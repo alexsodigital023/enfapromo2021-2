@@ -1,0 +1,132 @@
+<?php
+
+use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
+
+class TicketSeeder extends Seeder
+{
+    protected $_status=[
+        [
+            "id"=>1,
+            "fingerprint"=>"test1",
+            "path"=>"/var/www/uploads/fotos/prueba/prueba1.jpg",
+            "status_id"=>1,
+            "estado_id"=>1,
+            "tienda_id"=>1,
+            "user_id"=>4,
+            "foto"=>"https://i2.wp.com/elpalomitron.com/wp-content/uploads/2019/07/Cr%C3%ADtica-de-Astra-Lost-in-Space-nave-espacial-El-Palomitr%C3%B3n.jpg?resize=750%2C422&ssl=1"
+        ],
+        [
+            "id"=>2,
+            "fingerprint"=>"test2",
+            "path"=>"/var/www/uploads/fotos/prueba/prueba2.jpg",
+            "status_id"=>1,
+            "estado_id"=>1,
+            "tienda_id"=>1,
+            "user_id"=>5,
+            "foto"=>"https://i2.wp.com/elpalomitron.com/wp-content/uploads/2019/07/Cr%C3%ADtica-de-Astra-Lost-in-Space-nave-espacial-El-Palomitr%C3%B3n.jpg?resize=750%2C422&ssl=1"
+        ],
+        [
+            "id"=>3,
+            "fingerprint"=>"test3",
+            "path"=>"/var/www/uploads/fotos/prueba/prueba3.jpg",
+            "status_id"=>1,
+            "estado_id"=>1,
+            "tienda_id"=>1,
+            "user_id"=>6,
+            "foto"=>"https://i2.wp.com/elpalomitron.com/wp-content/uploads/2019/07/Cr%C3%ADtica-de-Astra-Lost-in-Space-nave-espacial-El-Palomitr%C3%B3n.jpg?resize=750%2C422&ssl=1"
+        ],
+        [
+            "id"=>4,
+            "fingerprint"=>"test4",
+            "path"=>"/var/www/uploads/fotos/prueba/prueba4.jpg",
+            "status_id"=>1,
+            "estado_id"=>1,
+            "tienda_id"=>1,
+            "user_id"=>4,
+            "foto"=>"https://i2.wp.com/elpalomitron.com/wp-content/uploads/2019/07/Cr%C3%ADtica-de-Astra-Lost-in-Space-nave-espacial-El-Palomitr%C3%B3n.jpg?resize=750%2C422&ssl=1"
+        ],
+        [
+            "id"=>5,
+            "fingerprint"=>"test5",
+            "path"=>"/var/www/uploads/fotos/prueba/prueba5.jpg",
+            "status_id"=>1,
+            "estado_id"=>1,
+            "tienda_id"=>1,
+            "user_id"=>5,
+            "foto"=>"https://i2.wp.com/elpalomitron.com/wp-content/uploads/2019/07/Cr%C3%ADtica-de-Astra-Lost-in-Space-nave-espacial-El-Palomitr%C3%B3n.jpg?resize=750%2C422&ssl=1"
+        ],
+        [
+            "id"=>6,
+            "fingerprint"=>"test6",
+            "path"=>"/var/www/uploads/fotos/prueba/prueba6.pdf",
+            "status_id"=>1,
+            "estado_id"=>1,
+            "tienda_id"=>1,
+            "user_id"=>6,
+            "foto"=>"https://i2.wp.com/elpalomitron.com/wp-content/uploads/2019/07/Cr%C3%ADtica-de-Astra-Lost-in-Space-nave-espacial-El-Palomitr%C3%B3n.jpg?resize=750%2C422&ssl=1"
+        ],
+        [
+            "id"=>7,
+            "fingerprint"=>"test7",
+            "path"=>"/var/www/uploads/fotos/prueba/prueba7.jpg",
+            "status_id"=>1,
+            "estado_id"=>1,
+            "tienda_id"=>1,
+            "user_id"=>4,
+            "foto"=>"https://i2.wp.com/elpalomitron.com/wp-content/uploads/2019/07/Cr%C3%ADtica-de-Astra-Lost-in-Space-nave-espacial-El-Palomitr%C3%B3n.jpg?resize=750%2C422&ssl=1"
+        ],
+        [
+            "id"=>8,
+            "fingerprint"=>"test8",
+            "path"=>"/var/www/uploads/fotos/prueba/prueba8.jpg",
+            "status_id"=>1,
+            "estado_id"=>1,
+            "tienda_id"=>1,
+            "user_id"=>5,
+            "foto"=>"https://i2.wp.com/elpalomitron.com/wp-content/uploads/2019/07/Cr%C3%ADtica-de-Astra-Lost-in-Space-nave-espacial-El-Palomitr%C3%B3n.jpg?resize=750%2C422&ssl=1"
+        ],
+        [
+            "id"=>9,
+            "fingerprint"=>"test9",
+            "path"=>"/var/www/uploads/fotos/prueba/prueba9.jpg",
+            "status_id"=>1,
+            "estado_id"=>1,
+            "tienda_id"=>1,
+            "user_id"=>6,
+            "foto"=>"https://i2.wp.com/elpalomitron.com/wp-content/uploads/2019/07/Cr%C3%ADtica-de-Astra-Lost-in-Space-nave-espacial-El-Palomitr%C3%B3n.jpg?resize=750%2C422&ssl=1"
+        ],
+        [
+            "id"=>10,
+            "fingerprint"=>"test10",
+            "path"=>"/var/www/uploads/fotos/prueba/prueba10.jpg",
+            "status_id"=>1,
+            "estado_id"=>1,
+            "tienda_id"=>1,
+            "user_id"=>4,
+            "foto"=>"https://i2.wp.com/elpalomitron.com/wp-content/uploads/2019/07/Cr%C3%ADtica-de-Astra-Lost-in-Space-nave-espacial-El-Palomitr%C3%B3n.jpg?resize=750%2C422&ssl=1"
+        ],
+        [
+            "id"=>11,
+            "fingerprint"=>"test11",
+            "path"=>"/var/www/uploads/fotos/prueba/prueba11.jpg",
+            "status_id"=>1,
+            "estado_id"=>1,
+            "tienda_id"=>1,
+            "user_id"=>5,
+            "foto"=>"https://i2.wp.com/elpalomitron.com/wp-content/uploads/2019/07/Cr%C3%ADtica-de-Astra-Lost-in-Space-nave-espacial-El-Palomitr%C3%B3n.jpg?resize=750%2C422&ssl=1"
+        ]
+        ];
+    /**
+     * Run the database seeds.
+     *
+     * @return void
+     */
+    public function run()
+    {
+        foreach($this->_status as $st){
+            $st["created_at"]=date("Y-m-d H:i:s");
+            DB::table('ticket')->insert($st);
+        }
+    }
+}

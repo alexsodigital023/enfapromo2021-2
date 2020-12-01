@@ -1,0 +1,16 @@
+{
+    "name": "sodigital/ocrservices",
+    "type": "project",
+    "authors": [
+        {
+            "name": "paynalton",
+            "email": "cxescalona@gmail.com"
+        }
+    ],
+    "require": {
+        "illuminate/database": "^7.15",
+        "retrinko/ini": "^2.0",
+        "thiagoalessio/tesseract_ocr": "^2.9",
+        "spatie/pdf-to-image": "^2.0"
+    }
+}
