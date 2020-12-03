@@ -1,0 +1,8 @@
+{
+    "host": "db",
+    "port":3306,
+    "user":"prueba",
+    "password": "prueba",
+    "database":"prueba",
+    "connectionLimit": 10
+}
