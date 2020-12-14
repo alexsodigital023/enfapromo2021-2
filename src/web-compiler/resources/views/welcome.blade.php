@@ -17,7 +17,7 @@
 				
 					
 					<div id="xSectionDetails_html_1606949136540" data-ngx-id="html_1606949136540" data-componenttype="html" style="" class="xComponent xHtml n1 xFullColModule xTmpl-Default" data-registered="true">
-  <div class="xComponentInner"><h1>Gana hasta <span class="prize-sign">$</span><span class="prize-number">100,000+</span><span class="prize-currency">pesos</span></h1> <h2>para su educación con</h2></div>
+  <div class="xComponentInner"><h1>Gana hasta <span class="prize-sign">$</span><span class="prize-number">100,000<sup></span><span class="prize-currency">pesos</span></h1> <h2>para su educación con</h2></div>
 </div>
 					
 				 
@@ -35,7 +35,7 @@
 				
 					
 					<div id="xSectionDetails_html_1606949446622" data-ngx-id="html_1606949446622" data-componenttype="html" style="" class="xComponent xHtml n1 xMidColModule xTmpl-Default" data-registered="true">
-  <div class="xComponentInner"><ul class="mecanica">   <li class="item">Compra $350.00 <span class="it">de productos Enfagrow</span></li>   <li class="item">Regístrate</li>   <li class="item">Hay miles de premios*</li> </ul></div>
+  <div class="xComponentInner"><ol type="1" class="mecanica">   <li class="item">Compra $350.00 <span class="it">de productos Enfagrow</span></li>   <li class="item">Regístrate</li>   <li class="item">Hay miles de premios*</li> </ol></div>
 </div>
 					
 				

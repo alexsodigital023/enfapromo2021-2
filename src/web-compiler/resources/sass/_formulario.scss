@@ -1,3 +1,88 @@
 .ticketFormContainer{
-    
+  ::placeholder,
+  .item, {
+    color: $c-gris;
+    opacity: 1;
+  }
+
+  label {
+    font-weight: bold;
+  }
+
+  input,
+  select {
+    color: $c-negro;
+  }
+
+  button[type="submit"] {
+    background: $c-azul;
+    font-weight: bold;
+  }
+
+  .xComboInput::after {
+    color: $c-azul;
+  }
+
+
+  .xControlName,
+  .xControlEmail,
+  .xControlDate,
+  .xControlNumber {
+    .xLabelContainer{
+      display: block;
+      width: 100%;
+      max-width: 100%;
+      label {
+        width: 100%;
+        text-align-last: left;
+      }
+    }
+  }
+
+  .xFieldContainer:first-child {
+    padding-left: 15px;
+  }
+
+  .xFieldItem.xControlCheckbox.xRequired {
+    .xLabelContainer {
+      width: 10px;
+      min-width: 10px;
+      padding-right: 8px;
+    }
+  }
+
+  .xActionsForm {
+    margin-left: 0;
+    margin-top: 10%;
+    padding-top: 35px;
+  }
+}
+
+
+@media only screen and (max-width: 1600px) {
+  .ticketFormContainer {}
+}
+
+@media only screen and (max-width: 1100px) {
+  .ticketFormContainer{
+    .xActionsForm {
+      margin-top: 30%;
+      padding-top: 20px;
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .ticketFormContainer{
+    .xFieldItem.xControlCheckbox.xRequired {
+      .xFieldContainer.xFieldWidthMedium {
+        margin-left: 15px;
+      }
+    }
+
+  .xActionsForm {
+      margin-top: 100%;
+      padding-top: 15px;
+    }
+  }
 }
