@@ -4,7 +4,7 @@
  * building robust, powerful web applications using Vue and Laravel.
  */
 
-$ = require('jquery');
+//$ = require('jquery');
 require('./wScratchPad');
 // console.log($.fn.wScratchPad);
 import Vue from 'vue'
@@ -38,7 +38,7 @@ Vue.component('rasca', require('./components/Rasca.vue').default);
   $(xH).insertBefore(h);
   $(xH).append(h);
   const f = $(".xCustom-formulario_ticket").get(0);
-  const xF = $.parseHTML('<formulario-ticket v-on:working="startWait"  v-on:stop="stopWait" v-on:error="errorFormulario"></formulario-ticket>');
+  const xF = $.parseHTML('<formulario-ticket ></formulario-ticket>');
   $(xF).insertBefore(f);
   $(xF).append(f);
 })($);
