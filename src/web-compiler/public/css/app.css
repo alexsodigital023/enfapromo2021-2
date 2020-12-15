@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*!
  * Font Awesome Free 5.14.0 by @fontawesome - https://fontawesome.com
  * License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)
@@ -150,8 +151,7 @@
 :root .fa-flip-horizontal,
 :root .fa-flip-vertical,
 :root .fa-flip-both {
-  -webkit-filter: none;
-          filter: none; }
+  filter: none; }
 
 .fa-stack {
   display: inline-block;
@@ -4574,5 +4574,316 @@ readers do not read off random characters that represent icons */
 .fas {
   font-family: 'Font Awesome 5 Free';
   font-weight: 900; }
+body {
+  background: #F6E8CD;
+  color: #00217B;
+}
 
+.ticketFormContainer ::-moz-placeholder {
+  color: #b8b8b8;
+  opacity: 1;
+}
+
+.ticketFormContainer :-ms-input-placeholder {
+  color: #b8b8b8;
+  opacity: 1;
+}
+
+.ticketFormContainer ::placeholder,
+.ticketFormContainer .item {
+  color: #b8b8b8;
+  opacity: 1;
+}
+
+.ticketFormContainer label {
+  font-weight: bold;
+}
+
+.ticketFormContainer input,
+.ticketFormContainer select {
+  color: #000;
+}
+
+.ticketFormContainer button[type=submit] {
+  background: #00217B;
+  font-weight: bold;
+}
+
+.ticketFormContainer .xComboInput::after {
+  color: #00217B;
+}
+
+.ticketFormContainer .xControlName .xLabelContainer,
+.ticketFormContainer .xControlEmail .xLabelContainer,
+.ticketFormContainer .xControlDate .xLabelContainer,
+.ticketFormContainer .xControlNumber .xLabelContainer {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+}
+
+.ticketFormContainer .xControlName .xLabelContainer label,
+.ticketFormContainer .xControlEmail .xLabelContainer label,
+.ticketFormContainer .xControlDate .xLabelContainer label,
+.ticketFormContainer .xControlNumber .xLabelContainer label {
+  width: 100%;
+  -moz-text-align-last: left;
+       text-align-last: left;
+}
+
+.ticketFormContainer .xFieldContainer:first-child {
+  padding-left: 15px;
+}
+
+.ticketFormContainer .xFieldItem.xControlCheckbox.xRequired .xLabelContainer {
+  width: 10px;
+  min-width: 10px;
+  padding-right: 8px;
+}
+
+.ticketFormContainer .xActionsForm {
+  margin-left: 0;
+  margin-top: 10%;
+  padding-top: 35px;
+}
+
+@media only screen and (max-width: 1100px) {
+  .ticketFormContainer .xActionsForm {
+    margin-top: 30%;
+    padding-top: 20px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .ticketFormContainer .xFieldItem.xControlCheckbox.xRequired .xFieldContainer.xFieldWidthMedium {
+    margin-left: 15px;
+  }
+
+  .ticketFormContainer .xActionsForm {
+    margin-top: 100%;
+    padding-top: 15px;
+  }
+}
+
+#xSectionDetails {
+  background: #F99C1B;
+  position: relative;
+}
+
+#xSectionDetails::before {
+  content: " ";
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: url(/images/fondo-golden.png) top center no-repeat;
+  background-size: 100%;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+#xSectionDetails .xComponentInner {
+  position: relative;
+  z-index: 2;
+}
+
+#xSectionDetails .xComponentInner h1,
+#xSectionDetails .xComponentInner h2 {
+  text-align: center;
+  font-weight: bold;
+}
+
+#xSectionDetails .xComponentInner h1 {
+  font-size: 3.5vw;
+  -webkit-text-stroke: 2px #fff;
+  text-transform: uppercase;
+  position: relative;
+  text-shadow: 6px 6px 2px rgba(84, 84, 84, 0.9);
+}
+
+#xSectionDetails .xComponentInner h1 .prize-sign {
+  font-size: 2.5vw;
+  vertical-align: text-top;
+  margin-right: 20px;
+}
+
+#xSectionDetails .xComponentInner h1 .prize-number {
+  font-size: 4.5vw;
+  text-shadow: 8px 8px 2px rgba(84, 84, 84, 0.9);
+}
+
+#xSectionDetails .xComponentInner h1 .prize-currency {
+  font-size: 1.1vw;
+  -webkit-text-stroke: 0;
+  position: absolute;
+  bottom: -10px;
+  right: 250px;
+  text-shadow: 1px 1px 10px #fff, 0 0 20px #fff, 0 0 10px #fff;
+}
+
+#xSectionDetails .xComponentInner h2 {
+  text-shadow: 1px 1px 10px #fff, 0 0 20px #fff, 0 0 10px #fff;
+  font-size: 2vw;
+  line-height: 0;
+  margin-bottom: 40px;
+}
+
+#xSectionDetails .xComponentInner .mecanica .item {
+  position: relative;
+  display: list-item;
+  font-size: 3vw;
+}
+
+#xSectionDetails .xComponentInner .mecanica .item .it {
+  position: absolute;
+  font-size: 1.5vw;
+  bottom: -12px;
+  left: 35%;
+}
+
+#xSectionDetails .xRowInner .xCell.n2 .xComponentInner .xMediaContainer.xRenderEmbed.xMediaImage img {
+  display: none;
+}
+
+@media only screen and (max-width: 1600px) {
+  #xSectionDetails .xComponentInner h1 {
+    font-size: 4.5vw;
+    -webkit-text-stroke: 2px #fff;
+  }
+
+  #xSectionDetails .xComponentInner h1 .prize-sign {
+    font-size: 3vw;
+    margin-right: 20px;
+  }
+
+  #xSectionDetails .xComponentInner h1 .prize-number {
+    font-size: 6.5vw;
+  }
+
+  #xSectionDetails .xComponentInner h1 .prize-currency {
+    font-size: 2vw;
+    bottom: -10px;
+    right: 250px;
+    text-shadow: 1px 1px 10px #fff, 0 0 20px #fff, 0 0 10px #fff;
+  }
+
+  #xSectionDetails .xComponentInner h2 {
+    text-shadow: 1px 1px 10px #fff, 0 0 20px #fff, 0 0 10px #fff;
+    font-size: 2.5vw;
+  }
+}
+
+@media only screen and (max-width: 1100px) {
+  #xSectionDetails .xComponentInner h1 {
+    font-size: 7vw;
+    -webkit-text-stroke: 2px #fff;
+  }
+
+  #xSectionDetails .xComponentInner h1 .prize-sign {
+    font-size: 5vw;
+    margin-right: 15px;
+    -webkit-text-stroke: 1px #fff;
+    vertical-align: text-top;
+  }
+
+  #xSectionDetails .xComponentInner h1 .prize-number {
+    font-size: 10vw;
+  }
+
+  #xSectionDetails .xComponentInner h1 .prize-currency {
+    font-size: 3vw;
+    font-weight: normal;
+    right: 3%;
+    bottom: -15px;
+    text-shadow: 1px 1px 0px #fff, 0 0 10px #fff, 0 0 10px #fff;
+  }
+
+  #xSectionDetails .xComponentInner h2 {
+    font-size: 5vw;
+    line-height: 0;
+    margin: 0 0 60px;
+    -webkit-text-stroke: 1px #fff;
+    text-shadow: none;
+  }
+
+  #xSectionDetails .xComponentInner .mecanica {
+    margin-top: -60px;
+  }
+
+  #xSectionDetails .xComponentInner .mecanica .item {
+    position: relative;
+    font-size: 4vw;
+  }
+
+  #xSectionDetails .xComponentInner .mecanica .item .it {
+    position: absolute;
+    right: 5%;
+    display: block;
+    text-align: right;
+    font-size: 2.5vw;
+    line-height: 5px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  #xSectionDetails::before {
+    top: 135px;
+    background: url(/images/monedas-movil.png) top center no-repeat;
+    background-size: 100%;
+  }
+
+  #xSectionDetails .xComponentInner h1 {
+    font-size: 40px;
+    -webkit-text-stroke: 1px #fff;
+  }
+
+  #xSectionDetails .xComponentInner h1 .prize-sign {
+    font-size: 35px;
+    margin-right: 10px;
+    -webkit-text-stroke: 0.09rem #fff;
+    vertical-align: text-bottom;
+  }
+
+  #xSectionDetails .xComponentInner h1 .prize-number {
+    font-size: 60px;
+  }
+
+  #xSectionDetails .xComponentInner h1 .prize-currency {
+    font-size: 18px;
+    font-weight: normal;
+    right: 10%;
+    bottom: -15px;
+    text-shadow: 1px 1px 0px #fff, 0 0 10px #fff, 0 0 10px #fff;
+  }
+
+  #xSectionDetails .xComponentInner h2 {
+    font-size: 30px;
+    line-height: 30px;
+    margin: 0 0 80px;
+    -webkit-text-stroke: 0.5px #fff;
+    text-shadow: none;
+  }
+
+  #xSectionDetails .xComponentInner .mecanica {
+    margin-top: 80px;
+  }
+
+  #xSectionDetails .xComponentInner .mecanica .item {
+    position: relative;
+    font-size: 30px;
+  }
+
+  #xSectionDetails .xComponentInner .mecanica .item .it {
+    position: absolute;
+    right: 5%;
+    display: block;
+    text-align: right;
+    font-size: 18px;
+    line-height: 0;
+  }
+
+  #xSectionDetails .xRowInner .xCell.n2 .xComponentInner .xMediaContainer.xRenderEmbed.xMediaImage img {
+    display: block;
+  }
+}
 
