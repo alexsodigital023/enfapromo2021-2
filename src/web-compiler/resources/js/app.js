@@ -4,10 +4,11 @@
  * building robust, powerful web applications using Vue and Laravel.
  */
 
-
+$ = require('jquery');
+require('./wScratchPad');
+// console.log($.fn.wScratchPad);
 import Vue from 'vue'
 import Vue2TouchEvents from 'vue2-touch-events'
-$ = require('jquery');
 
 Vue.use(Vue2TouchEvents);
 
@@ -31,29 +32,29 @@ Vue.component('rasca', require('./components/Rasca.vue').default);
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-(function($){
-    const h = $("#xSectionHeader").get(0);
-    const xH=$.parseHTML('<logo-header></logo-header>');
-    $(xH).insertBefore(h);
-    $(xH).append(h);
-    const f = $(".xCustom-formulario_ticket").get(0);
-    const xF=$.parseHTML('<formulario-ticket v-on:working="startWait"  v-on:stop="stopWait" v-on:error="errorFormulario"></formulario-ticket>');
-    $(xF).insertBefore(f);
-    $(xF).append(f);
+(function ($) {
+  const h = $("#xSectionHeader").get(0);
+  const xH = $.parseHTML('<logo-header></logo-header>');
+  $(xH).insertBefore(h);
+  $(xH).append(h);
+  const f = $(".xCustom-formulario_ticket").get(0);
+  const xF = $.parseHTML('<formulario-ticket v-on:working="startWait"  v-on:stop="stopWait" v-on:error="errorFormulario"></formulario-ticket>');
+  $(xF).insertBefore(f);
+  $(xF).append(f);
 })($);
 
 const app = new Vue({
-    el: '.xPageInner',
-    data(){
-        return {
-        }
-    },
-    methods:{
-        
-    },
-    mounted(){
-        
+  el: '.xPageInner',
+  data() {
+    return {
     }
+  },
+  methods: {
+
+  },
+  mounted() {
+
+  }
 });
 
 

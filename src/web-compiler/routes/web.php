@@ -16,6 +16,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 })->name("home");
+
 Route::get('/ganador.html', function () {
     return view('felicidades');
 })->name("felicidades");
+
+Route::get('/rasca-gana', function () {
+    return view('rascaHuele');
+})->name("rascaHuele");

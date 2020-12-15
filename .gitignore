@@ -1,2 +1,8 @@
 src/publicSocket/src/tmp/
 src/publicSocket/node_modules/
+
+*.code-workspace
+*/vendor/*
+*/node_modules/*
+src/services/src/vendor/*
+src/publicSocket/src/tmp/*
