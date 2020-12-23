@@ -5,6 +5,8 @@ use Laminas\ApiTools\ApiProblem\ApiProblem;
 use Laminas\ApiTools\Rest\AbstractResourceListener;
 use Laminas\Db\Sql\Sql;
 use Application\Base\ResourceBase;
+use Laminas\Db\Sql\Select;
+use Laminas\Paginator\Adapter\DbSelect;
 
 class TicketResource extends ResourceBase
 {
@@ -74,7 +76,11 @@ class TicketResource extends ResourceBase
      */
     public function fetchAll($params = [])
     {
-        return new ApiProblem(405, 'The GET method has not been defined for collections');
+        $query = (new Select("ticket"));
+        $select=new DbSelect($query,$this->_db);
+        $collection=new TicketCollection($select);
+        $collection->_db=&$this->_db;
+        return $collection;
     }
 
     /**

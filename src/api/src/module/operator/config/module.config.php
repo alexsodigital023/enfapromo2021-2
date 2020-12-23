@@ -56,9 +56,10 @@ return [
             ],
             'collection_http_methods' => [
                 0 => 'POST',
+                1 => 'GET',
             ],
             'collection_query_whitelist' => [],
-            'page_size' => 25,
+            'page_size' => '5',
             'page_size_param' => null,
             'entity_class' => \operator\V1\Rest\Ticket\TicketEntity::class,
             'collection_class' => \operator\V1\Rest\Ticket\TicketCollection::class,
@@ -181,7 +182,7 @@ return [
         'authorization' => [
             'operator\\V1\\Rest\\Ticket\\Controller' => [
                 'collection' => [
-                    'GET' => true,
+                    'GET' => false,
                     'POST' => false,
                     'PUT' => false,
                     'PATCH' => false,
