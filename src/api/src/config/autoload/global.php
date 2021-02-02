@@ -33,4 +33,19 @@ return [
             ],
         ],
     ],
+    'storage' => [
+        'adapters' =>[
+            'do_spaces' =>[
+                'driver' => Aws\S3\S3Client::class,
+                'version' => 'latest',
+                'region'  => 'NYC3',
+                'endpoint' => 'https://nyc3.digitaloceanspaces.com',
+                'credentials' => [
+                        'key'    => 'M4I2LYAQVWAXFGF5W5XJ',
+                        'secret' => 'd+okr4VB3gZNPuwV0ubV34G6mxonCzbsTvxIRM3qSZk',
+                    ],
+                'bucket' => 'imatch'
+            ]
+        ]
+    ]
 ];
