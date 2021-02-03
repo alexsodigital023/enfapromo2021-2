@@ -1,5 +1,5 @@
 const websocket = require('ws');
-const https = require('https');
+const https = require('http');
 const fs = require('fs');
 const express = require('express');
 const handleLoader = require('./lib/LoadHandler');
@@ -8,13 +8,13 @@ const TicketWatcher = require('./lib/watchers/TicketWatcher');
 const app = express();
 
 const options = {
-  cert: fs.readFileSync(`${__dirname}/ssl/certificate.pem`,'utf8'),
+ /* cert: fs.readFileSync(`${__dirname}/ssl/certificate.pem`,'utf8'),
   key: fs.readFileSync(`${__dirname}/ssl/private.key`,'utf8'),
   ca: [
     fs.readFileSync(`${__dirname}/ssl/ca1.crt`,'utf8'),
     fs.readFileSync(`${__dirname}/ssl/ca2.crt`,'utf8'),
     fs.readFileSync(`${__dirname}/ssl/ca3.crt`,'utf8'),
-  ]
+  ]*/
 };
 
 const server = https.createServer(options,app);
