@@ -11,7 +11,7 @@ return [
                 'username' => 'golden',
                 'password' => '3XRMws3hKmbvPCsTf4jT9nPnd',
                 'hostname' => 'ec2-18-222-32-38.us-east-2.compute.amazonaws.com',
-                'port' => '25060'
+                'port' => '3307'
             ],
         ],
     ],
