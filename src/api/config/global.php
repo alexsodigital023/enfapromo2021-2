@@ -7,10 +7,10 @@ return [
         'adapters' => [
             'database' => [
                 'driver' => \Mysqli::class,
-                'database' => 'enfa-goldenticket',
-                'username' => 'doadmin',
-                'password' => 'cperj0r7ng3hl9ld',
-                'hostname' => 'db-mysql-nyc1-42577-do-user-1684304-0.b.db.ondigitalocean.com',
+                'database' => 'golden',
+                'username' => 'golden',
+                'password' => '3XRMws3hKmbvPCsTf4jT9nPnd',
+                'hostname' => 'ec2-18-222-32-38.us-east-2.compute.amazonaws.com',
                 'port' => '25060'
             ],
         ],
