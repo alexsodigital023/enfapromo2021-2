@@ -1,6 +1,6 @@
 FROM php:7.4-apache
 
-RUN apt-get update && apt-get install -y git zip 
+RUN apt-get update && apt-get install -y git zip zlib
 COPY ./src/backend/config/vhost.conf /etc/apache2/sites-enabled/000-default.conf
 COPY ./src/backend/src /var/www
 COPY ./src/backend/config/env-production /var/www/.env
