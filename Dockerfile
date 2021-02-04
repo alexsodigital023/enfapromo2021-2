@@ -18,3 +18,4 @@ RUN mkdir -p  /var/www/data/cache && chmod 777 /var/www/data -R
 
 RUN cd /var/www && composer install --no-dev 
 COPY ./src/api/config/constants.php /var/www/src/ApiTools/constants.php
+RUN mv "$PHP_INI_DIR/php.ini-production" "$PHP_INI_DIR/php.ini"
