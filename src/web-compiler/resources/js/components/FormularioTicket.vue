@@ -13,6 +13,9 @@ import Cookies from 'js-cookie';
                 submitButton:null,
                 fileInput:null,
                 conexion:null,
+                emailInput:null,
+                file:null,
+                email:null,
                 stage:0
             };
         },
@@ -24,8 +27,15 @@ import Cookies from 'js-cookie';
                 switch(this.stage){
                     case 0:
                         $(this.fileInput).find("input").change(()=>this.fileChanged());
+                        $(this.emailInput).change(()=>this.emailChanged());
                         $(this.submitButton).hide();
                         this.stage++;
+                        break;
+                    case 1:
+                        if(this.file&&this.email){
+                            this.stage++;
+                            this.send();
+                        }
                         break;
                 }
             },
@@ -36,7 +46,17 @@ import Cookies from 'js-cookie';
                     message:message
                 });
             },
+
             fileChanged(){
+                this.file=$(this.fileInput).find("input").val().length>0;
+                this.endStage();
+            },
+            emailChanged(){
+                this.email=$(this.emailInput).val().length>0;
+                this.endStage();
+            },
+
+            send(){
                 this.$emit("working",{
                     percent:'Subiendo Ticker',
                     status:0,
@@ -146,6 +166,7 @@ import Cookies from 'js-cookie';
         mounted() {
             this.submitButton=$(this.$el).find("#xSubmitContainer").get(0);
             this.fileInput=$(this.$el).find("#ngxUserUploadWrapper").get(0);
+            this.emailInput=$(this.$el).find("#email").get(0);
             this.endStage();
         }
     }

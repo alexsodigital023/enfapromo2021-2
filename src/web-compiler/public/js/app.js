@@ -112,6 +112,9 @@ __webpack_require__.r(__webpack_exports__);
       submitButton: null,
       fileInput: null,
       conexion: null,
+      emailInput: null,
+      file: null,
+      email: null,
       stage: 0
     };
   },
@@ -125,8 +128,19 @@ __webpack_require__.r(__webpack_exports__);
           $(this.fileInput).find("input").change(function () {
             return _this.fileChanged();
           });
+          $(this.emailInput).change(function () {
+            return _this.emailChanged();
+          });
           $(this.submitButton).hide();
           this.stage++;
+          break;
+
+        case 1:
+          if (this.file && this.email) {
+            this.stage++;
+            this.send();
+          }
+
           break;
       }
     },
@@ -138,6 +152,14 @@ __webpack_require__.r(__webpack_exports__);
       });
     },
     fileChanged: function fileChanged() {
+      this.file = $(this.fileInput).find("input").val().length > 0;
+      this.endStage();
+    },
+    emailChanged: function emailChanged() {
+      this.email = $(this.emailInput).val().length > 0;
+      this.endStage();
+    },
+    send: function send() {
       var _this2 = this;
 
       this.$emit("working", {
@@ -266,6 +288,7 @@ __webpack_require__.r(__webpack_exports__);
   mounted: function mounted() {
     this.submitButton = $(this.$el).find("#xSubmitContainer").get(0);
     this.fileInput = $(this.$el).find("#ngxUserUploadWrapper").get(0);
+    this.emailInput = $(this.$el).find("#email").get(0);
     this.endStage();
   }
 });
