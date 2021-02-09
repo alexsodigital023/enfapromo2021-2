@@ -171,7 +171,7 @@ export default class {
         });
     }
     getToken(uuid){
-        return new Promise((resolve,reject)=>{
+        return new Promise((resolve,reject)=>{ 
             this.post(this.config.auth.host,{
                 email:uuid
             }).then(
