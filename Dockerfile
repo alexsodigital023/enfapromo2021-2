@@ -13,7 +13,7 @@ RUN docker-php-ext-enable mysqli pdo pdo_mysql
 RUN curl -sS https://getcomposer.org/installer \
   | php -- --install-dir=/usr/local/bin --filename=composer
 
-RUN a2enmod rewrite
+RUN a2enmod rewrite ssl
 
 RUN mkdir -p  /var/www/data/cache && chmod 777 /var/www/data -R
 
