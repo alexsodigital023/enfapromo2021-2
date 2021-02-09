@@ -2,6 +2,7 @@ FROM php:7.2-apache
 
 RUN apt-get update && apt-get install -y git zip
 COPY ./src/api/config/vhost.conf /etc/apache2/sites-enabled/000-default.conf
+COPY ./src/api/config/vhost-ssl.conf /etc/apache2/sites-enabled/default-ssl.conf
 COPY ./src/api/src /var/www
 COPY ./src/api/config/global.php /var/www/config/autoload/global.php
 COPY ./src/api/config/IndexController.php /var/www/module/Application/src/Controller/IndexController.php
