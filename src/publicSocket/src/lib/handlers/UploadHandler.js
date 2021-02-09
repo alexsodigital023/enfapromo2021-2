@@ -10,7 +10,7 @@ const AWS = require('aws-sdk');
 
 const magic = new mmm.Magic(mmm.MAGIC_MIME_TYPE);
 const pool = mariadb.createPool(require('../../config/database.json'));
-const ep = new AWS.Endpoint('enfa-goldenticket.nyc3.digitaloceanspaces.com');
+const ep = new AWS.Endpoint('nyc3.digitaloceanspaces.com');
 
 const s3 = new AWS.S3({
     accessKeyId: 'QETEHBUFSJ7F2Y5WJF6W',
