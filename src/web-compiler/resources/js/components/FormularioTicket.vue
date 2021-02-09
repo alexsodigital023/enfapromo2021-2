@@ -52,7 +52,7 @@ import Cookies from 'js-cookie';
                 this.endStage();
             },
             emailChanged(){
-                this.email=$(this.emailInput).val().length>0;
+                this.email=$(this.emailInput).val().length>0?$(this.emailInput).val():null;
                 this.endStage();
             },
 

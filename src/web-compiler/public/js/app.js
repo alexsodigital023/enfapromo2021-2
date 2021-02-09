@@ -156,7 +156,7 @@ __webpack_require__.r(__webpack_exports__);
       this.endStage();
     },
     emailChanged: function emailChanged() {
-      this.email = $(this.emailInput).val().length > 0;
+      this.email = $(this.emailInput).val().length > 0 ? $(this.emailInput).val() : null;
       this.endStage();
     },
     send: function send() {
@@ -33885,11 +33885,12 @@ var _default = /*#__PURE__*/function () {
           port: destino.port,
           path: destino.path,
           headers: {
-            Accept: '*/*',
             'Content-Type': 'application/json',
+            Accept: '*/*',
             'Content-Length': Buffer.byteLength(data)
           }
         };
+        console.log(config);
         var req = https__WEBPACK_IMPORTED_MODULE_0___default.a.request(config, function (res) {
           if (res.statusCode != 200 && res.statusCode != 201) {
             reject(res);
