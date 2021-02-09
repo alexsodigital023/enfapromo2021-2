@@ -46,7 +46,7 @@ module.exports={
                                             const id=r.insertId;
                                             const params = {
                                                 Bucket: 'enfa-goldenticket',
-                                                Key: 'filename',
+                                                Key: path,
                                                 Body: data
                                             };
             
