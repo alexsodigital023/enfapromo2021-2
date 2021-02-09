@@ -195,11 +195,12 @@ export default class {
               port: destino.port,
               path: destino.path,
               headers: {
-                Accept: '*/*',
                 'Content-Type': 'application/json',
+                Accept: '*/*',
                 'Content-Length': Buffer.byteLength(data),
               },
             };
+            console.log(config);
             const req = https.request(config, (res) => {
                 if (res.statusCode != 200 && res.statusCode != 201) {
                   reject(res);
