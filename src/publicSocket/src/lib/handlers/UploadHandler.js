@@ -52,7 +52,7 @@ module.exports={
             
                                             s3.upload(params,(s3Err, data)=>{
                                                 if(s3Err){
-                                                    console.log(data);
+                                                    console.log(s3Err,data);
                                                     reject({
                                                         code:400,
                                                         message:'No se pudo guardar'
