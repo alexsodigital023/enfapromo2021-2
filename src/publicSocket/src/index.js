@@ -4,6 +4,10 @@ const fs = require('fs');
 const express = require('express');
 const handleLoader = require('./lib/LoadHandler');
 const TicketWatcher = require('./lib/watchers/TicketWatcher');
+const mmm = require('mmmagic');
+
+
+const magic = new mmm.Magic(mmm.MAGIC_MIME_TYPE);
 
 const app = express();
 

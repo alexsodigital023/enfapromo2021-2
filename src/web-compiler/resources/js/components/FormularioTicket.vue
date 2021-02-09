@@ -48,7 +48,7 @@ import Cookies from 'js-cookie';
             },
 
             fileChanged(){
-                this.file=$(this.fileInput).find("input").val().length>0;
+                this.file=$(this.fileInput).find("input[type='file']").val().length>0;
                 this.endStage();
             },
             emailChanged(){
@@ -70,7 +70,7 @@ import Cookies from 'js-cookie';
                             status:50,
                             message:'Espere...'
                         });
-                        let fileField = $(this.fileField).find("input[type='file']").get(0);
+                        let fileField = $(this.fileInput).find("input[type='file']").get(0);
                         for(let i in fileField.files){
                             if(fileField.files[i]&&fileField.files[i].size){
                                 const reader = new FileReader();
@@ -114,8 +114,8 @@ import Cookies from 'js-cookie';
                     this.conexion=new Conexion({
                         auth:{
                             host:{
-                                host:'enfa-goldenticket-api-2l349.ondigitalocean.app',
-                                port:'443',
+                                host:'dev-sodigital.mx',
+                                port:'8085',
                                 path:'/user'
                             }
                         },

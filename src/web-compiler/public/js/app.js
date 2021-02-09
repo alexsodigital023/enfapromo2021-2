@@ -152,7 +152,7 @@ __webpack_require__.r(__webpack_exports__);
       });
     },
     fileChanged: function fileChanged() {
-      this.file = $(this.fileInput).find("input").val().length > 0;
+      this.file = $(this.fileInput).find("input[type='file']").val().length > 0;
       this.endStage();
     },
     emailChanged: function emailChanged() {
@@ -175,7 +175,7 @@ __webpack_require__.r(__webpack_exports__);
           message: 'Espere...'
         });
 
-        var fileField = $(_this2.fileField).find("input[type='file']").get(0);
+        var fileField = $(_this2.fileInput).find("input[type='file']").get(0);
 
         for (var i in fileField.files) {
           if (fileField.files[i] && fileField.files[i].size) {
@@ -228,8 +228,8 @@ __webpack_require__.r(__webpack_exports__);
         this.conexion = new _conexion__WEBPACK_IMPORTED_MODULE_0__["default"]({
           auth: {
             host: {
-              host: 'enfa-goldenticket-api-2l349.ondigitalocean.app',
-              port: '443',
+              host: 'dev-sodigital.mx',
+              port: '8085',
               path: '/user'
             }
           },

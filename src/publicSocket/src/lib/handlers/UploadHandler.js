@@ -2,113 +2,92 @@ const fs = require('fs');
 const paths = require('../../config/paths.json');
 const { v4: uuidv4 } = require('uuid');
 const md5File = require('md5-file');
+const md5File = require('md5');
 const mariadb = require('mariadb');
 const mmm = require('mmmagic');
+const AWS = require('aws-sdk');
 
 
 const magic = new mmm.Magic(mmm.MAGIC_MIME_TYPE);
 const pool = mariadb.createPool(require('../../config/database.json'));
+
+const s3 = new AWS.S3({
+    accessKeyId: 'QETEHBUFSJ7F2Y5WJF6W',
+    secretAccessKey: 'RFNf9kndhT2Qp2KmeaKtFumSIyyn/UhTDvTU00dBvqs'
+  });
 
 module.exports={
     requireAuth:true,
     run(data,user){
         return new Promise((resolve,reject)=>{
             const filename=uuidv4();
-            const path=paths.uploads+filename;
-            fs.writeFile(path, data,'binary',(err)=>{
-                if(err){
-                    reject({
-                        code:400,
-                        message:'No se pudo guardar'
-                    });
-                }else{
-                fs.stat(path,(err,stat)=>{
-                    if(err){
-                        fs.unlinkSync(path);
-                        reject({
-                            code:500,
-                            message:'No se pudo guardar..'
-                        });
-                    }else{
-                        magic.detectFile(path,(err,mime)=>{
-                            if(!(/image\/.*/i).test(mime)&&!(/application\/pdf/i).test(mime)){
-                                fs.unlinkSync(path);
+            const path=`${paths.uploads}/${filename}`;
+
+            let hash=md5(data);
+            pool.getConnection()
+                .then(conn => {
+                    conn.query(`select * from ticket where fingerprint=? and submited=1 limit 1`,[hash]).then(
+                        r=>{
+                            if(r[0]){
                                 reject({
                                     code:400,
-                                    message:'Formato de archivo no permitido'
+                                    message:'Archivo duplicado'
                                 });
                             }else{
-                                md5File(path).then((hash) => {
-                                    pool.getConnection()
-                                    .then(conn => {
-                                        conn.query(`select * from ticket where fingerprint=? and submited=1 limit 1`,[hash]).then(
-                                            r=>{
-                                                if(r[0]){
-                                                    fs.unlinkSync(path);
+
+                                conn.query(
+                                    `insert into ticket(user_id,estado_id,tienda_id,fingerprint,path,status_id,created_at,updated_at)`+
+                                    `values(?,1,1,?,?,1,now(),now()) on duplicate key update path=?, updated_at=now()`
+                                    ,[user.id,hash,path,path]).then(
+                                        r=>{
+                                            conn.end();
+                                            const id=r.insertId;
+                                            const params = {
+                                                Bucket: 'enfa-goldenticket',
+                                                Key: 'filename',
+                                                Body: data
+                                            };
+            
+                                            s3.upload(params,(s3Err, data)=>{
+                                                if(s3Err){
                                                     reject({
                                                         code:400,
-                                                        message:'Archivo duplicado'
+                                                        message:'No se pudo guardar'
                                                     });
                                                 }else{
-                                                    conn.query(
-                                                        `insert into ticket(user_id,estado_id,tienda_id,fingerprint,path,status_id,created_at,updated_at)`+
-                                                        `values(?,1,1,?,?,1,now(),now()) on duplicate key update path=?, updated_at=now()`
-                                                        ,[user.id,hash,path,path]).then(
-                                                            r=>{
-                                                                conn.end();
-                                                                const id=r.insertId;
-                                                                resolve({
-                                                                    code:200,
-                                                                    data:{
-                                                                        type:'statusChange',
-                                                                        status:1,
-                                                                        tid:id
-                                                                    },
-                                                                    ticket_id:id
-                                                                });
-                                                            },error=>{
-                                                                conn.end();
-                                                                fs.unlinkSync(path);
-                                                                console.error(error);
-                                                                reject({
-                                                                    code:500,
-                                                                    message:'No se pudo guardar.'
-                                                                });
-                                                            }
-                                                        );
+                                                    resolve({
+                                                        code:200,
+                                                        data:{
+                                                            type:'statusChange',
+                                                            status:1,
+                                                            tid:id
+                                                        },
+                                                        ticket_id:id
+                                                    });
                                                 }
-                                            },error=>{
-                                                conn.end();
-                                                fs.unlinkSync(path);
-                                                console.error(error);
-                                                reject({
-                                                    code:500,
-                                                    message:'No se pudo guardar.'
-                                                });
-                                            }
-                                        );
-                                    },error=>{
-                                        fs.unlinkSync(path);
-                                        reject({
-                                            code:500,
-                                            message:'No se pudo guardar.'
-                                        });
-                                    });
-                                  },error=>{
-                                    fs.unlinkSync(path);
-                                    reject({
-                                        code:400,
-                                        message:'No se pudo guardar'
-                                    });
-                                  });
-
+                                            });
+                                        },error=>{
+                                            conn.end();
+                                            reject({
+                                                code:500,
+                                                message:'No se pudo guardar.'
+                                            });
+                                        }
+                                    );
                             }
+                        },error=>{
+                            conn.end();
+                            reject({
+                                code:500,
+                                message:'No se pudo guardar.'
+                            });
                         });
-
-                    }
+                },error=>{
+                    reject({
+                        code:500,
+                        message:'No se pudo guardar.'
+                    });
                 });
-                }
-              });
         })
     },
     removeUpload(id){
@@ -118,7 +97,6 @@ module.exports={
                     conn.query(`select path from ticket where id = ?`,[id]).then(
                         r=>{
                             if(r[0]){
-                                fs.unlinkSync(path);
                                 conn.query(`delete from ticket where id = ? limit 1`,[id]).then(
                                     r=>{
                                         conn.end();
