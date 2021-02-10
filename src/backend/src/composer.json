@@ -18,7 +18,7 @@
         "maatwebsite/excel": "^3.1",
         "thiagoalessio/tesseract_ocr": "^2.9",
         "spatie/pdf-to-image": "^2.0",
-        "league/flysystem-aws-s3-v3": "~1.0"
+        "league/flysystem-aws-s3-v3": "^1.0"
     },
     "require-dev": {
         "facade/ignition": "^2.0",

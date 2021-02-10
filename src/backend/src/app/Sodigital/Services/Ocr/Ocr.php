@@ -1,7 +1,7 @@
 <?php
 
 
-namespace App\Sodigital\Services\OCR;
+namespace App\Sodigital\Services\Ocr;
 
 use finfo;
 use thiagoalessio\TesseractOCR\TesseractOCR;
