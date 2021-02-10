@@ -28,7 +28,7 @@ import Cookies from 'js-cookie';
                     case 0:
                         $(this.fileInput).find("input").change(()=>this.fileChanged());
                         $(this.emailInput).change(()=>this.emailChanged());
-                        $(this.submitButton).hide();
+                        //$(this.submitButton).hide();
                         this.stage++;
                         break;
                     case 1:
