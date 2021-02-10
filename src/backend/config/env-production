@@ -8,10 +8,18 @@ LOG_CHANNEL=stack
 
 DB_CONNECTION=mysql
 DB_HOST=ec2-18-222-32-38.us-east-2.compute.amazonaws.com
+DATABASE_URL=mysql://golden:3XRMws3hKmbvPCsTf4jT9nPnd@ec2-18-222-32-38.us-east-2.compute.amazonaws.com/golden?charset=UTF-8
 DB_PORT=3307
 DB_DATABASE=golden
 DB_USERNAME=golden
 DB_PASSWORD=3XRMws3hKmbvPCsTf4jT9nPnd
+
+DB2_CONNECTION=mysql
+DB2_HOST=ec2-18-222-32-38.us-east-2.compute.amazonaws.com
+DB2_PORT=3307
+DB2_DATABASE=golden
+DB2_USERNAME=golden
+DB2_PASSWORD=3XRMws3hKmbvPCsTf4jT9nPnd
 
 BROADCAST_DRIVER=log
 CACHE_DRIVER=file
