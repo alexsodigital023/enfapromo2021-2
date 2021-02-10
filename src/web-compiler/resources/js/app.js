@@ -4,7 +4,7 @@
  * building robust, powerful web applications using Vue and Laravel.
  */
 
-//$ = require('jquery');
+$ = require('jquery');
 require('./wScratchPad');
 // console.log($.fn.wScratchPad);
 import Vue from 'vue'
@@ -25,7 +25,6 @@ Vue.component('registros', require('./components/RegisterCounter.vue').default);
 Vue.component('rasca', require('./components/Rasca.vue').default);
 
 
-
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
@@ -33,11 +32,7 @@ Vue.component('rasca', require('./components/Rasca.vue').default);
  */
 
 (function ($) {
-  const h = $("#xSectionHeader").get(0);
-  const xH = $.parseHTML('<logo-header></logo-header>');
-  $(xH).insertBefore(h);
-  $(xH).append(h);
-  const f = $(".xCustom-formulario_ticket").get(0);
+  const f = $("#xCampaignForm").get(0);
   const xF = $.parseHTML('<formulario-ticket ></formulario-ticket>');
   $(xF).insertBefore(f);
   $(xF).append(f);
