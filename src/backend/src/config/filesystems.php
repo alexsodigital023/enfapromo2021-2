@@ -27,6 +27,7 @@ return [
     */
 
     'cloud' => env('FILESYSTEM_CLOUD', 's3'),
+    'spaces' => env('FILESYSTEM_CLOUD', 'do_spaces'),
 
     /*
     |--------------------------------------------------------------------------
