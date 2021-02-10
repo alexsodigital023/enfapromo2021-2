@@ -2,7 +2,7 @@ APP_NAME="Golden Ticket"
 APP_ENV=local
 APP_KEY=base64:fGvEXLLH91pIEEBNsZ2OI/smJMRiQGMAf0CKraSVTGA=
 APP_DEBUG=true
-APP_URL=http://localhost
+APP_URL=https://enfa-goldenticket-backend-ypabl.ondigitalocean.app
 
 LOG_CHANNEL=stack
 
