@@ -20,8 +20,7 @@ class ServiceController extends Controller
         if(!$ticket){
             throw new \Exception("ticket inexistente");
         }
-        $path=$ticket->path;
-        $tmpFile=tmpfile();
+        $tmpFile=tempnam('./tmp','ticket_');
         file_put_contents($tmpFile,$this->getFile($ticket->path));
         $ocr=new Ocr();
         $ticket->status_id=4;
@@ -35,6 +34,7 @@ class ServiceController extends Controller
         $ticket->save();
         $regex=new Regex();
         $status=$ocr->processTicket($regex);
+        unlink($tmpFile);
         return json_encode($ticket);
     }
 }

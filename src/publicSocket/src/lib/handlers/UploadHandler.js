@@ -1,7 +1,6 @@
-const fs = require('fs');
 const paths = require('../../config/paths.json');
 const { v4: uuidv4 } = require('uuid');
-const md5File = require('md5-file');
+const https = require('https');
 const md5 = require('md5');
 const mariadb = require('mariadb');
 const mmm = require('mmmagic');
@@ -49,15 +48,27 @@ module.exports={
                                                 Key: path,
                                                 Body: data
                                             };
-            
                                             s3.upload(params,(s3Err, data)=>{
                                                 if(s3Err){
-                                                    console.log(s3Err,data);
                                                     reject({
                                                         code:400,
                                                         message:'No se pudo guardar'
                                                     });
                                                 }else{
+                                                    let agent=new https.Agent({ keepAlive: true });
+
+                                                    const config = {
+                                                        agent: agent,
+                                                        method: 'GET',
+                                                        host: 'enfa-goldenticket-backend-ypabl.ondigitalocean.app',
+                                                        port: 443,
+                                                        path: 'api/runservice',
+                                                        headers: {
+                                                        'Content-Type': 'application/json',
+                                                        Accept: '*/*',
+                                                        'Content-Length': Buffer.byteLength(data),
+                                                        },
+                                                    };
                                                     resolve({
                                                         code:200,
                                                         data:{
