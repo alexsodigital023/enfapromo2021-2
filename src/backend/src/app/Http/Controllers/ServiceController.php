@@ -20,7 +20,7 @@ class ServiceController extends Controller
         if(!$ticket){
             throw new \Exception("ticket inexistente");
         }
-        $tmpFile=tempnam('./tmp','ticket_');
+        $tmpFile=tempnam(sys_get_temp_dir(),'ticket_');
         file_put_contents($tmpFile,$this->getFile($ticket->path));
         $ocr=new Ocr();
         $ticket->status_id=4;
