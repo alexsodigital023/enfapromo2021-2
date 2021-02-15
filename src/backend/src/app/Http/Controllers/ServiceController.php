@@ -30,7 +30,7 @@ class ServiceController extends Controller
         $time2=time();
         $ticket->status_id=4;
         $ticket->data=$text;
-        $ticket->process_time=$$time2-$time;
+        $ticket->process_time=$time2-$time;
         $ticket->save();
         $regex=new Regex();
         $status=$ocr->processTicket($regex);
