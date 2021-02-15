@@ -26,4 +26,3 @@ RUN chown www-data:www-data -R /var/www/bootstrap/cache\
     &&chown www-data:www-data -R /var/www/data
 
 RUN cd /var/www && composer install --no-dev 
-RUN cd /var/www &&php artisan key:generate&& php artisan migrate:fresh --seed
