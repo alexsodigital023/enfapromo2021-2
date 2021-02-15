@@ -33,7 +33,7 @@ class ServiceController extends Controller
         $ticket->process_time=$time2-$time;
         $ticket->save();
         $regex=new Regex();
-        $status=$regex->processTicket($regex);
+        $status=$regex->processTicket($ticket);
         unlink($tmpFile);
         return json_encode($ticket);
     }
