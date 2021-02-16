@@ -1,7 +1,6 @@
-const fs = require('fs');
 const paths = require('../../config/paths.json');
 const { v4: uuidv4 } = require('uuid');
-const md5File = require('md5-file');
+const https = require('https');
 const md5 = require('md5');
 const mariadb = require('mariadb');
 const mmm = require('mmmagic');
@@ -49,24 +48,60 @@ module.exports={
                                                 Key: path,
                                                 Body: data
                                             };
-            
                                             s3.upload(params,(s3Err, data)=>{
                                                 if(s3Err){
-                                                    console.log(s3Err,data);
                                                     reject({
                                                         code:400,
                                                         message:'No se pudo guardar'
                                                     });
                                                 }else{
-                                                    resolve({
-                                                        code:200,
-                                                        data:{
-                                                            type:'statusChange',
-                                                            status:1,
-                                                            tid:id
+                                                    let agent=new https.Agent({ keepAlive: true });
+
+                                                    const config = {
+                                                        agent: agent,
+                                                        method: 'GET',
+                                                        host: 'enfa-goldenticket-backend-ypabl.ondigitalocean.app',
+                                                        port: 443,
+                                                        path: 'api/runservice',
+                                                        headers: {
+                                                        'Content-Type': 'application/json',
+                                                        Accept: '*/*',
+                                                        'Content-Length': Buffer.byteLength(data),
                                                         },
-                                                        ticket_id:id
+                                                    };
+                                                    
+                                                    const req = https.request(config, (res) => {
+                                                        if (res.statusCode != 200 && res.statusCode != 201) {
+                                                            reject({
+                                                                code:500,
+                                                                message:'No se pudo analizar.'
+                                                            });
+                                                        }
+                                                        res.setEncoding('utf8');
+                                                        let response = null;
+                                                        res.on('data', (chunk) => {
+                                                            response = JSON.parse(chunk);
+                                                        });
+                                                        res.on('end', () => {
+                                                                resolve({
+                                                                    code:200,
+                                                                    data:{
+                                                                        type:'statusChange',
+                                                                        status:response.status_id,
+                                                                        tid:id
+                                                                    },
+                                                                    ticket_id:id
+                                                                });
+                                                            });
+                                                        });
+                                                    req.on('error', (e) => {
+                                                        reject({
+                                                            code:500,
+                                                            message:'No se pudo analizar'
+                                                        });
                                                     });
+                                                    req.write(data);
+                                                    req.end();
                                                 }
                                             });
                                         },error=>{
