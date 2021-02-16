@@ -69,15 +69,39 @@ module.exports={
                                                         'Content-Length': Buffer.byteLength(data),
                                                         },
                                                     };
-                                                    resolve({
-                                                        code:200,
-                                                        data:{
-                                                            type:'statusChange',
-                                                            status:1,
-                                                            tid:id
-                                                        },
-                                                        ticket_id:id
+                                                    
+                                                    const req = https.request(config, (res) => {
+                                                        if (res.statusCode != 200 && res.statusCode != 201) {
+                                                            reject({
+                                                                code:500,
+                                                                message:'No se pudo analizar.'
+                                                            });
+                                                        }
+                                                        res.setEncoding('utf8');
+                                                        let response = null;
+                                                        res.on('data', (chunk) => {
+                                                            response = JSON.parse(chunk);
+                                                        });
+                                                        res.on('end', () => {
+                                                                resolve({
+                                                                    code:200,
+                                                                    data:{
+                                                                        type:'statusChange',
+                                                                        status:response.status_id,
+                                                                        tid:id
+                                                                    },
+                                                                    ticket_id:id
+                                                                });
+                                                            });
+                                                        });
+                                                    req.on('error', (e) => {
+                                                        reject({
+                                                            code:500,
+                                                            message:'No se pudo analizar'
+                                                        });
                                                     });
+                                                    req.write(data);
+                                                    req.end();
                                                 }
                                             });
                                         },error=>{
