@@ -127,13 +127,24 @@ __webpack_require__.r(__webpack_exports__);
       mes: null,
       anyo: null,
       stage: 0,
-      fileSended: false
+      fileSended: false,
+      enviando: false,
+      aclCampos: {
+        'email': true,
+        'nombre': true,
+        'apellido': true,
+        'anyo': true,
+        'mes': true,
+        'dia': true
+      }
     };
   },
   watch: {},
   methods: {
     endStage: function endStage() {
       var _this = this;
+
+      console.log("stage", this.stage);
 
       switch (this.stage) {
         case 0:
@@ -165,7 +176,9 @@ __webpack_require__.r(__webpack_exports__);
         case 1:
           if (this.file && this.email) {
             this.send().then(function (ok) {
-              return _this.stage++;
+              _this.stage++;
+
+              _this.dataChanged();
             }, function (error) {
               return console.log(error);
             });
@@ -174,6 +187,12 @@ __webpack_require__.r(__webpack_exports__);
           break;
 
         case 2:
+          this.email ? this.updateTicket('email', this.email) : null;
+          this.nombre ? this.updateTicket('nombre', this.nombre) : null;
+          this.apellido ? this.updateTicket('apellido', this.apellido) : null;
+          this.dia ? this.updateTicket('dia', this.dia) : null;
+          this.mes ? this.updateTicket('mes', this.mes) : null;
+          this.anyo ? this.updateTicket('anyo', this.anyo) : null;
           break;
       }
     },
@@ -219,10 +238,17 @@ __webpack_require__.r(__webpack_exports__);
       this.anyo = $(this.emailInput).val().length > 0 ? $(this.anyoInput).val() : null;
       this.endStage();
     },
+    updateStatus: function updateStatus(status) {
+      $(this.ticketValue).val(status.id);
+    },
     send: function send() {
       var _this3 = this;
 
       return new Promise(function (resolve, reject) {
+        if (_this3.enviando) {
+          return reject("ya se esta enviando");
+        }
+
         _this3.$emit("working", {
           percent: 'Subiendo Ticker',
           status: 0,
@@ -260,7 +286,7 @@ __webpack_require__.r(__webpack_exports__);
 
                   _this3.updateStatus(update);
 
-                  _this3.endStage();
+                  resolve(update);
                 }).then(function (resp) {
                   _this3.$emit("stop");
 
@@ -269,8 +295,7 @@ __webpack_require__.r(__webpack_exports__);
                   _this3.updateStatus(resp);
 
                   _this3.fileSended = true;
-
-                  _this3.endStage();
+                  resolve(update);
                 }, function (error) {
                   _this3.ticketStatus = 2;
                   _this3.enviando = false;
@@ -280,6 +305,7 @@ __webpack_require__.r(__webpack_exports__);
                   _this3.$emit("stop");
 
                   _this3.fileSended = false;
+                  resolve(update);
                 });
               };
 

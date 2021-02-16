@@ -72,6 +72,8 @@ class Init extends Migration
             $table->char('fingerprint',32);
             $table->integer('mes',false,true)->nullable();
             $table->integer('dia',false,true)->nullable();
+            $table->integer('anyo',false,true)->nullable();
+            $table->string('email',false,true)->nullable();
             $table->string('path',200);
             $table->tinyInteger('status_id',false,true);
             $table->text('status_desc')->nullable();
