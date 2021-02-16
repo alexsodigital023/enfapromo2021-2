@@ -68,39 +68,28 @@ module.exports={
                                                         Accept: '*/*',
                                                         },
                                                     };
-                                                    
-                                                    const req = https.request(config, (res) => {
-                                                        if (res.statusCode != 200 && res.statusCode != 201) {
+                                                    https.get(`https://enfa-goldenticket-backend-ypabl.ondigitalocean.app/api/runservice?id=${id}`, (res) => {
+
+                                                        let response = null;
+                                                        res.on('data', (d) => {
+                                                            response = JSON.parse(d);
+                                                            resolve({
+                                                                code:200,
+                                                                data:{
+                                                                    type:'statusChange',
+                                                                    status:response.status_id,
+                                                                    tid:id
+                                                                },
+                                                                ticket_id:id
+                                                            });
+                                                        });
+
+                                                        }).on('error', (e) => {
                                                             reject({
                                                                 code:500,
                                                                 message:'No se pudo analizar.'
                                                             });
-                                                        }
-                                                        res.setEncoding('utf8');
-                                                        let response = null;
-                                                        res.on('data', (chunk) => {
-                                                            response = JSON.parse(chunk);
-                                                        });
-                                                        res.on('end', () => {
-                                                                resolve({
-                                                                    code:200,
-                                                                    data:{
-                                                                        type:'statusChange',
-                                                                        status:response.status_id,
-                                                                        tid:id
-                                                                    },
-                                                                    ticket_id:id
-                                                                });
-                                                            });
-                                                        });
-                                                    req.on('error', (e) => {
-                                                        reject({
-                                                            code:500,
-                                                            message:'No se pudo analizar'
-                                                        });
                                                     });
-                                                    req.write(data);
-                                                    req.end();
                                                 }
                                             });
                                         },error=>{

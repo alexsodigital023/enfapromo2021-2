@@ -22,7 +22,13 @@ import Cookies from 'js-cookie';
                 ticketValue:null,
                 file:null,
                 email:null,
-                stage:0
+                nombre:null,
+                apellido:null,
+                dia:null,
+                mes:null,
+                anyo:null,
+                stage:0,
+                fileSended:false
             };
         },
         watch:{
@@ -33,15 +39,21 @@ import Cookies from 'js-cookie';
                 switch(this.stage){
                     case 0:
                         $(this.fileInput).find("input").change(()=>this.fileChanged());
-                        $(this.emailInput).change(()=>this.emailChanged());
+                        $(this.emailInput).change(()=>this.dataChanged());
+                        $(this.nombreInput).change(()=>this.dataChanged());
+                        $(this.apellidoInput).change(()=>this.dataChanged());
+                        $(this.diaInput).change(()=>this.dataChanged());
+                        $(this.mesInput).change(()=>this.dataChanged());
+                        $(this.anyoInput).change(()=>this.dataChanged());
                         //$(this.submitButton).hide();
                         this.stage++;
                         break;
                     case 1:
                         if(this.file&&this.email){
-                            this.stage++;
-                            this.send();
+                            this.send().then(ok=>this.stage++,error=>console.log(error));
                         }
+                        break;
+                    case 2:
                         break;
                 }
             },
@@ -53,66 +65,101 @@ import Cookies from 'js-cookie';
                 });
             },
 
+            updateTicket(nombre,valor){
+                if(this.aclCampos[nombre]){
+                    this.enviando=true;
+                    this.getConexion().then(
+                        con=>{
+                            con.send('updateTicket',{
+                                name:nombre,
+                                value:valor
+                            }).then(
+                                ok=>this.enviando=false,
+                                error=>{
+                                    console.error(error);
+                                    this.enviando=false;
+                                }
+                            )
+                        },error=>{
+                            this.enviando=false;
+                            this.showError('error','Error de Conexión', 'Por favor intenta más tarde');
+                        }
+                    )
+                }
+            },
             fileChanged(){
                 this.file=$(this.fileInput).find("input[type='file']").val().length>0;
                 this.endStage();
             },
-            emailChanged(){
+            dataChanged(){
                 this.email=$(this.emailInput).val().length>0?$(this.emailInput).val():null;
+                this.nombre=$(this.emailInput).val().length>0?$(this.nombreInput).val():null;
+                this.apellido=$(this.emailInput).val().length>0?$(this.apellidoInput).val():null;
+                this.dia=$(this.emailInput).val().length>0?$(this.diaInput).val():null;
+                this.mes=$(this.emailInput).val().length>0?$(this.mesInput).val():null;
+                this.anyo=$(this.emailInput).val().length>0?$(this.anyoInput).val():null;
                 this.endStage();
             },
 
             send(){
-                this.$emit("working",{
-                    percent:'Subiendo Ticker',
-                    status:0,
-                    message:'Espere...'
-                });
-                this.enviando=true;
-                this.getConexion().then(
-                    con=>{
-                        this.$emit("working",{
-                            percent:'50%',
-                            status:50,
-                            message:'Espere...'
-                        });
-                        let fileField = $(this.fileInput).find("input[type='file']").get(0);
-                        for(let i in fileField.files){
-                            if(fileField.files[i]&&fileField.files[i].size){
-                                const reader = new FileReader();
-                                this.$emit("working",{
-                                    percent:'75%',
-                                    status:50,
-                                    message:'Espere...'
-                                });
-                                reader.onload = (e)=>{
-                                    con.sendFile(e.target.result,(update)=>{
-                                            this.$emit("stop");
-                                            this.enviando=false;
-                                            this.updateStatus(update)
-                                        }).then(
-                                        resp=>{
-                                            this.$emit("stop");
-                                            this.enviando=false;
-                                            this.updateStatus(resp);
-                                        },
-                                        error=>{
-                                            this.ticketStatus=2;
-                                            this.enviando=false;
-                                            this.showError('error','Archivo incorrecto', 'Este ticket está duplicado o es de un formato que no podemos aceptar');
-                                            this.$emit("stop");
-                                        }
-                                    );
-                                }
-                                reader.readAsArrayBuffer(fileField.files[i]);
-                            }
-                        }
-                    },error=>{
-                        this.showError('error','Error de Conexión', 'Por favor intenta más tarde');
-                        this.enviando=false;
-                        this.$emit("stop");
-                        this.ticketStatus=2;
+                return new Promise((resolve,reject)=>{
+
+                    this.$emit("working",{
+                        percent:'Subiendo Ticker',
+                        status:0,
+                        message:'Espere...'
                     });
+                    this.enviando=true;
+                    this.getConexion().then(
+                        con=>{
+                            this.$emit("working",{
+                                percent:'50%',
+                                status:50,
+                                message:'Espere...'
+                            });
+                            let fileField = $(this.fileInput).find("input[type='file']").get(0);
+                            for(let i in fileField.files){
+                                if(fileField.files[i]&&fileField.files[i].size){
+                                    const reader = new FileReader();
+                                    this.$emit("working",{
+                                        percent:'75%',
+                                        status:50,
+                                        message:'Espere...'
+                                    });
+                                    reader.onload = (e)=>{
+                                        con.sendFile(e.target.result,(update)=>{
+                                                this.fileSended=true;
+                                                this.$emit("stop");
+                                                this.enviando=false;
+                                                this.updateStatus(update);
+                                                this.endStage();
+                                            }).then(
+                                            resp=>{
+                                                this.$emit("stop");
+                                                this.enviando=false;
+                                                this.updateStatus(resp);
+                                                this.fileSended=true;
+                                                this.endStage();
+                                            },
+                                            error=>{
+                                                this.ticketStatus=2;
+                                                this.enviando=false;
+                                                this.showError('error','Archivo incorrecto', 'Este ticket está duplicado o es de un formato que no podemos aceptar');
+                                                this.$emit("stop");
+                                                this.fileSended=false;
+                                            }
+                                        );
+                                    }
+                                    reader.readAsArrayBuffer(fileField.files[i]);
+                                }
+                            }
+                        },error=>{
+                            this.showError('error','Error de Conexión', 'Por favor intenta más tarde');
+                            this.enviando=false;
+                            this.$emit("stop");
+                            this.ticketStatus=2;
+                        });
+                });
             },
             
             getConexionObject(){
