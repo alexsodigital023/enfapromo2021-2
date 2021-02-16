@@ -121,7 +121,13 @@ __webpack_require__.r(__webpack_exports__);
       ticketValue: null,
       file: null,
       email: null,
-      stage: 0
+      nombre: null,
+      apellido: null,
+      dia: null,
+      mes: null,
+      anyo: null,
+      stage: 0,
+      fileSended: false
     };
   },
   watch: {},
@@ -135,7 +141,22 @@ __webpack_require__.r(__webpack_exports__);
             return _this.fileChanged();
           });
           $(this.emailInput).change(function () {
-            return _this.emailChanged();
+            return _this.dataChanged();
+          });
+          $(this.nombreInput).change(function () {
+            return _this.dataChanged();
+          });
+          $(this.apellidoInput).change(function () {
+            return _this.dataChanged();
+          });
+          $(this.diaInput).change(function () {
+            return _this.dataChanged();
+          });
+          $(this.mesInput).change(function () {
+            return _this.dataChanged();
+          });
+          $(this.anyoInput).change(function () {
+            return _this.dataChanged();
           }); //$(this.submitButton).hide();
 
           this.stage++;
@@ -143,10 +164,16 @@ __webpack_require__.r(__webpack_exports__);
 
         case 1:
           if (this.file && this.email) {
-            this.stage++;
-            this.send();
+            this.send().then(function (ok) {
+              return _this.stage++;
+            }, function (error) {
+              return console.log(error);
+            });
           }
 
+          break;
+
+        case 2:
           break;
       }
     },
@@ -157,76 +184,117 @@ __webpack_require__.r(__webpack_exports__);
         message: message
       });
     },
+    updateTicket: function updateTicket(nombre, valor) {
+      var _this2 = this;
+
+      if (this.aclCampos[nombre]) {
+        this.enviando = true;
+        this.getConexion().then(function (con) {
+          con.send('updateTicket', {
+            name: nombre,
+            value: valor
+          }).then(function (ok) {
+            return _this2.enviando = false;
+          }, function (error) {
+            console.error(error);
+            _this2.enviando = false;
+          });
+        }, function (error) {
+          _this2.enviando = false;
+
+          _this2.showError('error', 'Error de Conexión', 'Por favor intenta más tarde');
+        });
+      }
+    },
     fileChanged: function fileChanged() {
       this.file = $(this.fileInput).find("input[type='file']").val().length > 0;
       this.endStage();
     },
-    emailChanged: function emailChanged() {
+    dataChanged: function dataChanged() {
       this.email = $(this.emailInput).val().length > 0 ? $(this.emailInput).val() : null;
+      this.nombre = $(this.emailInput).val().length > 0 ? $(this.nombreInput).val() : null;
+      this.apellido = $(this.emailInput).val().length > 0 ? $(this.apellidoInput).val() : null;
+      this.dia = $(this.emailInput).val().length > 0 ? $(this.diaInput).val() : null;
+      this.mes = $(this.emailInput).val().length > 0 ? $(this.mesInput).val() : null;
+      this.anyo = $(this.emailInput).val().length > 0 ? $(this.anyoInput).val() : null;
       this.endStage();
     },
     send: function send() {
-      var _this2 = this;
+      var _this3 = this;
 
-      this.$emit("working", {
-        percent: 'Subiendo Ticker',
-        status: 0,
-        message: 'Espere...'
-      });
-      this.enviando = true;
-      this.getConexion().then(function (con) {
-        _this2.$emit("working", {
-          percent: '50%',
-          status: 50,
+      return new Promise(function (resolve, reject) {
+        _this3.$emit("working", {
+          percent: 'Subiendo Ticker',
+          status: 0,
           message: 'Espere...'
         });
 
-        var fileField = $(_this2.fileInput).find("input[type='file']").get(0);
+        _this3.enviando = true;
 
-        for (var i in fileField.files) {
-          if (fileField.files[i] && fileField.files[i].size) {
-            var reader = new FileReader();
+        _this3.getConexion().then(function (con) {
+          _this3.$emit("working", {
+            percent: '50%',
+            status: 50,
+            message: 'Espere...'
+          });
 
-            _this2.$emit("working", {
-              percent: '75%',
-              status: 50,
-              message: 'Espere...'
-            });
+          var fileField = $(_this3.fileInput).find("input[type='file']").get(0);
 
-            reader.onload = function (e) {
-              con.sendFile(e.target.result, function (update) {
-                _this2.$emit("stop");
+          for (var i in fileField.files) {
+            if (fileField.files[i] && fileField.files[i].size) {
+              var reader = new FileReader();
 
-                _this2.enviando = false;
-
-                _this2.updateStatus(update);
-              }).then(function (resp) {
-                _this2.$emit("stop");
-
-                _this2.enviando = false;
-
-                _this2.updateStatus(resp);
-              }, function (error) {
-                _this2.ticketStatus = 2;
-                _this2.enviando = false;
-
-                _this2.showError('error', 'Archivo incorrecto', 'Este ticket está duplicado o es de un formato que no podemos aceptar');
-
-                _this2.$emit("stop");
+              _this3.$emit("working", {
+                percent: '75%',
+                status: 50,
+                message: 'Espere...'
               });
-            };
 
-            reader.readAsArrayBuffer(fileField.files[i]);
+              reader.onload = function (e) {
+                con.sendFile(e.target.result, function (update) {
+                  _this3.fileSended = true;
+
+                  _this3.$emit("stop");
+
+                  _this3.enviando = false;
+
+                  _this3.updateStatus(update);
+
+                  _this3.endStage();
+                }).then(function (resp) {
+                  _this3.$emit("stop");
+
+                  _this3.enviando = false;
+
+                  _this3.updateStatus(resp);
+
+                  _this3.fileSended = true;
+
+                  _this3.endStage();
+                }, function (error) {
+                  _this3.ticketStatus = 2;
+                  _this3.enviando = false;
+
+                  _this3.showError('error', 'Archivo incorrecto', 'Este ticket está duplicado o es de un formato que no podemos aceptar');
+
+                  _this3.$emit("stop");
+
+                  _this3.fileSended = false;
+                });
+              };
+
+              reader.readAsArrayBuffer(fileField.files[i]);
+            }
           }
-        }
-      }, function (error) {
-        _this2.showError('error', 'Error de Conexión', 'Por favor intenta más tarde');
+        }, function (error) {
+          _this3.showError('error', 'Error de Conexión', 'Por favor intenta más tarde');
 
-        _this2.enviando = false;
+          _this3.enviando = false;
 
-        _this2.$emit("stop");
+          _this3.$emit("stop");
 
-        _this2.ticketStatus = 2;
+          _this3.ticketStatus = 2;
+        });
       });
     },
     getConexionObject: function getConexionObject() {
@@ -254,27 +322,27 @@ __webpack_require__.r(__webpack_exports__);
       return this.conexion;
     },
     getConexion: function getConexion() {
-      var _this3 = this;
+      var _this4 = this;
 
       return new Promise(function (resolve, reject) {
-        if (_this3.conexion && _this3.conexion.conectado) {
-          resolve(_this3.conexion);
+        if (_this4.conexion && _this4.conexion.conectado) {
+          resolve(_this4.conexion);
         } else {
-          var con = _this3.getConexionObject();
+          var con = _this4.getConexionObject();
 
           con.registerTimeoutHandler(function () {
-            if (_this3.enviando) {
-              _this3.$emit('stop');
+            if (_this4.enviando) {
+              _this4.$emit('stop');
 
-              _this3.showError('error', 'Error de Conexión', 'Por favor intenta más tarde');
+              _this4.showError('error', 'Error de Conexión', 'Por favor intenta más tarde');
             }
 
             reject('timeout');
           });
 
-          _this3.openSocket(con, _this3.email).then(function (s) {
-            _this3.conexion = con;
-            resolve(_this3.conexion);
+          _this4.openSocket(con, _this4.email).then(function (s) {
+            _this4.conexion = con;
+            resolve(_this4.conexion);
           }, function (error) {
             return reject(error);
           });
