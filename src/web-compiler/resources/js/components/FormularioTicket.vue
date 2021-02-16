@@ -70,9 +70,9 @@ import Cookies from 'js-cookie';
                         this.email?this.updateTicket('email',this.email):null;
                         this.nombre?this.updateTicket('nombre',this.nombre):null;
                         this.apellido?this.updateTicket('apellido',this.apellido):null;
-                        this.dia?this.updateTicket('dia',this.dia):null;
+                        !isNaN(parseInt(this.dia))?this.updateTicket('dia',this.dia):0;
                         this.mes?this.updateTicket('mes',this.mes):null;
-                        this.anyo?this.updateTicket('anyo',this.anyo):null;
+                        !isNaN(parseInt(this.anyo))?this.updateTicket('anyo',this.anyo):null;
                         break;
                 }
             },
@@ -120,7 +120,7 @@ import Cookies from 'js-cookie';
                 this.endStage();
             },
             updateStatus(status){
-                $(this.ticketValue).val(status.id)
+                $(this.ticketValue).val(status.import)
             },
             send(){
                 return new Promise((resolve,reject)=>{
