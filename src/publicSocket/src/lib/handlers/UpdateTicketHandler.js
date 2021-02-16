@@ -4,13 +4,15 @@ const pool = mariadb.createPool(require('../../config/database.json'));
 
 const acl={
     'numero':true,
+    'email':true,
     'nombre':true,
     'apellido':true,
     'foto':true,
     'estado_id':true,
     'tienda_id':true,
     'mes':true,
-    'dia':true
+    'dia':true,
+    'anyo':true
 }
 
 module.exports={

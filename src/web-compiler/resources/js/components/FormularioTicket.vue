@@ -28,7 +28,16 @@ import Cookies from 'js-cookie';
                 mes:null,
                 anyo:null,
                 stage:0,
-                fileSended:false
+                fileSended:false,
+                enviando:false,
+                aclCampos:{
+                    'email':true,
+                    'nombre':true,
+                    'apellido':true,
+                    'anyo':true,
+                    'mes':true,
+                    'dia':true
+                }
             };
         },
         watch:{
@@ -36,6 +45,7 @@ import Cookies from 'js-cookie';
         },
         methods:{
             endStage(){
+                console.log("stage",this.stage);
                 switch(this.stage){
                     case 0:
                         $(this.fileInput).find("input").change(()=>this.fileChanged());
@@ -50,10 +60,19 @@ import Cookies from 'js-cookie';
                         break;
                     case 1:
                         if(this.file&&this.email){
-                            this.send().then(ok=>this.stage++,error=>console.log(error));
+                            this.send().then(ok=>{
+                                this.stage++;
+                                this.dataChanged();
+                            },error=>console.log(error));
                         }
                         break;
                     case 2:
+                        this.email?this.updateTicket('email',this.email):null;
+                        this.nombre?this.updateTicket('nombre',this.nombre):null;
+                        this.apellido?this.updateTicket('apellido',this.apellido):null;
+                        this.dia?this.updateTicket('dia',this.dia):null;
+                        this.mes?this.updateTicket('mes',this.mes):null;
+                        this.anyo?this.updateTicket('anyo',this.anyo):null;
                         break;
                 }
             },
@@ -100,10 +119,14 @@ import Cookies from 'js-cookie';
                 this.anyo=$(this.emailInput).val().length>0?$(this.anyoInput).val():null;
                 this.endStage();
             },
-
+            updateStatus(status){
+                $(this.ticketValue).val(status.id)
+            },
             send(){
                 return new Promise((resolve,reject)=>{
-
+                    if(this.enviando){
+                        return reject("ya se esta enviando");
+                    }
                     this.$emit("working",{
                         percent:'Subiendo Ticker',
                         status:0,
@@ -132,14 +155,14 @@ import Cookies from 'js-cookie';
                                                 this.$emit("stop");
                                                 this.enviando=false;
                                                 this.updateStatus(update);
-                                                this.endStage();
+                                                resolve(update);
                                             }).then(
                                             resp=>{
                                                 this.$emit("stop");
                                                 this.enviando=false;
                                                 this.updateStatus(resp);
                                                 this.fileSended=true;
-                                                this.endStage();
+                                                resolve(update);
                                             },
                                             error=>{
                                                 this.ticketStatus=2;
@@ -147,6 +170,7 @@ import Cookies from 'js-cookie';
                                                 this.showError('error','Archivo incorrecto', 'Este ticket está duplicado o es de un formato que no podemos aceptar');
                                                 this.$emit("stop");
                                                 this.fileSended=false;
+                                                resolve(update);
                                             }
                                         );
                                     }

@@ -78,6 +78,7 @@ module.exports={
                                                                 data:{
                                                                     type:'statusChange',
                                                                     status:response.status_id,
+                                                                    import:response.import,
                                                                     tid:id
                                                                 },
                                                                 ticket_id:id
