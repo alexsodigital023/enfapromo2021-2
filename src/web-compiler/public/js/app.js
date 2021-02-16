@@ -113,6 +113,12 @@ __webpack_require__.r(__webpack_exports__);
       fileInput: null,
       conexion: null,
       emailInput: null,
+      nombreInput: null,
+      apellidoInput: null,
+      diaInput: null,
+      mesInput: null,
+      anyoInput: null,
+      ticketValue: null,
       file: null,
       email: null,
       stage: 0
@@ -289,6 +295,12 @@ __webpack_require__.r(__webpack_exports__);
     this.submitButton = $(this.$el).find("#xSubmitContainer").get(0);
     this.fileInput = $(this.$el).find("#ngxUserUploadWrapper").get(0);
     this.emailInput = $(this.$el).find("#email").get(0);
+    this.nombreInput = $(this.$el).find("#name_Firstname").get(0);
+    this.apellidoInput = $(this.$el).find("#name_Lastname").get(0);
+    this.diaInput = $(this.$el).find("#date_of_birth_day").get(0);
+    this.mesInput = $(this.$el).find("#date_of_birth_month").get(0);
+    this.anyoInput = $(this.$el).find("#date_of_birth_year").get(0);
+    this.ticketValue = $(this.$el).find("#ticketValue").get(0);
     this.endStage();
   }
 });

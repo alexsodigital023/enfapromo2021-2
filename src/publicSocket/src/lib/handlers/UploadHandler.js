@@ -66,7 +66,6 @@ module.exports={
                                                         headers: {
                                                         'Content-Type': 'application/json',
                                                         Accept: '*/*',
-                                                        'Content-Length': Buffer.byteLength(data),
                                                         },
                                                     };
                                                     
