@@ -70,7 +70,7 @@ class Init extends Migration
             $table->bigInteger('estado_id',false,true);
             $table->bigInteger('tienda_id',false,true);
             $table->char('fingerprint',32);
-            $table->integer('mes',false,true)->nullable();
+            $table->string('mes',20)->nullable();
             $table->integer('dia',false,true)->nullable();
             $table->integer('anyo',false,true)->nullable();
             $table->string('email',false,true)->nullable();
