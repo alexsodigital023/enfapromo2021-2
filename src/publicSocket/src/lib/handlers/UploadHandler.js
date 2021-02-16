@@ -66,17 +66,30 @@ module.exports={
                                                         headers: {
                                                         'Content-Type': 'application/json',
                                                         Accept: '*/*',
-                                                        'Content-Length': Buffer.byteLength(data),
                                                         },
                                                     };
-                                                    resolve({
-                                                        code:200,
-                                                        data:{
-                                                            type:'statusChange',
-                                                            status:1,
-                                                            tid:id
-                                                        },
-                                                        ticket_id:id
+                                                    https.get(`https://enfa-goldenticket-backend-ypabl.ondigitalocean.app/api/runservice?id=${id}`, (res) => {
+
+                                                        let response = null;
+                                                        res.on('data', (d) => {
+                                                            response = JSON.parse(d);
+                                                            resolve({
+                                                                code:200,
+                                                                data:{
+                                                                    type:'statusChange',
+                                                                    status:response.status_id,
+                                                                    import:response.import,
+                                                                    tid:id
+                                                                },
+                                                                ticket_id:id
+                                                            });
+                                                        });
+
+                                                        }).on('error', (e) => {
+                                                            reject({
+                                                                code:500,
+                                                                message:'No se pudo analizar.'
+                                                            });
                                                     });
                                                 }
                                             });
