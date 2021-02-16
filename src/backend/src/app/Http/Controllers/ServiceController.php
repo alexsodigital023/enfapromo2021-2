@@ -35,7 +35,10 @@ class ServiceController extends Controller
         $regex=new Regex();
         $status=$regex->processTicket($ticket);
         unlink($tmpFile);
-        $ticket->data=null;
-        return json_encode($ticket);
+        return json_encode([
+            "id"=>$ticket->id,
+            "status_id"=>$ticket->status_id,
+            "importe"=>$ticket->importe
+        ]);
     }
 }
