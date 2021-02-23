@@ -84,6 +84,19 @@ return [
 
     /*
     |--------------------------------------------------------------------------
+    | Application Theme Configuration
+    |--------------------------------------------------------------------------
+    |
+    | The application theme determines the default theme that will be used.
+    | You are free to set this value to any of the themes which will be
+    | supported by the application.
+    |
+    */
+
+    'theme' => env('APP_THEME', 'default'),
+
+    /*
+    |--------------------------------------------------------------------------
     | Application Fallback Locale
     |--------------------------------------------------------------------------
     |
