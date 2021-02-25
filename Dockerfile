@@ -8,6 +8,8 @@ COPY ./src/backend/config/vhost.conf /etc/apache2/sites-enabled/000-default.conf
 COPY ./src/backend/src /var/www
 COPY ./src/backend/config/env-production /var/www/.env
 COPY ./src/backend/config/RouteServiceProvider.php /var/www/app/Providers/RouteServiceProvider.php
+COPY ./src/backend/config/UserSeeder.php /var/www/database/seeds/UserSeeder.php
+COPY ./src/backend/config/DatabaseSeeder.php /var/www/database/seeds/DatabaseSeeder.php
 
 RUN docker-php-ext-install mysqli pdo pdo_mysql gd zip
 RUN docker-php-ext-enable mysqli pdo pdo_mysql imagick
