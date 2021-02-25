@@ -14,19 +14,19 @@ class RegexSeeder extends Seeder
             ],
             [    
                 "id"=>2,
-                "product"=>"/.*ca[lt1].{0,5}c.{0,5}[1tl][o0]se.*/im",
+                "product"=>"/.*enfagro[uw].*/im",
                 "import"=>"/(\d{1,9})\.{0,1}(\d{0,2}).*$/im",
                 "active"=>1
             ],
             [    
                 "id"=>3,
-                "product"=>"/.* ca[l1t]c[ -].*/im",
+                "product"=>"/.*enfagro[uw].*/im",
                 "import"=>"/(\d{1,9})\.{0,1}(\d{0,2})$/im",
                 "active"=>1
             ],
             [    
                 "id"=>4,
-                "product"=>"/.*ca[lt1].{0,5}.{0,5}[1tl][o0]se.*/im",
+                "product"=>"/.*enfagro[uw].*/im",
                 "import"=>"/(\d{1,9})\.{0,1}(\d{0,2})$/im",
                 "active"=>1
             ]
