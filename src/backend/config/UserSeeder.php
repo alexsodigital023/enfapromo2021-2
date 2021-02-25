@@ -27,7 +27,7 @@ class UserSeeder extends Seeder
             ],
             [
                 "name"=>"Joaquin Leon",
-                "email"=>"premios@palyergroup.com.mx",
+                "email"=>"premios@playergroup.com.mx",
                 "email_verified_at"=>"2011-10-08",
                 "created_at"=>"2020-07-08",
                 "password"=>Hash::make("ghRWRJ4HJfpVNNRjvhqzcHq3M"),
