@@ -93,7 +93,7 @@ return [
     |
     */
 
-    'theme' => env('APP_THEME', 'default'),
+    'theme' => env('MIX_APP_THEME', 'default'),
 
     /*
     |--------------------------------------------------------------------------

@@ -34,3 +34,22 @@
     }
   }
 }
+
+
+@if $theme_valid == 'enfa' {
+  .card {
+    
+    .container {
+      padding: 0 !important;
+    }
+    .card-header {
+      h2::after {
+        content: '';
+        width: 120px;
+        display: block;
+        margin: 5px 0 0 -1.25rem;
+        border-bottom: 3px solid $secondary;
+      }
+    }
+  }
+}

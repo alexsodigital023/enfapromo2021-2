@@ -318,7 +318,7 @@
 // Sidebar Dark
 .sidebar-dark {
   .sidebar-brand {
-    color: $white;
+    color: map-get($theme_colors, "link");
   }
   hr.sidebar-divider {
     border-top: 1px solid fade-out($white, 0.85);
@@ -335,9 +335,9 @@
       &:active,
       &:focus,
       &:hover {
-        color: $white;
+        color: map-get($theme_colors, "link");
         i {
-          color: $white;
+          color: map-get($theme_colors, "link");
         }
       }
       // Accordion
@@ -347,26 +347,56 @@
     }
     &.active {
       .nav-link {
-        color: $white;
+        color: map-get($theme_colors, "link");
         i {
-          color: $white;
+          color: map-get($theme_colors, "link");
         }
       }
     }
   }
   // Color the sidebar toggler
   #sidebarToggle {
-    background-color: fade-out($white, 0.8);
+    background-color: fade-out(map-get($theme_colors, "link"), 0.8);
     &::after {
-      color: fade-out($white, 0.5);
+      color: fade-out(map-get($theme_colors, "link"), 0.5);
     }
     &:hover {
-      background-color: fade-out($white, 0.75);
+      background-color: fade-out(map-get($theme_colors, "link"), 0.75);
     }
   }
   &.toggled {
     #sidebarToggle::after {
-      color: fade-out($white, 0.5);
+      color: fade-out(map-get($theme_colors, "link"), 0.5);
+    }
+  }
+}
+
+@if $theme_valid == 'enfa' {
+  .sidebar {
+    .nav-item {
+      .nav-link {
+        i {
+          width: 2rem;
+
+          &::before {
+            font-size: 1.5rem;
+          }
+        }
+        span {
+          font-size: .85rem;
+        }
+      }
+      .rounded-circle {
+        border: 2px solid;
+        padding: 18px;
+        position: relative;
+        &::before {
+          position: absolute;
+          left: 0;
+          right: 0;
+          bottom: 1px;
+        }
+      }
     }
   }
 }

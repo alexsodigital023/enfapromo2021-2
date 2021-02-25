@@ -19,7 +19,7 @@ a {
 #wrapper {
   display: flex;
   #content-wrapper {
-    background-color: $gray-100;
+    background-color: map-get($theme_colors, "main-bg");
     width: 100%;
     overflow-x: hidden;
     #content {
