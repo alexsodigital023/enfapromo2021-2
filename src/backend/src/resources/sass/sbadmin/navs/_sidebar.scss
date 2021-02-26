@@ -373,6 +373,25 @@
 
 @if $theme_valid == 'enfa' {
   .sidebar {
+    .sidebar-brand:hover {
+      background-color: $primary !important;
+    }
+    
+    .nav-item:hover {
+      background-color: $primary !important;
+    }
+
+    &-brand {
+      flex-flow: column !important;
+      height: auto !important;
+      padding: 10px !important;
+
+      &-text {
+        display: block !important;
+        font-size: .9rem !important;
+      }
+    }
+
     .nav-item {
       .nav-link {
         i {
@@ -383,18 +402,7 @@
           }
         }
         span {
-          font-size: .85rem;
-        }
-      }
-      .rounded-circle {
-        border: 2px solid;
-        padding: 18px;
-        position: relative;
-        &::before {
-          position: absolute;
-          left: 0;
-          right: 0;
-          bottom: 1px;
+          font-size: .9rem !important;
         }
       }
     }

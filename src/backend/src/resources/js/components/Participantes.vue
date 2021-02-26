@@ -1,25 +1,25 @@
 <template>
 
-    <table class="table table-bordered table-responsive" id="dataTable" width="100%" cellspacing="0">
-    <thead>
-        <tr>
-            <th colspan="3"></th>
-            <th colspan="5" class="text-center">Tickets</th>
+    <table class="table table-bordered table-responsive w-100 d-block d-md-table" id="dataTable" width="100%" cellspacing="0">
+        <thead>
+            <tr>
+                <th colspan="3"></th>
+                <th colspan="5" class="text-center">Tickets</th>
+                <th></th>
+            </tr>
+            <tr>
+            <th>#</th>
+            <th>Nombre</th>
+            <th>Email</th>
+            <th>Total</th>
+            <th>Aprobados</th>
+            <th>Rechazados</th>
+            <th>Nuevos</th>
+            <th>Premiados</th>
+            <th>Activo</th>
             <th></th>
-        </tr>
-        <tr>
-        <th>#</th>
-        <th>Nombre</th>
-        <th>Email</th>
-        <th>Total</th>
-        <th>Aprobados</th>
-        <th>Rechazados</th>
-        <th>Nuevos</th>
-        <th>Premiados</th>
-        <th>Activo</th>
-        <th></th>
-        </tr>
-    </thead>
+            </tr>
+        </thead>
         <tbody>
             <tr  v-for="u in users" class="form-group">
                 <td>{{u.id}}</td>
@@ -39,7 +39,7 @@
                 <td>
                 </td>
             </tr>
-    </tbody>
+        </tbody>
     </table>
 </template>
 

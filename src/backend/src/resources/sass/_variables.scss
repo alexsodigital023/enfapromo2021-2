@@ -57,18 +57,22 @@ $cyan:    #75CAEB !default;
 $themes: (
     "default": (
         "colors": (
-            "primary": $blue,
-            "secondary": $gray-200,
-            "main-bg": $gray-100,
-            "link": $white,
+            "primary":  $blue,
+            "secondary":$gray-200,
+            "main-bg":  $gray-100,
+            "link":     $white,
+            "titles":   $gray-800,
+            "separador":$gray-200,
         )
     ),
     "enfa": (
         "colors": (
-            "primary": #fee9cf,
-            "secondary": #fcd9b7,
-            "main-bg": #fee9cf,
-            "link":#1a8dd4,
+            "primary":  #fee9cf,
+            "secondary":#fcd9b7,
+            "main-bg":  #fee9cf,
+            "link":     #1a8dd4,
+            "titles":   #1a8dd4,
+            "separador":#1a8dd4,
         )
     ),
 );
@@ -77,8 +81,8 @@ $theme_valid:   if(map-has-key($themes, $theme), $theme, "default");
 $theme_vars:    map-get($themes, $theme_valid);
 $theme_colors:  map-get($theme_vars, "colors");
 
-$primary: map-get($theme_colors, "primary")!default;
-$secondary: map-get($theme_colors, "secondary")!default;
+$primary:       map-get($theme_colors, "primary")!default;
+$secondary:     map-get($theme_colors, "secondary")!default;
 $success:       $green !default;
 $info:          $cyan !default;
 $warning:       $yellow !default;

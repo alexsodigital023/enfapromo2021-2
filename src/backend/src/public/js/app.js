@@ -79080,7 +79080,8 @@ var render = function() {
   return _c(
     "table",
     {
-      staticClass: "table table-bordered table-responsive",
+      staticClass:
+        "table table-bordered table-responsive w-100 d-block d-md-table",
       attrs: { id: "dataTable", width: "100%", cellspacing: "0" }
     },
     [
@@ -79643,7 +79644,8 @@ var render = function() {
   return _c(
     "table",
     {
-      staticClass: "table table-bordered table-responsive",
+      staticClass:
+        "table table-bordered table-responsive w-100 d-block d-md-table",
       attrs: { id: "dataTable", width: "100%", cellspacing: "0" }
     },
     [
@@ -79856,7 +79858,8 @@ var render = function() {
   return _c(
     "table",
     {
-      staticClass: "table table-bordered table-responsive",
+      staticClass:
+        "table table-bordered table-responsive w-100 d-block d-md-table",
       attrs: { id: "dataTable", width: "100%", cellspacing: "0" }
     },
     [

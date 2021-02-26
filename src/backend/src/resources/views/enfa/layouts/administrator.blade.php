@@ -39,7 +39,7 @@
 
                         <!-- Page Heading -->
                         <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                            <h1 class="h3 mb-0 text-gray-800">@yield("title")</h1>
+                            <h1 class="h3 mb-0 text-title">@yield("title")</h1>
                         </div>
 
                         <!-- Content Row -->
@@ -68,7 +68,7 @@
             
         </div>
         <!-- End of Page Wrapper -->
-        
+
         <x-footer></x-footer>
 
         <!-- Scroll to Top Button-->

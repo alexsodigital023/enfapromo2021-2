@@ -1,12 +1,12 @@
 @extends('layouts.administrator')
 @section('title')
-<i class="fa fa-user-friends"></i>
+<i class="fa fa-user-alt rounded-circle"></i>
 Usuarios
 @endsection('title')
 @section('content')
 
 <div class="row">
-    <div class="card shadow mb-4">
+    <div class="card shadow mb-4 w-100 d-block">
         <div class="card-head">
         </div>
         <div class="card-body">
