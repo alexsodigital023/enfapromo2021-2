@@ -45,7 +45,7 @@
 }
 
 .text-title {
-  color: map-get($theme_colors, "titles") !important;
+  color: $color-title !important;
 }
 
 .icon-circle {

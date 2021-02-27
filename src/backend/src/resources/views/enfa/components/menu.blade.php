@@ -1,5 +1,5 @@
 <!-- Sidebar -->
-<div class="bg-primary container-sidebar">
+<div class="bg-primary container-sidebar pt-3">
     <ul class="navbar-nav sidebar sidebar-dark accordion toggled" id="accordionSidebar">
 
         <!-- Nav Item - Dashboard -->
@@ -21,7 +21,7 @@
                 <span>Usuarios</span>
             </a>
         </li>
-        <li class="nav-item active bg-secondary shadow">
+        <li class="nav-item active bg-secondary shadow m-0">
             <a class="nav-link" href="{{route('participantes')}}">
                 <i class="fas fa-fw fa-users"></i>
                 <span>Participantes</span>

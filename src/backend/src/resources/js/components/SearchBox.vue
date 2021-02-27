@@ -1,5 +1,5 @@
 <template>
-    <div class="pl-3 pr-3">
+    <div class="pl-3 pr-3 pt-3">
         <input type="text" :value="value" ref="box" class="form-control" placeholder="Buscar"  @input="update()">
     </div>
 </template>

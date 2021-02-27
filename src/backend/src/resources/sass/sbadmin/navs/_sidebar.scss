@@ -318,7 +318,7 @@
 // Sidebar Dark
 .sidebar-dark {
   .sidebar-brand {
-    color: map-get($theme_colors, "link");
+    color: $color-link;
   }
   hr.sidebar-divider {
     border-top: 1px solid fade-out($white, 0.85);
@@ -335,9 +335,9 @@
       &:active,
       &:focus,
       &:hover {
-        color: map-get($theme_colors, "link");
+        color: $color-link;
         i {
-          color: map-get($theme_colors, "link");
+          color: $color-link;
         }
       }
       // Accordion
@@ -347,32 +347,33 @@
     }
     &.active {
       .nav-link {
-        color: map-get($theme_colors, "link");
+        color: $color-link;
         i {
-          color: map-get($theme_colors, "link");
+          color: $color-link;
         }
       }
     }
   }
   // Color the sidebar toggler
   #sidebarToggle {
-    background-color: fade-out(map-get($theme_colors, "link"), 0.8);
+    background-color: fade-out($color-link, 0.8);
     &::after {
-      color: fade-out(map-get($theme_colors, "link"), 0.5);
+      color: fade-out($color-link, 0.5);
     }
     &:hover {
-      background-color: fade-out(map-get($theme_colors, "link"), 0.75);
+      background-color: fade-out($color-link, 0.75);
     }
   }
   &.toggled {
     #sidebarToggle::after {
-      color: fade-out(map-get($theme_colors, "link"), 0.5);
+      color: fade-out($color-link, 0.5);
     }
   }
 }
 
 @if $theme_valid == 'enfa' {
   .sidebar {
+    min-height: 86vh;
     
     .nav-item:hover {
       a {
@@ -380,7 +381,7 @@
           color: $white !important;
         }
       }
-      background-color: map-get($theme_colors, "link") !important;
+      background-color: $color-link !important;
     }
 
     &-brand {

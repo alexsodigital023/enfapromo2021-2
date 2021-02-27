@@ -60,7 +60,7 @@ $themes: (
             "primary":  $blue,
             "secondary":$gray-200,
             "link":     $white,
-            "titles":   $gray-800,
+            "title":   $gray-800,
             "separador":$gray-200,
         )
     ),
@@ -69,7 +69,7 @@ $themes: (
             "primary":  #fee9cf,
             "secondary":#fcd9b7,
             "link":     #1a8dd4,
-            "titles":   #1a8dd4,
+            "title":   #1a8dd4,
             "separador":#1a8dd4,
         )
     ),
@@ -81,6 +81,8 @@ $theme_colors:  map-get($theme_vars, "colors");
 
 $primary:       map-get($theme_colors, "primary")!default;
 $secondary:     map-get($theme_colors, "secondary")!default;
+$color-link:     map-get($theme_colors, "link");
+$color-title:     map-get($theme_colors, "title");
 $success:       $green !default;
 $info:          $cyan !default;
 $warning:       $yellow !default;

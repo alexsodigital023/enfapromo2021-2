@@ -29,7 +29,7 @@
         <div id="wrapper">
 
             <!-- Content Wrapper -->
-            <div id="content-wrapper" class="d-flex flex-column bg-primary">
+            <div id="content-wrapper" class="d-flex flex-column bg-primary pt-3">
 
                 <!-- Main Content -->
                 <div id="content">

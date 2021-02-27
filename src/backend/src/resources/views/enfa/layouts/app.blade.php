@@ -21,7 +21,7 @@
 </head>
 <body class="bg-primary">
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white">
+        <nav class="navbar navbar-expand-md navbar-light bg-primary">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     Administración {{ config('app.name', '') }}

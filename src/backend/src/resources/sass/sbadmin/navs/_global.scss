@@ -42,6 +42,9 @@
 }
 
 @if $theme_valid == 'enfa' {
+  .navbar {
+    border-bottom: 1px solid $secondary;
+  }
   .topbar {
     &.navbar-expand {
       flex-direction: row-reverse;
@@ -53,7 +56,7 @@
           
           &:hover {
             span {
-              color: map-get($theme_colors, "link") !important;
+              color: $color-link !important;
             }
           }
         }
