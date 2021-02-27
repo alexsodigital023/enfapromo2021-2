@@ -17,7 +17,7 @@
             <img class="img-profile rounded-circle" src="https://www.gravatar.com/avatar/{{md5(Auth::user()->email)}}">
         </a>
     <!-- Dropdown - User Information -->
-    <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
+    <div class="dropdown-menu dropdown-menu-right animated--grow-in" aria-labelledby="userDropdown">
         
         
         <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">

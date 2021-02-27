@@ -48,8 +48,14 @@
     }
     ul {
       li {
-          #userDropdown {
+        #userDropdown {
           flex-direction: row-reverse;
+          
+          &:hover {
+            span {
+              color: map-get($theme_colors, "link") !important;
+            }
+          }
         }
       }
     }

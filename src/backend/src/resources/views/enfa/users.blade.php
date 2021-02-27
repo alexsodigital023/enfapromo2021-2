@@ -6,7 +6,7 @@ Usuarios
 @section('content')
 
 <div class="row">
-    <div class="card shadow mb-4 w-100 d-block">
+    <div class="card mb-4 w-100 d-block">
         <div class="card-head">
         </div>
         <div class="card-body">
