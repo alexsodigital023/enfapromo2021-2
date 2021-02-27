@@ -373,12 +373,14 @@
 
 @if $theme_valid == 'enfa' {
   .sidebar {
-    .sidebar-brand:hover {
-      background-color: $primary !important;
-    }
     
     .nav-item:hover {
-      background-color: $primary !important;
+      a {
+        i, span {
+          color: $white !important;
+        }
+      }
+      background-color: map-get($theme_colors, "link") !important;
     }
 
     &-brand {

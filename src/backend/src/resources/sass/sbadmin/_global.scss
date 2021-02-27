@@ -19,7 +19,6 @@ a {
 #wrapper {
   display: flex;
   #content-wrapper {
-    background-color: map-get($theme_colors, "main-bg");
     width: 100%;
     overflow-x: hidden;
     #content {
@@ -59,14 +58,12 @@ a {
   }
 }
 
-i.rounded-circle {
-  border: 3px solid;
-  padding: 15px;
-  position: relative;
 
-  &::before {
-    position: absolute;
-    left: 2px;
-    bottom: 2px;
+.row-mobile {
+  background-color: $white;
+}
+@media only screen and (max-width: 768px) {
+  .row-mobile {
+    flex-direction: column;
   }
 }

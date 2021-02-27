@@ -1,6 +1,6 @@
 @extends('layouts.administrator')
 @section('title')
-<i class="fa fa-user-alt rounded-circle"></i>
+<i class="fa fa-user-circle"></i>
 Usuarios
 @endsection('title')
 @section('content')

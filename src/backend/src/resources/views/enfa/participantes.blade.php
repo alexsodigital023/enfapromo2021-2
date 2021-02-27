@@ -1,6 +1,6 @@
 @extends('layouts.administrator')
 @section('title')
-<i class="fa fa-child"></i>
+<i class="fa fa-users"></i>
 Participantes
 @endsection('title')
 @section('content')

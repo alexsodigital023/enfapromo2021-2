@@ -2,7 +2,7 @@
 @section('title', 'Dashboard')
 @section('content')
 
-<div class="row">
+<div class="row row-mobile pb-4">
     <div class="col">
         <div class="card">
             <div class="container">

@@ -1,6 +1,6 @@
 
 <!-- Footer -->
-<footer class="sticky-footer bg-white">
+<footer class="sticky-footer bg-primary">
     <div class="container my-auto">
     <div class="copyright text-center my-auto">
         <i class="sologo"></i>

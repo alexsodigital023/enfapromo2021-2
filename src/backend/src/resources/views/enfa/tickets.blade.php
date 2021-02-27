@@ -19,7 +19,7 @@
         <semana-selector value="{{$week}}"></semana-selector>
     </div>
     <div class="col">
-        <a :href="`{{route('ticket/download',['week'=>$week])}}${invalidos?'?invalidos=1':''}`" class="btn btn-primary">
+        <a :href="`{{route('ticket/download',['week'=>$week])}}${invalidos?'?invalidos=1':''}`" class="btn btn-link">
             <i class="fa fa-file"></i>
             Descargar
         </a>

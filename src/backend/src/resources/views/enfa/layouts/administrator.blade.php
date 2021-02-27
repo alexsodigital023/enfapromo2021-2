@@ -20,7 +20,7 @@
     <link href="/css/all.min.css" rel="stylesheet">
 
 </head>
-<body id="page-top">
+<body id="page-top bg-primary">
     <div id="app">
         
         <x-top></x-top>
@@ -29,7 +29,7 @@
         <div id="wrapper">
 
             <!-- Content Wrapper -->
-            <div id="content-wrapper" class="d-flex flex-column">
+            <div id="content-wrapper" class="d-flex flex-column bg-primary">
 
                 <!-- Main Content -->
                 <div id="content">
@@ -38,7 +38,7 @@
                     <div class="container-fluid">
 
                         <!-- Page Heading -->
-                        <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                        <div class="d-sm-flex align-items-center justify-content-between table-header">
                             <h1 class="h3 mb-0 text-title">@yield("title")</h1>
                         </div>
 
@@ -61,6 +61,8 @@
 
                 </div>
                 <!-- End of Main Content -->
+
+                <x-footer></x-footer>
                 
             </div>
             <!-- End of Content Wrapper -->
@@ -68,8 +70,6 @@
             
         </div>
         <!-- End of Page Wrapper -->
-
-        <x-footer></x-footer>
 
         <!-- Scroll to Top Button-->
         <a class="scroll-to-top rounded" href="#page-top">
@@ -89,7 +89,7 @@
                 <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
                 <div class="modal-footer">
                 <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                <a class="btn btn-primary" href="login.html">Logout</a>
+                <a class="btn btn-link" href="login.html">Logout</a>
                 </div>
             </div>
             </div>

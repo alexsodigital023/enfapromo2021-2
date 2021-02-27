@@ -50,3 +50,13 @@
     }
   }
 }
+
+.btn-link {
+  color: $white;
+  background-color: map-get($theme_colors, "link");
+  
+  &:hover {
+    color: $white;
+    text-decoration: none;
+  }
+}
