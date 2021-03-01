@@ -1,10 +1,14 @@
-FROM php:7.2-apache
+FROM php:7.3-apache
 
 RUN apt-get update
 RUN apt-get install -y git unzip libpng-dev
 
 COPY ./config/vhost.conf /etc/apache2/sites-enabled/000-default.conf
 COPY ./src /var/www
+
+RUN apt-get install -y zip libzip-dev \
+  && docker-php-ext-configure zip --with-libzip \
+  && docker-php-ext-install zip
 
 RUN chown www-data:www-data -R /var/www/bootstrap/cache\
     &&chown www-data:www-data -R /var/www/storage

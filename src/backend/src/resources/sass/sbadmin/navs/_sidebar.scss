@@ -318,7 +318,7 @@
 // Sidebar Dark
 .sidebar-dark {
   .sidebar-brand {
-    color: $white;
+    color: $color-link;
   }
   hr.sidebar-divider {
     border-top: 1px solid fade-out($white, 0.85);
@@ -335,9 +335,9 @@
       &:active,
       &:focus,
       &:hover {
-        color: $white;
+        color: $color-link;
         i {
-          color: $white;
+          color: $color-link;
         }
       }
       // Accordion
@@ -347,26 +347,67 @@
     }
     &.active {
       .nav-link {
-        color: $white;
+        color: $color-link;
         i {
-          color: $white;
+          color: $color-link;
         }
       }
     }
   }
   // Color the sidebar toggler
   #sidebarToggle {
-    background-color: fade-out($white, 0.8);
+    background-color: fade-out($color-link, 0.8);
     &::after {
-      color: fade-out($white, 0.5);
+      color: fade-out($color-link, 0.5);
     }
     &:hover {
-      background-color: fade-out($white, 0.75);
+      background-color: fade-out($color-link, 0.75);
     }
   }
   &.toggled {
     #sidebarToggle::after {
-      color: fade-out($white, 0.5);
+      color: fade-out($color-link, 0.5);
+    }
+  }
+}
+
+@if $theme_valid == 'enfa' {
+  .sidebar {
+    min-height: 86vh;
+    
+    .nav-item:hover {
+      a {
+        i, span {
+          color: $white !important;
+        }
+      }
+      background-color: $color-link !important;
+    }
+
+    &-brand {
+      flex-flow: column !important;
+      height: auto !important;
+      padding: 10px !important;
+
+      &-text {
+        display: block !important;
+        font-size: .9rem !important;
+      }
+    }
+
+    .nav-item {
+      .nav-link {
+        i {
+          width: 2rem;
+
+          &::before {
+            font-size: 1.5rem;
+          }
+        }
+        span {
+          font-size: .9rem !important;
+        }
+      }
     }
   }
 }

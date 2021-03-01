@@ -49,14 +49,47 @@ $green:   #28B62C !default;
 $teal:    #20c997 !default;
 $cyan:    #75CAEB !default;
 
-$primary:       $blue !default;
-$secondary:     $gray-200 !default;
+
+/*
+* Themes
+*/
+
+$themes: (
+    "default": (
+        "colors": (
+            "primary":  $blue,
+            "secondary":$gray-200,
+            "link":     $white,
+            "title":   $gray-800,
+            "separador":$gray-200,
+        )
+    ),
+    "enfa": (
+        "colors": (
+            "primary":  #fee9cf,
+            "secondary":#fcd9b7,
+            "link":     #1a8dd4,
+            "title":   #1a8dd4,
+            "separador":#1a8dd4,
+        )
+    ),
+);
+
+$theme_valid:   if(map-has-key($themes, $theme), $theme, "default");
+$theme_vars:    map-get($themes, $theme_valid);
+$theme_colors:  map-get($theme_vars, "colors");
+
+$primary:       map-get($theme_colors, "primary")!default;
+$secondary:     map-get($theme_colors, "secondary")!default;
+$color-link:     map-get($theme_colors, "link");
+$color-title:     map-get($theme_colors, "title");
 $success:       $green !default;
 $info:          $cyan !default;
 $warning:       $yellow !default;
 $danger:        $red !default;
 $light:         $gray-100 !default;
 $dark:          $gray-700 !default;
+
 
 $yiq-contrasted-threshold: 200 !default;
 

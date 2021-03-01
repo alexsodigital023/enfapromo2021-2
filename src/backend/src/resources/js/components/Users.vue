@@ -1,18 +1,18 @@
 <template>
 
-    <table class="table table-bordered table-responsive" id="dataTable" width="100%" cellspacing="0">
-    <thead>
-        <tr>
-        <th>#</th>
-        <th>Nombre</th>
-        <th>Perfil</th>
-        <th>Email</th>
-        <th>Aplicación</th>
-        <th>Activo</th>
-        <th>Backend</th>
-        <th></th>
-        </tr>
-    </thead>
+    <table class="table table-bordered table-responsive w-100 d-block d-md-table" id="dataTable" width="100%" cellspacing="0">
+        <thead>
+            <tr>
+            <th>#</th>
+            <th>Nombre</th>
+            <th>Perfil</th>
+            <th>Email</th>
+            <th>Aplicación</th>
+            <th>Activo</th>
+            <th>Backend</th>
+            <th></th>
+            </tr>
+        </thead>
         <tbody>
             <tr  v-for="u in users" :key="u.id" class="form-group">
                 <td>{{u.id}}</td>
@@ -30,7 +30,7 @@
                     </div>
                 </td>
             </tr>
-    </tbody>
+        </tbody>
     </table>
 </template>
 
