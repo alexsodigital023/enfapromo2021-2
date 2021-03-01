@@ -29,6 +29,7 @@ class ServiceController extends Controller
         $text=$ocr->processTicket($tmpFile);
         $time2=time();
         $ticket->status_id=4;
+        $ticket->submited=1;
         $ticket->data=$text;
         $ticket->process_time=$time2-$time;
         $ticket->save();
