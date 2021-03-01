@@ -19,7 +19,6 @@ a {
 #wrapper {
   display: flex;
   #content-wrapper {
-    background-color: $gray-100;
     width: 100%;
     overflow-x: hidden;
     #content {
@@ -56,5 +55,15 @@ a {
   }
   i {
     font-weight: 800;
+  }
+}
+
+
+.row-mobile {
+  background-color: $white;
+}
+@media only screen and (max-width: 768px) {
+  .row-mobile {
+    flex-direction: column;
   }
 }

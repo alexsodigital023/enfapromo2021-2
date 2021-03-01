@@ -20,52 +20,54 @@
     <link href="/css/all.min.css" rel="stylesheet">
 
 </head>
-<body id="page-top">
+<body id="page-top bg-primary">
     <div id="app">
-  <!-- Page Wrapper -->
+        
+        <x-top></x-top>
+
+        <!-- Page Wrapper -->
         <div id="wrapper">
-            <x-menu></x-menu>
 
             <!-- Content Wrapper -->
-            <div id="content-wrapper" class="d-flex flex-column">
+            <div id="content-wrapper" class="d-flex flex-column bg-primary pt-3">
 
-            <!-- Main Content -->
-            <div id="content">
-                <x-top></x-top>
-                
+                <!-- Main Content -->
+                <div id="content">
 
-                <!-- Begin Page Content -->
-                <div class="container-fluid">
-
-                    <!-- Page Heading -->
-                    <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800">@yield("title")</h1>
-                    </div>
-
-                    <!-- Content Row -->
-                    <div class="row">
-                        @yield("top-modules")
-                    </div>
-
-                    <!-- Content Row -->
+                    <!-- Begin Page Content -->
                     <div class="container-fluid">
-                        @yield("content")
+
+                        <!-- Page Heading -->
+                        <div class="d-sm-flex align-items-center justify-content-between table-header">
+                            <h1 class="h3 mb-0 text-title">@yield("title")</h1>
+                        </div>
+
+                        <!-- Content Row -->
+                        <div class="row">
+                            @yield("top-modules")
+                        </div>
+
+                        <!-- Content Row -->
+                        <div class="container-fluid">
+                            @yield("content")
+                        </div>
+                        <!-- Content Row -->
+                        <div class="row">
+                            @yield("bottom-modules")
+                        </div>
+
                     </div>
-                    <!-- Content Row -->
-                    <div class="row">
-                        @yield("bottom-modules")
-                    </div>
+                    <!-- /.container-fluid -->
 
                 </div>
-                <!-- /.container-fluid -->
+                <!-- End of Main Content -->
 
-            </div>
-            <!-- End of Main Content -->
-            <x-footer></x-footer>
-
+                <x-footer></x-footer>
+                
             </div>
             <!-- End of Content Wrapper -->
-
+            <x-menu></x-menu>
+            
         </div>
         <!-- End of Page Wrapper -->
 
@@ -87,7 +89,7 @@
                 <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
                 <div class="modal-footer">
                 <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                <a class="btn btn-primary" href="login.html">Logout</a>
+                <a class="btn btn-link" href="login.html">Logout</a>
                 </div>
             </div>
             </div>

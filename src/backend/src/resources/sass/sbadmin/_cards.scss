@@ -34,3 +34,12 @@
     }
   }
 }
+
+
+@if $theme_valid == 'enfa' {
+  .card {
+    .container {
+      padding: 0 !important;
+    }
+  }
+}

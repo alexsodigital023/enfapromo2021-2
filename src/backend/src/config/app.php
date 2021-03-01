@@ -84,6 +84,19 @@ return [
 
     /*
     |--------------------------------------------------------------------------
+    | Application Theme Configuration
+    |--------------------------------------------------------------------------
+    |
+    | The application theme determines the default theme that will be used.
+    | You are free to set this value to any of the themes which will be
+    | supported by the application.
+    |
+    */
+
+    'theme' => env('MIX_APP_THEME', 'default'),
+
+    /*
+    |--------------------------------------------------------------------------
     | Application Fallback Locale
     |--------------------------------------------------------------------------
     |
@@ -225,7 +238,8 @@ return [
         'Str' => Illuminate\Support\Str::class,
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
-        'View' => Illuminate\Support\Facades\View::class,
+        // 'View' => Illuminate\Support\Facades\View::class,
+        'View' => App\Sodigital\Factories\Factory::class,
 
     ],
 
