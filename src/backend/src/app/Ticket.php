@@ -6,7 +6,10 @@ namespace App;
 use Exception;
 use Illuminate\Database\Eloquent\Model;
 
+use App\Mutators\Storage\Spaces;
+
 class Ticket extends Model{
+    use Spaces;
     protected $table="ticket";
 
     public function user(){
@@ -58,6 +61,9 @@ class Ticket extends Model{
         return $img;
     }
 
+    public function publicImage(){
+        return $this->temporaryUrl($this->path,30);
+    }
     protected function convertPDF($path){
         $tmp=tempnam("tmp","tick");
         $pdf = new \Spatie\PdfToImage\Pdf($path);

@@ -5,8 +5,8 @@ use Storage;
 
 trait Spaces{
   function resolvePath($filename){
-    $path=property_exists($this,"storagePath")?trim(preg_replace('/[^\da-z\/]/i', '_',$this->_storagePath),' /'):"/";
-    return sprintf('/%s/%s',$path,$filename);
+    $path=property_exists($this,"_storagePath")?trim(preg_replace('/[^\da-z\/]/i', '_',$this->_storagePath),' /'):"";
+    return trim(sprintf('%s/%s',$path,$filename),"/");
   }
   function saveFile($filename,$data){
     return Storage::disk('do_spaces')->put($this->resolvePath($filename),$data);
@@ -55,5 +55,8 @@ trait Spaces{
   }
   function moveFile($filename,$destination){
     return Storage::disk('do_spaces')->move($this->resolvePath($filename),$destination);
+  }
+  function temporaryUrl($filename,$time=5){
+    return Storage::disk('do_spaces')->temporaryUrl($this->resolvePath($filename), now()->addMinutes($time));
   }
 }

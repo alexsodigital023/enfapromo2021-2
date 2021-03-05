@@ -39,7 +39,6 @@
                 <td>
                     <div>
                         <ver-ticket :image="t.imagePath"></ver-ticket>
-                        <ver-foto :image="t.foto"></ver-foto>
                     </div>
                     <div>
                         <aprobar-ticket v-if="t.status_id!=3&&t.status_id!=11" v-on:aprobado="(ev)=>{aprobado(ev,t);}"></aprobar-ticket>
