@@ -63,7 +63,7 @@
                                     product="{{number_format($t->product)}}"
                                     import="{{number_format($t->import,2)}}"
                                     semana="{{date('Y::W',strtotime($t->created_at))}}"
-                                    image="{{route('ticket/image',['id'=>$t->id])}}"
+                                    image="{{t->publicImage}}"
                                     foto="{{$t->foto}}"
                                     prioridad="{{$t->prioridad}}"
                                     aprobar="{{route('ticket/aprobar',['id'=>$t->id])}}"

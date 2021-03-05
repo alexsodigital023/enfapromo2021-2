@@ -9,7 +9,7 @@ class TicketSeeder extends Seeder
         [
             "id"=>1,
             "fingerprint"=>"test1",
-            "path"=>"/var/www/uploads/fotos/prueba/prueba1.jpg",
+            "path"=>"tickets/000c07cc-71e7-4f1f-9a77-d481f850c359",
             "status_id"=>1,
             "estado_id"=>1,
             "tienda_id"=>1,
@@ -19,7 +19,7 @@ class TicketSeeder extends Seeder
         [
             "id"=>2,
             "fingerprint"=>"test2",
-            "path"=>"/var/www/uploads/fotos/prueba/prueba2.jpg",
+            "path"=>"tickets/000c07cc-71e7-4f1f-9a77-d481f850c359",
             "status_id"=>1,
             "estado_id"=>1,
             "tienda_id"=>1,
@@ -29,7 +29,7 @@ class TicketSeeder extends Seeder
         [
             "id"=>3,
             "fingerprint"=>"test3",
-            "path"=>"/var/www/uploads/fotos/prueba/prueba3.jpg",
+            "path"=>"tickets/000c07cc-71e7-4f1f-9a77-d481f850c359",
             "status_id"=>1,
             "estado_id"=>1,
             "tienda_id"=>1,
@@ -39,7 +39,7 @@ class TicketSeeder extends Seeder
         [
             "id"=>4,
             "fingerprint"=>"test4",
-            "path"=>"/var/www/uploads/fotos/prueba/prueba4.jpg",
+            "path"=>"tickets/000c07cc-71e7-4f1f-9a77-d481f850c359",
             "status_id"=>1,
             "estado_id"=>1,
             "tienda_id"=>1,
@@ -49,7 +49,7 @@ class TicketSeeder extends Seeder
         [
             "id"=>5,
             "fingerprint"=>"test5",
-            "path"=>"/var/www/uploads/fotos/prueba/prueba5.jpg",
+            "path"=>"tickets/000c07cc-71e7-4f1f-9a77-d481f850c359",
             "status_id"=>1,
             "estado_id"=>1,
             "tienda_id"=>1,
@@ -59,7 +59,7 @@ class TicketSeeder extends Seeder
         [
             "id"=>6,
             "fingerprint"=>"test6",
-            "path"=>"/var/www/uploads/fotos/prueba/prueba6.pdf",
+            "path"=>"tickets/000c07cc-71e7-4f1f-9a77-d481f850c359",
             "status_id"=>1,
             "estado_id"=>1,
             "tienda_id"=>1,
@@ -69,7 +69,7 @@ class TicketSeeder extends Seeder
         [
             "id"=>7,
             "fingerprint"=>"test7",
-            "path"=>"/var/www/uploads/fotos/prueba/prueba7.jpg",
+            "path"=>"tickets/000c07cc-71e7-4f1f-9a77-d481f850c359",
             "status_id"=>1,
             "estado_id"=>1,
             "tienda_id"=>1,
@@ -79,7 +79,7 @@ class TicketSeeder extends Seeder
         [
             "id"=>8,
             "fingerprint"=>"test8",
-            "path"=>"/var/www/uploads/fotos/prueba/prueba8.jpg",
+            "path"=>"tickets/000c07cc-71e7-4f1f-9a77-d481f850c359",
             "status_id"=>1,
             "estado_id"=>1,
             "tienda_id"=>1,
@@ -89,7 +89,7 @@ class TicketSeeder extends Seeder
         [
             "id"=>9,
             "fingerprint"=>"test9",
-            "path"=>"/var/www/uploads/fotos/prueba/prueba9.jpg",
+            "path"=>"tickets/000c07cc-71e7-4f1f-9a77-d481f850c359",
             "status_id"=>1,
             "estado_id"=>1,
             "tienda_id"=>1,
@@ -99,7 +99,7 @@ class TicketSeeder extends Seeder
         [
             "id"=>10,
             "fingerprint"=>"test10",
-            "path"=>"/var/www/uploads/fotos/prueba/prueba10.jpg",
+            "path"=>"tickets/000c07cc-71e7-4f1f-9a77-d481f850c359",
             "status_id"=>1,
             "estado_id"=>1,
             "tienda_id"=>1,
@@ -109,7 +109,7 @@ class TicketSeeder extends Seeder
         [
             "id"=>11,
             "fingerprint"=>"test11",
-            "path"=>"/var/www/uploads/fotos/prueba/prueba11.jpg",
+            "path"=>"tickets/000c07cc-71e7-4f1f-9a77-d481f850c359",
             "status_id"=>1,
             "estado_id"=>1,
             "tienda_id"=>1,

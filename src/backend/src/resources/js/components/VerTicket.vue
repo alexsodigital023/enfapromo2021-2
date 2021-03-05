@@ -16,7 +16,7 @@
 
                 <div class="modal-body">
                     <slot name="body">
-                        <canvas :id="id"></canvas>
+                        <img :src="image" class="image-node">
                     </slot>
                 </div>
                 </div>
@@ -60,16 +60,7 @@
                 this.showImage=false;
             },
             abrirModal(){
-                if(this.imageData){
-                    this.showImage=true;
-                    this.showCanvas();
-                }else{
-                    $.get(this.image,(resp)=>{
-                        this.imageData=resp.data;
-                        this.showImage=true;
-                        this.showCanvas();
-                    });
-                }
+                this.showImage=true;
             }
         },
         mounted() {
@@ -143,5 +134,9 @@
     }
     canvas{
         width:100%;
+    }
+    .image-node{
+        width:30vw;
+        max-width:70vw;
     }
 </style>
