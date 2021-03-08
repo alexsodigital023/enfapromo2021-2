@@ -16,6 +16,7 @@ class ServiceController extends Controller
 {
     use Spaces;
     public function run(Request $request){
+        set_time_limit(60);
         $ticket=Ticket::find($request->get("id"));
         if(!$ticket){
             throw new \Exception("ticket inexistente");
