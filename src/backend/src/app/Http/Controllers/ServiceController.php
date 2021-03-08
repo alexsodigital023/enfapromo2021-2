@@ -21,20 +21,27 @@ class ServiceController extends Controller
         if(!$ticket){
             throw new \Exception("ticket inexistente");
         }
-        $tmpFile=tempnam(sys_get_temp_dir(),'ticket_');
-        file_put_contents($tmpFile,$this->getFile($ticket->path));
-        $ocr=new Ocr();
-        $ticket->status_id=4;
-        $ticket->save();
-        $time=time();
-        $text=$ocr->processTicket($tmpFile);
-        $time2=time();
-        $ticket->status_id=4;
-        $ticket->submited=1;
-        $ticket->data=$text;
-        $ticket->process_time=$time2-$time;
-        $ticket->save();
+        if($ticket->status_id==1
+            ||$ticket->status_id!=7
+            ){
+            $ticket->status_id=8;
+            $ticket->save();
+            $tmpFile=tempnam(sys_get_temp_dir(),'ticket_');
+            file_put_contents($tmpFile,$this->getFile($ticket->path));
+            $ocr=new Ocr();
+            $time=time();
+            $text=$ocr->processTicket($tmpFile);
+            $time2=time();
+            $ticket->status_id=4;
+            $ticket->submited=1;
+            $ticket->data=$text;
+            $ticket->process_time=$time2-$time;
+            $ticket->save();
+        }
         $regex=new Regex();
+
+        $ticket->status_id=9;
+        $ticket->save();
         $status=$regex->processTicket($ticket);
         unlink($tmpFile);
         return json_encode([
