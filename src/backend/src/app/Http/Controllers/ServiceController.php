@@ -22,7 +22,7 @@ class ServiceController extends Controller
             throw new \Exception("ticket inexistente");
         }
         if($ticket->status_id==1
-            ||$ticket->status_id!=7
+            ||$ticket->status_id==7
             ){
             $ticket->status_id=8;
             $ticket->save();
@@ -32,18 +32,20 @@ class ServiceController extends Controller
             $time=time();
             $text=$ocr->processTicket($tmpFile);
             $time2=time();
-            $ticket->status_id=4;
+            $ticket->status_id=strlen($ticket->data)>5?4:7;
             $ticket->submited=1;
             $ticket->data=$text;
             $ticket->process_time=$time2-$time;
             $ticket->save();
+            unlink($tmpFile);
         }
-        $regex=new Regex();
+        if(strlen($ticket->data)>5){
+            $regex=new Regex();
 
-        $ticket->status_id=9;
-        $ticket->save();
-        $status=$regex->processTicket($ticket);
-        unlink($tmpFile);
+            $ticket->status_id=9;
+            $ticket->save();
+            $status=$regex->processTicket($ticket);
+        }
         return json_encode([
             "id"=>$ticket->id,
             "status_id"=>$ticket->status_id,
