@@ -41,7 +41,11 @@ class Regex{
                     $p=[];
                     preg_match_all($rule->import,$producto,$p);
                     foreach($p[0] as $i=>$imp){
+                        try{
                         $importe+=floatval($p[1][$i])+(floatval($p[2][$i])?floatval($p[2][$i])/100:0);
+                        }catch(\Exception $e){
+                            
+                        }
                     }
                 }
                 if($importe >= 39.9){
