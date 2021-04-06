@@ -1,17 +1,19 @@
 version: "3"
 services:
   db:
-    image: mysql:8
-    volumes:
-        - db-data:/var/lib/mysql
-    command: --default-authentication-plugin=mysql_native_password --character-set-server=utf8 --collation-server=utf8_general_ci
+    image: mysql:8.0
+    command: --default-authentication-plugin=mysql_native_password --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
     environment:
-        MYSQL_ROOT_PASSWORD: prueba
-        MYSQL_DATABASE: prueba
-        MYSQL_USER: prueba
-        MYSQL_PASSWORD: prueba
+      MYSQL_ROOT_PASSWORD: prueba
+      MYSQL_DATABASE: prueba
+      MYSQL_USER: prueba
+      MYSQL_PASSWORD: prueba
     ports:
         - "3307:3306"
+    volumes:
+        - "./docker/db/data:/var/lib/mysql"
+        - "./docker/db/my.cnf:/etc/mysql/conf.d/my.cnf"
+        - "./docker/db/sql:/docker-entrypoint-initdb.d"
   api:
     build: ./src/api
     ports:
