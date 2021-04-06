@@ -1,44 +1,45 @@
 version: "3"
 services:
-    db:
-        image: mariadb:latest
-        volumes:
-            - db-data:/var/lib/mysql
-        environment:
-            MYSQL_ROOT_PASSWORD: prueba
-            MYSQL_DATABASE: prueba
-            MYSQL_USER: prueba
-            MYSQL_PASSWORD: prueba
-        ports:
-            - "3307:3306"
-    api:
-        build: ./src/api
-        ports:
-            - "8085:80"
-        volumes:
-            - "./src/api/src:/var/www"
-            - ./pruebaTickets:/var/www/uploads/tickets
-    backend:
-        build: ./src/backend
-        ports:
-            - "8080:80"
-        volumes:
-            - "./src/backend/src:/var/www"
-            - ./pruebaTickets:/var/www/uploads/fotos
-    ocr:
-        build: ./src/services
-        volumes:
-            - "./src/services/src:/usr/local/nutrisuenos"
-            - tickets:/var/www/uploads/tickets
-            - ./pruebaTickets:/var/www/uploads/fotos
-    publicsocket:
-        build: ./src/publicSocket
-        ports:
-            - "3000:3000"
-        volumes:
-            - "./src/publicSocket/src:/usr/src/app/src"
-            - ./pruebaTickets:/var/www/uploads/tickets
+  db:
+    image: mysql:8
+    volumes:
+        - db-data:/var/lib/mysql
+    command: --default-authentication-plugin=mysql_native_password
+    environment:
+        MYSQL_ROOT_PASSWORD: prueba
+        MYSQL_DATABASE: prueba
+        MYSQL_USER: prueba
+        MYSQL_PASSWORD: prueba
+    ports:
+        - "3307:3306"
+  api:
+    build: ./src/api
+    ports:
+      - "8085:80"
+    volumes:
+      - "./src/api/src:/var/www"
+      - ./pruebaTickets:/var/www/uploads/tickets
+  backend:
+    build: ./src/backend
+    ports:
+      - "8080:80"
+    volumes:
+      - "./src/backend/src:/var/www"
+      - ./pruebaTickets:/var/www/uploads/fotos
+  ocr:
+    build: ./src/services
+    volumes:
+      - "./src/services/src:/usr/local/nutrisuenos"
+      - tickets:/var/www/uploads/tickets
+      - ./pruebaTickets:/var/www/uploads/fotos
+  publicsocket:
+    build: ./src/publicSocket
+    ports:
+      - "3000:3000"
+    volumes:
+      - "./src/publicSocket/src:/usr/src/app/src"
+      - ./pruebaTickets:/var/www/uploads/tickets
 volumes:
-    db-data:
-    tickets:
-    fotos:
+  db-data:
+  tickets:
+  fotos:
