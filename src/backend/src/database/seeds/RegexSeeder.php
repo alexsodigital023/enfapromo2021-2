@@ -8,26 +8,8 @@ class RegexSeeder extends Seeder
     protected $_status=[
             [    
                 "id"=>1,
-                "product"=>"/.*enfagro[uw].*/im",
-                "import"=>"/(\d{1,9})\.{0,1}(\d{0,2})$/im",
-                "active"=>1
-            ],
-            [    
-                "id"=>2,
-                "product"=>"/.*enfagro[uw].*/im",
-                "import"=>"/(\d{1,9})\.{0,1}(\d{0,2}).*$/im",
-                "active"=>1
-            ],
-            [    
-                "id"=>3,
-                "product"=>"/.*enfagro[uw].*/im",
-                "import"=>"/(\d{1,9})\.{0,1}(\d{0,2})$/im",
-                "active"=>1
-            ],
-            [    
-                "id"=>4,
-                "product"=>"/.*enfagro[uw].*/im",
-                "import"=>"/(\d{1,9})\.{0,1}(\d{0,2})$/im",
+                "product"=>"/.*CHOCO.ILK.*/",
+                "import"=>"(\d{1,9})+[.].{0,1}(\d{0,2})",
                 "active"=>1
             ]
         ];
