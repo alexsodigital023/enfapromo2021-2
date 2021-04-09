@@ -51,7 +51,7 @@ class TicketController extends Controller
         if($search){
             $tickets
                 ->leftJoin('users','users.id','=','ticket.user_id')
-                ->where('email','like','%'.trim($search).'%');
+                ->where('users.email','like','%'.trim($search).'%');
         }
         return view('tickets',[
             'tickets'=>$tickets->paginate(10),

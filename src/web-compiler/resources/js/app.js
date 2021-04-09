@@ -4,7 +4,7 @@
  * building robust, powerful web applications using Vue and Laravel.
  */
 
-$ = require('jquery');
+//$ = require('jquery');
 require('./wScratchPad');
 // console.log($.fn.wScratchPad);
 import Vue from 'vue'

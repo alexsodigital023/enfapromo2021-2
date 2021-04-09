@@ -19,7 +19,7 @@
         <semana-selector value="{{$week}}"></semana-selector>
     </div>
     <div class="col">
-        <a :href="`{{route('ticket/download',['week'=>$week])}}${invalidos?'?invalidos=1':''}`" class="btn btn-primary">
+        <a :href="`{{route('ticket/download',['week'=>$week])}}${invalidos?'?invalidos=1':''}`" class="btn btn-link">
             <i class="fa fa-file"></i>
             Descargar
         </a>
@@ -33,7 +33,7 @@
 @section('content')
 
 <div class="row">
-    <div class="card shadow mb-4">
+    <div class="card mb-4 w-100 d-block">
         <div class="card-head">
             <div class="row">
                 <div class="col">
@@ -63,7 +63,7 @@
                                     product="{{number_format($t->product)}}"
                                     import="{{number_format($t->import,2)}}"
                                     semana="{{date('Y::W',strtotime($t->created_at))}}"
-                                    image="{{route('ticket/image',['id'=>$t->id])}}"
+                                    image="{{t->publicImage}}"
                                     foto="{{$t->foto}}"
                                     prioridad="{{$t->prioridad}}"
                                     aprobar="{{route('ticket/aprobar',['id'=>$t->id])}}"

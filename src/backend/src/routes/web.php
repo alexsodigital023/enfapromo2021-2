@@ -34,3 +34,5 @@ Route::get('/user', 'UserController@index')->name('users');
 Route::post('/user/{id}', 'UserController@update')->name('user/update');
 
 Route::get('/participantes', 'ParticipantesController@index')->name('participantes');
+
+Route::get('/api/runservice', 'ServiceController@run')->name('services');

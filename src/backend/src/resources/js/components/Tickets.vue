@@ -1,27 +1,27 @@
 <template>
 
-    <table class="table table-bordered table-responsive" id="dataTable" width="100%" cellspacing="0">
-    <thead>
-        <tr v-if="statusId==11">
-            <th colspan="5"></th>
-            <th colspan="4">Lugar</th>
-        </tr>
-        <tr>
-            <th>#</th>
-            <th>Email</th>
-            <th>Estado</th>
-            <th>Tienda</th>
-            <th>Status</th>
-            <th v-if="statusId==11">1</th>
-            <th v-if="statusId==11">2</th>
-            <th v-if="statusId==11">3</th>
-            <th v-if="statusId==11">N</th>
-            <th v-if="statusId!=11">Productos</th>
-            <th v-if="statusId!=11">Importe</th>
-            <th>Semana</th>
-            <th></th>
-        </tr>
-    </thead>
+    <table class="table table-bordered table-responsive w-100 d-block d-md-table" id="dataTable" width="100%" cellspacing="0">
+        <thead>
+            <tr v-if="statusId==11">
+                <th colspan="5"></th>
+                <th colspan="4">Lugar</th>
+            </tr>
+            <tr>
+                <th>#</th>
+                <th>Email</th>
+                <th>Estado</th>
+                <th>Tienda</th>
+                <th>Status</th>
+                <th v-if="statusId==11">1</th>
+                <th v-if="statusId==11">2</th>
+                <th v-if="statusId==11">3</th>
+                <th v-if="statusId==11">N</th>
+                <th v-if="statusId!=11">Productos</th>
+                <th v-if="statusId!=11">Importe</th>
+                <th>Semana</th>
+                <th></th>
+            </tr>
+        </thead>
         <tbody>
             <tr v-if="t.status_id==statusId" v-for="t in tickets" :key="t.id" :class="`${!t.submited?'':''}`">
                 <td>{{t.id}}</td>
@@ -39,7 +39,6 @@
                 <td>
                     <div>
                         <ver-ticket :image="t.imagePath"></ver-ticket>
-                        <ver-foto :image="t.foto"></ver-foto>
                     </div>
                     <div>
                         <aprobar-ticket v-if="t.status_id!=3&&t.status_id!=11" v-on:aprobado="(ev)=>{aprobado(ev,t);}"></aprobar-ticket>
@@ -49,7 +48,7 @@
                     </div>
                 </td>
             </tr>
-    </tbody>
+        </tbody>
     </table>
 </template>
 

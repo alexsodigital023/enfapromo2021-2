@@ -10,18 +10,18 @@
     <title>{{ config('app.name', '') }}</title>
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}?v=1.2" defer></script>
+    <script src="js/app.js" defer></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
     <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="css/app.css" rel="stylesheet">
 </head>
-<body>
+<body class="bg-primary">
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+        <nav class="navbar navbar-expand-md navbar-light bg-primary">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     Administración {{ config('app.name', '') }}

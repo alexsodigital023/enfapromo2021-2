@@ -50,3 +50,13 @@
     }
   }
 }
+
+.btn-link {
+  color: $white;
+  background-color: $color-link;
+  
+  &:hover {
+    color: $white;
+    text-decoration: none;
+  }
+}
