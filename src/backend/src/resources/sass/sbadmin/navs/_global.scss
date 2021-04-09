@@ -40,3 +40,35 @@
     }
   }
 }
+
+@if $theme_valid == 'enfa' {
+  .navbar {
+    border-bottom: 1px solid $secondary;
+  }
+  .topbar {
+    &.navbar-expand {
+      flex-direction: row-reverse;
+    }
+    ul {
+      li {
+        #userDropdown {
+          flex-direction: row-reverse;
+          
+          &:hover {
+            span {
+              color: $color-link !important;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media only screen and (max-width: 768px) {
+    .container-sidebar {
+      position: absolute;
+      top: 70px;
+      right: 0;
+    }
+  }
+}

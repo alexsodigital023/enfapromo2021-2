@@ -28,30 +28,35 @@ class Regex{
         $status = 5;
         $ruleid=null;
         $desc="Producto no encontrado";
-        foreach($this->ruleList as $rule){
-            $m=[];
-            preg_match_all($rule->product,$ticket->data,$m);
+        if(strlen($ticket->data)>10){
+            foreach($this->ruleList as $rule){
+                $m=[];
+                preg_match_all($rule->product,$ticket->data,$m);
 
-            if(count($m[0])){
-                $status = 6;
-                $ruleid = $rule->id;
-                $desc="Importe inferior o no encontrado";
-                foreach($m[0] as $producto){
-                    $productos[]=$producto;
-                    $p=[];
-                    preg_match_all($rule->import,$producto,$p);
-                    foreach($p[0] as $i=>$imp){
-                        $importe+=floatval($p[1][$i])+(floatval($p[2][$i])?floatval($p[2][$i])/100:0);
+                if(count($m[0])){
+                    $status = 6;
+                    $ruleid = $rule->id;
+                    $desc="Importe inferior o no encontrado";
+                    foreach($m[0] as $producto){
+                        $productos[]=$producto;
+                        $p=[];
+                        preg_match_all($rule->import,$producto,$p);
+                        foreach($p[0] as $i=>$imp){
+                            try{
+                            $importe+=floatval($p[1][$i])+(floatval($p[2][$i])?floatval($p[2][$i])/100:0);
+                            }catch(\Exception $e){
+                                
+                            }
+                        }
                     }
-                }
-                if($importe >= 39.9){
-                    $status = 3;
-                    $desc="Ok";
-                    break;
+                    if($importe >= 350){
+                        $status = 3;
+                        $desc="Ok";
+                        break;
+                    }
                 }
             }
         }
-
         $ticket->status_id=$status;
         $ticket->status_desc=$desc;
         $ticket->rule_id=$ruleid;

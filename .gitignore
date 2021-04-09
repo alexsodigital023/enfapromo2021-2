@@ -1,5 +1,7 @@
 src/publicSocket/src/tmp/
 src/publicSocket/node_modules/
+docker
+mysql_data
 <<<<<<< HEAD
 src/services/src/vendor/
 =======

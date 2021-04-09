@@ -9,7 +9,7 @@
 @import './sbadmin/sb-admin-2.scss';
 @import './fontawesome/fontawesome.scss';
 
-.sologo{
+.sologo {
     background: url(img/SoGris2.png);
     width:30px;
     height:30px;
@@ -17,13 +17,40 @@
     vertical-align: middle;
 }
 
-.passwordChange{
+.passwordChange {
     position:absolute;
-    background:rgba(255,255,255,0.5);
+    background:if($theme_valid == 'default', rgba(255,255,255,0.5), $white);
     border:2px inset #666;
     box-shadow:1px 1px 2px #666;
     width:200px;
     margin-left:-200px;
     z-index:100;
     text-align:center;
+}
+
+@if $theme_valid != 'default' {
+    .form-control:focus {
+        border-color: #666;
+    }
+
+    .passwordChange {
+        width: 300px;
+        padding: 10px;
+
+        input {
+            border: 1px solid #666;
+            display: inline-block;
+            width: 65%;
+        }
+
+        .btn {
+            display: inline-block;
+            width: 33%;
+        }
+    }
+    .table-header {
+        background-color: #fff;
+        margin: 0 15px;
+        padding: 20px;
+    }
 }
