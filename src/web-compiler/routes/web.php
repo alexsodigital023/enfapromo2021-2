@@ -14,13 +14,29 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('form');
+    return view('welcome');
 })->name("home");
 
-Route::get('/ganador.html', function () {
-    return view('felicidades');
-})->name("felicidades");
+Route::get('/contacto.html', function () {
+    return view('contacto');
+})->name("contacto");
 
-Route::get('/rasca-gana', function () {
-    return view('rascaHuele');
-})->name("rascaHuele");
+Route::get('/diarios.html', function () {
+    return view('diarios');
+})->name("diarios");
+
+Route::get('/faq.html', function () {
+    return view('faq');
+})->name("faq");
+
+Route::get('/privacidad.html', function () {
+    return view('privacidad');
+})->name("privacidad");
+
+Route::get('/semanales.html', function () {
+    return view('semanales');
+})->name("semanales");
+
+Route::get('/tyc.html', function () {
+    return view('tyc');
+})->name("tyc");
