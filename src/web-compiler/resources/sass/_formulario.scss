@@ -1,8 +1,22 @@
+#xSectionDetails {
+  .xForm {
+    padding: 0;
+  }
+
+  .xMediaContainer img {
+    max-width: 200px;
+  }
+}
+
 .ticketFormContainer{
   ::placeholder,
-  .item, {
+  .item {
     color: $c-gris;
     opacity: 1;
+  }
+
+  .xFormPages {
+    margin: 10%;
   }
 
   label {
@@ -12,6 +26,13 @@
   input,
   select {
     color: $c-negro;
+    border-radius: 5px;
+    text-align: center;
+
+    &::placeholder {
+      font-weight: bold;
+      text-align: center;
+    }
   }
 
   button[type="submit"] {
@@ -23,24 +44,65 @@
     color: $c-azul;
   }
 
+  .xFieldCheckboxChoice {
+    display: flex;
+    align-items: center;
+
+    .xCheckbox {
+      span::before {
+        content: "";
+        display: none;
+      }
+    }
+    
+    .checkField {
+      opacity: 1;
+      width: 10px;
+      height: 15px;
+      position: relative;
+
+      &::before {
+        content: "";
+        display: block;
+        width: 25px;
+        height: 25px;
+        border-radius: 100%;
+        background: $c-blanco;
+        border: 5px solid $c-blanco;
+        box-shadow: 0 0 0px 3px $c-azul;
+      }
+
+      &:checked::before {
+        background: $c-azul;
+      }
+    }
+  }
+
+  .xFieldLabel {
+    font-weight: normal;
+    margin: 8px 0 5px 30px;
+  }
 
   .xControlName,
   .xControlEmail,
   .xControlDate,
+  .xControlPhone,
   .xControlNumber {
     .xLabelContainer{
       display: block;
       width: 100%;
       max-width: 100%;
+      text-align: center;
+      
       label {
         width: 100%;
-        text-align-last: left;
+        text-align: center;
       }
     }
   }
 
-  .xFieldContainer:first-child {
-    padding-left: 15px;
+  .xFieldContainer {
+    padding: 0;
   }
 
   .xFieldItem.xControlCheckbox.xRequired {
@@ -53,36 +115,45 @@
 
   .xActionsForm {
     margin-left: 0;
-    margin-top: 10%;
     padding-top: 35px;
+
+    .xPagingButton {
+      width: 100%;
+      font-size: 1.8em;
+      font-weight: bold;
+      text-transform: uppercase;
+      background-color: $c-azul;
+      border-top: 3px solid $c-blanco;
+      border-bottom: 3px solid $c-blanco;
+    }
   }
 }
 
+@media #{$grid-md} {
+  #xSectionDetails {
+    .xMediaContainer img {
+      max-width: -webkit-fill-available;
+    }
+    
+    #xSectionDetailsR1C1.xModuleImage {
+      transform: translateY(25%);
+    }
+  }
 
-@media only screen and (max-width: 1600px) {
-  .ticketFormContainer {}
-}
+  .ticketFormContainer {
+    transform: translateY(33%);
+    .xFormPages {
+      margin: 0 25%;
+    }
 
-@media only screen and (max-width: 1100px) {
-  .ticketFormContainer{
     .xActionsForm {
-      margin-top: 30%;
-      padding-top: 20px;
-    }
-  }
-}
+      text-align: center;
 
-@media only screen and (max-width: 600px) {
-  .ticketFormContainer{
-    .xFieldItem.xControlCheckbox.xRequired {
-      .xFieldContainer.xFieldWidthMedium {
-        margin-left: 15px;
+      .xPagingButton {
+        border: 2px solid #fff;
+        border-radius: 10px;
+        width: auto;
       }
-    }
-
-  .xActionsForm {
-      margin-top: 100%;
-      padding-top: 15px;
     }
   }
 }

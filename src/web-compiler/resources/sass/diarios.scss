@@ -1,0 +1,163 @@
+.Content1 {
+    h1 {
+        background: -webkit-linear-gradient($c-dorado, $c-amarillo);
+        -webkit-text-fill-color: transparent;
+        text-shadow: 0px 0px 20px $c-shadow;
+        -webkit-background-clip: text;
+        -webkit-text-stroke: 0;
+        color: $c-dorado;
+        font-size: 25px;
+        text-align: center;
+        font-weight: bold;
+    }
+
+    h2 {
+        text-shadow: 0px 0px 20px $c-shadow;
+        -webkit-text-stroke: 2px $c-dorado;
+        color: $c-blanco;
+        font-size: 25px;
+        text-align: center;
+        font-weight: bold;
+    }
+
+    #xSectionContent1R4C1 h2 {
+        background: -webkit-linear-gradient($c-dorado, $c-amarillo);
+        -webkit-text-fill-color: transparent;
+        text-shadow: 0px 0px 20px $c-shadow;
+        -webkit-text-stroke: 3px $c-negro;
+        -webkit-background-clip: text;
+        text-align: center;
+        color: $c-amarillo;
+        font-weight: bold;
+        font-size: 40px;
+    }
+
+    h3 {
+        background: -webkit-linear-gradient($c-dorado, $c-amarillo);
+        -webkit-text-fill-color: transparent;
+        text-shadow: 0px 0px 20px $c-shadow;
+        -webkit-background-clip: text;
+        -webkit-text-stroke: 0;
+        color: $c-dorado;
+        font-size: 25px;
+        text-align: center;
+        font-weight: bold;
+    }
+
+    #xSectionContent1R1 {
+        .xRowInner {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            border-top: 2px solid $c-blanco;
+
+            #xSectionContent1R1C1 {
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background-color: $c-azul-oscuro;
+            }
+            
+            #xSectionContent1R1C2 {
+                width: 100%;
+                position: relative;
+
+                .xMediaImage {
+                    &::before {
+                        content: "";
+                        height: 300%;
+                        width: 400%;
+                        display: block;
+                        position: absolute;
+                        top: -80%;
+                        left: -372%;
+                        background: $c-azul-oscuro;
+                        z-index: 1;
+                        border-right: 3px solid $c-dorado;
+                        border-top: 3px solid $c-dorado;
+                        border-radius: 0 50% 50% 0;
+                    }
+
+                    img {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+
+    #xSectionContent1R2 .xRowInner,
+    #xSectionContent1R3 .xRowInner,
+    #xSectionContent1R4 .xRowInner {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        
+        #xSectionContent1R2C1,
+        #xSectionContent1R3C2 {
+            width: 100%;
+        }
+
+        #xSectionContent1R2C2 {
+            width: 100%;
+
+            .xCellInner {
+                display: flex;
+                flex-wrap: wrap;
+                
+                .xImage {
+                    flex-basis: 21%;
+                    margin: 2%;
+                }
+            }
+        }
+        
+        #xSectionContent1R3C2 .xCellInner .xImage .xMediaImage img,
+        #xSectionContent1R4C2 .xCellInner .xImage .xMediaImage img {
+            width: 50%;
+        }
+    }
+
+    #xSectionContent1R2 .xRowInner,
+    #xSectionContent1R3 .xRowInner {
+        background-color: $c-azul-claro;
+        padding: 10px;
+        margin: 10px 0;
+    }
+    #xSectionContent1R4 .xRowInner {
+        background-color: $c-azul-oscuro;
+    }
+}
+
+@media #{$grid-md} {
+    .Content1 {
+        #xSectionContent1R1 .xRowInner {
+            border-bottom: 2px solid $c-blanco;
+
+            h1 {
+                font-size: 35px;
+            }
+            
+            #xSectionContent1R1C2 .xMediaImage img {
+                width: 50%;
+            }
+        }
+        
+        #xSectionContent1R2 .xRowInner,
+        #xSectionContent1R3 .xRowInner,
+        #xSectionContent1R4 .xRowInner {
+            flex-direction: row;
+            
+            #xSectionContent1R2C1,
+            #xSectionContent1R2C2,
+            #xSectionContent1R3C1,
+            #xSectionContent1R3C2,
+            #xSectionContent1R4C1,
+            #xSectionContent1R4C2,
+            #xSectionContent1R4C3 {
+                width: 50%;
+            }
+        }
+    }
+}

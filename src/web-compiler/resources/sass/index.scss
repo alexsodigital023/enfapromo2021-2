@@ -1,13 +1,51 @@
+#xSectionHeader {
+  display: none;
+  background-color: $c-cafe;
+
+  #HeaderR1 {
+    position: fixed;
+    z-index: 3;
+    width: 70%;
+    left: 0;
+    top: 0;
+
+    .xCampaignHeader {
+      height: 100vh;
+      
+      ul.xNavMain li.xTab {
+        display: list-item;
+        margin: 0;
+
+        .xTabLink {
+          cursor: pointer;
+          font-size: 20px;
+          margin: 10px 0;
+          padding: 10px;
+          width: 100%;
+          text-align: left;
+
+          &::before {
+            content: '';
+
+          }
+        }
+      }
+    }
+  }
+}
+
 #xSectionDetails{
-    background: $c-naranja;
+    background: $c-azul-claro;
     position: relative;
+    min-height: 100vh;
+    height: 100%;
 
     &::before{
       content: ' ';
       position: absolute;
       top: 0;
       right: 0;
-      background: url(https://a.wayin.com/images/5365/26155350-a7a8-486a-a0cc-e0cad0ddc22e/fondo-golden.png) top center no-repeat;
+      // background: url(https://a.wayin.com/images/5365/26155350-a7a8-486a-a0cc-e0cad0ddc22e/fondo-golden.png) top center no-repeat;
       background-size: 100%;
       width: 100%;
       height: 100%;
@@ -30,36 +68,42 @@
             position: relative;
             text-shadow: 6px 6px 2px rgba(84, 84, 84, .9);
 
-            .prize-sign {
-                font-size: 2.5vw;
-                vertical-align: text-top;
-                margin-right: 20px;
+            &::before{
+              none-text-stroke: 1px $c-blanco;
             }
+
+            .prize-sign {
+                font-size: 35px;
+                margin-right: 10px;
+                -webkit-text-stroke: .09rem $c-blanco;
+                vertical-align: text-bottom;
+            }
+            
             .prize-number {
-                font-size: 4.5vw;
+              font-size: 60px;
                 text-shadow: 8px 8px 2px rgba(84, 84, 84, .9);
             }
+
             .prize-currency {
-                font-size: 1.1vw;
-                -webkit-text-stroke: 0;
-                position: absolute;
-                bottom: -10px;
-                right: 250px;
-                text-shadow: 1px 1px 10px $c-blanco, 0 0 20px $c-blanco, 0 0 10px $c-blanco;
+              font-size: 18px;
+              bottom: -15px;
+              text-shadow: 1px 1px 0px $c-blanco, 0 0 10px $c-blanco, 0 0 10px $c-blanco;
             }
-        }
+          }
+
         h2 {
-            text-shadow: 1px 1px 10px $c-blanco, 0 0 20px $c-blanco, 0 0 10px $c-blanco;
-            font-size: 2vw;
-            line-height: 0;
-            margin-bottom: 40px;
+          font-size: 30px;
+          line-height: 30px;
+          margin: 0 0 80px;
+          -webkit-text-stroke: 0.5px $c-blanco;
+          text-shadow: none;
         }
 
         .mecanica {
+          margin-top: 80px;
           .item {
             position: relative;
-            display: list-item;
-            font-size: 3vw;
+            font-size: 30px;
             .it {
               position: absolute;
               font-size: 1.5vw;
@@ -71,156 +115,8 @@
     }
 
     .xRowInner {
-      .xCell.n2 {
-        .xComponentInner {
-          .xMediaContainer.xRenderEmbed.xMediaImage {
-            img {
-              display: none;
-            }
-          }
-        }
-      }
-    }
-}
-
-
-@media only screen and (max-width: 1600px) {
-  #xSectionDetails{
-    .xComponentInner {
-      h1 {
-          font-size: 4.5vw;
-          -webkit-text-stroke: 2px $c-blanco;
-
-          .prize-sign {
-              font-size: 3vw;
-              margin-right: 20px;
-          }
-          .prize-number {
-              font-size: 6.5vw;
-          }
-          .prize-currency {
-              font-size: 2vw;
-              bottom: -10px;
-              right: 250px;
-              text-shadow: 1px 1px 10px $c-blanco, 0 0 20px $c-blanco, 0 0 10px $c-blanco;
-          }
-      }
-
-      h2 {
-          text-shadow: 1px 1px 10px $c-blanco, 0 0 20px $c-blanco, 0 0 10px $c-blanco;
-          font-size: 2.5vw;
-      }
-  }
-
-  }
-}
-
-@media only screen and (max-width: 1100px) {
-    #xSectionDetails{
-      .xComponentInner {
-        h1 {
-          font-size: 7vw;
-          -webkit-text-stroke: 2px $c-blanco;
-          .prize-sign {
-            font-size: 5vw;
-            margin-right: 15px;
-            -webkit-text-stroke: 1px $c-blanco;
-            vertical-align: text-top;
-          }
-          .prize-number {
-            font-size: 10vw;
-          }
-          .prize-currency {
-            font-size: 3vw;
-            font-weight: normal;
-            right: 3%;
-            bottom: -15px;
-            text-shadow: 1px 1px 0px $c-blanco, 0 0 10px $c-blanco, 0 0 10px $c-blanco;
-          }
-        }
-        h2 {
-          font-size: 5vw;
-          line-height: 0;
-          margin: 0 0 60px;
-          -webkit-text-stroke: 1px $c-blanco;
-          text-shadow: none;
-        }
-
-        .mecanica {
-          margin-top: -60px;
-          .item {
-            position: relative;
-            font-size: 4vw;
-            .it {
-              position: absolute;
-              right: 5%;
-              display: block;
-              text-align: right;
-              font-size: 2.5vw;
-              line-height: 5px;
-            }
-          }
-        }
-      }
-    }
-}
-
-@media only screen and (max-width: 600px) {
-    #xSectionDetails{
-        &::before{
-          top: 135px;
-          background: url(/images/monedas-movil.png) top center no-repeat;
-          background-size: 100%;
-        }
-
-        .xComponentInner {
-          h1 {
-            font-size: 40px;
-            -webkit-text-stroke: 1px $c-blanco;
-            .prize-sign {
-              font-size: 35px;
-              margin-right: 10px;
-              -webkit-text-stroke: .09rem $c-blanco;
-              vertical-align: text-bottom;
-            }
-            .prize-number {
-              font-size: 60px;
-            }
-            .prize-currency {
-              font-size: 18px;
-              font-weight: normal;
-              right: 10%;
-              bottom: -15px;
-              text-shadow: 1px 1px 0px $c-blanco, 0 0 10px $c-blanco, 0 0 10px $c-blanco;
-            }
-          }
-          h2 {
-            font-size: 30px;
-            line-height: 30px;
-            margin: 0 0 80px;
-            -webkit-text-stroke: 0.5px $c-blanco;
-            text-shadow: none;
-          }
-
-          .mecanica {
-            margin-top: 80px;
-            .item {
-              position: relative;
-              font-size: 30px;
-              .it {
-                position: absolute;
-                right: 5%;
-                display: block;
-                text-align: right;
-                font-size: 18px;
-                line-height: 0;
-              }
-            }
-          }
-        }
-
-      .xRowInner {
-        .xCell.n2 {
+      .xCell {
+        &.n2 {
           .xComponentInner {
             .xMediaContainer.xRenderEmbed.xMediaImage {
               img {
@@ -229,6 +125,24 @@
             }
           }
         }
+
+        &.mid {
+          width: 100%;
+        }
       }
     }
+}
+
+@media #{$grid-md} {
+  #xSectionHeader #HeaderR1 {
+    left: auto;
+    width: 50%;
+    right: 0;
   }
+
+  #xSectionDetails {
+    .xRowInner .xCell.mid {
+      width: 50%;
+    }
+  }
+}
