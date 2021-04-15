@@ -54,7 +54,7 @@
 				
 					
 					<div id="xSectionContent_html_1617831684867" data-ngx-id="html_1617831684867" data-componenttype="html" style="" class="xComponent xHtml n2 xFullColModule xTmpl-Default" data-registered="true">
-  <div class="xComponentInner"><h2>¿DÓNDE PUEDO PONERME EN CONTACTO?</h2> <h3>Mandarnos un WhatsApp:</h3> <a href="#"><img src="https://a.wayin.com/images/7461/aad27b26-bbfb-4ee0-a25c-0af2f3943dbc/400x400.png" alt="WhatsApp"></a> <h3>Puedes llamarnos al:</h3> <a href="#"><img src="https://a.wayin.com/images/7461/aad27b26-bbfb-4ee0-a25c-0af2f3943dbc/400x400.png" alt="Teléfono">(55) 52-81-86-11</a></div>
+  <div class="xComponentInner"><h2>¿DÓNDE PUEDO PONERME EN CONTACTO?</h2> <h3>Mandarnos un WhatsApp:</h3> <a href="#"><img src="https://a.wayin.com/images/7405/f7cdaa0a-93b7-47f6-8f9f-8723b19b8822/logo_whats.png" alt="WhatsApp"></a> <h3>Puedes llamarnos al:</h3> <a href="#"><img src="https://a.wayin.com/images/7405/f7cdaa0a-93b7-47f6-8f9f-8723b19b8822/logo_phone.png" alt="Teléfono">(55) 52-81-86-11</a></div>
 </div>
 					
 				 

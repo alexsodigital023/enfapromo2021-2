@@ -54,14 +54,14 @@
 					
 				
 					
-					<div id="xSectionPrizes_image_1617819409057" data-ngx-id="image_1617819409057" data-componenttype="image" style="" class="xComponent xImage n2 xMidColModule xTmpl-Item" data-registered="true">
+					<div id="xSectionPrizes_image_1617819409057" data-ngx-id="image_1617819409057" data-componenttype="image" style="" class="xComponent xImage n2 xMidColModule xStyle-default xTmpl-Item" data-registered="true">
   <div class="xComponentInner"><div class="xContainer xContainerImage xClassImage xTemplateItem hasItemMediacard xRenderExternal xItemCount1" data-ngx-contentsource="external">
   <div class="xContainerInner"><div class="xItem xContentImage xMediacard xClassImage xNetworkUgc xDisplayShow hasMainAsset">
   <div class="xItemInner">
 
 
 
-<div class="xMediaContainer xRenderEmbed xMediaImage"><img src="https://a.wayin.com/images/7461/aad27b26-bbfb-4ee0-a25c-0af2f3943dbc/650x650.png" class="" alt="" height="650" width="650"></div>
+<div class="xMediaContainer xRenderEmbed xMediaImage"><img src="https://a.wayin.com/images/7405/f7cdaa0a-93b7-47f6-8f9f-8723b19b8822/prize_money.png" class="" alt="" height="378" width="650"></div>
 
 
 
@@ -100,7 +100,7 @@
 				
 					
 					<div id="xSectionPrizes_html_1617819871260" data-ngx-id="html_1617819871260" data-componenttype="html" style="" class="xComponent xHtml n1 xMidColModule xTmpl-Default" data-registered="true">
-  <div class="xComponentInner"><h2>Premios Semanales:</h2> <h3>Premios de la semana 1 a la 9.</h3> <ul>   <li>     <img src="https://a.wayin.com/images/7461/aad27b26-bbfb-4ee0-a25c-0af2f3943dbc/150x150.png" alt="Monopatín Eléctrico">     <b>MONO PATÍN ELÉCTRICO</b>     <sub>1 por semana - 9 en total</sub>   </li>   <li>     <img src="https://a.wayin.com/images/7461/aad27b26-bbfb-4ee0-a25c-0af2f3943dbc/150x150.png" alt="Biciletas">     <b>BICICLETAS</b>     <sub>1 por semana - 9 en total</sub>   </li>   <li>     <img src="https://a.wayin.com/images/7461/aad27b26-bbfb-4ee0-a25c-0af2f3943dbc/150x150.png" alt="Videojuegos">     <b>VIDEOJUEGOS</b>     <sub>2 por semana - 18 en total</sub>   </li>   <li>     <img src="https://a.wayin.com/images/7461/aad27b26-bbfb-4ee0-a25c-0af2f3943dbc/150x150.png" alt="Xbox Series S">     <b>XBOX SERIES S</b>     <sub>1 por semana - 9 en total</sub>   </li>   <li>     <img src="https://a.wayin.com/images/7461/aad27b26-bbfb-4ee0-a25c-0af2f3943dbc/150x150.png" alt="Bocinas">     <b>BOCINAS</b>     <sub>2 por semana - 18 en total</sub>   </li>   <li>     <img src="https://a.wayin.com/images/7461/aad27b26-bbfb-4ee0-a25c-0af2f3943dbc/150x150.png" alt="Tabletas">     <b>Tabletas</b>     <sub>2 por semana - 18 en total</sub>   </li> </ul></div>
+  <div class="xComponentInner"><h2>Premios Semanales:</h2> <h3>Premios de la semana 1 a la 9.</h3> <ul>   <li>     <img src="https://a.wayin.com/images/7405/f7cdaa0a-93b7-47f6-8f9f-8723b19b8822/tmb_monopatin.png" alt="Monopatín Eléctrico">     <b>MONO PATÍN ELÉCTRICO</b>     <sub>1 por semana - 9 en total</sub>   </li>   <li>     <img src="https://a.wayin.com/images/7405/f7cdaa0a-93b7-47f6-8f9f-8723b19b8822/tmb_bicicleta.png" alt="Biciletas">     <b>BICICLETAS</b>     <sub>1 por semana - 9 en total</sub>   </li>   <li>     <img src="https://a.wayin.com/images/7405/f7cdaa0a-93b7-47f6-8f9f-8723b19b8822/tmb_videojuegos.png" alt="Videojuegos">     <b>VIDEOJUEGOS</b>     <sub>2 por semana - 18 en total</sub>   </li>   <li>     <img src="https://a.wayin.com/images/7405/f7cdaa0a-93b7-47f6-8f9f-8723b19b8822/tmb_xbox.png" alt="Xbox Series S">     <b>XBOX SERIES S</b>     <sub>1 por semana - 9 en total</sub>   </li>   <li>     <img src="https://a.wayin.com/images/7405/f7cdaa0a-93b7-47f6-8f9f-8723b19b8822/tmb_bocina.png" alt="Bocinas">     <b>BOCINAS</b>     <sub>2 por semana - 18 en total</sub>   </li>   <li>     <img src="https://a.wayin.com/images/7405/f7cdaa0a-93b7-47f6-8f9f-8723b19b8822/tmb_tabletas.png" alt="Tabletas">     <b>Tabletas</b>     <sub>2 por semana - 18 en total</sub>   </li> </ul></div>
 </div>
 					
 				 
@@ -123,14 +123,14 @@
 					
 				
 					
-					<div id="xSectionPrizes_image_1617831264664" data-ngx-id="image_1617831264664" data-componenttype="image" style="" class="xComponent xImage n2 xFullColModule xTmpl-Item" data-registered="true">
+					<div id="xSectionPrizes_image_1617831264664" data-ngx-id="image_1617831264664" data-componenttype="image" style="" class="xComponent xImage n2 xFullColModule xStyle-default xTmpl-Item" data-registered="true">
   <div class="xComponentInner"><div class="xContainer xContainerImage xClassImage xTemplateItem hasItemMediacard xRenderExternal xItemCount1" data-ngx-contentsource="external">
   <div class="xContainerInner"><div class="xItem xContentImage xMediacard xClassImage xNetworkUgc xDisplayShow hasMainAsset">
   <div class="xItemInner">
 
 
 
-<div class="xMediaContainer xRenderEmbed xMediaImage"><img src="https://a.wayin.com/images/7461/aad27b26-bbfb-4ee0-a25c-0af2f3943dbc/550x550.png" class="" alt="" height="550" width="550"></div>
+<div class="xMediaContainer xRenderEmbed xMediaImage"><img src="https://a.wayin.com/images/7405/f7cdaa0a-93b7-47f6-8f9f-8723b19b8822/modo_pantera.png" class="" alt="" height="423" width="450"></div>
 
 
 

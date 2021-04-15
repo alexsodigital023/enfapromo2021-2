@@ -59,14 +59,14 @@
   <div class="xCellInner">
 				
 					
-					<div id="xSectionContent1_image_1617832611836" data-ngx-id="image_1617832611836" data-componenttype="image" style="" class="xComponent xImage n1 xMidColModule xTmpl-Item" data-registered="true">
+					<div id="xSectionContent1_image_1617832611836" data-ngx-id="image_1617832611836" data-componenttype="image" style="" class="xComponent xImage n1 xMidColModule xStyle-default xTmpl-Item" data-registered="true">
   <div class="xComponentInner"><div class="xContainer xContainerImage xClassImage xTemplateItem hasItemMediacard xRenderExternal xItemCount1" data-ngx-contentsource="external">
   <div class="xContainerInner"><div class="xItem xContentImage xMediacard xClassImage xNetworkUgc xDisplayShow hasMainAsset">
   <div class="xItemInner">
 
 
 
-<div class="xMediaContainer xRenderEmbed xMediaImage"><img src="https://a.wayin.com/images/7461/aad27b26-bbfb-4ee0-a25c-0af2f3943dbc/600x600.png" class="" alt="" height="600" width="600"></div>
+<div class="xMediaContainer xRenderEmbed xMediaImage"><img src="https://a.wayin.com/images/7405/f7cdaa0a-93b7-47f6-8f9f-8723b19b8822/pancho.png" class="" alt="" height="978" width="600"></div>
 
 
 
@@ -123,7 +123,7 @@
 
 
 
-<div class="xMediaContainer xRenderEmbed xMediaImage"><img src="https://a.wayin.com/images/7461/aad27b26-bbfb-4ee0-a25c-0af2f3943dbc/400x400.png" class="" alt="" height="400" width="400"></div>
+<div class="xMediaContainer xRenderEmbed xMediaImage"><img src="https://a.wayin.com/images/7405/f7cdaa0a-93b7-47f6-8f9f-8723b19b8822/400x400.png" class="" alt="" height="400" width="400"></div>
 
 
 
@@ -156,7 +156,7 @@
 
 
 
-<div class="xMediaContainer xRenderEmbed xMediaImage"><img src="https://a.wayin.com/images/7461/aad27b26-bbfb-4ee0-a25c-0af2f3943dbc/400x400.png" class="" alt="" height="400" width="400"></div>
+<div class="xMediaContainer xRenderEmbed xMediaImage"><img src="https://a.wayin.com/images/7405/f7cdaa0a-93b7-47f6-8f9f-8723b19b8822/400x400.png" class="" alt="" height="400" width="400"></div>
 
 
 
@@ -189,7 +189,7 @@
 
 
 
-<div class="xMediaContainer xRenderEmbed xMediaImage"><img src="https://a.wayin.com/images/7461/aad27b26-bbfb-4ee0-a25c-0af2f3943dbc/400x400.png" class="" alt="" height="400" width="400"></div>
+<div class="xMediaContainer xRenderEmbed xMediaImage"><img src="https://a.wayin.com/images/7405/f7cdaa0a-93b7-47f6-8f9f-8723b19b8822/400x400.png" class="" alt="" height="400" width="400"></div>
 
 
 
@@ -222,7 +222,7 @@
 
 
 
-<div class="xMediaContainer xRenderEmbed xMediaImage"><img src="https://a.wayin.com/images/7461/aad27b26-bbfb-4ee0-a25c-0af2f3943dbc/400x400.png" class="" alt="" height="400" width="400"></div>
+<div class="xMediaContainer xRenderEmbed xMediaImage"><img src="https://a.wayin.com/images/7405/f7cdaa0a-93b7-47f6-8f9f-8723b19b8822/400x400.png" class="" alt="" height="400" width="400"></div>
 
 
 
@@ -272,14 +272,14 @@
   <div class="xCellInner">
 				
 					
-					<div id="xSectionContent1_image_1617832925362" data-ngx-id="image_1617832925362" data-componenttype="image" style="" class="xComponent xImage n1 xMidColModule xTmpl-Item" data-registered="true">
+					<div id="xSectionContent1_image_1617832925362" data-ngx-id="image_1617832925362" data-componenttype="image" style="" class="xComponent xImage n1 xMidColModule xStyle-default xTmpl-Item" data-registered="true">
   <div class="xComponentInner"><div class="xContainer xContainerImage xClassImage xTemplateItem hasItemMediacard xRenderExternal xItemCount1" data-ngx-contentsource="external">
   <div class="xContainerInner"><div class="xItem xContentImage xMediacard xClassImage xNetworkUgc xDisplayShow hasMainAsset">
   <div class="xItemInner">
 
 
 
-<div class="xMediaContainer xRenderEmbed xMediaImage"><img src="https://a.wayin.com/images/7461/aad27b26-bbfb-4ee0-a25c-0af2f3943dbc/600x600.png" class="" alt="" height="600" width="600"></div>
+<div class="xMediaContainer xRenderEmbed xMediaImage"><img src="https://a.wayin.com/images/7405/f7cdaa0a-93b7-47f6-8f9f-8723b19b8822/premios.png" class="" alt="" height="298" width="600"></div>
 
 
 
@@ -329,14 +329,14 @@
   <div class="xCellInner">
 				
 					
-					<div id="xSectionContent1_image_1617833088596" data-ngx-id="image_1617833088596" data-componenttype="image" style="" class="xComponent xImage n1 xThirdColModule xTmpl-Item" data-registered="true">
+					<div id="xSectionContent1_image_1617833088596" data-ngx-id="image_1617833088596" data-componenttype="image" style="" class="xComponent xImage n1 xThirdColModule xStyle-default xTmpl-Item" data-registered="true">
   <div class="xComponentInner"><div class="xContainer xContainerImage xClassImage xTemplateItem hasItemMediacard xRenderExternal xItemCount1" data-ngx-contentsource="external">
   <div class="xContainerInner"><div class="xItem xContentImage xMediacard xClassImage xNetworkUgc xDisplayShow hasMainAsset">
   <div class="xItemInner">
 
 
 
-<div class="xMediaContainer xRenderEmbed xMediaImage"><img src="https://a.wayin.com/images/7461/aad27b26-bbfb-4ee0-a25c-0af2f3943dbc/550x550.png" class="" alt="" height="550" width="550"></div>
+<div class="xMediaContainer xRenderEmbed xMediaImage"><img src="https://a.wayin.com/images/7405/f7cdaa0a-93b7-47f6-8f9f-8723b19b8822/prize_money.png" class="" alt="" height="378" width="650"></div>
 
 
 
