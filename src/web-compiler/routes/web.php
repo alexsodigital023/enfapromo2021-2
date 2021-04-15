@@ -40,3 +40,7 @@ Route::get('/semanales.html', function () {
 Route::get('/tyc.html', function () {
     return view('tyc');
 })->name("tyc");
+
+Route::get('/thankyou.html', function () {
+    return view('thankyou');
+})->name("thankyou");

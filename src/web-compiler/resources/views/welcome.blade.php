@@ -12,18 +12,18 @@
 	<div class="xRow xRow-2col_mid_mid n1 odd first" id="xSectionDetailsR1">
   <div class="xRowInner">
 		
-			<div class="xCell n1 first mid xModuleImage" id="xSectionDetailsR1C1">
+			<div class="xCell n1 first mid xModuleImage xCustomCell-feature-image-left" id="xSectionDetailsR1C1">
   <div class="xCellInner">
 				
 					
-					<div id="xSectionDetails_image_1618263402164" data-ngx-id="image_1618263402164" data-componenttype="image" style="" class="xComponent xImage n1 xMidColModule xTmpl-Item" data-registered="true">
+					<div id="xSectionDetails_image_1618263402164" data-ngx-id="image_1618263402164" data-componenttype="image" style="" class="xComponent xImage n1 xMidColModule xCustom-featureimageleft xCustomModule-feature-image-left xStyle-default xTmpl-Item" data-registered="true">
   <div class="xComponentInner"><div class="xContainer xContainerImage xClassImage xTemplateItem hasItemMediacard xRenderExternal xItemCount1" data-ngx-contentsource="external">
   <div class="xContainerInner"><div class="xItem xContentImage xMediacard xClassImage xNetworkUgc xDisplayShow hasMainAsset">
   <div class="xItemInner">
 
 
 
-<div class="xMediaContainer xRenderEmbed xMediaImage"><img src="https://a.wayin.com/images/7461/aad27b26-bbfb-4ee0-a25c-0af2f3943dbc/600x600.png" class="" alt="" height="600" width="600"></div>
+<div class="xMediaContainer xRenderEmbed xMediaImage"><img src="https://a.wayin.com/images/7405/f7cdaa0a-93b7-47f6-8f9f-8723b19b8822/game-feature-left.png" class="" alt="" height="1038" width="618"></div>
 
 
 
@@ -75,17 +75,17 @@
 
 
     <div class="xFormContainer"><form enctype="multipart/form-data" method="post" action="https://eu-api.wayin.com/api/interact/d/record" id="xCampaignForm" style="" role="form" data-ngx-method="ajax" class="xDefaultForm" novalidate="novalidate" data-flow="1">
-  <div class="xFormPages" style="position: relative; height: 462px;">
-<input type="hidden" name="apikey" value="d974e77d-3d7e-4bf2-a3de-096db68ebda8" id="apikey">
+  <div class="xFormPages" style="position: relative; height: 587px;">
+<input type="hidden" name="apikey" value="7c606ec2-435f-4eb4-a0fa-c852c5e0006c" id="apikey">
 <input type="hidden" name="containerId" value="" id="containerId">
-<input type="hidden" name="formId" value="306215" id="formId">
-<input type="hidden" name="campaignId" value="235013" id="campaignId">
-<input type="hidden" name="container_guid" value="aad27b26-bbfb-4ee0-a25c-0af2f3943dbc" id="container_guid">
+<input type="hidden" name="formId" value="308335" id="formId">
+<input type="hidden" name="campaignId" value="236633" id="campaignId">
+<input type="hidden" name="container_guid" value="f7cdaa0a-93b7-47f6-8f9f-8723b19b8822" id="container_guid">
 <input type="hidden" name="mode" value="" id="mode">
 
 
 	<input type="hidden" name="stageMode" value="true" id="stageMode">
-	<input type="hidden" name="ptk" value="3d7dd676366cab285048d29824f31d64" id="stageToken">
+	<input type="hidden" name="ptk" value="46c460b119437c508f3d50ea6da7b973" id="stageToken">
 
 
 <input type="hidden" name="promotionId" value="" id="promotionId">
@@ -116,7 +116,28 @@
 
 
 
-<input type="hidden" name="ngx_t_token" value="Myvsj2UIK3IbKVYYO+ZmqM0QTUF+e/w8l4keJwH5iJc=" id="ngx_t_token"><div class="xFormPage first odd n1  cycle-slide cycle-slide-active" style="position: absolute; top: 0px; left: 0px; z-index: 100; opacity: 1;">
+	<!-- rendering hidden fields in new one -->
+	
+		<input type="hidden" name="AccountSourceCode" value="" id="AccountSourceCode" class="hidden">
+	
+		<input type="hidden" name="lds_url_01" value="" id="lds_url_01" class="hidden">
+	
+		<input type="hidden" name="lds_url_01_MandatoryInd" value="" id="lds_url_01_MandatoryInd" class="hidden">
+	
+		<input type="hidden" name="lds_url_01_ConsentDesc" value="" id="lds_url_01_ConsentDesc" class="hidden">
+	
+		<input type="hidden" name="lds_url_02" value="" id="lds_url_02" class="hidden">
+	
+		<input type="hidden" name="lds_url_02_MandatoryInd" value="" id="lds_url_02_MandatoryInd" class="hidden">
+	
+		<input type="hidden" name="lds_url_02_ConsentDesc" value="" id="lds_url_02_ConsentDesc" class="hidden">
+	
+		<input type="hidden" name="game_t" value="" id="game_t" class="hidden">
+	
+		<input type="hidden" name="game_m" value="" id="game_m" class="hidden">
+	
+
+<input type="hidden" name="ngx_t_token" value="Mna8WjYNXCcaYU7Igf1/9pmXZ+Y71X26RePrOBJu/cs=" id="ngx_t_token"><div class="xFormPage first odd n1  cycle-slide cycle-slide-active" style="position: absolute; top: 0px; left: 0px; z-index: 100; opacity: 1;">
 	<fieldset>
 
 		
@@ -170,28 +191,34 @@
   </div>
 </div>
 		
-			<div id="terms_and_conditionsWrapper" data-ngx-id="terms_and_conditions" data-ngx-control-required-msg="Para participar debes aceptar los términos y condiciones" data-parsley-error-container="#terms_and_conditionsWrapper .xErrorLabel" data-ngx-control-error-msg="Invalid error" class="xFieldItem xControlTerms_and_conditions xRequired">
-  <div class="xFieldContainer"><div class="xField xFieldCheckboxChoice">
-<div class="xCheckbox" id="xForm-tsandcs_check"><span><input type="checkbox" id="tsandcs_check" title="" class="checkField parsley-validated" name="terms_and_conditions" value="Acepto los [Link:Terms and Conditions]." tabindex="0" data-parsley-required="true" data-parsley-error-container="#terms_and_conditionsWrapper .xErrorLabel" data-parsley-trigger="change" data-parsley-mincheck="1" required="required" data-parsley-required-message="Para participar debes aceptar los términos y condiciones" data-ngx-api-bound="true"></span></div>
-<label class="xFormLabel xFieldLabel xTermsAndConditionsLabel" for="tsandcs_check">Acepto los <a id="" href="#" data-ngx-action="route:rules" rel="" class="" target="_blank" role="button">Terms and Conditions</a>.</label>
+			<div id="lds_url_01_ConsentAcceptedWrapper" data-ngx-id="lds_url_01_ConsentAccepted" data-ngx-control-error-msg="Invalid error" data-parsley-error-container="#lds_url_01_ConsentAcceptedWrapper .xErrorLabel" class="xFieldItem xControlCheckbox"><div class="xLabelContainer">
+  <label class="xFormLabel xControlLabel" for="lds_url_01_ConsentAccepted"></label>
+</div>
+  <div class="xFieldContainer xFieldWidthMedium"><div class="xField xFieldCheckboxChoice">
+  <div class="xCheckbox" id="xForm-lds_url_01_ConsentAccepted_0"><span><input type="checkbox" title="" class="checkField" name="lds_url_01_ConsentAccepted[]" id="lds_url_01_ConsentAccepted_0" value="acepto_los_tcs" autocomplete="off" data-parsley-trigger="change focusout" data-parsley-validation-minlength="0" data-parsley-error-container="#lds_url_01_ConsentAcceptedWrapper .xErrorLabel" data-parsley-required-message="Select an option." data-parsley-type-text-message="Invalid error" data-ngx-api-bound="true"></span></div>
+  <label class="xFormLabel xFieldLabel" for="lds_url_01_ConsentAccepted_0">Acepto los T&amp;cs</label>
 </div>
     <div class="xHelpContainer"><div role="alert" class="xErrorLabel"></div></div>
   </div>
 </div>
 		
-			<div id="brand_opt_inWrapper" data-ngx-id="brand_opt_in" data-ngx-control-error-msg="Invalid error" data-parsley-error-container="#brand_opt_inWrapper .xErrorLabel" class="xFieldItem xControlMarketing xProfileMarketingOptIn">
-  <div style="" class="xFieldContainer"><div class="xField xFieldCheckboxChoice">
-  <div class="xCheckbox" id="xForm-brand_opt_in_check"><span><input type="checkbox" id="brand_opt_in_check" title="Acepto la <a href=&quot;#&quot;>Política de Privacidad</a>" value="Acepto la <a href=&quot;#&quot;>Política de Privacidad</a>" class="checkField" autocomplete="off" name="brand_opt_in" data-group="brand_opt_in_check" data-ngx-api-bound="true"></span></div>
-  <label class="xFormLabel xFieldLabel" for="brand_opt_in_check">Acepto la <a href="#">Política de Privacidad</a></label>
+			<div id="lds_url_02_ConsentAcceptedWrapper" data-ngx-id="lds_url_02_ConsentAccepted" data-ngx-control-error-msg="Invalid error" data-parsley-error-container="#lds_url_02_ConsentAcceptedWrapper .xErrorLabel" class="xFieldItem xControlCheckbox"><div class="xLabelContainer">
+  <label class="xFormLabel xControlLabel" for="lds_url_02_ConsentAccepted"></label>
+</div>
+  <div class="xFieldContainer xFieldWidthMedium"><div class="xField xFieldCheckboxChoice">
+  <div class="xCheckbox" id="xForm-lds_url_02_ConsentAccepted_0"><span><input type="checkbox" title="" class="checkField" name="lds_url_02_ConsentAccepted[]" id="lds_url_02_ConsentAccepted_0" value="acepto_la_política_de_privacidad" autocomplete="off" data-parsley-trigger="change focusout" data-parsley-validation-minlength="0" data-parsley-error-container="#lds_url_02_ConsentAcceptedWrapper .xErrorLabel" data-parsley-required-message="Select an option." data-parsley-type-text-message="Invalid error" data-ngx-api-bound="true"></span></div>
+  <label class="xFormLabel xFieldLabel" for="lds_url_02_ConsentAccepted_0">Acepto la <a href="#">Política de Privacidad</a></label>
 </div>
     <div class="xHelpContainer"><div role="alert" class="xErrorLabel"></div></div>
   </div>
 </div>
 		
-			<div id="group_opt_inWrapper" data-ngx-id="group_opt_in" data-ngx-control-error-msg="Invalid error" data-parsley-error-container="#group_opt_inWrapper .xErrorLabel" class="xFieldItem xControlMarketing xProfileMarketingOptIn">
-  <div style="" class="xFieldContainer"><div class="xField xFieldCheckboxChoice">
-  <div class="xCheckbox" id="xForm-group_opt_in_check"><span><input type="checkbox" id="group_opt_in_check" title="Soy mayor de edad" value="Soy mayor de edad" class="checkField" autocomplete="off" name="group_opt_in" data-group="group_opt_in_check" data-ngx-api-bound="true"></span></div>
-  <label class="xFormLabel xFieldLabel" for="group_opt_in_check">Soy mayor de edad</label>
+			<div id="age_verificationWrapper" data-ngx-id="age_verification" data-ngx-control-error-msg="Invalid error" data-parsley-error-container="#age_verificationWrapper .xErrorLabel" class="xFieldItem xControlCheckbox"><div class="xLabelContainer">
+  <label class="xFormLabel xControlLabel" for="age_verification"></label>
+</div>
+  <div class="xFieldContainer xFieldWidthMedium"><div class="xField xFieldCheckboxChoice">
+  <div class="xCheckbox" id="xForm-age_verification_0"><span><input type="checkbox" title="" class="checkField" name="age_verification[]" id="age_verification_0" value="age_verification" autocomplete="off" data-parsley-trigger="change focusout" data-parsley-validation-minlength="0" data-parsley-error-container="#age_verificationWrapper .xErrorLabel" data-parsley-required-message="Select an option." data-parsley-type-text-message="Invalid error" data-ngx-api-bound="true"></span></div>
+  <label class="xFormLabel xFieldLabel" for="age_verification_0">age verification</label>
 </div>
     <div class="xHelpContainer"><div role="alert" class="xErrorLabel"></div></div>
   </div>
@@ -199,7 +226,7 @@
 			<!-- EOF: Page Control Loop //-->
 
 	</fieldset>
-</div><div class="xFormPage last even n2  cycle-slide" style="position: absolute; top: 0px; left: 0px; z-index: 99; display: none;">
+</div><div class="xFormPage even n2  cycle-slide" style="position: absolute; top: 0px; left: 0px; z-index: 99; display: none;">
 	<fieldset>
 
 		
@@ -211,6 +238,20 @@
   <div class="xFieldContainer xFieldWidthMedium">
     <div class="xField"><div class="xUploader" id="xForm-ngxUserUpload"><input type="file" id="ngxUserUpload" name="ngxUserUpload" title="Subir Ticket:" data-parsley-fileupload-message="There is a problem with the size or format of your photo." accept="image/*" data-ngx-type="image" data-ngx-maxsize="5242880" placeholder="Escoge una foto" data-parsley-trigger="" data-parsley-validation-minlength="0" data-parsley-error-container="#ngxUserUploadWrapper .xErrorLabel" data-parsley-required="true" data-parsley-required-message="Required." data-parsley-type-text-message="Invalid error" data-parsley-value="" data-parsley-fileupload="true" required="" class="uploadField xTypeImage required parsley-validated" data-ngx-api-bound="true"><span class="xFilename" style="user-select: none;">Escoge una foto</span><span class="xFileAction" style="user-select: none;">Choose File</span></div></div>
     <div class="xHelpContainer"><p class="xHelpLabel">Toma una foto de tu ticket completo. Máximo 5Mb</p><div role="alert" class="xErrorLabel"></div></div>
+  </div>
+</div>
+			<!-- EOF: Page Control Loop //-->
+
+	</fieldset>
+</div><div class="xFormPage last odd n3  cycle-slide" style="position: absolute; top: 0px; left: 0px; z-index: 97; display: none;">
+	<fieldset>
+
+		
+
+		
+			<div id="html_1618406947842Wrapper" data-ngx-id="" data-ngx-control-error-msg="Invalid error" data-parsley-error-container="#html_1618406947842Wrapper .xErrorLabel" class="xFieldItem xControlHtml">
+  <div style="" class="xFieldContainer"><div id="puzzleApp"></div>
+    <div class="xHelpContainer"><div role="alert" class="xErrorLabel"></div></div>
   </div>
 </div>
 			<!-- EOF: Page Control Loop //-->
