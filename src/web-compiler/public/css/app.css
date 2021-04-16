@@ -4581,7 +4581,7 @@ body {
 }
 
 .xPage {
-  max-width: 1600px;
+  width: 100%;
 }
 
 #xSectionDetails .xForm {
@@ -5547,8 +5547,6 @@ nav ul {
 
 #xSectionHeader {
   background-color: #3c1b1a;
-  height: 100%;
-  width: 70%;
   z-index: 4;
   left: 0;
   top: 0;
@@ -5578,7 +5576,7 @@ nav ul {
   min-height: 95vh;
   background: url(/images/background_blue_mob_2.jpg?3c87b240131ef76596f1dd208f59b13b);
   background-position-x: center;
-  background-position-y: top;
+  background-position-y: -50px;
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -5662,9 +5660,12 @@ nav ul {
 
 @media screen and (min-width: 768px) {
   #xSectionHeader {
-    width: 50%;
     left: auto;
     right: 0;
+  }
+
+  #xSectionDetails .xRowInner .xCell.mid {
+    width: 50%;
   }
 }
 
