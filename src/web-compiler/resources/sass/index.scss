@@ -1,13 +1,21 @@
 nav ul {
   background-color: $c-cafe-oscuro;
   color: $c-blanco;
+  list-style: none;
+  padding: 25px;
+  height: 83px;
+
+  >div {
+    display: inline-block;
+    cursor: pointer;
+  }
 }
 
 #xSectionHeader {
   background-color: $c-cafe-oscuro;
-  // position: fixed;
-  // height: 100%;
-  // width: 70%;
+  position: fixed;
+  height: 100%;
+  width: 70%;
   z-index: 4;
   left: 0;
   top: 0;
@@ -23,6 +31,7 @@ nav ul {
 
       .xTabLink {
         cursor: pointer;
+        width: 100%;
 
         &::before {
           content: '';
@@ -132,10 +141,16 @@ nav ul {
 
 
 @media #{$grid-md} {
+  nav ul {
+    display: flex;
+    justify-content: flex-end;
+  }
+
   #xSectionHeader {
-    // width: 50%;
+    width: 50%;
     left: auto;
     right: 0;
+    padding-top: 125px;
   }
 
   #xSectionDetails .xRowInner .xCell.mid {
