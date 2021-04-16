@@ -4573,9 +4573,15 @@ readers do not read off random characters that represent icons */
 .fas {
   font-family: 'Font Awesome 5 Free';
   font-weight: 900; }
+@charset "UTF-8";
+
 body {
   background: #0A59A2;
   color: #fff;
+}
+
+.xPage {
+  max-width: 1600px;
 }
 
 #xSectionDetails .xForm {
@@ -4724,21 +4730,21 @@ body {
   border-bottom: 3px solid #fff;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 576px) {
   #xSectionDetails .xMediaContainer img {
     max-width: -webkit-fill-available;
   }
 
   #xSectionDetails #xSectionDetailsR1C1.xModuleImage {
-    transform: translateY(25%);
-  }
-
-  .ticketFormContainer {
-    transform: translateY(33%);
+    transform: translateY(10%);
   }
 
   .ticketFormContainer .xFormPages {
-    margin: 0 25%;
+    width: auto !important;
+  }
+
+  .ticketFormContainer .xFormPages .xFormPage {
+    position: initial !important;
   }
 
   .ticketFormContainer .xActionsForm {
@@ -4752,24 +4758,103 @@ body {
   }
 }
 
+@media screen and (min-width: 768px) {
+  #xSectionDetails #xSectionDetailsR1C1.xModuleImage {
+    transform: translateY(5%);
+  }
+
+  .ticketFormContainer {
+    transform: translateY(15%);
+  }
+
+  .ticketFormContainer .xFormPages {
+    margin: 0 25%;
+  }
+}
+
+.xSectionPrizes {
+  text-align: center;
+  background: url(/images/background_blue.jpg?97f7f7b85bcb167b4da023873be77335);
+  background-position-x: 35%;
+  background-position-y: top;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 .xSectionPrizes .xTitle,
 .xSectionPrizes h2 {
-  background: -webkit-linear-gradient(#AC8833, #EAD23D);
+  background: -webkit-linear-gradient(#EAD23D 40%, #F4A91D 60%);
   -webkit-text-fill-color: transparent;
-  text-shadow: 0px 0px 20px #7c7c7c91;
-  -webkit-text-stroke: 3px #0A59A2;
+  -webkit-text-stroke: 2px #000;
   -webkit-background-clip: text;
   text-align: center;
   color: #EAD23D;
   font-weight: bold;
-  font-size: 40px;
-  margin: 0;
+  font-size: 10vw;
+  margin: 0 auto 25px auto;
+  font-family: Gotham Italic;
+  line-height: 1.16;
+  letter-spacing: 1px;
+}
+
+.xSectionPrizes h2 {
+  line-height: 1;
 }
 
 .xSectionPrizes h3 {
   text-align: center;
   font-weight: bold;
   margin: 0;
+  font-size: 1em;
+}
+
+.xSectionPrizes sub {
+  display: block;
+  -webkit-text-stroke: 0;
+  -webkit-text-fill-color: #fff;
+}
+
+.xSectionPrizes ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.xSectionPrizes ul li {
+  display: grid;
+  margin: 15px 0;
+  grid-gap: 0 10px;
+  flex-basis: 100%;
+  grid-template-columns: 40% 60%;
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-areas: "img title" "img desc";
+}
+
+.xSectionPrizes ul li img {
+  grid-area: img;
+  margin: auto;
+}
+
+.xSectionPrizes ul li b {
+  grid-area: title;
+  justify-self: start;
+  align-self: end;
+  background: -webkit-linear-gradient(#AC8833, #EAD23D);
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0px 0px 15px #7c7c7c91;
+  -webkit-background-clip: text;
+  -webkit-text-stroke: 0;
+  color: #AC8833;
+}
+
+.xSectionPrizes ul li sub {
+  grid-area: desc;
+  line-height: 1.5;
+  align-self: start;
+  justify-self: start;
+  font-size: 15px;
+  text-shadow: 0px 0px 15px #7c7c7c91;
 }
 
 .xSectionPrizes #xSectionPrizesR1C1 {
@@ -4783,16 +4868,16 @@ body {
 .xSectionPrizes #xSectionPrizesR1C1 .xMediaContainer img {
   width: 60%;
   margin: auto;
+  position: relative;
 }
 
 .xSectionPrizes #xSectionPrizesR1C1 .xMediaContainer::before {
   position: absolute;
   top: 0;
-  left: 19vw;
-  z-index: -1;
+  left: 30vw;
   content: "";
-  width: 62vw;
-  height: 62vw;
+  width: 40vw;
+  height: 40vw;
   display: block;
   border-radius: 100%;
   border: 6px solid #AC8833;
@@ -4821,44 +4906,21 @@ body {
   width: 100%;
 }
 
-.xSectionPrizes h3 {
-  font-size: 1em;
+.xSectionPrizes #xSectionPrizesR2C1 .xFullColModule.xImage img {
+  width: 50%;
 }
 
-.xSectionPrizes sub {
-  display: block;
-  -webkit-text-stroke: 0;
-  -webkit-text-fill-color: #fff;
-}
-
-.xSectionPrizes ul {
-  list-style: none;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.xSectionPrizes ul li {
-  display: grid;
-  margin: 15px 0;
-  grid-gap: 0 10px;
-  flex-basis: 100%;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(2, 1fr);
-  grid-template-areas: "img title" "img desc";
-}
-
-.xSectionPrizes ul li img {
+.xSectionPrizes #xSectionPrizesR2C1 ul li img {
   grid-area: img;
   width: 65%;
   margin: auto;
 }
 
-.xSectionPrizes ul li::before {
+.xSectionPrizes #xSectionPrizesR2C1 ul li::before {
   grid-area: img;
   content: "";
-  width: 135px;
-  height: 135px;
+  width: 30vw;
+  height: 30vw;
   margin: auto;
   display: block;
   border-radius: 100%;
@@ -4866,46 +4928,65 @@ body {
   background-color: #fff;
 }
 
-.xSectionPrizes ul li b {
-  grid-area: title;
-  justify-self: start;
-  align-self: end;
-  background: -webkit-linear-gradient(#AC8833, #EAD23D);
-  -webkit-text-fill-color: transparent;
-  text-shadow: 0px 0px 15px #7c7c7c91;
-  -webkit-background-clip: text;
-  -webkit-text-stroke: 0;
-  color: #AC8833;
-}
-
-.xSectionPrizes ul li sub {
-  grid-area: desc;
-  line-height: 1.5;
-  align-self: start;
-  justify-self: start;
-  font-size: 15px;
-  text-shadow: 0px 0px 15px #7c7c7c91;
+@media screen and (min-width: 480px) {
+  .xSectionPrizes .xTitle,
+  .xSectionPrizes h2 {
+    -webkit-text-stroke: 3px #000;
+  }
 }
 
 @media screen and (min-width: 576px) {
+  .xSectionPrizes .xTitle,
+  .xSectionPrizes h2 {
+    -webkit-text-stroke: 4px #000;
+  }
+
   .xSectionPrizes ul li {
-    flex-basis: 48%;
+    flex-basis: 45%;
     margin: 15px auto;
+  }
+
+  .xSectionPrizes #xSectionPrizesR2C1 .xFullColModule.xImage img {
+    width: 200px;
+  }
+
+  .xSectionPrizes #xSectionPrizesR2C1 ul li::before {
+    width: 16vw;
+    height: 16vw;
   }
 }
 
 @media screen and (min-width: 768px) {
-  .xSectionPrizes #xSectionPrizesR2C1 li {
-    flex-basis: 33.33%;
+  .xSectionPrizes .xTitle,
+  .xSectionPrizes h2 {
+    -webkit-text-stroke: 5px #000;
   }
 
-  .xSectionPrizes ul li::before {
-    width: 100px;
-    height: 100px;
+  .xSectionPrizes #xSectionPrizesR2C1 h2 {
+    max-width: 500px;
+  }
+
+  .xSectionPrizes #xSectionPrizesR2C1 ul li {
+    flex-basis: 30%;
+  }
+
+  .xSectionPrizes #xSectionPrizesR2C1 ul li::before {
+    width: 12vw;
+    height: 12vw;
   }
 }
 
 @media screen and (min-width: 992px) {
+  .xSectionPrizes {
+    background-position-x: left;
+  }
+
+  .xSectionPrizes .xTitle,
+  .xSectionPrizes h2 {
+    -webkit-text-stroke: 3.5px #000;
+    font-size: 5.5vw;
+  }
+
   .xSectionPrizes #xSectionPrizesR1 .xRowInner {
     display: grid;
     grid-template-columns: 50% 50%;
@@ -4918,9 +4999,9 @@ body {
   }
 
   .xSectionPrizes #xSectionPrizesR1 .xRowInner #xSectionPrizesR1C1 .xMediaContainer::before {
-    left: 8.8vw;
-    width: 29.5vw;
-    height: 29.5vw;
+    left: 15vw;
+    width: 19vw;
+    height: 19vw;
   }
 
   .xSectionPrizes #xSectionPrizesR1 .xRowInner #xSectionPrizesR1C2 {
@@ -4933,29 +5014,33 @@ body {
     display: none;
   }
 
-  .xSectionPrizes ul li::before {
-    width: 85px;
-    height: 85px;
+  .xSectionPrizes #xSectionPrizesR2C1 ul li::before {
+    width: 8vw;
+    height: 8vw;
   }
 }
 
 @media screen and (min-width: 1200px) {
-  .xSectionPrizes #xSectionPrizesR1 .xRowInner #xSectionPrizesR1C1 .xMediaContainer::before {
-    left: 20%;
-    width: 370px;
-    height: 370px;
-  }
-
-  .xSectionPrizes ul li::before {
+  .xSectionPrizes #xSectionPrizesR2C1 ul li::before {
     width: 140px;
     height: 140px;
   }
 }
 
 @media screen and (min-width: 1600px) {
-  .xSectionPrizes ul li::before {
-    width: 160px;
-    height: 160px;
+  .xSectionPrizes .xTitle,
+  .xSectionPrizes h2 {
+    font-size: 90px;
+  }
+
+  .xSectionPrizes #xSectionPrizesR1 .xRowInner #xSectionPrizesR1C1 .xMediaContainer::before {
+    left: 30%;
+    width: 300px;
+    height: 300px;
+  }
+
+  .xSectionPrizes #xSectionPrizesR2C1 .xFullColModule.xImage img {
+    width: 250px;
   }
 }
 
@@ -5080,24 +5165,129 @@ body {
   margin: 2%;
 }
 
+.Content1 #xSectionContent1R2 .xRowInner #xSectionContent1R2C2 .xCellInner .xImage .xItemInner,
+.Content1 #xSectionContent1R3 .xRowInner #xSectionContent1R2C2 .xCellInner .xImage .xItemInner,
+.Content1 #xSectionContent1R4 .xRowInner #xSectionContent1R2C2 .xCellInner .xImage .xItemInner {
+  overflow: unset;
+}
+
+.Content1 #xSectionContent1R2 .xRowInner #xSectionContent1R2C2 .xCellInner .xImage .xItemInner .xMediaImage,
+.Content1 #xSectionContent1R3 .xRowInner #xSectionContent1R2C2 .xCellInner .xImage .xItemInner .xMediaImage,
+.Content1 #xSectionContent1R4 .xRowInner #xSectionContent1R2C2 .xCellInner .xImage .xItemInner .xMediaImage {
+  position: relative;
+}
+
+.Content1 #xSectionContent1R2 .xRowInner #xSectionContent1R2C2 .xCellInner .xImage .xItemInner .xMediaImage::before,
+.Content1 #xSectionContent1R3 .xRowInner #xSectionContent1R2C2 .xCellInner .xImage .xItemInner .xMediaImage::before,
+.Content1 #xSectionContent1R4 .xRowInner #xSectionContent1R2C2 .xCellInner .xImage .xItemInner .xMediaImage::before {
+  content: "C" "\D3" "DIGOS ELECTR\D3NICOS";
+  position: absolute;
+  left: 6%;
+  top: 33%;
+  z-index: 1;
+  font-size: 11px;
+  text-align: center;
+  transform: rotate(345deg);
+}
+
+.Content1 #xSectionContent1R2 .xRowInner #xSectionContent1R2C2 .xCellInner .xImage .xItemInner .xMediaImage::after,
+.Content1 #xSectionContent1R3 .xRowInner #xSectionContent1R2C2 .xCellInner .xImage .xItemInner .xMediaImage::after,
+.Content1 #xSectionContent1R4 .xRowInner #xSectionContent1R2C2 .xCellInner .xImage .xItemInner .xMediaImage::after {
+  content: "AMAZON";
+  position: absolute;
+  left: 30%;
+  bottom: 30%;
+  font-size: 16px;
+  text-align: center;
+  transform: rotate(345deg);
+}
+
+.Content1 #xSectionContent1R2 .xRowInner #xSectionContent1R2C2 .xCellInner .xImage .xItemInner .xMediaImage img,
+.Content1 #xSectionContent1R3 .xRowInner #xSectionContent1R2C2 .xCellInner .xImage .xItemInner .xMediaImage img,
+.Content1 #xSectionContent1R4 .xRowInner #xSectionContent1R2C2 .xCellInner .xImage .xItemInner .xMediaImage img {
+  transform: rotate(345deg);
+}
+
+.Content1 #xSectionContent1R2 .xRowInner #xSectionContent1R2C2 .xCellInner .xImage:nth-of-type(2) .xMediaImage::after,
+.Content1 #xSectionContent1R3 .xRowInner #xSectionContent1R2C2 .xCellInner .xImage:nth-of-type(2) .xMediaImage::after,
+.Content1 #xSectionContent1R4 .xRowInner #xSectionContent1R2C2 .xCellInner .xImage:nth-of-type(2) .xMediaImage::after {
+  content: "UBER";
+  left: 40%;
+  bottom: 32%;
+}
+
+.Content1 #xSectionContent1R2 .xRowInner #xSectionContent1R2C2 .xCellInner .xImage:nth-of-type(3) .xMediaImage::after,
+.Content1 #xSectionContent1R3 .xRowInner #xSectionContent1R2C2 .xCellInner .xImage:nth-of-type(3) .xMediaImage::after,
+.Content1 #xSectionContent1R4 .xRowInner #xSectionContent1R2C2 .xCellInner .xImage:nth-of-type(3) .xMediaImage::after {
+  content: "LIVERPOOL";
+  left: 25%;
+  bottom: 32%;
+}
+
+.Content1 #xSectionContent1R2 .xRowInner #xSectionContent1R2C2 .xCellInner .xImage:last-of-type .xMediaImage::after,
+.Content1 #xSectionContent1R3 .xRowInner #xSectionContent1R2C2 .xCellInner .xImage:last-of-type .xMediaImage::after,
+.Content1 #xSectionContent1R4 .xRowInner #xSectionContent1R2C2 .xCellInner .xImage:last-of-type .xMediaImage::after {
+  content: "$100";
+  left: 42%;
+  bottom: 32%;
+}
+
 .Content1 #xSectionContent1R2 .xRowInner #xSectionContent1R3C2 .xCellInner .xImage .xMediaImage img,
-.Content1 #xSectionContent1R2 .xRowInner #xSectionContent1R4C2 .xCellInner .xImage .xMediaImage img,
 .Content1 #xSectionContent1R3 .xRowInner #xSectionContent1R3C2 .xCellInner .xImage .xMediaImage img,
-.Content1 #xSectionContent1R3 .xRowInner #xSectionContent1R4C2 .xCellInner .xImage .xMediaImage img,
-.Content1 #xSectionContent1R4 .xRowInner #xSectionContent1R3C2 .xCellInner .xImage .xMediaImage img,
-.Content1 #xSectionContent1R4 .xRowInner #xSectionContent1R4C2 .xCellInner .xImage .xMediaImage img {
+.Content1 #xSectionContent1R4 .xRowInner #xSectionContent1R3C2 .xCellInner .xImage .xMediaImage img {
   width: 50%;
 }
 
-.Content1 #xSectionContent1R2 .xRowInner,
+.Content1 #xSectionContent1R2 .xRowInner #xSectionContent1R4C2 .xCellInner .xImage .xMediaImage,
+.Content1 #xSectionContent1R3 .xRowInner #xSectionContent1R4C2 .xCellInner .xImage .xMediaImage,
+.Content1 #xSectionContent1R4 .xRowInner #xSectionContent1R4C2 .xCellInner .xImage .xMediaImage {
+  position: relative;
+  padding: 25px;
+}
+
+.Content1 #xSectionContent1R2 .xRowInner #xSectionContent1R4C2 .xCellInner .xImage .xMediaImage::before,
+.Content1 #xSectionContent1R3 .xRowInner #xSectionContent1R4C2 .xCellInner .xImage .xMediaImage::before,
+.Content1 #xSectionContent1R4 .xRowInner #xSectionContent1R4C2 .xCellInner .xImage .xMediaImage::before {
+  content: "";
+  width: 32vw;
+  height: 32vw;
+  margin: auto;
+  display: block;
+  border-radius: 100%;
+  border: 6px solid #AC8833;
+  background-color: #fff;
+  position: absolute;
+  top: 0;
+  left: 34vw;
+}
+
+.Content1 #xSectionContent1R2 .xRowInner #xSectionContent1R4C2 .xCellInner .xImage .xMediaImage img,
+.Content1 #xSectionContent1R3 .xRowInner #xSectionContent1R4C2 .xCellInner .xImage .xMediaImage img,
+.Content1 #xSectionContent1R4 .xRowInner #xSectionContent1R4C2 .xCellInner .xImage .xMediaImage img {
+  position: relative;
+  width: 50%;
+}
+
+.Content1 #xSectionContent1R2 .xRowInner {
+  background-image: linear-gradient(45deg, #2AA1D2 37%, #00AAD9 36%);
+  padding: 20px 10px;
+  margin: 10px 0;
+}
+
 .Content1 #xSectionContent1R3 .xRowInner {
-  background-color: #2AA1D2;
-  padding: 10px;
+  background-image: linear-gradient(45deg, #2AA1D2 50%, #00AAD9 50%);
+  padding: 20px 10px;
   margin: 10px 0;
 }
 
 .Content1 #xSectionContent1R4 .xRowInner {
   background-color: #0F1E56;
+}
+
+.Content1 #xSectionContent1R4C1,
+.Content1 #xSectionContent1R4C2,
+.Content1 #xSectionContent1R4C3 {
+  width: 100%;
 }
 
 @media screen and (min-width: 768px) {
@@ -5142,10 +5332,33 @@ body {
   .Content1 #xSectionContent1R4 .xRowInner #xSectionContent1R4C3 {
     width: 50%;
   }
+
+  .Content1 #xSectionContent1R2 .xRowInner #xSectionContent1R4C2 .xCellInner .xImage .xMediaImage::before,
+  .Content1 #xSectionContent1R3 .xRowInner #xSectionContent1R4C2 .xCellInner .xImage .xMediaImage::before,
+  .Content1 #xSectionContent1R4 .xRowInner #xSectionContent1R4C2 .xCellInner .xImage .xMediaImage::before {
+    width: 10vw;
+    height: 10vw;
+    top: 1vw;
+    left: 12vw;
+  }
+}
+
+@media screen and (min-width: 1600px) {
+  .Content1 #xSectionContent1R4 .xRowInner #xSectionContent1R4C2 .xCellInner .xImage .xMediaImage::before {
+    width: 160px;
+    height: 160px;
+    top: 12px;
+    left: 36%;
+  }
 }
 
 .Content #xSectionContent {
   text-align: center;
+  background: url(/images/background_blue.jpg?97f7f7b85bcb167b4da023873be77335);
+  background-position-x: 35%;
+  background-position-y: top;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .Content #xSectionContent h1,
@@ -5166,37 +5379,87 @@ body {
 
 .Content #xSectionContent img {
   margin: 20px auto;
+  width: 50%;
+}
+
+@media screen and (min-width: 576px) {
+  .Content #xSectionContent {
+    background-position-x: 30%;
+  }
+
+  .Content #xSectionContent img {
+    width: 30%;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .Content #xSectionContent {
+    background-position-x: left;
+  }
+
+  .Content #xSectionContent img {
+    margin: 50px auto;
+    width: 200px;
+  }
+}
+
+@font-face {
+  font-family: "Avenir Oblique";
+  font-style: normal;
+  font-weight: 400;
+  font-display: block;
+  src: url(/fonts/AvenirLTW04-45BookOblique.woff2?a7aee40df2ceaa5cb52f511120ed2b8b) format("woff2"), url(/fonts/AvenirLTW04-45BookOblique.woff?304c9687d46339979c684989ce7fea1c) format("woff");
+}
+
+@font-face {
+  font-family: "Gotham Book";
+  font-style: normal;
+  font-weight: 400;
+  font-display: block;
+  src: url(/fonts/gotham-book-webfont.woff2?3679aa7028c588efffff3dbe0e3bc4df) format("woff2"), url(/fonts/gotham-book-webfont.woff?6ac2c0a2a37e9603e25ded83fee1c3f0) format("woff");
+}
+
+@font-face {
+  font-family: "Gotham Bold";
+  font-style: bold;
+  font-weight: 400;
+  font-display: block;
+  src: url(/fonts/gotham-bold-webfont.woff2?6940d4d13503c04acad85842145b2866) format("woff2"), url(/fonts/gotham-bold-webfont.woff?3c924cf2326fefe69529d666407f9d9d) format("woff");
+}
+
+@font-face {
+  font-family: "Gotham Italic";
+  font-style: bold;
+  font-weight: 400;
+  font-display: block;
+  src: url(/fonts/gotham-ultraitalic-webfont.woff2?b39433a1602b6a314a7fe5be50d8f9f7) format("woff2"), url(/fonts/gotham-ultraitalic-webfont.woff?1f885ad2951e1b009eb8f9eb10dd0940) format("woff");
+}
+
+@font-face {
+  font-family: "Velocista Demo";
+  font-style: bold;
+  font-weight: 400;
+  font-display: block;
+  src: url(/fonts/velocista-demo-ffp-webfont.woff2?ea6a73a63339bf1992062e12f979589f) format("woff2"), url(/fonts/velocista-demo-ffp-webfont.woff?29bd08edf859d6d785980ffc35314286) format("woff");
 }
 
 #xSectionHeader {
-  display: none;
   background-color: #642805;
 }
 
-#xSectionHeader #HeaderR1 {
-  position: fixed;
-  z-index: 3;
-  width: 70%;
-  left: 0;
-  top: 0;
-}
-
-#xSectionHeader #HeaderR1 .xCampaignHeader {
-  height: 100vh;
+#xSectionHeader #HeaderR1 .xCampaignHeader ul.xNavMain {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
 }
 
 #xSectionHeader #HeaderR1 .xCampaignHeader ul.xNavMain li.xTab {
-  display: list-item;
   margin: 0;
+  text-align: center;
 }
 
 #xSectionHeader #HeaderR1 .xCampaignHeader ul.xNavMain li.xTab .xTabLink {
   cursor: pointer;
-  font-size: 20px;
-  margin: 10px 0;
-  padding: 10px;
-  width: 100%;
-  text-align: left;
 }
 
 #xSectionHeader #HeaderR1 .xCampaignHeader ul.xNavMain li.xTab .xTabLink::before {
@@ -5204,21 +5467,14 @@ body {
 }
 
 #xSectionDetails {
-  background: #2AA1D2;
-  position: relative;
-  min-height: 100vh;
+  padding-top: 15px;
   height: 100%;
-}
-
-#xSectionDetails::before {
-  content: " ";
-  position: absolute;
-  top: 0;
-  right: 0;
-  background-size: 100%;
-  width: 100%;
-  height: 100%;
-  z-index: 1;
+  min-height: 95vh;
+  background: url(/images/background_blue_mob_2.jpg?3c87b240131ef76596f1dd208f59b13b);
+  background-position-x: center;
+  background-position-y: top;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 #xSectionDetails .xComponentInner {
@@ -5241,7 +5497,7 @@ body {
 }
 
 #xSectionDetails .xComponentInner h1::before {
-  none-text-stroke: 1px #fff;
+  -webkit-text-stroke: 1px #fff;
 }
 
 #xSectionDetails .xComponentInner h1 .prize-sign {
@@ -5294,15 +5550,41 @@ body {
   width: 100%;
 }
 
-@media screen and (min-width: 768px) {
-  #xSectionHeader #HeaderR1 {
-    left: auto;
-    width: 50%;
-    right: 0;
+.xMediacard .xMediaContainer:last-child {
+  margin-bottom: 0;
+}
+
+@media screen and (min-width: 480px) {
+  #xSectionHeader #HeaderR1 .xCampaignHeader ul.xNavMain {
+    flex-direction: row;
+  }
+
+  #xSectionHeader #HeaderR1 .xCampaignHeader ul.xNavMain li.xTab {
+    text-align: left;
+    flex-basis: 50%;
+  }
+}
+
+@media screen and (min-width: 576px) {
+  #xSectionHeader #HeaderR1 .xCampaignHeader ul.xNavMain li.xTab {
+    flex-basis: 33.33%;
   }
 
   #xSectionDetails .xRowInner .xCell.mid {
     width: 50%;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  #xSectionHeader #HeaderR1 .xCampaignHeader ul.xNavMain li.xTab {
+    flex-basis: 25%;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  #xSectionHeader #HeaderR1 .xCampaignHeader ul.xNavMain {
+    display: grid;
+    grid-template-columns: 1fr 2fr 2fr 1fr 2fr 2fr 2fr;
   }
 }
 

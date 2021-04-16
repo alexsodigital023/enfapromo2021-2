@@ -109,24 +109,110 @@
                 .xImage {
                     flex-basis: 21%;
                     margin: 2%;
+
+                    .xItemInner {
+                        overflow: unset;
+
+                        .xMediaImage {
+                            position: relative;
+                        
+                            &::before {
+                                content: 'C''\D3''DIGOS ELECTR\D3NICOS';
+                                position: absolute;
+                                left: 6%;
+                                top: 33%;
+                                z-index: 1;
+                                font-size: 11px;
+                                text-align: center;
+                                transform: rotate(345deg);
+                            }
+
+                            &::after {
+                                content: 'AMAZON';
+                                position: absolute;
+                                left: 30%;
+                                bottom: 30%;
+                                font-size: 16px;
+                                text-align: center;
+                                transform: rotate(345deg);
+                            }
+                            
+                            img {
+                                transform: rotate(345deg);
+                            }
+                        }
+                    }
+
+                    &:nth-of-type(2) .xMediaImage::after {
+                        content: 'UBER';
+                        left: 40%;
+                        bottom: 32%;
+                    }
+
+                    &:nth-of-type(3) .xMediaImage::after {
+                        content: 'LIVERPOOL';
+                        left: 25%;
+                        bottom: 32%;
+                    }
+
+                    &:last-of-type .xMediaImage::after {
+                        content: '$100';
+                        left: 42%;
+                        bottom: 32%;
+                    }
                 }
             }
         }
         
-        #xSectionContent1R3C2 .xCellInner .xImage .xMediaImage img,
-        #xSectionContent1R4C2 .xCellInner .xImage .xMediaImage img {
+        #xSectionContent1R3C2 .xCellInner .xImage .xMediaImage img {
             width: 50%;
+        }
+
+        #xSectionContent1R4C2 .xCellInner .xImage .xMediaImage {
+            position: relative;
+            padding: 25px;
+
+            &::before {
+                content: "";
+                width: 32vw;
+                height: 32vw;
+                margin: auto;
+                display: block;
+                border-radius: 100%;
+                border: 6px solid $c-dorado;
+                background-color: $c-blanco;
+                position: absolute;
+                top: 0;
+                left: 34vw;
+            }
+
+            img {
+                position: relative;
+                width: 50%;
+            }
         }
     }
 
-    #xSectionContent1R2 .xRowInner,
-    #xSectionContent1R3 .xRowInner {
-        background-color: $c-azul-claro;
-        padding: 10px;
+    #xSectionContent1R2 .xRowInner {
+        background-image: linear-gradient(45deg, #2AA1D2 37%, #00AAD9 36%);
+        padding: 20px 10px;
         margin: 10px 0;
     }
+
+    #xSectionContent1R3 .xRowInner {
+        background-image: linear-gradient(45deg, #2AA1D2 50%, #00AAD9 50%);
+        padding: 20px 10px;
+        margin: 10px 0;
+    }
+
     #xSectionContent1R4 .xRowInner {
         background-color: $c-azul-oscuro;
+    }
+
+    #xSectionContent1R4C1,
+    #xSectionContent1R4C2,
+    #xSectionContent1R4C3 {
+        width: 100%;
     }
 }
 
@@ -158,6 +244,22 @@
             #xSectionContent1R4C3 {
                 width: 50%;
             }
+
+            #xSectionContent1R4C2 .xCellInner .xImage .xMediaImage::before {
+                width: 10vw;
+                height: 10vw;
+                top: 1vw;
+                left: 12vw;
+            }
         }
+    }
+}
+
+@media #{$grid-xxl} {
+    .Content1 #xSectionContent1R4 .xRowInner #xSectionContent1R4C2 .xCellInner .xImage .xMediaImage::before {
+        width: 160px;
+        height: 160px;
+        top: 12px;
+        left: 36%;
     }
 }

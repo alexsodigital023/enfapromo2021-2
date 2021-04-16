@@ -1,33 +1,20 @@
 #xSectionHeader {
-  display: none;
   background-color: $c-cafe;
 
-  #HeaderR1 {
-    position: fixed;
-    z-index: 3;
-    width: 70%;
-    left: 0;
-    top: 0;
+  #HeaderR1 .xCampaignHeader ul.xNavMain {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    
+    li.xTab {
+      margin: 0;
+      text-align: center;
 
-    .xCampaignHeader {
-      height: 100vh;
-      
-      ul.xNavMain li.xTab {
-        display: list-item;
-        margin: 0;
+      .xTabLink {
+        cursor: pointer;
 
-        .xTabLink {
-          cursor: pointer;
-          font-size: 20px;
-          margin: 10px 0;
-          padding: 10px;
-          width: 100%;
-          text-align: left;
-
-          &::before {
-            content: '';
-
-          }
+        &::before {
+          content: '';
         }
       }
     }
@@ -35,114 +22,137 @@
 }
 
 #xSectionDetails{
-    background: $c-azul-claro;
+  padding-top: 15px;
+  height: 100%;
+  min-height: 95vh;
+  background: url('../images/background_blue_mob_2.jpg');
+  background-position-x: center;
+  background-position-y: top;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  .xComponentInner {
     position: relative;
-    min-height: 100vh;
-    height: 100%;
+    z-index: 2;
 
-    &::before{
-      content: ' ';
-      position: absolute;
-      top: 0;
-      right: 0;
-      // background: url(https://a.wayin.com/images/5365/26155350-a7a8-486a-a0cc-e0cad0ddc22e/fondo-golden.png) top center no-repeat;
-      background-size: 100%;
-      width: 100%;
-      height: 100%;
-      z-index: 1;
+    h1,
+    h2 {
+        text-align: center;
+        font-weight: bold;
     }
 
-    .xComponentInner {
-      position: relative;
-      z-index: 2;
+    h1 {
+        font-size: 3.5vw;
+        -webkit-text-stroke: 2px $c-blanco;
+        text-transform: uppercase;
+        position: relative;
+        text-shadow: 6px 6px 2px rgba(84, 84, 84, .9);
 
-        h1,
-        h2 {
-            text-align: center;
-            font-weight: bold;
-        }
-        h1 {
-            font-size: 3.5vw;
-            -webkit-text-stroke: 2px $c-blanco;
-            text-transform: uppercase;
-            position: relative;
-            text-shadow: 6px 6px 2px rgba(84, 84, 84, .9);
-
-            &::before{
-              none-text-stroke: 1px $c-blanco;
-            }
-
-            .prize-sign {
-                font-size: 35px;
-                margin-right: 10px;
-                -webkit-text-stroke: .09rem $c-blanco;
-                vertical-align: text-bottom;
-            }
-            
-            .prize-number {
-              font-size: 60px;
-                text-shadow: 8px 8px 2px rgba(84, 84, 84, .9);
-            }
-
-            .prize-currency {
-              font-size: 18px;
-              bottom: -15px;
-              text-shadow: 1px 1px 0px $c-blanco, 0 0 10px $c-blanco, 0 0 10px $c-blanco;
-            }
-          }
-
-        h2 {
-          font-size: 30px;
-          line-height: 30px;
-          margin: 0 0 80px;
-          -webkit-text-stroke: 0.5px $c-blanco;
-          text-shadow: none;
+        &::before{
+          -webkit-text-stroke: 1px $c-blanco;
         }
 
-        .mecanica {
-          margin-top: 80px;
-          .item {
-            position: relative;
-            font-size: 30px;
-            .it {
-              position: absolute;
-              font-size: 1.5vw;
-              bottom: -12px;
-              left: 35%;
-            }
-          }
+        .prize-sign {
+            font-size: 35px;
+            margin-right: 10px;
+            -webkit-text-stroke: .09rem $c-blanco;
+            vertical-align: text-bottom;
         }
+        
+        .prize-number {
+          font-size: 60px;
+            text-shadow: 8px 8px 2px rgba(84, 84, 84, .9);
+        }
+
+        .prize-currency {
+          font-size: 18px;
+          bottom: -15px;
+          text-shadow: 1px 1px 0px $c-blanco, 0 0 10px $c-blanco, 0 0 10px $c-blanco;
+        }
+      }
+
+    h2 {
+      font-size: 30px;
+      line-height: 30px;
+      margin: 0 0 80px;
+      -webkit-text-stroke: 0.5px $c-blanco;
+      text-shadow: none;
     }
 
-    .xRowInner {
-      .xCell {
-        &.n2 {
-          .xComponentInner {
-            .xMediaContainer.xRenderEmbed.xMediaImage {
-              img {
-                display: block;
-              }
-            }
-          }
-        }
+    .mecanica {
+      margin-top: 80px;
 
-        &.mid {
-          width: 100%;
+      .item {
+        position: relative;
+        font-size: 30px;
+
+        .it {
+          position: absolute;
+          font-size: 1.5vw;
+          bottom: -12px;
+          left: 35%;
         }
       }
     }
+  }
+
+  .xRowInner {
+    .xCell {
+      &.n2 {
+        .xComponentInner {
+          .xMediaContainer.xRenderEmbed.xMediaImage {
+            img {
+              display: block;
+            }
+          }
+        }
+      }
+
+      &.mid {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.xMediacard .xMediaContainer:last-child {
+  margin-bottom: 0;
+}
+
+@media #{$grid-xs} {
+  #xSectionHeader #HeaderR1 .xCampaignHeader ul.xNavMain {
+    flex-direction: row;
+    
+    li.xTab {
+      text-align: left;
+      flex-basis: 50%;
+    }
+  }
+}
+
+@media #{$grid-sm} {
+  #xSectionHeader #HeaderR1 .xCampaignHeader ul.xNavMain {
+    li.xTab {
+      flex-basis: 33.33%;
+    }
+  }
+
+  #xSectionDetails .xRowInner .xCell.mid {
+    width: 50%;
+  }
 }
 
 @media #{$grid-md} {
-  #xSectionHeader #HeaderR1 {
-    left: auto;
-    width: 50%;
-    right: 0;
-  }
-
-  #xSectionDetails {
-    .xRowInner .xCell.mid {
-      width: 50%;
+  #xSectionHeader #HeaderR1 .xCampaignHeader ul.xNavMain {
+    li.xTab {
+      flex-basis: 25%;
     }
+  }
+}
+
+@media #{$grid-lg} {
+  #xSectionHeader #HeaderR1 .xCampaignHeader ul.xNavMain {
+    display: grid;
+    grid-template-columns: 1fr 2fr 2fr 1fr 2fr 2fr 2fr;
   }
 }

@@ -1,5 +1,10 @@
 .Content #xSectionContent {
     text-align: center;
+    background: url('../images/background_blue.jpg');
+    background-position-x: 35%;
+    background-position-y: top;
+    background-repeat: no-repeat;
+    background-size: cover;
 
     h1, h2, a {
         font-size: 25px;
@@ -17,5 +22,27 @@
 
     img {
         margin: 20px auto;
+        width: 50%;
+    }
+}
+
+@media #{$grid-sm} {
+    .Content #xSectionContent {
+        background-position-x: 30%;
+
+        img {
+            width: 30%;
+        }
+    }
+}
+
+@media #{$grid-lg} {
+    .Content #xSectionContent {
+        background-position-x: left;
+
+        img {
+            margin: 50px auto;
+            width: 200px;
+        }
     }
 }
