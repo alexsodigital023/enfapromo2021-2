@@ -101,19 +101,23 @@
         align-content: center;
         
         #xSectionContent1R2C1,
+        #xSectionContent1R3C1,
         #xSectionContent1R3C2 {
             width: 100%;
         }
 
         #xSectionContent1R2C2 {
             width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
 
             .xCellInner {
                 display: flex;
                 flex-wrap: wrap;
                 
                 .xImage {
-                    flex-basis: 21%;
+                    flex-basis: 45%;
                     margin: 2%;
 
                     .xItemInner {
@@ -128,9 +132,10 @@
                                 left: 6%;
                                 top: 33%;
                                 z-index: 1;
-                                font-size: 11px;
+                                font-size: 2.7vw;
                                 text-align: center;
                                 transform: rotate(345deg);
+                                font-weight: bold;
                             }
 
                             &::after {
@@ -138,9 +143,10 @@
                                 position: absolute;
                                 left: 30%;
                                 bottom: 30%;
-                                font-size: 16px;
+                                font-size: 4vw;
                                 text-align: center;
                                 transform: rotate(345deg);
+                                font-weight: bold;
                             }
                             
                             img {
@@ -213,6 +219,13 @@
 
     #xSectionContent1R4 .xRowInner {
         background-color: $c-azul-oscuro;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #xSectionContent1R3C1 {
+        justify-self: center;
+        align-self: center;
     }
 
     #xSectionContent1R4C1,
@@ -235,6 +248,10 @@
             -webkit-text-stroke: 7px transparent;
         }
 
+        h3 {
+            font-size: 3vw;
+        }
+
         #xSectionContent1R1 .xRowInner {
             border-bottom: 2px solid $c-blanco;
             
@@ -251,7 +268,7 @@
         #xSectionContent1R3 .xRowInner,
         #xSectionContent1R4 .xRowInner {
             flex-direction: row;
-            
+
             #xSectionContent1R2C1,
             #xSectionContent1R2C2,
             #xSectionContent1R3C1,
@@ -273,13 +290,22 @@
                 left: 12vw;
             }
 
-
-            h3 {
-                font-size: 3vw;
-            }
-
             #xSectionContent1R4C1 h2 {
                 font-size: 5vw;
+            }
+            
+            #xSectionContent1R2C2 .xCellInner .xImage {
+                flex-basis: 21%;
+
+                .xItemInner .xMediaImage {
+                    &::before {
+                        font-size: .7vw;
+                    }
+
+                    &::after {
+                        font-size: 1vw;
+                    }
+                }
             }
         }
     }

@@ -5,13 +5,13 @@ nav ul {
 
 #xSectionHeader {
   background-color: $c-cafe-oscuro;
-  position: fixed;
+  // position: fixed;
   height: 100%;
   width: 70%;
   z-index: 4;
   left: 0;
   top: 0;
-  display: none;
+  // display: none;
 
   #HeaderR1 .xCampaignHeader ul.xNavMain {
     display: flex;
