@@ -5030,18 +5030,18 @@ body {
     width: 140px;
     height: 140px;
   }
+
+  .xSectionPrizes #xSectionPrizesR1 .xRowInner #xSectionPrizesR1C1 .xMediaContainer::before {
+    left: 31%;
+    width: 250px;
+    height: 250px;
+  }
 }
 
 @media screen and (min-width: 1600px) {
   .xSectionPrizes .xTitle,
   .xSectionPrizes h2 {
     font-size: 90px;
-  }
-
-  .xSectionPrizes #xSectionPrizesR1 .xRowInner #xSectionPrizesR1C1 .xMediaContainer::before {
-    left: 30%;
-    width: 300px;
-    height: 300px;
   }
 
   .xSectionPrizes #xSectionPrizesR2C1 .xFullColModule.xImage img {
@@ -5415,29 +5415,39 @@ body {
   }
 }
 
+@media screen and (min-width: 1200px) {
+  .Content1 h1 {
+    font-size: 100px;
+  }
+
+  .Content1 #xSectionContent1R4 .xRowInner h3 {
+    font-size: 45px;
+  }
+
+  .Content1 #xSectionContent1R4 .xRowInner #xSectionContent1R4C1 h2 {
+    font-size: 60px;
+  }
+
+  .Content1 #xSectionContent1R4 .xRowInner #xSectionContent1R4C2 .xCellInner .xImage .xItemInner .xMediaImage::before {
+    width: 130px;
+    height: 130px;
+    top: 7%;
+    left: 35%;
+  }
+
+  .Content1 #xSectionContent1R2 .xRowInner #xSectionContent1R2C2 .xCellInner .xImage .xItemInner .xMediaImage::before {
+    font-size: 9px;
+  }
+
+  .Content1 #xSectionContent1R2 .xRowInner #xSectionContent1R2C2 .xCellInner .xImage .xItemInner .xMediaImage::after {
+    font-size: 16px;
+  }
+}
+
 @media screen and (min-width: 1600px) {
   .Content1 h2 {
     font-size: 65px;
     -webkit-text-stroke: 10px transparent;
-  }
-
-  .Content1 #xSectionContent1R4 .xRowInner #xSectionContent1R4C1 h2 {
-    font-size: 85px;
-  }
-
-  .Content1 #xSectionContent1R4 .xRowInner #xSectionContent1R4C3 h3 {
-    font-size: 55px;
-  }
-
-  .Content1 #xSectionContent1R4 .xRowInner #xSectionContent1R4C2 .xCellInner .xImage .xMediaImage::before {
-    width: 160px;
-    height: 160px;
-    top: 12px;
-    left: 36%;
-  }
-
-  .Content1 #xSectionContent1R1 .xRowInner h1 {
-    font-size: 125px;
   }
 }
 

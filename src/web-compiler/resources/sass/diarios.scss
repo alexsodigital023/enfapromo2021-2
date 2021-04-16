@@ -311,32 +311,46 @@
     }
 }
 
+@media #{$grid-xl} {
+    .Content1 {
+        h1 {
+            font-size: 100px;
+        }
+
+        #xSectionContent1R4 .xRowInner {
+            h3 {
+                font-size: 45px;
+            }
+
+            #xSectionContent1R4C1 h2 {
+                font-size: 60px;
+            }
+            
+            #xSectionContent1R4C2 .xCellInner .xImage .xItemInner .xMediaImage::before {
+                width: 130px;
+                height: 130px;
+                top: 7%;
+                left: 35%;
+            }
+        }
+
+        #xSectionContent1R2 .xRowInner #xSectionContent1R2C2 .xCellInner .xImage .xItemInner .xMediaImage {
+            &::before {
+                font-size: 9px;
+            }
+            
+            &::after {
+                font-size: 16px;
+            }
+        }
+    }
+}
+
 @media #{$grid-xxl} {
     .Content1 {
         h2 {
             font-size: 65px;
             -webkit-text-stroke: 10px transparent;
-        }
-
-        #xSectionContent1R4 .xRowInner {
-            #xSectionContent1R4C1 h2 {
-                font-size: 85px;
-            }
-
-            #xSectionContent1R4C3 h3 {
-                    font-size: 55px;
-            }
-
-            #xSectionContent1R4C2 .xCellInner .xImage .xMediaImage::before {
-                width: 160px;
-                height: 160px;
-                top: 12px;
-                left: 36%;
-            }
-        }
-
-        #xSectionContent1R1 .xRowInner h1 {
-            font-size: 125px;
         }
     }
 }

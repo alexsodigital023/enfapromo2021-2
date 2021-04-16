@@ -261,9 +261,16 @@
 }
 
 @media #{$grid-xl} {
-    .xSectionPrizes #xSectionPrizesR2C1 ul li::before {
-        width: 140px;
-        height: 140px;
+    .xSectionPrizes {
+        #xSectionPrizesR2C1 ul li::before {
+            width: 140px;
+            height: 140px;
+        }
+        #xSectionPrizesR1 .xRowInner #xSectionPrizesR1C1 .xMediaContainer::before {
+            left: 31%;
+            width: 250px;
+            height: 250px;
+        }
     }
 }
 
@@ -271,12 +278,6 @@
     .xSectionPrizes {
         .xTitle, h2 {
             font-size: 90px;
-        }
-        
-        #xSectionPrizesR1 .xRowInner #xSectionPrizesR1C1 .xMediaContainer::before {
-            left: 30%;
-            width: 300px;
-            height: 300px;
         }
 
         #xSectionPrizesR2C1 .xFullColModule.xImage img {
