@@ -11,7 +11,7 @@ const magic = new mmm.Magic(mmm.MAGIC_MIME_TYPE);
 
 const app = express();
 
-const options = {
+/*const options = {
   cert: fs.readFileSync(`${__dirname}/ssl/certificate.pem`,'utf8'),
   key: fs.readFileSync(`${__dirname}/ssl/private.key`,'utf8'),
   ca: [
@@ -21,7 +21,8 @@ const options = {
   ]
 };
 
-const server = https.createServer(options,app);
+const server = https.createServer(options,app);*/
+const server = https.createServer(app);
 const wss = new websocket.Server({ server });
 
 app.on('upgrade', wss.handleUpgrade);

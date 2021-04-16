@@ -7,6 +7,7 @@
 <script>
 import Conexion from '../conexion';
 import Cookies from 'js-cookie';
+
     export default {
         data(){
             return {
@@ -20,6 +21,7 @@ import Cookies from 'js-cookie';
                 mesInput:null,
                 anyoInput:null,
                 ticketValue:null,
+                celularInput:null,
                 file:null,
                 email:null,
                 nombre:null,
@@ -30,37 +32,32 @@ import Cookies from 'js-cookie';
                 stage:0,
                 fileSended:false,
                 enviando:false,
+                submit:null,
                 aclCampos:{
-                    'email':true,
-                    'nombre':true,
-                    'apellido':true,
-                    'anyo':true,
-                    'mes':true,
-                    'dia':true
+                    'emailInput':true,
+                    'nombreInput':true,
+                    'apellidoInput':true,
                 }
             };
         },
         watch:{
-            
+	        
         },
         methods:{
             endStage(){
-                console.log("stage",this.stage);
+                console.log("stage :",this.stage);
                 switch(this.stage){
                     case 0:
-                        $(this.fileInput).find("input").change(()=>this.fileChanged());
                         $(this.emailInput).change(()=>this.dataChanged());
                         $(this.nombreInput).change(()=>this.dataChanged());
                         $(this.apellidoInput).change(()=>this.dataChanged());
-                        $(this.diaInput).change(()=>this.dataChanged());
-                        $(this.mesInput).change(()=>this.dataChanged());
-                        $(this.anyoInput).change(()=>this.dataChanged());
-                        //$(this.submitButton).hide();
+                        $(this.celularInput).change(()=>this.dataChanged());
                         this.stage++;
                         break;
                     case 1:
                         if(this.file&&this.email){
                             this.send().then(ok=>{
+                                console.log(ok);
                                 this.stage++;
                                 this.dataChanged();
                             },error=>console.log(error));
@@ -187,23 +184,23 @@ import Cookies from 'js-cookie';
             },
             
             getConexionObject(){
+                console.log('!!');
                 if(!this.conexion){
                     this.conexion=new Conexion({
                         auth:{
-                            host:{
-                                host:'dev-sodigital.mx',
-                                port:'8085',
-                                path:'/user'
+                            host : {
+                                host: 'localhost',
+                                port: '8085',
+                                path:'/',
                             }
                         },
                         socket:{
                             host:{
-                                host:'enfa-goldenticket-socket-k6r9k.ondigitalocean.app/',
-                                port:'443',
-                                protocol:'wss',
-                                path:'/'
-                            },
-                            protocol:''
+                                host:'localhost',
+                                port:'3000',
+                                path:'/',
+                                protocol: 'ws'
+                            }
                         }
                     });
                 }
@@ -241,8 +238,14 @@ import Cookies from 'js-cookie';
             },
         },
         mounted() {
+            $(this.$el).find('.xActionNext').click(function() {
+                this.stage =1;
+            });
+            this.getConexion();
             this.submitButton=$(this.$el).find("#xSubmitContainer").get(0);
             this.fileInput=$(this.$el).find("#ngxUserUploadWrapper").get(0);
+            this.celularInput=$(this.$el).find("#Phone").get(0);
+            this.fileInput=$(this.$el).find("#ngxUserUpload").get(0);
             this.emailInput=$(this.$el).find("#email").get(0);
             this.nombreInput=$(this.$el).find("#name_Firstname").get(0);
             this.apellidoInput=$(this.$el).find("#name_Lastname").get(0);

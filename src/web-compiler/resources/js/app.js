@@ -23,6 +23,7 @@ Vue.use(Vue2TouchEvents);
 Vue.component('formulario-ticket', require('./components/FormularioTicket.vue').default);
 Vue.component('registros', require('./components/RegisterCounter.vue').default);
 Vue.component('rasca', require('./components/Rasca.vue').default);
+Vue.component('top-menu',require('./components/TopMenu').default);
 
 
 /**
@@ -36,6 +37,12 @@ Vue.component('rasca', require('./components/Rasca.vue').default);
   const xF = $.parseHTML('<formulario-ticket ></formulario-ticket>');
   $(xF).insertBefore(f);
   $(xF).append(f);
+
+  const f1 = $("#xSectionHeader").get(0);
+  const xF1 = $.parseHTML('<top-menu ></top-menu>');
+  $(xF1).insertBefore(f1);
+  $(xF1).append(f1);
+
 })($);
 
 const app = new Vue({
