@@ -5150,10 +5150,13 @@ body {
 }
 
 .Content1 #xSectionContent1R2 .xRowInner #xSectionContent1R2C1,
+.Content1 #xSectionContent1R2 .xRowInner #xSectionContent1R3C1,
 .Content1 #xSectionContent1R2 .xRowInner #xSectionContent1R3C2,
 .Content1 #xSectionContent1R3 .xRowInner #xSectionContent1R2C1,
+.Content1 #xSectionContent1R3 .xRowInner #xSectionContent1R3C1,
 .Content1 #xSectionContent1R3 .xRowInner #xSectionContent1R3C2,
 .Content1 #xSectionContent1R4 .xRowInner #xSectionContent1R2C1,
+.Content1 #xSectionContent1R4 .xRowInner #xSectionContent1R3C1,
 .Content1 #xSectionContent1R4 .xRowInner #xSectionContent1R3C2 {
   width: 100%;
 }
@@ -5162,6 +5165,9 @@ body {
 .Content1 #xSectionContent1R3 .xRowInner #xSectionContent1R2C2,
 .Content1 #xSectionContent1R4 .xRowInner #xSectionContent1R2C2 {
   width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .Content1 #xSectionContent1R2 .xRowInner #xSectionContent1R2C2 .xCellInner,
@@ -5174,7 +5180,7 @@ body {
 .Content1 #xSectionContent1R2 .xRowInner #xSectionContent1R2C2 .xCellInner .xImage,
 .Content1 #xSectionContent1R3 .xRowInner #xSectionContent1R2C2 .xCellInner .xImage,
 .Content1 #xSectionContent1R4 .xRowInner #xSectionContent1R2C2 .xCellInner .xImage {
-  flex-basis: 21%;
+  flex-basis: 45%;
   margin: 2%;
 }
 
@@ -5198,9 +5204,10 @@ body {
   left: 6%;
   top: 33%;
   z-index: 1;
-  font-size: 11px;
+  font-size: 2.7vw;
   text-align: center;
   transform: rotate(345deg);
+  font-weight: bold;
 }
 
 .Content1 #xSectionContent1R2 .xRowInner #xSectionContent1R2C2 .xCellInner .xImage .xItemInner .xMediaImage::after,
@@ -5210,9 +5217,10 @@ body {
   position: absolute;
   left: 30%;
   bottom: 30%;
-  font-size: 16px;
+  font-size: 4vw;
   text-align: center;
   transform: rotate(345deg);
+  font-weight: bold;
 }
 
 .Content1 #xSectionContent1R2 .xRowInner #xSectionContent1R2C2 .xCellInner .xImage .xItemInner .xMediaImage img,
@@ -5295,6 +5303,13 @@ body {
 
 .Content1 #xSectionContent1R4 .xRowInner {
   background-color: #0F1E56;
+  justify-content: center;
+  align-items: center;
+}
+
+.Content1 #xSectionContent1R3C1 {
+  justify-self: center;
+  align-self: center;
 }
 
 .Content1 #xSectionContent1R4C1,
@@ -5312,6 +5327,10 @@ body {
     font-size: 4vw;
     text-align: left;
     -webkit-text-stroke: 7px transparent;
+  }
+
+  .Content1 h3 {
+    font-size: 3vw;
   }
 
   .Content1 #xSectionContent1R1 .xRowInner {
@@ -5371,16 +5390,28 @@ body {
     left: 12vw;
   }
 
-  .Content1 #xSectionContent1R2 .xRowInner h3,
-  .Content1 #xSectionContent1R3 .xRowInner h3,
-  .Content1 #xSectionContent1R4 .xRowInner h3 {
-    font-size: 3vw;
-  }
-
   .Content1 #xSectionContent1R2 .xRowInner #xSectionContent1R4C1 h2,
   .Content1 #xSectionContent1R3 .xRowInner #xSectionContent1R4C1 h2,
   .Content1 #xSectionContent1R4 .xRowInner #xSectionContent1R4C1 h2 {
     font-size: 5vw;
+  }
+
+  .Content1 #xSectionContent1R2 .xRowInner #xSectionContent1R2C2 .xCellInner .xImage,
+  .Content1 #xSectionContent1R3 .xRowInner #xSectionContent1R2C2 .xCellInner .xImage,
+  .Content1 #xSectionContent1R4 .xRowInner #xSectionContent1R2C2 .xCellInner .xImage {
+    flex-basis: 21%;
+  }
+
+  .Content1 #xSectionContent1R2 .xRowInner #xSectionContent1R2C2 .xCellInner .xImage .xItemInner .xMediaImage::before,
+  .Content1 #xSectionContent1R3 .xRowInner #xSectionContent1R2C2 .xCellInner .xImage .xItemInner .xMediaImage::before,
+  .Content1 #xSectionContent1R4 .xRowInner #xSectionContent1R2C2 .xCellInner .xImage .xItemInner .xMediaImage::before {
+    font-size: 0.7vw;
+  }
+
+  .Content1 #xSectionContent1R2 .xRowInner #xSectionContent1R2C2 .xCellInner .xImage .xItemInner .xMediaImage::after,
+  .Content1 #xSectionContent1R3 .xRowInner #xSectionContent1R2C2 .xCellInner .xImage .xItemInner .xMediaImage::after,
+  .Content1 #xSectionContent1R4 .xRowInner #xSectionContent1R2C2 .xCellInner .xImage .xItemInner .xMediaImage::after {
+    font-size: 1vw;
   }
 }
 
@@ -5516,13 +5547,11 @@ nav ul {
 
 #xSectionHeader {
   background-color: #3c1b1a;
-  position: fixed;
   height: 100%;
   width: 70%;
   z-index: 4;
   left: 0;
   top: 0;
-  display: none;
 }
 
 #xSectionHeader #HeaderR1 .xCampaignHeader ul.xNavMain {
