@@ -1,14 +1,25 @@
+nav ul {
+  background-color: $c-cafe-oscuro;
+  color: $c-blanco;
+}
+
 #xSectionHeader {
-  background-color: $c-cafe;
+  background-color: $c-cafe-oscuro;
+  position: fixed;
+  height: 100%;
+  width: 70%;
+  z-index: 4;
+  left: 0;
+  top: 0;
+  display: none;
 
   #HeaderR1 .xCampaignHeader ul.xNavMain {
     display: flex;
-    flex-wrap: wrap;
     flex-direction: column;
     
     li.xTab {
       margin: 0;
-      text-align: center;
+      text-align: left;
 
       .xTabLink {
         cursor: pointer;
@@ -119,40 +130,11 @@
   margin-bottom: 0;
 }
 
-@media #{$grid-xs} {
-  #xSectionHeader #HeaderR1 .xCampaignHeader ul.xNavMain {
-    flex-direction: row;
-    
-    li.xTab {
-      text-align: left;
-      flex-basis: 50%;
-    }
-  }
-}
-
-@media #{$grid-sm} {
-  #xSectionHeader #HeaderR1 .xCampaignHeader ul.xNavMain {
-    li.xTab {
-      flex-basis: 33.33%;
-    }
-  }
-
-  #xSectionDetails .xRowInner .xCell.mid {
-    width: 50%;
-  }
-}
 
 @media #{$grid-md} {
-  #xSectionHeader #HeaderR1 .xCampaignHeader ul.xNavMain {
-    li.xTab {
-      flex-basis: 25%;
-    }
-  }
+#xSectionHeader {
+  width: 50%;
+  left: auto;
+  right: 0;
 }
-
-@media #{$grid-lg} {
-  #xSectionHeader #HeaderR1 .xCampaignHeader ul.xNavMain {
-    display: grid;
-    grid-template-columns: 1fr 2fr 2fr 1fr 2fr 2fr 2fr;
-  }
 }

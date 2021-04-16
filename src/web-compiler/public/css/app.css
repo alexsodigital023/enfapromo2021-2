@@ -4705,6 +4705,10 @@ body {
   text-align: center;
 }
 
+.ticketFormContainer .xControlCheckbox .xLabelContainer {
+  min-width: 0;
+}
+
 .ticketFormContainer .xFieldContainer {
   padding: 0;
 }
@@ -5382,13 +5386,8 @@ body {
 
 @media screen and (min-width: 1600px) {
   .Content1 h2 {
-    -webkit-text-stroke: 10px transparent;
-  }
-}
-
-@media screen and (min-width: 1600px) {
-  .Content1 h2 {
     font-size: 65px;
+    -webkit-text-stroke: 10px transparent;
   }
 
   .Content1 #xSectionContent1R4 .xRowInner #xSectionContent1R4C1 h2 {
@@ -5510,19 +5509,30 @@ body {
   src: url(/fonts/velocista-demo-ffp-webfont.woff2?ea6a73a63339bf1992062e12f979589f) format("woff2"), url(/fonts/velocista-demo-ffp-webfont.woff?29bd08edf859d6d785980ffc35314286) format("woff");
 }
 
+nav ul {
+  background-color: #3c1b1a;
+  color: #fff;
+}
+
 #xSectionHeader {
-  background-color: #642805;
+  background-color: #3c1b1a;
+  position: fixed;
+  height: 100%;
+  width: 70%;
+  z-index: 4;
+  left: 0;
+  top: 0;
+  display: none;
 }
 
 #xSectionHeader #HeaderR1 .xCampaignHeader ul.xNavMain {
   display: flex;
-  flex-wrap: wrap;
   flex-direction: column;
 }
 
 #xSectionHeader #HeaderR1 .xCampaignHeader ul.xNavMain li.xTab {
   margin: 0;
-  text-align: center;
+  text-align: left;
 }
 
 #xSectionHeader #HeaderR1 .xCampaignHeader ul.xNavMain li.xTab .xTabLink {
@@ -5621,37 +5631,11 @@ body {
   margin-bottom: 0;
 }
 
-@media screen and (min-width: 480px) {
-  #xSectionHeader #HeaderR1 .xCampaignHeader ul.xNavMain {
-    flex-direction: row;
-  }
-
-  #xSectionHeader #HeaderR1 .xCampaignHeader ul.xNavMain li.xTab {
-    text-align: left;
-    flex-basis: 50%;
-  }
-}
-
-@media screen and (min-width: 576px) {
-  #xSectionHeader #HeaderR1 .xCampaignHeader ul.xNavMain li.xTab {
-    flex-basis: 33.33%;
-  }
-
-  #xSectionDetails .xRowInner .xCell.mid {
-    width: 50%;
-  }
-}
-
 @media screen and (min-width: 768px) {
-  #xSectionHeader #HeaderR1 .xCampaignHeader ul.xNavMain li.xTab {
-    flex-basis: 25%;
-  }
-}
-
-@media screen and (min-width: 992px) {
-  #xSectionHeader #HeaderR1 .xCampaignHeader ul.xNavMain {
-    display: grid;
-    grid-template-columns: 1fr 2fr 2fr 1fr 2fr 2fr 2fr;
+  #xSectionHeader {
+    width: 50%;
+    left: auto;
+    right: 0;
   }
 }
 

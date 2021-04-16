@@ -286,15 +286,10 @@
 }
 
 @media #{$grid-xxl} {
-    .Content1 h2 {
-        -webkit-text-stroke: 10px transparent;
-    }
-}
-
-@media #{$grid-xxl} {
     .Content1 {
         h2 {
             font-size: 65px;
+            -webkit-text-stroke: 10px transparent;
         }
 
         #xSectionContent1R4 .xRowInner {
