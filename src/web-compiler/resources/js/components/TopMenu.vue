@@ -2,6 +2,9 @@
     <div :class="cssClass">
         <nav>
             <ul>
+                <div v-if="visible" @click="myMethod">
+                    <img style="width:40px;" src="../../images/icon_menu.png" id="test"/>
+                </div>
                 <li>
                     <slot></slot>
                 </li>
@@ -18,10 +21,21 @@
         },
         data(){
             return {
-                tamano:null
+                tamano:null,
+                visible:true
             }
+            
         },
         methods:{
+            myMethod () {	
+    	        document.getElementById('xSectionHeader').style.display = "block";
+                this.visible=false
+            },
+            menuVisible(){
+                if(document.getElementById('xSectionHeader').style.display = "none"){
+                    return false;
+                }
+            },
             resize(){
                 console.log('wiiii');
             },
@@ -39,7 +53,8 @@
             })
         },
         mounted() {
-                this.resize();
+               this.resize();
+               
         },
     }
 </script>

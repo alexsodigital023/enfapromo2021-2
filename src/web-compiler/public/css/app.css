@@ -5550,6 +5550,7 @@ nav ul {
   z-index: 4;
   left: 0;
   top: 0;
+  display: none;
 }
 
 #xSectionHeader #HeaderR1 .xCampaignHeader ul.xNavMain {
