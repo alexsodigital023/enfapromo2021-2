@@ -2,34 +2,37 @@
     h1 {
         background: -webkit-linear-gradient($c-dorado, $c-amarillo);
         -webkit-text-fill-color: transparent;
-        text-shadow: 0px 0px 20px $c-shadow;
         -webkit-background-clip: text;
         -webkit-text-stroke: 0;
         color: $c-dorado;
-        font-size: 25px;
         text-align: center;
         font-weight: bold;
+        font-size: 9.5vw;
+        font-family: 'Gotham Italic';
+        line-height: 1.16;
+        letter-spacing: 1px;
     }
 
     h2 {
-        text-shadow: 0px 0px 20px $c-shadow;
-        -webkit-text-stroke: 2px $c-dorado;
+        background: -webkit-linear-gradient(-45deg, $c-amarillo, $c-dorado);
+        -webkit-background-clip: text;
+        -webkit-text-stroke: 5px transparent;
         color: $c-blanco;
-        font-size: 25px;
+        font-size: 5vw;
         text-align: center;
-        font-weight: bold;
+        font-family: 'Gotham Italic';
+        padding: 0 10%;
     }
 
     #xSectionContent1R4C1 h2 {
         background: -webkit-linear-gradient($c-dorado, $c-amarillo);
         -webkit-text-fill-color: transparent;
-        text-shadow: 0px 0px 20px $c-shadow;
         -webkit-text-stroke: 3px $c-negro;
         -webkit-background-clip: text;
         text-align: center;
         color: $c-amarillo;
         font-weight: bold;
-        font-size: 40px;
+        font-size: 15vw;
     }
 
     h3 {
@@ -39,9 +42,9 @@
         -webkit-background-clip: text;
         -webkit-text-stroke: 0;
         color: $c-dorado;
-        font-size: 25px;
         text-align: center;
         font-weight: bold;
+        font-size: 8vw;
     }
 
     #xSectionContent1R1 {
@@ -60,9 +63,12 @@
             
             #xSectionContent1R1C2 {
                 width: 100%;
+                margin-left: -1px;
                 position: relative;
 
                 .xMediaImage {
+                    padding: 4% 6% 4% 26%;
+
                     &::before {
                         content: "";
                         height: 300%;
@@ -91,8 +97,8 @@
     #xSectionContent1R4 .xRowInner {
         display: flex;
         flex-direction: column;
-        align-items: center;
         justify-content: center;
+        align-content: center;
         
         #xSectionContent1R2C1,
         #xSectionContent1R3C2 {
@@ -218,15 +224,26 @@
 
 @media #{$grid-md} {
     .Content1 {
+
+        h1 {
+            font-size: 8vw;
+        }
+
+        h2 {
+            font-size: 4vw;
+            text-align: left;
+            -webkit-text-stroke: 7px transparent;
+        }
+
         #xSectionContent1R1 .xRowInner {
             border-bottom: 2px solid $c-blanco;
-
-            h1 {
-                font-size: 35px;
-            }
             
-            #xSectionContent1R1C2 .xMediaImage img {
-                width: 50%;
+            #xSectionContent1R1C2 .xMediaImage {
+                padding: 4% 6% 4% 26%;
+
+                img {
+                    width: 50%;
+                }
             }
         }
         
@@ -245,21 +262,60 @@
                 width: 50%;
             }
 
+            #xSectionContent1R2C1 .xComponentInner {
+                display: flex;
+            }
+
             #xSectionContent1R4C2 .xCellInner .xImage .xMediaImage::before {
                 width: 10vw;
                 height: 10vw;
                 top: 1vw;
                 left: 12vw;
             }
+
+
+            h3 {
+                font-size: 3vw;
+            }
+
+            #xSectionContent1R4C1 h2 {
+                font-size: 5vw;
+            }
         }
     }
 }
 
 @media #{$grid-xxl} {
-    .Content1 #xSectionContent1R4 .xRowInner #xSectionContent1R4C2 .xCellInner .xImage .xMediaImage::before {
-        width: 160px;
-        height: 160px;
-        top: 12px;
-        left: 36%;
+    .Content1 h2 {
+        -webkit-text-stroke: 10px transparent;
+    }
+}
+
+@media #{$grid-xxl} {
+    .Content1 {
+        h2 {
+            font-size: 65px;
+        }
+
+        #xSectionContent1R4 .xRowInner {
+            #xSectionContent1R4C1 h2 {
+                font-size: 85px;
+            }
+
+            #xSectionContent1R4C3 h3 {
+                    font-size: 55px;
+            }
+
+            #xSectionContent1R4C2 .xCellInner .xImage .xMediaImage::before {
+                width: 160px;
+                height: 160px;
+                top: 12px;
+                left: 36%;
+            }
+        }
+
+        #xSectionContent1R1 .xRowInner h1 {
+            font-size: 125px;
+        }
     }
 }

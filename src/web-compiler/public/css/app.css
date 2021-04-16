@@ -4792,7 +4792,7 @@ body {
   font-weight: bold;
   font-size: 10vw;
   margin: 0 auto 25px auto;
-  font-family: Gotham Italic;
+  font-family: "Gotham Italic";
   line-height: 1.16;
   letter-spacing: 1px;
 }
@@ -4810,6 +4810,7 @@ body {
 
 .xSectionPrizes sub {
   display: block;
+  font-size: 15px;
   -webkit-text-stroke: 0;
   -webkit-text-fill-color: #fff;
 }
@@ -4887,11 +4888,11 @@ body {
 .xSectionPrizes #xSectionPrizesR1C1 h2 {
   background: -webkit-linear-gradient(#AC8833, #EAD23D);
   -webkit-text-fill-color: transparent;
-  text-shadow: 0px 0px 20px #7c7c7c91;
   -webkit-background-clip: text;
   -webkit-text-stroke: 0;
   color: #AC8833;
   font-size: 30px;
+  line-height: 1.8;
 }
 
 .xSectionPrizes #xSectionPrizesR1C1::after {
@@ -5047,34 +5048,37 @@ body {
 .Content1 h1 {
   background: -webkit-linear-gradient(#AC8833, #EAD23D);
   -webkit-text-fill-color: transparent;
-  text-shadow: 0px 0px 20px #7c7c7c91;
   -webkit-background-clip: text;
   -webkit-text-stroke: 0;
   color: #AC8833;
-  font-size: 25px;
   text-align: center;
   font-weight: bold;
+  font-size: 9.5vw;
+  font-family: "Gotham Italic";
+  line-height: 1.16;
+  letter-spacing: 1px;
 }
 
 .Content1 h2 {
-  text-shadow: 0px 0px 20px #7c7c7c91;
-  -webkit-text-stroke: 2px #AC8833;
+  background: -webkit-linear-gradient(-45deg, #EAD23D, #AC8833);
+  -webkit-background-clip: text;
+  -webkit-text-stroke: 5px transparent;
   color: #fff;
-  font-size: 25px;
+  font-size: 5vw;
   text-align: center;
-  font-weight: bold;
+  font-family: "Gotham Italic";
+  padding: 0 10%;
 }
 
 .Content1 #xSectionContent1R4C1 h2 {
   background: -webkit-linear-gradient(#AC8833, #EAD23D);
   -webkit-text-fill-color: transparent;
-  text-shadow: 0px 0px 20px #7c7c7c91;
   -webkit-text-stroke: 3px #000;
   -webkit-background-clip: text;
   text-align: center;
   color: #EAD23D;
   font-weight: bold;
-  font-size: 40px;
+  font-size: 15vw;
 }
 
 .Content1 h3 {
@@ -5084,9 +5088,9 @@ body {
   -webkit-background-clip: text;
   -webkit-text-stroke: 0;
   color: #AC8833;
-  font-size: 25px;
   text-align: center;
   font-weight: bold;
+  font-size: 8vw;
 }
 
 .Content1 #xSectionContent1R1 .xRowInner {
@@ -5105,7 +5109,12 @@ body {
 
 .Content1 #xSectionContent1R1 .xRowInner #xSectionContent1R1C2 {
   width: 100%;
+  margin-left: -1px;
   position: relative;
+}
+
+.Content1 #xSectionContent1R1 .xRowInner #xSectionContent1R1C2 .xMediaImage {
+  padding: 4% 6% 4% 26%;
 }
 
 .Content1 #xSectionContent1R1 .xRowInner #xSectionContent1R1C2 .xMediaImage::before {
@@ -5132,8 +5141,8 @@ body {
 .Content1 #xSectionContent1R4 .xRowInner {
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
+  align-content: center;
 }
 
 .Content1 #xSectionContent1R2 .xRowInner #xSectionContent1R2C1,
@@ -5291,12 +5300,22 @@ body {
 }
 
 @media screen and (min-width: 768px) {
+  .Content1 h1 {
+    font-size: 8vw;
+  }
+
+  .Content1 h2 {
+    font-size: 4vw;
+    text-align: left;
+    -webkit-text-stroke: 7px transparent;
+  }
+
   .Content1 #xSectionContent1R1 .xRowInner {
     border-bottom: 2px solid #fff;
   }
 
-  .Content1 #xSectionContent1R1 .xRowInner h1 {
-    font-size: 35px;
+  .Content1 #xSectionContent1R1 .xRowInner #xSectionContent1R1C2 .xMediaImage {
+    padding: 4% 6% 4% 26%;
   }
 
   .Content1 #xSectionContent1R1 .xRowInner #xSectionContent1R1C2 .xMediaImage img {
@@ -5333,6 +5352,12 @@ body {
     width: 50%;
   }
 
+  .Content1 #xSectionContent1R2 .xRowInner #xSectionContent1R2C1 .xComponentInner,
+  .Content1 #xSectionContent1R3 .xRowInner #xSectionContent1R2C1 .xComponentInner,
+  .Content1 #xSectionContent1R4 .xRowInner #xSectionContent1R2C1 .xComponentInner {
+    display: flex;
+  }
+
   .Content1 #xSectionContent1R2 .xRowInner #xSectionContent1R4C2 .xCellInner .xImage .xMediaImage::before,
   .Content1 #xSectionContent1R3 .xRowInner #xSectionContent1R4C2 .xCellInner .xImage .xMediaImage::before,
   .Content1 #xSectionContent1R4 .xRowInner #xSectionContent1R4C2 .xCellInner .xImage .xMediaImage::before {
@@ -5341,14 +5366,48 @@ body {
     top: 1vw;
     left: 12vw;
   }
+
+  .Content1 #xSectionContent1R2 .xRowInner h3,
+  .Content1 #xSectionContent1R3 .xRowInner h3,
+  .Content1 #xSectionContent1R4 .xRowInner h3 {
+    font-size: 3vw;
+  }
+
+  .Content1 #xSectionContent1R2 .xRowInner #xSectionContent1R4C1 h2,
+  .Content1 #xSectionContent1R3 .xRowInner #xSectionContent1R4C1 h2,
+  .Content1 #xSectionContent1R4 .xRowInner #xSectionContent1R4C1 h2 {
+    font-size: 5vw;
+  }
 }
 
 @media screen and (min-width: 1600px) {
+  .Content1 h2 {
+    -webkit-text-stroke: 10px transparent;
+  }
+}
+
+@media screen and (min-width: 1600px) {
+  .Content1 h2 {
+    font-size: 65px;
+  }
+
+  .Content1 #xSectionContent1R4 .xRowInner #xSectionContent1R4C1 h2 {
+    font-size: 85px;
+  }
+
+  .Content1 #xSectionContent1R4 .xRowInner #xSectionContent1R4C3 h3 {
+    font-size: 55px;
+  }
+
   .Content1 #xSectionContent1R4 .xRowInner #xSectionContent1R4C2 .xCellInner .xImage .xMediaImage::before {
     width: 160px;
     height: 160px;
     top: 12px;
     left: 36%;
+  }
+
+  .Content1 #xSectionContent1R1 .xRowInner h1 {
+    font-size: 125px;
   }
 }
 
@@ -5364,9 +5423,9 @@ body {
 .Content #xSectionContent h1,
 .Content #xSectionContent h2,
 .Content #xSectionContent a {
-  font-size: 25px;
-  font-weight: bold;
+  font-size: 30px;
   text-transform: uppercase;
+  font-family: "Gotham Italic";
 }
 
 .Content #xSectionContent h3 {
@@ -5389,6 +5448,14 @@ body {
 
   .Content #xSectionContent img {
     width: 30%;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .Content #xSectionContent h1,
+  .Content #xSectionContent h2,
+  .Content #xSectionContent a {
+    font-size: 40px;
   }
 }
 
