@@ -116,14 +116,14 @@
   <div class="xCellInner">
 				
 					
-					<div id="xSectionContent1_image_1617832714307" data-ngx-id="image_1617832714307" data-componenttype="image" style="" class="xComponent xImage n1 xMidColModule xTmpl-Item" data-registered="true">
+					<div id="xSectionContent1_image_1617832714307" data-ngx-id="image_1617832714307" data-componenttype="image" style="" class="xComponent xImage n1 xMidColModule xStyle-default xTmpl-Item" data-registered="true">
   <div class="xComponentInner"><div class="xContainer xContainerImage xClassImage xTemplateItem hasItemMediacard xRenderExternal xItemCount1" data-ngx-contentsource="external">
   <div class="xContainerInner"><div class="xItem xContentImage xMediacard xClassImage xNetworkUgc xDisplayShow hasMainAsset">
   <div class="xItemInner">
 
 
 
-<div class="xMediaContainer xRenderEmbed xMediaImage"><img src="https://a.wayin.com/images/7405/f7cdaa0a-93b7-47f6-8f9f-8723b19b8822/400x400.png" class="" alt="" height="400" width="400"></div>
+<div class="xMediaContainer xRenderEmbed xMediaImage"><img src="https://a.wayin.com/images/7405/f7cdaa0a-93b7-47f6-8f9f-8723b19b8822/card_amazon_1.png" class="" alt="" height="175" width="320"></div>
 
 
 
@@ -149,14 +149,14 @@
 					
 				
 					
-					<div id="xSectionContent1_image_1617832769600" data-ngx-id="image_1617832769600" data-componenttype="image" style="" class="xComponent xImage n2 xMidColModule xTmpl-Item" data-registered="true">
+					<div id="xSectionContent1_image_1617832769600" data-ngx-id="image_1617832769600" data-componenttype="image" style="" class="xComponent xImage n2 xMidColModule xStyle-default xTmpl-Item" data-registered="true">
   <div class="xComponentInner"><div class="xContainer xContainerImage xClassImage xTemplateItem hasItemMediacard xRenderExternal xItemCount1" data-ngx-contentsource="external">
   <div class="xContainerInner"><div class="xItem xContentImage xMediacard xClassImage xNetworkUgc xDisplayShow hasMainAsset">
   <div class="xItemInner">
 
 
 
-<div class="xMediaContainer xRenderEmbed xMediaImage"><img src="https://a.wayin.com/images/7405/f7cdaa0a-93b7-47f6-8f9f-8723b19b8822/400x400.png" class="" alt="" height="400" width="400"></div>
+<div class="xMediaContainer xRenderEmbed xMediaImage"><img src="https://a.wayin.com/images/7405/f7cdaa0a-93b7-47f6-8f9f-8723b19b8822/card_uber_1.png" class="" alt="" height="175" width="320"></div>
 
 
 
@@ -182,14 +182,14 @@
 					
 				
 					
-					<div id="xSectionContent1_image_1617832790027" data-ngx-id="image_1617832790027" data-componenttype="image" style="" class="xComponent xImage n3 xMidColModule xTmpl-Item" data-registered="true">
+					<div id="xSectionContent1_image_1617832790027" data-ngx-id="image_1617832790027" data-componenttype="image" style="" class="xComponent xImage n3 xMidColModule xStyle-default xTmpl-Item" data-registered="true">
   <div class="xComponentInner"><div class="xContainer xContainerImage xClassImage xTemplateItem hasItemMediacard xRenderExternal xItemCount1" data-ngx-contentsource="external">
   <div class="xContainerInner"><div class="xItem xContentImage xMediacard xClassImage xNetworkUgc xDisplayShow hasMainAsset">
   <div class="xItemInner">
 
 
 
-<div class="xMediaContainer xRenderEmbed xMediaImage"><img src="https://a.wayin.com/images/7405/f7cdaa0a-93b7-47f6-8f9f-8723b19b8822/400x400.png" class="" alt="" height="400" width="400"></div>
+<div class="xMediaContainer xRenderEmbed xMediaImage"><img src="https://a.wayin.com/images/7405/f7cdaa0a-93b7-47f6-8f9f-8723b19b8822/card_lverpool_1.png" class="" alt="" height="175" width="320"></div>
 
 
 
@@ -215,14 +215,14 @@
 					
 				
 					
-					<div id="xSectionContent1_image_1617832817924" data-ngx-id="image_1617832817924" data-componenttype="image" style="" class="xComponent xImage n4 xMidColModule xTmpl-Item" data-registered="true">
+					<div id="xSectionContent1_image_1617832817924" data-ngx-id="image_1617832817924" data-componenttype="image" style="" class="xComponent xImage n4 xMidColModule xStyle-default xTmpl-Item" data-registered="true">
   <div class="xComponentInner"><div class="xContainer xContainerImage xClassImage xTemplateItem hasItemMediacard xRenderExternal xItemCount1" data-ngx-contentsource="external">
   <div class="xContainerInner"><div class="xItem xContentImage xMediacard xClassImage xNetworkUgc xDisplayShow hasMainAsset">
   <div class="xItemInner">
 
 
 
-<div class="xMediaContainer xRenderEmbed xMediaImage"><img src="https://a.wayin.com/images/7405/f7cdaa0a-93b7-47f6-8f9f-8723b19b8822/400x400.png" class="" alt="" height="400" width="400"></div>
+<div class="xMediaContainer xRenderEmbed xMediaImage"><img src="https://a.wayin.com/images/7405/f7cdaa0a-93b7-47f6-8f9f-8723b19b8822/card_cien_1.png" class="" alt="" height="175" width="320"></div>
 
 
 

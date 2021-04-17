@@ -4580,7 +4580,7 @@ readers do not read off random characters that represent icons */
   font-style: normal;
   font-weight: 400;
   font-display: block;
-  src: url(/fonts/AvenirLTW04-45BookOblique.woff2?a7aee40df2ceaa5cb52f511120ed2b8b) format("woff2"), url(/fonts/AvenirLTW04-45BookOblique.woff?304c9687d46339979c684989ce7fea1c) format("woff");
+  src: url("https://chocomilk.nyc3.digitaloceanspaces.com/fonts/AvenirLTW04-45BookOblique.woff2") format("woff2"), url("https://chocomilk.nyc3.digitaloceanspaces.com/fonts/AvenirLTW04-45BookOblique.woff") format("woff");
 }
 
 @font-face {
@@ -4588,7 +4588,7 @@ readers do not read off random characters that represent icons */
   font-style: normal;
   font-weight: 400;
   font-display: block;
-  src: url(/fonts/gotham-book-webfont.woff2?3679aa7028c588efffff3dbe0e3bc4df) format("woff2"), url(/fonts/gotham-book-webfont.woff?6ac2c0a2a37e9603e25ded83fee1c3f0) format("woff");
+  src: url("https://chocomilk.nyc3.digitaloceanspaces.com/fonts/gotham-book-webfont.woff2") format("woff2"), url("https://chocomilk.nyc3.digitaloceanspaces.com/fonts/gotham-book-webfont.woff") format("woff");
 }
 
 @font-face {
@@ -4596,7 +4596,7 @@ readers do not read off random characters that represent icons */
   font-style: bold;
   font-weight: 400;
   font-display: block;
-  src: url(/fonts/gotham-bold-webfont.woff2?6940d4d13503c04acad85842145b2866) format("woff2"), url(/fonts/gotham-bold-webfont.woff?3c924cf2326fefe69529d666407f9d9d) format("woff");
+  src: url("https://chocomilk.nyc3.digitaloceanspaces.com/fonts/gotham-bold-webfont.woff2") format("woff2"), url("https://chocomilk.nyc3.digitaloceanspaces.com/fonts/gotham-bold-webfont.woff") format("woff");
 }
 
 @font-face {
@@ -4604,7 +4604,7 @@ readers do not read off random characters that represent icons */
   font-style: bold;
   font-weight: 400;
   font-display: block;
-  src: url(/fonts/gotham-ultraitalic-webfont.woff2?b39433a1602b6a314a7fe5be50d8f9f7) format("woff2"), url(/fonts/gotham-ultraitalic-webfont.woff?1f885ad2951e1b009eb8f9eb10dd0940) format("woff");
+  src: url("https://chocomilk.nyc3.digitaloceanspaces.com/fonts/gotham-ultraitalic-webfont.woff2") format("woff2"), url("https://chocomilk.nyc3.digitaloceanspaces.com/fonts/gotham-ultraitalic-webfont.woff") format("woff");
 }
 
 @font-face {
@@ -4612,7 +4612,7 @@ readers do not read off random characters that represent icons */
   font-style: bold;
   font-weight: 400;
   font-display: block;
-  src: url(/fonts/velocista-demo-ffp-webfont.woff2?ea6a73a63339bf1992062e12f979589f) format("woff2"), url(/fonts/velocista-demo-ffp-webfont.woff?29bd08edf859d6d785980ffc35314286) format("woff");
+  src: url("https://chocomilk.nyc3.digitaloceanspaces.com/fonts/velocista-demo-ffp-webfont.woff2") format("woff2"), url("https://chocomilk.nyc3.digitaloceanspaces.com/fonts/velocista-demo-ffp-webfont.woff") format("woff");
 }
 
 body {
@@ -5141,7 +5141,7 @@ body {
   display: grid;
   grid-template-columns: 1fr 1fr;
   border-top: 2px solid #fff;
-  background: url(/static/images/background_premios.jpg);
+  background: url(https://a.wayin.com/images/7405/f7cdaa0a-93b7-47f6-8f9f-8723b19b8822/background_premios.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position-y: top;

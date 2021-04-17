@@ -6,6 +6,7 @@
 @section('id', 'xSectionConfirmation')
 @section('state', 'Confirmation')
 @section('content')
+
 <div class="xSectionInner">
                                         
 	<div class="xRow xRow-1col_full n1 odd first" id="xSectionConfirmationR1">
@@ -20,7 +21,7 @@
 
 <div class="xItem xContentText xPostcard xClassCallout xNetworkUgc xDisplayShow xVariantBottom hasMainAsset">
   <div class="xItemInner">
-	<div class="xMediaContainer xRenderEmbed"><img src="https://a.wayin.com/images/7405/f7cdaa0a-93b7-47f6-8f9f-8723b19b8822/550x550.png" class="" alt="Pancho Pantera" height="550" width="550"></div>
+	<div class="xMediaContainer xRenderEmbed"><img src="https://a.wayin.com/images/7405/f7cdaa0a-93b7-47f6-8f9f-8723b19b8822/pancho_gracias.png" class="" alt="Pancho Pantera" height="437" width="320"></div>
 	
 
 
@@ -57,7 +58,7 @@
 
 
 
-<div class="xMediaContainer xRenderEmbed xMediaImage"><img src="https://a.wayin.com/images/7405/f7cdaa0a-93b7-47f6-8f9f-8723b19b8822/modo_pantera.png" class="" alt="" height="423" width="450"></div>
+<div class="xMediaContainer xRenderEmbed xMediaImage"><img src="https://a.wayin.com/images/7405/f7cdaa0a-93b7-47f6-8f9f-8723b19b8822/logo_gracias.png" class="" alt="" height="168" width="299"></div>
 
 
 
