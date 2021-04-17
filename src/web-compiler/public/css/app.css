@@ -4858,9 +4858,9 @@ body {
 .xSectionPrizes ul li {
   display: grid;
   margin: 15px 0;
-  grid-gap: 0 10px;
+  grid-gap: 0 2%;
   flex-basis: 100%;
-  grid-template-columns: 40% 60%;
+  grid-template-columns: 39% 59%;
   grid-template-rows: repeat(2, 1fr);
   grid-template-areas: "img title" "img desc";
 }
@@ -4876,10 +4876,11 @@ body {
   align-self: end;
   background: -webkit-linear-gradient(#AC8833, #EAD23D);
   -webkit-text-fill-color: transparent;
-  text-shadow: 0px 0px 15px #7c7c7c91;
   -webkit-background-clip: text;
   -webkit-text-stroke: 0;
   color: #AC8833;
+  font-size: 15px;
+  text-align: left;
 }
 
 .xSectionPrizes ul li sub {
@@ -4888,6 +4889,7 @@ body {
   align-self: start;
   justify-self: start;
   font-size: 15px;
+  text-align: left;
   text-shadow: 0px 0px 15px #7c7c7c91;
 }
 
@@ -4897,6 +4899,7 @@ body {
 
 .xSectionPrizes #xSectionPrizesR1C1 .xMediaContainer {
   padding: 5%;
+  position: relative;
 }
 
 .xSectionPrizes #xSectionPrizesR1C1 .xMediaContainer img {
@@ -4908,7 +4911,7 @@ body {
 .xSectionPrizes #xSectionPrizesR1C1 .xMediaContainer::before {
   position: absolute;
   top: 0;
-  left: 30vw;
+  left: 30%;
   content: "";
   width: 40vw;
   height: 40vw;
@@ -5033,9 +5036,9 @@ body {
   }
 
   .xSectionPrizes #xSectionPrizesR1 .xRowInner #xSectionPrizesR1C1 .xMediaContainer::before {
-    left: 15vw;
-    width: 19vw;
-    height: 19vw;
+    left: 30%;
+    width: 17vw;
+    height: 17vw;
   }
 
   .xSectionPrizes #xSectionPrizesR1 .xRowInner #xSectionPrizesR1C2 {

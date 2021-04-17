@@ -49,9 +49,9 @@
         li {
             display: grid;
             margin: 15px 0;
-            grid-gap: 0 10px;
+            grid-gap: 0 2%;
             flex-basis: 100%;
-            grid-template-columns: 40% 60%;
+            grid-template-columns: 39% 59%;
             grid-template-rows: repeat(2, 1fr);
             grid-template-areas:
                 'img title'
@@ -68,10 +68,11 @@
                 align-self: end;
                 background: -webkit-linear-gradient($c-dorado, $c-amarillo);
                 -webkit-text-fill-color: $c-transparent;
-                text-shadow: 0px 0px 15px $c-shadow;
                 -webkit-background-clip: text;
                 -webkit-text-stroke: 0;
                 color: $c-dorado;
+                font-size: 15px;
+                text-align: left;
             }
             
             sub {
@@ -80,6 +81,7 @@
                 align-self: start;
                 justify-self: start;
                 font-size: 15px;
+                text-align: left;
                 text-shadow: 0px 0px 15px $c-shadow;
             }
         }
@@ -90,6 +92,7 @@
         
         .xMediaContainer {
             padding: 5%;
+            position: relative;
 
             img {
                 width: 60%;
@@ -100,7 +103,7 @@
             &::before {
                 position: absolute;
                 top: 0;
-                left: 30vw;
+                left: 30%;
                 content: "";
                 width: 40vw;
                 height: 40vw;
@@ -236,9 +239,9 @@
                 border-bottom: 2px solid #fff;
 
                 .xMediaContainer::before {
-                    left: 15vw;
-                    width: 19vw;
-                    height: 19vw;
+                    left: 30%;
+                    width: 17vw;
+                    height: 17vw;
                 }
             }
 
