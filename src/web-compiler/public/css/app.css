@@ -5554,8 +5554,10 @@ nav ul {
   background-color: #3c1b1a;
   color: #fff;
   list-style: none;
-  padding: 25px;
-  height: 83px;
+  min-height: 80px;
+  padding: 0 10px;
+  display: flex;
+  align-items: center;
 }
 
 nav ul > div {
@@ -5567,7 +5569,7 @@ nav ul > div {
   background-color: #3c1b1a;
   position: fixed;
   height: 100%;
-  width: 70%;
+  width: 80%;
   z-index: 4;
   left: 0;
   top: 0;
@@ -5577,20 +5579,52 @@ nav ul > div {
 #xSectionHeader #HeaderR1 .xCampaignHeader ul.xNavMain {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
 }
 
 #xSectionHeader #HeaderR1 .xCampaignHeader ul.xNavMain li.xTab {
   margin: 0;
+  width: 100%;
   text-align: left;
 }
 
 #xSectionHeader #HeaderR1 .xCampaignHeader ul.xNavMain li.xTab .xTabLink {
   cursor: pointer;
   width: 100%;
+  padding: 10px;
+  font-size: 18px;
+  display: grid;
+  align-items: center;
+  grid-template-columns: 50px 1fr;
 }
 
 #xSectionHeader #HeaderR1 .xCampaignHeader ul.xNavMain li.xTab .xTabLink::before {
   content: "";
+  width: 40px;
+  height: 40px;
+  display: inline-block;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 50%;
+  border: 2px solid #fff;
+  border-radius: 100%;
+  margin-right: 10px;
+}
+
+#xSectionHeader #HeaderR1 .xCampaignHeader ul.xNavMain li.contentTab .xTabLink::before {
+  background-image: url(/images/icon_tel.png);
+}
+
+#xSectionHeader #HeaderR1 .xCampaignHeader ul.xNavMain li.content2Tab .xTabLink::before {
+  background-image: url(/images/icon_question.png);
+}
+
+#xSectionHeader #HeaderR1 .xCampaignHeader ul.xNavMain li.content3Tab .xTabLink::before {
+  background-image: url(/images/icon_privacy.png);
+}
+
+#xSectionHeader #HeaderR1 .xCampaignHeader ul.xNavMain li.content4Tab .xTabLink::before {
+  background-image: url(/images/icon_terms.png);
 }
 
 #xSectionDetails {
