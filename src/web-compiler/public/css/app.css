@@ -5276,13 +5276,13 @@ body {
 }
 
 .Content1 #xSectionContent1R2 .xRowInner {
-  background-image: linear-gradient(45deg, #2AA1D2 37%, #00AAD9 36%);
+  background-image: linear-gradient(45deg, #2AA1D2 35%, #00AAD9 34%);
   padding: 20px 10px;
   margin: 10px 0;
 }
 
 .Content1 #xSectionContent1R3 .xRowInner {
-  background-image: linear-gradient(45deg, #2AA1D2 50%, #00AAD9 50%);
+  background-image: linear-gradient(45deg, #2AA1D2 50%, #00AAD9 49%);
   padding: 20px 10px;
   margin: 10px 0;
 }
@@ -5510,6 +5510,14 @@ body {
     margin: 50px auto;
     width: 200px;
   }
+}
+
+.xSectionContent2 h1,
+.xSectionContent3 h1,
+.xSectionContent4 h1 {
+  font-family: "Gotham Italic";
+  text-align: center;
+  text-transform: uppercase;
 }
 
 nav > ul {
