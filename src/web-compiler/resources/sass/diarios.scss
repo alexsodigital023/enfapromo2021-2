@@ -7,7 +7,7 @@
         color: $c-dorado;
         text-align: center;
         font-weight: bold;
-        font-size: 9.5vw;
+        font-size: 8vw;
         font-family: $font-gothamItalic;
         line-height: 1.16;
         letter-spacing: 1px;
@@ -47,34 +47,50 @@
         font-size: 8vw;
     }
 
-    #xSectionContent1R1 {
-        .xRowInner {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            border-top: 2px solid $c-blanco;
-            background: $background-premios;
+    #xSectionContent1R1 .xRowInner {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        border-top: 2px solid $c-blanco;
+        background: $background-premios;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position-y: top;
+        background-position-x: 56%;
+        position: relative;
+
+        &::before {
+            content: '';
+            width: 14vw;
+            height: 20vw;
+            display: block;
+            background-image: $splash-choco_1;
             background-repeat: no-repeat;
             background-size: cover;
-            background-position-y: top;
-            background-position-x: 56%;
+            position: absolute;
+            left: -2vw;
+            bottom: 0;
+        }
 
-            #xSectionContent1R1C1 {
-                width: 100%;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                background-color: $c-azul-oscuro;
+        #xSectionContent1R1C1 {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: $c-azul-oscuro;
+
+            .xBodyContainer {
+                padding: 15px 0 15px 30px;
             }
-            
-            #xSectionContent1R1C2 {
-                width: 100%;
-                margin-left: -1px;
-                position: relative;
+        }
+        
+        #xSectionContent1R1C2 {
+            width: 100%;
+            margin-left: -1px;
+            position: relative;
 
-                .xMediaImage img {
-                    width: 100%;
-                    display: none;
-                }
+            .xMediaImage img {
+                width: 100%;
+                display: none;
             }
         }
     }
@@ -181,11 +197,19 @@
     }
 }
 
+@media #{$grid-xs} {
+    .Content1 #xSectionContent1R1 .xRowInner::before {
+        width: 11vw;
+        height: 16vw;
+        left: 0;
+    }
+}
+
 @media #{$grid-md} {
     .Content1 {
-
         h1 {
             font-size: 7vw;
+            padding-left: 15%;
         }
 
         h2 {
@@ -200,6 +224,23 @@
 
         #xSectionContent1R1 .xRowInner {
             border-bottom: 2px solid $c-blanco;
+
+            &::before {
+                left: 0;
+            }
+
+            &::after {
+                content: '';
+                width: 18vw;
+                height: 12vw;
+                display: block;
+                background-image: $splash-choco_2;
+                background-repeat: no-repeat;
+                background-size: cover;
+                position: absolute;
+                right: 0;
+                bottom: 0;
+            }
             
             #xSectionContent1R1C2 .xMediaImage {
                 padding: 4% 6% 4% 26%;
@@ -251,6 +292,18 @@
     .Content1 {
         h1 {
             font-size: 75px;
+        }
+
+        #xSectionContent1R1 .xRowInner {
+            &::before {
+                width: 140px;
+                height: 210px;
+            }
+
+            &::after {
+                width: 250px;
+                height: 165px;
+            }
         }
 
         #xSectionContent1R4 .xRowInner {

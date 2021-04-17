@@ -80,7 +80,6 @@ nav>ul {
             background-repeat: no-repeat;
             background-position: center;
             background-size: 50%;
-            border: 2px solid #fff;
             border-radius: 100%;
             margin-right: 10px;
           }
@@ -90,18 +89,22 @@ nav>ul {
 
     li.contentTab .xTabLink::before {
       background-image: $icon-tel;
+      border: 2px solid #fff;
     }
 
     li.content2Tab .xTabLink::before {
       background-image: $icon-question;
+      border: 2px solid #fff;
     }
 
     li.content3Tab .xTabLink::before {
       background-image: $icon-privacy;
+      border: 2px solid #fff;
     }
 
     li.content4Tab .xTabLink::before {
       background-image: $icon-terms;
+      border: 2px solid #fff;
     }
   }
 }

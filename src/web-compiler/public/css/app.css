@@ -5086,7 +5086,7 @@ body {
   color: #AC8833;
   text-align: center;
   font-weight: bold;
-  font-size: 9.5vw;
+  font-size: 8vw;
   font-family: "Gotham Italic";
   line-height: 1.16;
   letter-spacing: 1px;
@@ -5135,6 +5135,20 @@ body {
   background-size: cover;
   background-position-y: top;
   background-position-x: 56%;
+  position: relative;
+}
+
+.Content1 #xSectionContent1R1 .xRowInner::before {
+  content: "";
+  width: 14vw;
+  height: 20vw;
+  display: block;
+  background-image: url(https://a.wayin.com/images/7405/f7cdaa0a-93b7-47f6-8f9f-8723b19b8822/splash_choco_1.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  left: -2vw;
+  bottom: 0;
 }
 
 .Content1 #xSectionContent1R1 .xRowInner #xSectionContent1R1C1 {
@@ -5143,6 +5157,10 @@ body {
   justify-content: center;
   align-items: center;
   background-color: #0F1E56;
+}
+
+.Content1 #xSectionContent1R1 .xRowInner #xSectionContent1R1C1 .xBodyContainer {
+  padding: 15px 0 15px 30px;
 }
 
 .Content1 #xSectionContent1R1 .xRowInner #xSectionContent1R1C2 {
@@ -5283,9 +5301,18 @@ body {
   width: 100%;
 }
 
+@media screen and (min-width: 480px) {
+  .Content1 #xSectionContent1R1 .xRowInner::before {
+    width: 11vw;
+    height: 16vw;
+    left: 0;
+  }
+}
+
 @media screen and (min-width: 768px) {
   .Content1 h1 {
     font-size: 7vw;
+    padding-left: 15%;
   }
 
   .Content1 h2 {
@@ -5300,6 +5327,23 @@ body {
 
   .Content1 #xSectionContent1R1 .xRowInner {
     border-bottom: 2px solid #fff;
+  }
+
+  .Content1 #xSectionContent1R1 .xRowInner::before {
+    left: 0;
+  }
+
+  .Content1 #xSectionContent1R1 .xRowInner::after {
+    content: "";
+    width: 18vw;
+    height: 12vw;
+    display: block;
+    background-image: url(https://a.wayin.com/images/7405/f7cdaa0a-93b7-47f6-8f9f-8723b19b8822/splash_choco_2.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    right: 0;
+    bottom: 0;
   }
 
   .Content1 #xSectionContent1R1 .xRowInner #xSectionContent1R1C2 .xMediaImage {
@@ -5371,6 +5415,16 @@ body {
 @media screen and (min-width: 1200px) {
   .Content1 h1 {
     font-size: 75px;
+  }
+
+  .Content1 #xSectionContent1R1 .xRowInner::before {
+    width: 140px;
+    height: 210px;
+  }
+
+  .Content1 #xSectionContent1R1 .xRowInner::after {
+    width: 250px;
+    height: 165px;
   }
 
   .Content1 #xSectionContent1R4 .xRowInner h3 {
@@ -5542,25 +5596,28 @@ nav > ul > div {
   background-repeat: no-repeat;
   background-position: center;
   background-size: 50%;
-  border: 2px solid #fff;
   border-radius: 100%;
   margin-right: 10px;
 }
 
 #xSectionHeader #HeaderR1 .xCampaignHeader li.contentTab .xTabLink::before {
   background-image: url(https://a.wayin.com/images/7405/f7cdaa0a-93b7-47f6-8f9f-8723b19b8822/icon_tel.png);
+  border: 2px solid #fff;
 }
 
 #xSectionHeader #HeaderR1 .xCampaignHeader li.content2Tab .xTabLink::before {
   background-image: url(https://a.wayin.com/images/7405/f7cdaa0a-93b7-47f6-8f9f-8723b19b8822/icon_question.png);
+  border: 2px solid #fff;
 }
 
 #xSectionHeader #HeaderR1 .xCampaignHeader li.content3Tab .xTabLink::before {
   background-image: url(https://a.wayin.com/images/7405/f7cdaa0a-93b7-47f6-8f9f-8723b19b8822/icon_privacy.png);
+  border: 2px solid #fff;
 }
 
 #xSectionHeader #HeaderR1 .xCampaignHeader li.content4Tab .xTabLink::before {
   background-image: url(https://a.wayin.com/images/7405/f7cdaa0a-93b7-47f6-8f9f-8723b19b8822/icon_terms.png);
+  border: 2px solid #fff;
 }
 
 #xSectionDetails {
