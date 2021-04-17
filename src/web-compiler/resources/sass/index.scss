@@ -1,15 +1,35 @@
-nav ul {
+nav>ul {
   background-color: $c-cafe-oscuro;
+  background-image: $background-header-mobile;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
   color: $c-blanco;
   list-style: none;
   min-height: 80px;
   padding: 0 10px;
   display: flex;
   align-items: center;
+  flex-direction: row;
+  position: relative;
+  justify-content: center;
+
+  &::before {
+    content: '';
+    width: 150px;
+    height: 120px;
+    display: block;
+    background-image: $modo-pantera;
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin: 10px 30px 0px 30px;
+  }
 
   >div {
     display: inline-block;
     cursor: pointer;
+    position: absolute;
+    left: 5%;
   }
 }
 
@@ -31,6 +51,12 @@ nav ul {
       flex-direction: column;
       align-items: flex-start;
       background: $c-transparent;
+
+      &::before {
+        width: 190px;
+        height: 150px;
+        margin: 10px 4%;
+      }
       
       li.xTab {
         margin: 0;
@@ -81,7 +107,7 @@ nav ul {
 }
 
 #xSectionDetails {
-  padding-top: 15px;
+  padding-top: 10px;
   height: 100%;
   min-height: 95vh;
   background: $background-home-mobile;
@@ -180,16 +206,15 @@ nav ul {
 
 
 @media #{$grid-md} {
-  nav ul {
-    display: flex;
-    justify-content: flex-end;
+  nav ul>div {
+    left: auto;
+    right: 5%;
   }
 
   #xSectionHeader {
     width: 50%;
     left: auto;
     right: 0;
-    padding-top: 125px;
   }
 
   #xSectionDetails .xRowInner .xCell.mid {

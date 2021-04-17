@@ -119,7 +119,6 @@
 
   .xActionsForm {
     margin-left: 0;
-    padding-top: 35px;
 
     .xPagingButton {
       width: 100%;
@@ -134,14 +133,8 @@
 }
 
 @media #{$grid-sm} {
-  #xSectionDetails {
-    .xMediaContainer img {
-      max-width: -webkit-fill-available;
-    }
-    
-    #xSectionDetailsR1C1.xModuleImage {
-      transform: translateY(10%);
-    }
+  #xSectionDetails .xMediaContainer img {
+    max-width: -webkit-fill-available;
   }
 
   .ticketFormContainer {
@@ -166,10 +159,6 @@
 }
 
 @media #{$grid-md} {
-  #xSectionDetails #xSectionDetailsR1C1.xModuleImage {
-    transform: translateY(5%);
-  }
-
   .ticketFormContainer {
     transform: translateY(15%);
 

@@ -113,51 +113,10 @@
                         .xMediaImage {
                             position: relative;
                         
-                            &::before {
-                                content: 'C''\D3''DIGOS ELECTR\D3NICOS';
-                                position: absolute;
-                                left: 6%;
-                                top: 33%;
-                                z-index: 1;
-                                font-size: 2.7vw;
-                                text-align: center;
-                                transform: rotate(345deg);
-                                font-weight: bold;
-                            }
-
-                            &::after {
-                                content: 'AMAZON';
-                                position: absolute;
-                                left: 30%;
-                                bottom: 30%;
-                                font-size: 4vw;
-                                text-align: center;
-                                transform: rotate(345deg);
-                                font-weight: bold;
-                            }
-                            
                             img {
                                 transform: rotate(345deg);
                             }
                         }
-                    }
-
-                    &:nth-of-type(2) .xMediaImage::after {
-                        content: 'UBER';
-                        left: 40%;
-                        bottom: 32%;
-                    }
-
-                    &:nth-of-type(3) .xMediaImage::after {
-                        content: 'LIVERPOOL';
-                        left: 25%;
-                        bottom: 32%;
-                    }
-
-                    &:last-of-type .xMediaImage::after {
-                        content: '$100';
-                        left: 42%;
-                        bottom: 32%;
                     }
                 }
             }
@@ -181,7 +140,7 @@
                 border: 6px solid $c-dorado;
                 background-color: $c-blanco;
                 position: absolute;
-                top: 0;
+                top: 9%;
                 left: 34vw;
             }
 
@@ -283,16 +242,6 @@
             
             #xSectionContent1R2C2 .xCellInner .xImage {
                 flex-basis: 21%;
-
-                .xItemInner .xMediaImage {
-                    &::before {
-                        font-size: .7vw;
-                    }
-
-                    &::after {
-                        font-size: 1vw;
-                    }
-                }
             }
         }
     }
@@ -318,16 +267,6 @@
                 height: 130px;
                 top: 7%;
                 left: 35%;
-            }
-        }
-
-        #xSectionContent1R2 .xRowInner #xSectionContent1R2C2 .xCellInner .xImage .xItemInner .xMediaImage {
-            &::before {
-                font-size: 9px;
-            }
-            
-            &::after {
-                font-size: 16px;
             }
         }
     }
