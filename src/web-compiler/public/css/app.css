@@ -4818,7 +4818,7 @@ body {
 
 .xSectionPrizes {
   text-align: center;
-  background: url(/images/background_blue.jpg?97f7f7b85bcb167b4da023873be77335);
+  background: url(https://a.wayin.com/images/7405/f7cdaa0a-93b7-47f6-8f9f-8723b19b8822/background_blue.jpg);
   background-position-x: 35%;
   background-position-y: top;
   background-repeat: no-repeat;
@@ -5480,7 +5480,7 @@ body {
 
 .Content #xSectionContent {
   text-align: center;
-  background: url(/images/background_blue.jpg?97f7f7b85bcb167b4da023873be77335);
+  background: url(https://a.wayin.com/images/7405/f7cdaa0a-93b7-47f6-8f9f-8723b19b8822/background_blue.jpg);
   background-position-x: 35%;
   background-position-y: top;
   background-repeat: no-repeat;
@@ -5563,6 +5563,10 @@ nav ul > div {
   display: none;
 }
 
+#xSectionHeader #HeaderR1 .xCampaignHeader {
+  background-color: transparent;
+}
+
 #xSectionHeader #HeaderR1 .xCampaignHeader ul.xNavMain {
   display: flex;
   flex-direction: column;
@@ -5599,27 +5603,27 @@ nav ul > div {
   margin-right: 10px;
 }
 
-#xSectionHeader #HeaderR1 .xCampaignHeader ul.xNavMain li.contentTab .xTabLink::before {
-  background-image: url(/images/icon_tel.png);
+#xSectionHeader #HeaderR1 .xCampaignHeader li.contentTab .xTabLink::before {
+  background-image: url(https://a.wayin.com/images/7405/f7cdaa0a-93b7-47f6-8f9f-8723b19b8822/icon_tel.png);
 }
 
-#xSectionHeader #HeaderR1 .xCampaignHeader ul.xNavMain li.content2Tab .xTabLink::before {
-  background-image: url(/images/icon_question.png);
+#xSectionHeader #HeaderR1 .xCampaignHeader li.content2Tab .xTabLink::before {
+  background-image: url(https://a.wayin.com/images/7405/f7cdaa0a-93b7-47f6-8f9f-8723b19b8822/icon_question.png);
 }
 
-#xSectionHeader #HeaderR1 .xCampaignHeader ul.xNavMain li.content3Tab .xTabLink::before {
-  background-image: url(/images/icon_privacy.png);
+#xSectionHeader #HeaderR1 .xCampaignHeader li.content3Tab .xTabLink::before {
+  background-image: url(https://a.wayin.com/images/7405/f7cdaa0a-93b7-47f6-8f9f-8723b19b8822/icon_privacy.png);
 }
 
-#xSectionHeader #HeaderR1 .xCampaignHeader ul.xNavMain li.content4Tab .xTabLink::before {
-  background-image: url(/images/icon_terms.png);
+#xSectionHeader #HeaderR1 .xCampaignHeader li.content4Tab .xTabLink::before {
+  background-image: url(https://a.wayin.com/images/7405/f7cdaa0a-93b7-47f6-8f9f-8723b19b8822/icon_terms.png);
 }
 
 #xSectionDetails {
   padding-top: 15px;
   height: 100%;
   min-height: 95vh;
-  background: url(/images/background_blue_mob_2.jpg?3c87b240131ef76596f1dd208f59b13b);
+  background: url(https://a.wayin.com/images/7405/f7cdaa0a-93b7-47f6-8f9f-8723b19b8822/background_blue_mob_2.jpg);
   background-position-x: center;
   background-position-y: -50px;
   background-repeat: no-repeat;

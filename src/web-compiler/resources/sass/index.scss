@@ -23,55 +23,59 @@ nav ul {
   top: 0;
   display: none;
 
-  #HeaderR1 .xCampaignHeader ul.xNavMain {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    background: transparent;
-    
-    li.xTab {
-      margin: 0;
-      width: 100%;
-      text-align: left;
+  #HeaderR1 .xCampaignHeader {
+    background-color: $c-transparent;
 
-      .xTabLink {
-        cursor: pointer;
+    ul.xNavMain {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      background: $c-transparent;
+      
+      li.xTab {
+        margin: 0;
         width: 100%;
-        padding: 10px;
-        font-size: 18px;
-        display: grid;
-        align-items: center;
-        grid-template-columns: 50px 1fr;
+        text-align: left;
 
-        &::before {
-          content: '';
-          width: 40px;
-          height: 40px;
-          display: inline-block;
-          background-repeat: no-repeat;
-          background-position: center;
-          background-size: 50%;
-          border: 2px solid #fff;
-          border-radius: 100%;
-          margin-right: 10px;
+        .xTabLink {
+          cursor: pointer;
+          width: 100%;
+          padding: 10px;
+          font-size: 18px;
+          display: grid;
+          align-items: center;
+          grid-template-columns: 50px 1fr;
+
+          &::before {
+            content: '';
+            width: 40px;
+            height: 40px;
+            display: inline-block;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 50%;
+            border: 2px solid #fff;
+            border-radius: 100%;
+            margin-right: 10px;
+          }
         }
       }
     }
 
     li.contentTab .xTabLink::before {
-      background-image: url(/images/icon_tel.png);
+      background-image: $icon-tel;
     }
 
     li.content2Tab .xTabLink::before {
-      background-image: url(/images/icon_question.png);
+      background-image: $icon-question;
     }
 
     li.content3Tab .xTabLink::before {
-      background-image: url(/images/icon_privacy.png);
+      background-image: $icon-privacy;
     }
 
     li.content4Tab .xTabLink::before {
-      background-image: url(/images/icon_terms.png);
+      background-image: $icon-terms;
     }
   }
 }
@@ -80,7 +84,7 @@ nav ul {
   padding-top: 15px;
   height: 100%;
   min-height: 95vh;
-  background: url('../images/background_blue_mob_2.jpg');
+  background: $background-home-mobile;
   background-position-x: center;
   background-position-y: -50px;
   background-repeat: no-repeat;

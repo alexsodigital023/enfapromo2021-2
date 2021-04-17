@@ -1,14 +1,14 @@
 .Content1 {
     h1 {
         background: -webkit-linear-gradient($c-dorado, $c-amarillo);
-        -webkit-text-fill-color: transparent;
+        -webkit-text-fill-color: $c-transparent;
         -webkit-background-clip: text;
         -webkit-text-stroke: 0;
         color: $c-dorado;
         text-align: center;
         font-weight: bold;
         font-size: 9.5vw;
-        font-family: 'Gotham Italic';
+        font-family: $font-gothamItalic;
         line-height: 1.16;
         letter-spacing: 1px;
     }
@@ -16,17 +16,17 @@
     h2 {
         background: -webkit-linear-gradient(-45deg, $c-amarillo, $c-dorado);
         -webkit-background-clip: text;
-        -webkit-text-stroke: 5px transparent;
+        -webkit-text-stroke: 5px $c-transparent;
         color: $c-blanco;
         font-size: 5vw;
         text-align: center;
-        font-family: 'Gotham Italic';
+        font-family: $font-gothamItalic;
         padding: 0 10%;
     }
 
     #xSectionContent1R4C1 h2 {
         background: -webkit-linear-gradient($c-dorado, $c-amarillo);
-        -webkit-text-fill-color: transparent;
+        -webkit-text-fill-color: $c-transparent;
         -webkit-text-stroke: 3px $c-negro;
         -webkit-background-clip: text;
         text-align: center;
@@ -37,7 +37,7 @@
 
     h3 {
         background: -webkit-linear-gradient($c-dorado, $c-amarillo);
-        -webkit-text-fill-color: transparent;
+        -webkit-text-fill-color: $c-transparent;
         text-shadow: 0px 0px 20px $c-shadow;
         -webkit-background-clip: text;
         -webkit-text-stroke: 0;
@@ -232,7 +232,7 @@
         h2 {
             font-size: 4vw;
             text-align: left;
-            -webkit-text-stroke: 7px transparent;
+            -webkit-text-stroke: 7px $c-transparent;
         }
 
         h3 {
@@ -337,7 +337,7 @@
     .Content1 {
         h2 {
             font-size: 55px;
-            -webkit-text-stroke: 10px transparent;
+            -webkit-text-stroke: 10px $c-transparent;
         }
     }
 }
