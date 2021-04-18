@@ -3,7 +3,7 @@
         <nav>
             <ul>
                 <div v-if="visible" @click="myMethod">
-                    <img style="width:40px;" src="../../images/icon_menu.png" id="test"/>
+                    <div class="menuIcono"></div>
                 </div>
                 <li>
                         <slot></slot>

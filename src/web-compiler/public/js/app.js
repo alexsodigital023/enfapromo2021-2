@@ -11064,13 +11064,7 @@ var render = function() {
         _c("ul", [
           _vm.visible
             ? _c("div", { on: { click: _vm.myMethod } }, [
-                _c("img", {
-                  staticStyle: { width: "40px" },
-                  attrs: {
-                    src: __webpack_require__(/*! ../../images/icon_menu.png */ "./resources/images/icon_menu.png"),
-                    id: "test"
-                  }
-                })
+                _c("div", { staticClass: "menuIcono" })
               ])
             : _vm._e(),
           _vm._v(" "),
@@ -23693,7 +23687,7 @@ module.exports = __webpack_require__(/*! ../package.json */ "./node_modules/webs
 /*! exports provided: _args, _from, _id, _inBundle, _integrity, _location, _phantomChildren, _requested, _requiredBy, _resolved, _spec, _where, author, browser, bugs, config, contributors, dependencies, description, devDependencies, directories, engines, homepage, keywords, license, main, name, repository, scripts, version, default */
 /***/ (function(module) {
 
-module.exports = JSON.parse("{\"_args\":[[\"websocket@1.0.31\",\"/home/jose_alfredo/Documentos/chocomilkpromo/src/web-compiler\"]],\"_from\":\"websocket@1.0.31\",\"_id\":\"websocket@1.0.31\",\"_inBundle\":false,\"_integrity\":\"sha512-VAouplvGKPiKFDTeCCO65vYHsyay8DqoBSlzIO3fayrfOgU94lQN5a1uWVnFrMLceTJw/+fQXR5PGbUVRaHshQ==\",\"_location\":\"/websocket\",\"_phantomChildren\":{\"ms\":\"2.0.0\"},\"_requested\":{\"type\":\"version\",\"registry\":true,\"raw\":\"websocket@1.0.31\",\"name\":\"websocket\",\"escapedName\":\"websocket\",\"rawSpec\":\"1.0.31\",\"saveSpec\":null,\"fetchSpec\":\"1.0.31\"},\"_requiredBy\":[\"/\"],\"_resolved\":\"https://registry.npmjs.org/websocket/-/websocket-1.0.31.tgz\",\"_spec\":\"1.0.31\",\"_where\":\"/home/jose_alfredo/Documentos/chocomilkpromo/src/web-compiler\",\"author\":{\"name\":\"Brian McKelvey\",\"email\":\"theturtle32@gmail.com\",\"url\":\"https://github.com/theturtle32\"},\"browser\":\"lib/browser.js\",\"bugs\":{\"url\":\"https://github.com/theturtle32/WebSocket-Node/issues\"},\"config\":{\"verbose\":false},\"contributors\":[{\"name\":\"Iñaki Baz Castillo\",\"email\":\"ibc@aliax.net\",\"url\":\"http://dev.sipdoc.net\"}],\"dependencies\":{\"debug\":\"^2.2.0\",\"es5-ext\":\"^0.10.50\",\"nan\":\"^2.14.0\",\"typedarray-to-buffer\":\"^3.1.5\",\"yaeti\":\"^0.0.6\"},\"description\":\"Websocket Client & Server Library implementing the WebSocket protocol as specified in RFC 6455.\",\"devDependencies\":{\"buffer-equal\":\"^1.0.0\",\"faucet\":\"^0.0.1\",\"gulp\":\"^4.0.2\",\"gulp-jshint\":\"^2.0.4\",\"jshint\":\"^2.0.0\",\"jshint-stylish\":\"^2.2.1\",\"tape\":\"^4.9.1\"},\"directories\":{\"lib\":\"./lib\"},\"engines\":{\"node\":\">=0.10.0\"},\"homepage\":\"https://github.com/theturtle32/WebSocket-Node\",\"keywords\":[\"websocket\",\"websockets\",\"socket\",\"networking\",\"comet\",\"push\",\"RFC-6455\",\"realtime\",\"server\",\"client\"],\"license\":\"Apache-2.0\",\"main\":\"index\",\"name\":\"websocket\",\"repository\":{\"type\":\"git\",\"url\":\"git+https://github.com/theturtle32/WebSocket-Node.git\"},\"scripts\":{\"gulp\":\"gulp\",\"install\":\"(node-gyp rebuild 2> builderror.log) || (exit 0)\",\"test\":\"faucet test/unit\"},\"version\":\"1.0.31\"}");
+module.exports = JSON.parse("{\"_args\":[[\"websocket@1.0.31\",\"/home/sergiosodigitalmx/chocomilkpromo/src/web-compiler\"]],\"_from\":\"websocket@1.0.31\",\"_id\":\"websocket@1.0.31\",\"_inBundle\":false,\"_integrity\":\"sha512-VAouplvGKPiKFDTeCCO65vYHsyay8DqoBSlzIO3fayrfOgU94lQN5a1uWVnFrMLceTJw/+fQXR5PGbUVRaHshQ==\",\"_location\":\"/websocket\",\"_phantomChildren\":{\"ms\":\"2.0.0\"},\"_requested\":{\"type\":\"version\",\"registry\":true,\"raw\":\"websocket@1.0.31\",\"name\":\"websocket\",\"escapedName\":\"websocket\",\"rawSpec\":\"1.0.31\",\"saveSpec\":null,\"fetchSpec\":\"1.0.31\"},\"_requiredBy\":[\"/\"],\"_resolved\":\"https://registry.npmjs.org/websocket/-/websocket-1.0.31.tgz\",\"_spec\":\"1.0.31\",\"_where\":\"/home/sergiosodigitalmx/chocomilkpromo/src/web-compiler\",\"author\":{\"name\":\"Brian McKelvey\",\"email\":\"theturtle32@gmail.com\",\"url\":\"https://github.com/theturtle32\"},\"browser\":\"lib/browser.js\",\"bugs\":{\"url\":\"https://github.com/theturtle32/WebSocket-Node/issues\"},\"config\":{\"verbose\":false},\"contributors\":[{\"name\":\"Iñaki Baz Castillo\",\"email\":\"ibc@aliax.net\",\"url\":\"http://dev.sipdoc.net\"}],\"dependencies\":{\"debug\":\"^2.2.0\",\"es5-ext\":\"^0.10.50\",\"nan\":\"^2.14.0\",\"typedarray-to-buffer\":\"^3.1.5\",\"yaeti\":\"^0.0.6\"},\"description\":\"Websocket Client & Server Library implementing the WebSocket protocol as specified in RFC 6455.\",\"devDependencies\":{\"buffer-equal\":\"^1.0.0\",\"faucet\":\"^0.0.1\",\"gulp\":\"^4.0.2\",\"gulp-jshint\":\"^2.0.4\",\"jshint\":\"^2.0.0\",\"jshint-stylish\":\"^2.2.1\",\"tape\":\"^4.9.1\"},\"directories\":{\"lib\":\"./lib\"},\"engines\":{\"node\":\">=0.10.0\"},\"homepage\":\"https://github.com/theturtle32/WebSocket-Node\",\"keywords\":[\"websocket\",\"websockets\",\"socket\",\"networking\",\"comet\",\"push\",\"RFC-6455\",\"realtime\",\"server\",\"client\"],\"license\":\"Apache-2.0\",\"main\":\"index\",\"name\":\"websocket\",\"repository\":{\"type\":\"git\",\"url\":\"git+https://github.com/theturtle32/WebSocket-Node.git\"},\"scripts\":{\"gulp\":\"gulp\",\"install\":\"(node-gyp rebuild 2> builderror.log) || (exit 0)\",\"test\":\"faucet test/unit\"},\"version\":\"1.0.31\"}");
 
 /***/ }),
 
@@ -23724,17 +23718,6 @@ function extend() {
     return target
 }
 
-
-/***/ }),
-
-/***/ "./resources/images/icon_menu.png":
-/*!****************************************!*\
-  !*** ./resources/images/icon_menu.png ***!
-  \****************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "/images/icon_menu.png?d8609cc9b05db8f99a5ca82f1a093e28";
 
 /***/ }),
 
@@ -24819,8 +24802,8 @@ var _default = /*#__PURE__*/function () {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /home/jose_alfredo/Documentos/chocomilkpromo/src/web-compiler/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /home/jose_alfredo/Documentos/chocomilkpromo/src/web-compiler/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /home/sergiosodigitalmx/chocomilkpromo/src/web-compiler/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /home/sergiosodigitalmx/chocomilkpromo/src/web-compiler/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ }),
