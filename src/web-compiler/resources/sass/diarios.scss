@@ -1,4 +1,4 @@
-.Content1 {
+.Content1, .xStateContent1 {
     h1 {
         background: -webkit-linear-gradient($c-dorado, $c-amarillo);
         -webkit-text-fill-color: $c-transparent;
@@ -198,15 +198,17 @@
 }
 
 @media #{$grid-xs} {
-    .Content1 #xSectionContent1R1 .xRowInner::before {
-        width: 11vw;
-        height: 16vw;
-        left: 0;
+    .Content1, .xStateContent1 {
+        #xSectionContent1R1 .xRowInner::before {
+            width: 11vw;
+            height: 16vw;
+            left: 0;
+        }
     }
 }
 
 @media #{$grid-md} {
-    .Content1 {
+    .Content1, .xStateContent1 {
         h1 {
             font-size: 7vw;
             padding-left: 15%;
@@ -289,7 +291,7 @@
 }
 
 @media #{$grid-xl} {
-    .Content1 {
+    .Content1, .xStateContent1 {
         h1 {
             font-size: 75px;
         }
@@ -326,7 +328,7 @@
 }
 
 @media #{$grid-xxl} {
-    .Content1 {
+    .Content1, .xStateContent1 {
         h2 {
             font-size: 55px;
             -webkit-text-stroke: 10px $c-transparent;

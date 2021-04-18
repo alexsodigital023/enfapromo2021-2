@@ -1,56 +1,64 @@
-.Content #xSectionContent {
-    text-align: center;
-    background: $background-section;
-    background-position-x: 35%;
-    background-position-y: top;
-    background-repeat: no-repeat;
-    background-size: cover;
+.Content, .xStateContent {
+    #xSectionContent {
+        text-align: center;
+        background: $background-section;
+        background-position-x: 35%;
+        background-position-y: top;
+        background-repeat: no-repeat;
+        background-size: cover;
 
-    h1, h2, a {
-        font-size: 30px;
-        text-transform: uppercase;
-        font-family: $font-gothamItalic;
-    }
+        h1, h2, a {
+            font-size: 30px;
+            text-transform: uppercase;
+            font-family: $font-gothamItalic;
+        }
 
-    h3 {
-        font-size: 20px;
-    }
+        h3 {
+            font-size: 20px;
+        }
 
-    .xHeadline {
-        margin-bottom: 30px;
-    }
+        .xHeadline {
+            margin-bottom: 30px;
+        }
 
-    img {
-        margin: 20px auto;
-        width: 50%;
+        img {
+            margin: 20px auto;
+            width: 50%;
+        }
     }
 }
 
 @media #{$grid-sm} {
-    .Content #xSectionContent {
-        background-position-x: 30%;
+    .Content, .xStateContent {
+        #xSectionContent {
+            background-position-x: 30%;
 
-        img {
-            width: 30%;
+            img {
+                width: 30%;
+            }
         }
     }
 }
 
 @media #{$grid-md} {
-    .Content #xSectionContent {
-        h1, h2, a {
-            font-size: 40px;
+    .Content, .xStateContent {
+        #xSectionContent {
+            h1, h2, a {
+                font-size: 40px;
+            }
         }
     }
 }
 
 @media #{$grid-lg} {
-    .Content #xSectionContent {
-        background-position-x: left;
+    .Content, .xStateContent {
+        #xSectionContent {
+            background-position-x: left;
 
-        img {
-            margin: 50px auto;
-            width: 200px;
+            img {
+                margin: 50px auto;
+                width: 200px;
+            }
         }
     }
 }
