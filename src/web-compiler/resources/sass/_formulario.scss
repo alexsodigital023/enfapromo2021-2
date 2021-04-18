@@ -133,10 +133,6 @@
 }
 
 @media #{$grid-sm} {
-  #xSectionDetails .xMediaContainer img {
-    max-width: -webkit-fill-available;
-  }
-
   .ticketFormContainer {
     .xFormPages {
       width: auto !important;
@@ -159,6 +155,10 @@
 }
 
 @media #{$grid-md} {
+  #xSectionDetails .xMediaContainer img {
+    max-width: -webkit-fill-available;
+  }
+  
   .ticketFormContainer {
     transform: translateY(15%);
 

@@ -4774,10 +4774,6 @@ body {
 }
 
 @media screen and (min-width: 576px) {
-  #xSectionDetails .xMediaContainer img {
-    max-width: -webkit-fill-available;
-  }
-
   .ticketFormContainer .xFormPages {
     width: auto !important;
   }
@@ -4798,6 +4794,10 @@ body {
 }
 
 @media screen and (min-width: 768px) {
+  #xSectionDetails .xMediaContainer img {
+    max-width: -webkit-fill-available;
+  }
+
   .ticketFormContainer {
     transform: translateY(15%);
   }
