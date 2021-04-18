@@ -31,6 +31,15 @@ nav>ul {
     position: absolute;
     left: 5%;
   }
+  
+  .menuIcono{
+    width: 40px;
+    height: 35px;
+    background-image: url(/images/icon_menu.png?d8610cc…);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: left top;
+  }
 }
 
 #xSectionHeader {

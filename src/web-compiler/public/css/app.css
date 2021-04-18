@@ -4573,6 +4573,8 @@ readers do not read off random characters that represent icons */
 .fas {
   font-family: 'Font Awesome 5 Free';
   font-weight: 900; }
+@charset "UTF-8";
+
 @font-face {
   font-family: "Avenir Oblique";
   font-style: normal;
@@ -5678,6 +5680,15 @@ nav > ul > div {
   cursor: pointer;
   position: absolute;
   left: 5%;
+}
+
+nav > ul .menuIcono {
+  width: 40px;
+  height: 35px;
+  background-image: url(/images/icon_menu.png?d8610cc…);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: left top;
 }
 
 #xSectionHeader {
