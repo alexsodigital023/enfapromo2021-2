@@ -5743,6 +5743,11 @@ nav > ul .menuIcono {
   grid-template-columns: 50px 1fr;
 }
 
+#xSectionHeader #HeaderR1 .xCampaignHeader ul.xNavMain li.xTab .xTabLink:hover {
+  opacity: 0.5;
+  text-decoration: none;
+}
+
 #xSectionHeader #HeaderR1 .xCampaignHeader ul.xNavMain li.xTab .xTabLink::before {
   content: "";
   width: 40px;

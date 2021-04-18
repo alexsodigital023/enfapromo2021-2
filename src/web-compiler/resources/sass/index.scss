@@ -81,6 +81,11 @@ nav>ul {
           align-items: center;
           grid-template-columns: 50px 1fr;
 
+          &:hover {
+            opacity: .5;
+            text-decoration: none;
+          }
+
           &::before {
             content: '';
             width: 40px;
