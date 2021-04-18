@@ -11068,7 +11068,7 @@ var render = function() {
               ])
             : _vm._e(),
           _vm._v(" "),
-          _c("li", { on: { click: _vm.myMethod } }, [_vm._t("default")], 2)
+          _c("li", { on: { click: _vm.clickExterno } }, [_vm._t("default")], 2)
         ])
       ])
     ]
