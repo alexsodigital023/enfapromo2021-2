@@ -5,7 +5,7 @@
                 <div v-if="visible" @click="myMethod">
                     <div class="menuIcono"></div>
                 </div>
-                <li>
+                <li @click="myMethod">
                         <slot></slot>
                 </li>
             </ul>
