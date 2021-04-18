@@ -229,7 +229,15 @@ nav>ul {
     right: 0;
   }
 
-  #xSectionDetails .xRowInner .xCell.mid {
-    width: 50%;
+  #xSectionDetails {
+    background: $background-section;
+    background-position-x: center;
+    background-position-y: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    .xRowInner .xCell.mid {
+      width: 50%;
+    }
   }
 }

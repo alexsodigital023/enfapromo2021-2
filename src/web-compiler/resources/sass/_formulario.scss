@@ -6,6 +6,15 @@
   .xMediaContainer img {
     max-width: 200px;
   }
+
+  .xHelpContainer {
+    color: #fff;
+    margin: 5px 0 15px 0;
+  }
+
+  .xFileAction {
+    right: -15px;
+  }
 }
 
 .ticketFormContainer{
@@ -122,7 +131,7 @@
 
     .xPagingButton {
       width: 100%;
-      font-size: 1.8em;
+      font-size: 1.6em;
       font-weight: bold;
       text-transform: uppercase;
       background-color: $c-azul;
@@ -158,12 +167,12 @@
   #xSectionDetails .xMediaContainer img {
     max-width: -webkit-fill-available;
   }
-  
+
   .ticketFormContainer {
     transform: translateY(15%);
 
     .xFormPages {
-      margin: 0 25%;
+      margin: 0 20%;
     }
   }
 }

@@ -4618,6 +4618,7 @@ readers do not read off random characters that represent icons */
 body {
   background: #0A59A2;
   color: #fff;
+  padding: 0 !important;
 }
 
 .xPage {
@@ -4630,6 +4631,15 @@ body {
 
 #xSectionDetails .xMediaContainer img {
   max-width: 200px;
+}
+
+#xSectionDetails .xHelpContainer {
+  color: #fff;
+  margin: 5px 0 15px 0;
+}
+
+#xSectionDetails .xFileAction {
+  right: -15px;
 }
 
 .ticketFormContainer ::-moz-placeholder {
@@ -4765,7 +4775,7 @@ body {
 
 .ticketFormContainer .xActionsForm .xPagingButton {
   width: 100%;
-  font-size: 1.8em;
+  font-size: 1.6em;
   font-weight: bold;
   text-transform: uppercase;
   background-color: #0A59A2;
@@ -4803,7 +4813,7 @@ body {
   }
 
   .ticketFormContainer .xFormPages {
-    margin: 0 25%;
+    margin: 0 20%;
   }
 }
 
@@ -5867,8 +5877,35 @@ nav > ul .menuIcono {
     right: 0;
   }
 
+  #xSectionDetails {
+    background: url(https://a.wayin.com/images/7405/f7cdaa0a-93b7-47f6-8f9f-8723b19b8822/background_blue.jpg);
+    background-position-x: center;
+    background-position-y: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
   #xSectionDetails .xRowInner .xCell.mid {
     width: 50%;
+  }
+}
+
+.xSectionConfirmation {
+  padding: 45px;
+  background: url(https://a.wayin.com/images/7405/f7cdaa0a-93b7-47f6-8f9f-8723b19b8822/background_blue_mob_2.jpg);
+  background-position-x: center;
+  background-position-y: top;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+@media screen and (min-width: 768px) {
+  .xSectionConfirmation {
+    background: url(https://a.wayin.com/images/7405/f7cdaa0a-93b7-47f6-8f9f-8723b19b8822/background_blue.jpg);
+    background-position-x: center;
+    background-position-y: top;
+    background-repeat: no-repeat;
+    background-size: cover;
   }
 }
 
