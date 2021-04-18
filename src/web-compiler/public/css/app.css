@@ -4674,17 +4674,23 @@ body {
 .ticketFormContainer input::-moz-placeholder, .ticketFormContainer select::-moz-placeholder {
   font-weight: bold;
   text-align: center;
+  color: #0A59A2;
+  opacity: 0.4;
 }
 
 .ticketFormContainer input:-ms-input-placeholder, .ticketFormContainer select:-ms-input-placeholder {
   font-weight: bold;
   text-align: center;
+  color: #0A59A2;
+  opacity: 0.4;
 }
 
 .ticketFormContainer input::placeholder,
 .ticketFormContainer select::placeholder {
   font-weight: bold;
   text-align: center;
+  color: #0A59A2;
+  opacity: 0.4;
 }
 
 .ticketFormContainer button[type=submit] {
