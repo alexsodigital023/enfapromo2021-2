@@ -30,10 +30,6 @@
     color: #fff;
     margin: 5px 0 15px 0;
   }
-
-  .xFileAction {
-    right: -15px;
-  }
 }
 
 .ticketFormContainer{
@@ -45,6 +41,11 @@
 
   .xFormPages {
     margin: 10%;
+    height: auto !important;
+    
+    .xFormPage {
+      position: initial !important;
+    }
   }
 
   label {
@@ -166,10 +167,6 @@
   .ticketFormContainer {
     .xFormPages {
       width: auto !important;
-
-      .xFormPage {
-        position: initial !important;
-      }
     }
 
     .xActionsForm {

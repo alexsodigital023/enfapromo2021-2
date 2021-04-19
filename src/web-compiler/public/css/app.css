@@ -4652,10 +4652,6 @@ body {
   margin: 5px 0 15px 0;
 }
 
-#xSectionDetails .xFileAction {
-  right: -15px;
-}
-
 .ticketFormContainer ::-moz-placeholder {
   color: #b8b8b8;
   opacity: 1;
@@ -4674,6 +4670,11 @@ body {
 
 .ticketFormContainer .xFormPages {
   margin: 10%;
+  height: auto !important;
+}
+
+.ticketFormContainer .xFormPages .xFormPage {
+  position: initial !important;
 }
 
 .ticketFormContainer label {
@@ -4806,10 +4807,6 @@ body {
 @media screen and (min-width: 576px) {
   .ticketFormContainer .xFormPages {
     width: auto !important;
-  }
-
-  .ticketFormContainer .xFormPages .xFormPage {
-    position: initial !important;
   }
 
   .ticketFormContainer .xActionsForm {
@@ -5911,6 +5908,53 @@ nav > ul .menuIcono {
   #xSectionDetails .xRowInner .xCell.mid {
     width: 50%;
   }
+}
+
+#ngxUserUploadWrapper {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+#ngxUserUploadWrapper .xLabelContainer {
+  font-family: "Gotham Italic";
+  text-align: center;
+  font-size: 1.5em;
+  letter-spacing: 1.5px;
+  margin: 10px auto;
+  padding: 0;
+  width: 100%;
+  max-width: 100%;
+}
+
+#ngxUserUploadWrapper .xHelpLabel {
+  font-family: "Gotham Bold";
+  margin: 0px 10px 10px 10px;
+  text-align: center;
+}
+
+#ngxUserUploadWrapper .xFieldContainer {
+  display: flex;
+  flex-direction: column-reverse;
+  width: 100% !important;
+}
+
+#ngxUserUploadWrapper .xFieldContainer .xFileAction {
+  right: 0;
+}
+
+#ngxUserUploadWrapper .xFieldContainer .xUploader span {
+  display: none;
+}
+
+#ngxUserUploadWrapper .xFieldContainer .xUploader::before {
+  content: "";
+  display: block;
+  width: 100px;
+  height: 100px;
+  margin: auto;
+  background-image: url(/images/icon_camera.png);
+  background-position: center;
+  background-size: cover;
 }
 
 .xSectionConfirmation {
