@@ -43,8 +43,8 @@
         -webkit-text-stroke: 0;
         color: $c-dorado;
         text-align: center;
-        font-weight: bold;
         font-size: 8vw;
+        font-family: $font-gothamItalic;
     }
 
     #xSectionContent1R1 .xRowInner {
@@ -181,6 +181,10 @@
 
     #xSectionContent1R4 .xRowInner {
         background-color: $c-azul-oscuro;
+        background-image: $background-big-price;
+        background-repeat: no-repeat;
+        background-position: top;
+        background-size: cover;
         justify-content: center;
         align-items: center;
     }
@@ -310,7 +314,7 @@
 
         #xSectionContent1R4 .xRowInner {
             h3 {
-                font-size: 45px;
+                font-size: 35px;
             }
 
             #xSectionContent1R4C1 h2 {

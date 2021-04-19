@@ -1,4 +1,5 @@
-$assets_path: 'https://a.wayin.com/images/7405/f7cdaa0a-93b7-47f6-8f9f-8723b19b8822/';
+// $assets_path: 'https://a.wayin.com/images/7405/f7cdaa0a-93b7-47f6-8f9f-8723b19b8822/';
+$assets_path: '/images/';
 
 $background-home: url(#{$assets_path}fondo-desktop.jpg);
 $background-home-mobile: url(#{$assets_path}background_blue_mob_2.jpg);
@@ -11,6 +12,7 @@ $background-section-mobile: url(#{$assets_path}background_blue.jpg);
 $background-game: url(#{$assets_path}background_controller.jpg);
 $background-netflix: url(#{$assets_path}background_netflix.jpg);
 $background-premios: url(#{$assets_path}background_premios.jpg);
+$background-big-price: url(#{$assets_path}background-big-price.jpg);
 
 $icon-camera: url(#{$assets_path}icon_camera.png);
 $icon-control: url(#{$assets_path}icon_control.png);

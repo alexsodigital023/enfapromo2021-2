@@ -4633,7 +4633,7 @@ body {
 }
 
 .details .xPage {
-  background-image: url(https://a.wayin.com/images/7405/f7cdaa0a-93b7-47f6-8f9f-8723b19b8822/background_blue_mob_2.jpg);
+  background-image: url(/images/background_blue_mob_2.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -4825,7 +4825,7 @@ body {
 
 @media screen and (min-width: 768px) {
   .details .xPage {
-    background-image: url(https://a.wayin.com/images/7405/f7cdaa0a-93b7-47f6-8f9f-8723b19b8822/fondo-desktop.jpg);
+    background-image: url(/images/fondo-desktop.jpg);
   }
 
   #xSectionDetails .xMediaContainer img {
@@ -4843,7 +4843,7 @@ body {
 
 .xSectionPrizes {
   text-align: center;
-  background: url(https://a.wayin.com/images/7405/f7cdaa0a-93b7-47f6-8f9f-8723b19b8822/background_blue_desktop.jpg);
+  background: url(/images/background_blue_desktop.jpg);
   background-position-x: 35%;
   background-position-y: top;
   background-repeat: no-repeat;
@@ -5169,8 +5169,8 @@ body {
   -webkit-text-stroke: 0;
   color: #AC8833;
   text-align: center;
-  font-weight: bold;
   font-size: 8vw;
+  font-family: "Gotham Italic";
 }
 
 .Content1 #xSectionContent1R1 .xRowInner,
@@ -5178,7 +5178,7 @@ body {
   display: grid;
   grid-template-columns: 1fr 1fr;
   border-top: 2px solid #fff;
-  background: url(https://a.wayin.com/images/7405/f7cdaa0a-93b7-47f6-8f9f-8723b19b8822/background_premios.jpg);
+  background: url(/images/background_premios.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position-y: top;
@@ -5192,7 +5192,7 @@ body {
   width: 14vw;
   height: 20vw;
   display: block;
-  background-image: url(https://a.wayin.com/images/7405/f7cdaa0a-93b7-47f6-8f9f-8723b19b8822/splash_choco_1.png);
+  background-image: url(/images/splash_choco_1.png);
   background-repeat: no-repeat;
   background-size: cover;
   position: absolute;
@@ -5384,6 +5384,10 @@ body {
 .Content1 #xSectionContent1R4 .xRowInner,
 .xStateContent1 #xSectionContent1R4 .xRowInner {
   background-color: #0F1E56;
+  background-image: url(/images/background-big-price.jpg);
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: cover;
   justify-content: center;
   align-items: center;
 }
@@ -5447,7 +5451,7 @@ body {
     width: 18vw;
     height: 12vw;
     display: block;
-    background-image: url(https://a.wayin.com/images/7405/f7cdaa0a-93b7-47f6-8f9f-8723b19b8822/splash_choco_2.png);
+    background-image: url(/images/splash_choco_2.png);
     background-repeat: no-repeat;
     background-size: cover;
     position: absolute;
@@ -5579,7 +5583,7 @@ body {
 
   .Content1 #xSectionContent1R4 .xRowInner h3,
   .xStateContent1 #xSectionContent1R4 .xRowInner h3 {
-    font-size: 45px;
+    font-size: 35px;
   }
 
   .Content1 #xSectionContent1R4 .xRowInner #xSectionContent1R4C1 h2,
@@ -5607,7 +5611,7 @@ body {
 .Content #xSectionContent,
 .xStateContent #xSectionContent {
   text-align: center;
-  background: url(https://a.wayin.com/images/7405/f7cdaa0a-93b7-47f6-8f9f-8723b19b8822/background_blue_desktop.jpg);
+  background: url(/images/background_blue_desktop.jpg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -5686,7 +5690,7 @@ body {
 
 nav > ul {
   background-color: #3c1b1a;
-  background-image: url(https://a.wayin.com/images/7405/f7cdaa0a-93b7-47f6-8f9f-8723b19b8822/background_header_mob.jpg);
+  background-image: url(/images/background_header_mob.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -5706,7 +5710,7 @@ nav > ul::before {
   width: 150px;
   height: 120px;
   display: block;
-  background-image: url(https://a.wayin.com/images/7405/f7cdaa0a-93b7-47f6-8f9f-8723b19b8822/modo_pantera_only.png);
+  background-image: url(/images/modo_pantera_only.png);
   background-repeat: no-repeat;
   background-size: contain;
   margin: 10px 30px 0px 30px;
@@ -5722,7 +5726,7 @@ nav > ul > div {
 nav > ul .menuIcono {
   width: 40px;
   height: 35px;
-  background-image: url(https://a.wayin.com/images/7405/f7cdaa0a-93b7-47f6-8f9f-8723b19b8822/icon_menu.png);
+  background-image: url(/images/icon_menu.png);
   background-size: contain;
   background-repeat: no-repeat;
   background-position: left top;
@@ -5790,22 +5794,22 @@ nav > ul .menuIcono {
 }
 
 #xSectionHeader #HeaderR1 .xCampaignHeader li.contentTab .xTabLink::before {
-  background-image: url(https://a.wayin.com/images/7405/f7cdaa0a-93b7-47f6-8f9f-8723b19b8822/icon_tel.png);
+  background-image: url(/images/icon_tel.png);
   border: 2px solid #fff;
 }
 
 #xSectionHeader #HeaderR1 .xCampaignHeader li.content2Tab .xTabLink::before {
-  background-image: url(https://a.wayin.com/images/7405/f7cdaa0a-93b7-47f6-8f9f-8723b19b8822/icon_question.png);
+  background-image: url(/images/icon_question.png);
   border: 2px solid #fff;
 }
 
 #xSectionHeader #HeaderR1 .xCampaignHeader li.content3Tab .xTabLink::before {
-  background-image: url(https://a.wayin.com/images/7405/f7cdaa0a-93b7-47f6-8f9f-8723b19b8822/icon_privacy.png);
+  background-image: url(/images/icon_privacy.png);
   border: 2px solid #fff;
 }
 
 #xSectionHeader #HeaderR1 .xCampaignHeader li.content4Tab .xTabLink::before {
-  background-image: url(https://a.wayin.com/images/7405/f7cdaa0a-93b7-47f6-8f9f-8723b19b8822/icon_terms.png);
+  background-image: url(/images/icon_terms.png);
   border: 2px solid #fff;
 }
 
@@ -5911,7 +5915,7 @@ nav > ul .menuIcono {
 
 .xSectionConfirmation {
   padding: 45px;
-  background: url(https://a.wayin.com/images/7405/f7cdaa0a-93b7-47f6-8f9f-8723b19b8822/background_blue_mob_2.jpg);
+  background: url(/images/background_blue_mob_2.jpg);
   background-position-x: center;
   background-position-y: top;
   background-repeat: no-repeat;
@@ -5920,7 +5924,7 @@ nav > ul .menuIcono {
 
 @media screen and (min-width: 768px) {
   .xSectionConfirmation {
-    background: url(https://a.wayin.com/images/7405/f7cdaa0a-93b7-47f6-8f9f-8723b19b8822/background_blue.jpg);
+    background: url(/images/background_blue.jpg);
     background-position-x: center;
     background-position-y: top;
     background-repeat: no-repeat;
