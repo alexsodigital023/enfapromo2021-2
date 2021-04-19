@@ -127,11 +127,6 @@ nav>ul {
   padding-top: 10px;
   height: 100%;
   min-height: 95vh;
-  background: $background-home-mobile;
-  background-position-x: center;
-  background-position-y: -50px;
-  background-repeat: no-repeat;
-  background-size: cover;
 
   .xComponentInner {
     position: relative;
@@ -235,12 +230,6 @@ nav>ul {
   }
 
   #xSectionDetails {
-    background: $background-section;
-    background-position-x: center;
-    background-position-y: top;
-    background-repeat: no-repeat;
-    background-size: cover;
-
     .xRowInner .xCell.mid {
       width: 50%;
     }

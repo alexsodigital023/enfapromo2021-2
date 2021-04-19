@@ -1,6 +1,6 @@
 .xSectionPrizes {
     text-align: center;
-    background: $background-section;
+    background: $background-section-dsk;
     background-position-x: 35%;
     background-position-y: top;
     background-repeat: no-repeat;
@@ -31,13 +31,17 @@
         font-weight: bold;
         margin: 0;
         font-size: 1em;
+        font-family: $font-gothamBold;
+        text-shadow: 0 3px 7px $c-negro;
     }
 
     sub {
         display: block;
         font-size: 15px;
         -webkit-text-stroke: 0;
-        -webkit-text-fill-color: #fff;
+        -webkit-text-fill-color: $c-blanco;
+        text-shadow: 0px 3px 7px $c-negro;
+
     }
 
     ul {
@@ -66,13 +70,15 @@
                 grid-area: title;
                 justify-self: start;
                 align-self: end;
-                background: -webkit-linear-gradient($c-dorado, $c-amarillo);
+                background: -webkit-linear-gradient($c-amarillo, $c-dorado);
                 -webkit-text-fill-color: $c-transparent;
                 -webkit-background-clip: text;
                 -webkit-text-stroke: 0;
                 color: $c-dorado;
                 font-size: 15px;
                 text-align: left;
+                line-height: 1;
+                font-weight: bold;
             }
             
             sub {
@@ -82,7 +88,6 @@
                 justify-self: start;
                 font-size: 15px;
                 text-align: left;
-                text-shadow: 0px 0px 15px $c-shadow;
             }
         }
     }

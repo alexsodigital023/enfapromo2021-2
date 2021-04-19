@@ -1,3 +1,22 @@
+.details {
+  nav>ul {
+    background-image: none;
+    background-color: transparent;
+
+
+    &::before {
+      display: none;
+    }
+  }
+  
+  .xPage {
+    background-image: $background-home-mobile;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+}
+
 #xSectionDetails {
   .xForm {
     padding: 0;
@@ -166,6 +185,12 @@
 }
 
 @media #{$grid-md} {
+  .details {
+    .xPage {
+      background-image: $background-home;
+    }
+  }
+
   #xSectionDetails .xMediaContainer img {
     max-width: -webkit-fill-available;
   }

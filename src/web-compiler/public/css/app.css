@@ -4623,6 +4623,22 @@ body {
   width: 100%;
 }
 
+.details nav > ul {
+  background-image: none;
+  background-color: transparent;
+}
+
+.details nav > ul::before {
+  display: none;
+}
+
+.details .xPage {
+  background-image: url(https://a.wayin.com/images/7405/f7cdaa0a-93b7-47f6-8f9f-8723b19b8822/background_blue_mob_2.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
 #xSectionDetails .xForm {
   padding: 0;
 }
@@ -4808,6 +4824,10 @@ body {
 }
 
 @media screen and (min-width: 768px) {
+  .details .xPage {
+    background-image: url(https://a.wayin.com/images/7405/f7cdaa0a-93b7-47f6-8f9f-8723b19b8822/fondo-desktop.jpg);
+  }
+
   #xSectionDetails .xMediaContainer img {
     max-width: -webkit-fill-available;
   }
@@ -4823,7 +4843,7 @@ body {
 
 .xSectionPrizes {
   text-align: center;
-  background: url(https://a.wayin.com/images/7405/f7cdaa0a-93b7-47f6-8f9f-8723b19b8822/background_blue.jpg);
+  background: url(https://a.wayin.com/images/7405/f7cdaa0a-93b7-47f6-8f9f-8723b19b8822/background_blue_desktop.jpg);
   background-position-x: 35%;
   background-position-y: top;
   background-repeat: no-repeat;
@@ -4855,6 +4875,8 @@ body {
   font-weight: bold;
   margin: 0;
   font-size: 1em;
+  font-family: "Gotham Bold";
+  text-shadow: 0 3px 7px #000;
 }
 
 .xSectionPrizes sub {
@@ -4862,6 +4884,7 @@ body {
   font-size: 15px;
   -webkit-text-stroke: 0;
   -webkit-text-fill-color: #fff;
+  text-shadow: 0px 3px 7px #000;
 }
 
 .xSectionPrizes ul {
@@ -4890,13 +4913,15 @@ body {
   grid-area: title;
   justify-self: start;
   align-self: end;
-  background: -webkit-linear-gradient(#AC8833, #EAD23D);
+  background: -webkit-linear-gradient(#EAD23D, #AC8833);
   -webkit-text-fill-color: transparent;
   -webkit-background-clip: text;
   -webkit-text-stroke: 0;
   color: #AC8833;
   font-size: 15px;
   text-align: left;
+  line-height: 1;
+  font-weight: bold;
 }
 
 .xSectionPrizes ul li sub {
@@ -4906,7 +4931,6 @@ body {
   justify-self: start;
   font-size: 15px;
   text-align: left;
-  text-shadow: 0px 0px 15px #7c7c7c91;
 }
 
 .xSectionPrizes #xSectionPrizesR1C1 {
@@ -5583,9 +5607,8 @@ body {
 .Content #xSectionContent,
 .xStateContent #xSectionContent {
   text-align: center;
-  background: url(https://a.wayin.com/images/7405/f7cdaa0a-93b7-47f6-8f9f-8723b19b8822/background_blue.jpg);
-  background-position-x: 35%;
-  background-position-y: top;
+  background: url(https://a.wayin.com/images/7405/f7cdaa0a-93b7-47f6-8f9f-8723b19b8822/background_blue_desktop.jpg);
+  background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -5790,11 +5813,6 @@ nav > ul .menuIcono {
   padding-top: 10px;
   height: 100%;
   min-height: 95vh;
-  background: url(https://a.wayin.com/images/7405/f7cdaa0a-93b7-47f6-8f9f-8723b19b8822/background_blue_mob_2.jpg);
-  background-position-x: center;
-  background-position-y: -50px;
-  background-repeat: no-repeat;
-  background-size: cover;
 }
 
 #xSectionDetails .xComponentInner {
@@ -5884,14 +5902,6 @@ nav > ul .menuIcono {
     width: 50%;
     left: auto;
     right: 0;
-  }
-
-  #xSectionDetails {
-    background: url(https://a.wayin.com/images/7405/f7cdaa0a-93b7-47f6-8f9f-8723b19b8822/background_blue.jpg);
-    background-position-x: center;
-    background-position-y: top;
-    background-repeat: no-repeat;
-    background-size: cover;
   }
 
   #xSectionDetails .xRowInner .xCell.mid {

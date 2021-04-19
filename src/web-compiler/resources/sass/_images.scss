@@ -1,10 +1,11 @@
 $assets_path: 'https://a.wayin.com/images/7405/f7cdaa0a-93b7-47f6-8f9f-8723b19b8822/';
 
-$background-home: url(#{$assets_path}fonde-mobile.jpg);
+$background-home: url(#{$assets_path}fondo-desktop.jpg);
 $background-home-mobile: url(#{$assets_path}background_blue_mob_2.jpg);
 $background-header-mobile: url(#{$assets_path}background_header_mob.jpg);
 
 $background-section: url(#{$assets_path}background_blue.jpg);
+$background-section-dsk: url(#{$assets_path}background_blue_desktop.jpg);
 $background-section-mobile: url(#{$assets_path}background_blue.jpg);
 
 $background-game: url(#{$assets_path}background_controller.jpg);
