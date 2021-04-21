@@ -5920,7 +5920,7 @@ nav > ul .menuIcono {
   text-align: center;
   font-size: 1.5em;
   letter-spacing: 1.5px;
-  margin: 10px auto;
+  margin: 10px auto 20px auto;
   padding: 0;
   width: 100%;
   max-width: 100%;
@@ -5944,6 +5944,11 @@ nav > ul .menuIcono {
 
 #ngxUserUploadWrapper .xFieldContainer .xUploader span {
   display: none;
+}
+
+#ngxUserUploadWrapper .xFieldContainer .xUploader input {
+  width: 100px !important;
+  margin: auto;
 }
 
 #ngxUserUploadWrapper .xFieldContainer .xUploader::before {
