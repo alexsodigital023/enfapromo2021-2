@@ -11,6 +11,7 @@ import Cookies from 'js-cookie';
     export default {
         data(){
             return {
+                fields:[],
                 submitButton:null,
                 fileInput:null,
                 conexion:null,
@@ -41,7 +42,10 @@ import Cookies from 'js-cookie';
             };
         },
         watch:{
-	        
+	        stage(){
+                this.mapInputs();
+                console.log("cambio de stage",this.stage);
+            }
         },
         methods:{
             endStage(){
@@ -236,12 +240,19 @@ import Cookies from 'js-cookie';
                     );
                 });
             },
+            mapInputs(){
+                switch(this.stage){
+                    case 1:
+                        this.fields["nombre"]=$(this.$el).find("#name_Firstname").get(0);
+                        break;
+                }
+                console.log("Campos iniciados", this.fields);
+            }
         },
         mounted() {
-            $(this.$el).find('.xActionNext').click(function() {
-                this.stage =1;
-            });
-            this.getConexion();
+            this.stage=1;
+            console.log("Iniciando");
+            return;
             this.submitButton=$(this.$el).find("#xSubmitContainer").get(0);
             this.fileInput=$(this.$el).find("#ngxUserUploadWrapper").get(0);
             this.celularInput=$(this.$el).find("#Phone").get(0);
@@ -253,7 +264,6 @@ import Cookies from 'js-cookie';
             this.mesInput=$(this.$el).find("#date_of_birth_month").get(0);
             this.anyoInput=$(this.$el).find("#date_of_birth_year").get(0);
             this.ticketValue=$(this.$el).find("#ticketValue").get(0);
-            this.endStage();
         }
     }
 </script>
