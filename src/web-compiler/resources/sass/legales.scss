@@ -1,9 +1,34 @@
 .xSectionContent2,
 .xSectionContent3,
 .xSectionContent4 {
+    background: $background-section-dsk;
+    background-position-x: center;
+    background-position-y: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: $c-blanco;
+
     h1 {
-        font-family: $font-gothamItalic;
         text-align: center;
         text-transform: uppercase;
+        font-family: $font-gothamItalic;
+    }
+
+    ol {
+        list-style: none;
+
+        li {
+            .pregunta {
+                text-align: left;
+                font-size: 2.8rem;
+            }
+
+            .respuesta {
+                text-align: left;
+                padding-bottom: 25px;
+                border-bottom: 2px solid #fff;
+                margin-bottom: 30px;
+            }
+        }
     }
 }

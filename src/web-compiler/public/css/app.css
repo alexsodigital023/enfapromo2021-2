@@ -4633,7 +4633,7 @@ body {
 }
 
 .details .xPage {
-  background-image: url(/images/background_blue_mob_2.jpg);
+  background-image: url(https://a.wayin.com/images/7405/f7cdaa0a-93b7-47f6-8f9f-8723b19b8822/background_blue_mob_2.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -4666,6 +4666,10 @@ body {
 .ticketFormContainer .item {
   color: #b8b8b8;
   opacity: 1;
+}
+
+.ticketFormContainer .xField {
+  margin: 0;
 }
 
 .ticketFormContainer .xFormPages {
@@ -4715,12 +4719,28 @@ body {
   font-weight: bold;
 }
 
+.ticketFormContainer #nameWrapper,
+.ticketFormContainer #PhoneWrapper,
+.ticketFormContainer #emailWrapper,
+.ticketFormContainer .xControlCheckbox {
+  padding: 0 10%;
+}
+
+.ticketFormContainer #name_Firstname {
+  margin-bottom: 5px;
+}
+
+.ticketFormContainer #emailWrapper {
+  margin-bottom: 10px;
+}
+
 .ticketFormContainer .xComboInput::after {
   color: #0A59A2;
 }
 
 .ticketFormContainer .xFieldCheckboxChoice {
   display: flex;
+  margin: 5px 0;
   align-items: center;
 }
 
@@ -4753,7 +4773,7 @@ body {
 
 .ticketFormContainer .xFieldLabel {
   font-weight: normal;
-  margin: 8px 0 5px 30px;
+  margin: 0 0 0 30px;
 }
 
 .ticketFormContainer .xControlName .xLabelContainer,
@@ -4765,6 +4785,7 @@ body {
   width: 100%;
   max-width: 100%;
   text-align: center;
+  padding: 0;
 }
 
 .ticketFormContainer .xControlName .xLabelContainer label,
@@ -4778,19 +4799,25 @@ body {
 
 .ticketFormContainer .xControlCheckbox .xLabelContainer {
   min-width: 0;
+  padding: 0;
 }
 
 .ticketFormContainer .xFieldContainer {
   padding: 0;
 }
 
+.ticketFormContainer .xFieldItem {
+  margin: 0;
+}
+
 .ticketFormContainer .xFieldItem.xControlCheckbox.xRequired .xLabelContainer {
   width: 10px;
   min-width: 10px;
-  padding-right: 8px;
+  padding: 0;
 }
 
 .ticketFormContainer .xActionsForm {
+  margin-top: 10px;
   margin-left: 0;
 }
 
@@ -4799,12 +4826,16 @@ body {
   font-size: 1.6em;
   font-weight: bold;
   text-transform: uppercase;
-  background-color: #0A59A2;
+  background-color: #26234f;
   border-top: 3px solid #fff;
   border-bottom: 3px solid #fff;
 }
 
 @media screen and (min-width: 576px) {
+  .ticketFormContainer #name_Firstname {
+    margin-bottom: 0;
+  }
+
   .ticketFormContainer .xFormPages {
     width: auto !important;
   }
@@ -4822,7 +4853,11 @@ body {
 
 @media screen and (min-width: 768px) {
   .details .xPage {
-    background-image: url(/images/fondo-desktop.jpg);
+    background-image: url(https://a.wayin.com/images/7405/f7cdaa0a-93b7-47f6-8f9f-8723b19b8822/fondo-desktop.jpg);
+  }
+
+  #xSectionDetails .xMediaContainer {
+    padding: 15% 15% 0 20%;
   }
 
   #xSectionDetails .xMediaContainer img {
@@ -4838,11 +4873,17 @@ body {
   }
 }
 
+@media screen and (min-width: 992px) {
+  #xSectionDetails .xMediaContainer {
+    padding: 8% 15% 0 30%;
+  }
+}
+
 .xSectionPrizes {
   text-align: center;
-  background: url(/images/background_blue_desktop.jpg);
-  background-position-x: 35%;
-  background-position-y: top;
+  background: url(https://a.wayin.com/images/7405/f7cdaa0a-93b7-47f6-8f9f-8723b19b8822/background_blue_desktop.jpg);
+  background-position-x: center;
+  background-position-y: center;
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -5051,10 +5092,6 @@ body {
 }
 
 @media screen and (min-width: 992px) {
-  .xSectionPrizes {
-    background-position-x: left;
-  }
-
   .xSectionPrizes .xTitle,
   .xSectionPrizes h2 {
     -webkit-text-stroke: 3.5px #000;
@@ -5175,7 +5212,7 @@ body {
   display: grid;
   grid-template-columns: 1fr 1fr;
   border-top: 2px solid #fff;
-  background: url(/images/background_premios.jpg);
+  background: url(https://a.wayin.com/images/7405/f7cdaa0a-93b7-47f6-8f9f-8723b19b8822/background_premios.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position-y: top;
@@ -5189,7 +5226,7 @@ body {
   width: 14vw;
   height: 20vw;
   display: block;
-  background-image: url(/images/splash_choco_1.png);
+  background-image: url(https://a.wayin.com/images/7405/f7cdaa0a-93b7-47f6-8f9f-8723b19b8822/splash_choco_1.png);
   background-repeat: no-repeat;
   background-size: cover;
   position: absolute;
@@ -5203,7 +5240,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #0F1E56;
+  background-color: #26234f;
 }
 
 .Content1 #xSectionContent1R1 .xRowInner #xSectionContent1R1C1 .xBodyContainer,
@@ -5380,8 +5417,8 @@ body {
 
 .Content1 #xSectionContent1R4 .xRowInner,
 .xStateContent1 #xSectionContent1R4 .xRowInner {
-  background-color: #0F1E56;
-  background-image: url(/images/background-big-price.jpg);
+  background-color: #26234f;
+  background-image: url(https://a.wayin.com/images/7405/f7cdaa0a-93b7-47f6-8f9f-8723b19b8822/background-big-price.jpg);
   background-repeat: no-repeat;
   background-position: top;
   background-size: cover;
@@ -5448,7 +5485,7 @@ body {
     width: 18vw;
     height: 12vw;
     display: block;
-    background-image: url(/images/splash_choco_2.png);
+    background-image: url(https://a.wayin.com/images/7405/f7cdaa0a-93b7-47f6-8f9f-8723b19b8822/splash_choco_2.png);
     background-repeat: no-repeat;
     background-size: cover;
     position: absolute;
@@ -5608,7 +5645,7 @@ body {
 .Content #xSectionContent,
 .xStateContent #xSectionContent {
   text-align: center;
-  background: url(/images/background_blue_desktop.jpg);
+  background: url(https://a.wayin.com/images/7405/f7cdaa0a-93b7-47f6-8f9f-8723b19b8822/background_blue_desktop.jpg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -5677,17 +5714,50 @@ body {
   }
 }
 
+.xSectionContent2,
+.xSectionContent3,
+.xSectionContent4 {
+  background: url(https://a.wayin.com/images/7405/f7cdaa0a-93b7-47f6-8f9f-8723b19b8822/background_blue_desktop.jpg);
+  background-position-x: center;
+  background-position-y: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #fff;
+}
+
 .xSectionContent2 h1,
 .xSectionContent3 h1,
 .xSectionContent4 h1 {
-  font-family: "Gotham Italic";
   text-align: center;
   text-transform: uppercase;
+  font-family: "Gotham Italic";
+}
+
+.xSectionContent2 ol,
+.xSectionContent3 ol,
+.xSectionContent4 ol {
+  list-style: none;
+}
+
+.xSectionContent2 ol li .pregunta,
+.xSectionContent3 ol li .pregunta,
+.xSectionContent4 ol li .pregunta {
+  text-align: left;
+  font-size: 2.8rem;
+}
+
+.xSectionContent2 ol li .respuesta,
+.xSectionContent3 ol li .respuesta,
+.xSectionContent4 ol li .respuesta {
+  text-align: left;
+  padding-bottom: 25px;
+  border-bottom: 2px solid #fff;
+  margin-bottom: 30px;
 }
 
 nav > ul {
   background-color: #3c1b1a;
-  background-image: url(/images/background_header_mob.jpg);
+  background-image: url(https://a.wayin.com/images/7405/f7cdaa0a-93b7-47f6-8f9f-8723b19b8822/background_header_mob.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -5707,7 +5777,7 @@ nav > ul::before {
   width: 150px;
   height: 120px;
   display: block;
-  background-image: url(/images/modo_pantera_only.png);
+  background-image: url(https://a.wayin.com/images/7405/f7cdaa0a-93b7-47f6-8f9f-8723b19b8822/modo_pantera_only.png);
   background-repeat: no-repeat;
   background-size: contain;
   margin: 10px 30px 0px 30px;
@@ -5723,7 +5793,7 @@ nav > ul > div {
 nav > ul .menuIcono {
   width: 40px;
   height: 35px;
-  background-image: url(/images/icon_menu.png);
+  background-image: url(https://a.wayin.com/images/7405/f7cdaa0a-93b7-47f6-8f9f-8723b19b8822/icon_menu.png);
   background-size: contain;
   background-repeat: no-repeat;
   background-position: left top;
@@ -5791,22 +5861,22 @@ nav > ul .menuIcono {
 }
 
 #xSectionHeader #HeaderR1 .xCampaignHeader li.contentTab .xTabLink::before {
-  background-image: url(/images/icon_tel.png);
+  background-image: url(https://a.wayin.com/images/7405/f7cdaa0a-93b7-47f6-8f9f-8723b19b8822/icon_tel.png);
   border: 2px solid #fff;
 }
 
 #xSectionHeader #HeaderR1 .xCampaignHeader li.content2Tab .xTabLink::before {
-  background-image: url(/images/icon_question.png);
+  background-image: url(https://a.wayin.com/images/7405/f7cdaa0a-93b7-47f6-8f9f-8723b19b8822/icon_question.png);
   border: 2px solid #fff;
 }
 
 #xSectionHeader #HeaderR1 .xCampaignHeader li.content3Tab .xTabLink::before {
-  background-image: url(/images/icon_privacy.png);
+  background-image: url(https://a.wayin.com/images/7405/f7cdaa0a-93b7-47f6-8f9f-8723b19b8822/icon_privacy.png);
   border: 2px solid #fff;
 }
 
 #xSectionHeader #HeaderR1 .xCampaignHeader li.content4Tab .xTabLink::before {
-  background-image: url(/images/icon_terms.png);
+  background-image: url(https://a.wayin.com/images/7405/f7cdaa0a-93b7-47f6-8f9f-8723b19b8822/icon_terms.png);
   border: 2px solid #fff;
 }
 
@@ -5957,14 +6027,14 @@ nav > ul .menuIcono {
   width: 100px;
   height: 100px;
   margin: auto;
-  background-image: url(/images/icon_camera.png);
+  background-image: url(https://a.wayin.com/images/7405/f7cdaa0a-93b7-47f6-8f9f-8723b19b8822/icon_camera.png);
   background-position: center;
   background-size: cover;
 }
 
 .xSectionConfirmation {
   padding: 45px;
-  background: url(/images/background_blue_mob_2.jpg);
+  background: url(https://a.wayin.com/images/7405/f7cdaa0a-93b7-47f6-8f9f-8723b19b8822/background_blue_mob_2.jpg);
   background-position-x: center;
   background-position-y: top;
   background-repeat: no-repeat;
@@ -5973,7 +6043,7 @@ nav > ul .menuIcono {
 
 @media screen and (min-width: 768px) {
   .xSectionConfirmation {
-    background: url(/images/background_blue.jpg);
+    background: url(https://a.wayin.com/images/7405/f7cdaa0a-93b7-47f6-8f9f-8723b19b8822/background_blue.jpg);
     background-position-x: center;
     background-position-y: top;
     background-repeat: no-repeat;

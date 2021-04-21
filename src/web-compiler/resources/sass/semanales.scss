@@ -1,8 +1,8 @@
 .xSectionPrizes {
     text-align: center;
     background: $background-section-dsk;
-    background-position-x: 35%;
-    background-position-y: top;
+    background-position-x: center;
+    background-position-y: center;
     background-repeat: no-repeat;
     background-size: cover;
 
@@ -227,8 +227,6 @@
 
 @media #{$grid-lg} {
     .xSectionPrizes {
-        background-position-x: left;
-
         .xTitle, h2 {
             -webkit-text-stroke: 3.5px $c-negro;
             font-size: 5.5vw;

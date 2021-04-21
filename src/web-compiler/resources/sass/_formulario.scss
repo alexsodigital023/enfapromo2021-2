@@ -32,11 +32,15 @@
   }
 }
 
-.ticketFormContainer{
+.ticketFormContainer {
   ::placeholder,
   .item {
     color: $c-gris;
     opacity: 1;
+  }
+
+  .xField {
+    margin: 0;
   }
 
   .xFormPages {
@@ -71,12 +75,28 @@
     font-weight: bold;
   }
 
+  #nameWrapper,
+  #PhoneWrapper,
+  #emailWrapper,
+  .xControlCheckbox {
+    padding: 0 10%;
+  }
+
+  #name_Firstname {
+    margin-bottom: 5px;
+  }
+
+  #emailWrapper {
+    margin-bottom: 10px;
+  }
+
   .xComboInput::after {
     color: $c-azul;
   }
 
   .xFieldCheckboxChoice {
     display: flex;
+    margin: 5px 0;
     align-items: center;
 
     .xCheckbox {
@@ -111,7 +131,7 @@
 
   .xFieldLabel {
     font-weight: normal;
-    margin: 8px 0 5px 30px;
+    margin: 0 0 0 30px;
   }
 
   .xControlName,
@@ -124,6 +144,7 @@
       width: 100%;
       max-width: 100%;
       text-align: center;
+      padding: 0;
       
       label {
         width: 100%;
@@ -134,21 +155,27 @@
 
   .xControlCheckbox .xLabelContainer {
     min-width: 0;
+    padding: 0;
   }
 
   .xFieldContainer {
     padding: 0;
   }
 
-  .xFieldItem.xControlCheckbox.xRequired {
-    .xLabelContainer {
-      width: 10px;
-      min-width: 10px;
-      padding-right: 8px;
+  .xFieldItem {
+    margin: 0;
+
+    &.xControlCheckbox.xRequired {
+      .xLabelContainer {
+        width: 10px;
+        min-width: 10px;
+        padding: 0;
+      }
     }
   }
 
   .xActionsForm {
+    margin-top: 10px;
     margin-left: 0;
 
     .xPagingButton {
@@ -156,7 +183,7 @@
       font-size: 1.6em;
       font-weight: bold;
       text-transform: uppercase;
-      background-color: $c-azul;
+      background-color: $c-azul-oscuro;
       border-top: 3px solid $c-blanco;
       border-bottom: 3px solid $c-blanco;
     }
@@ -165,6 +192,10 @@
 
 @media #{$grid-sm} {
   .ticketFormContainer {
+    #name_Firstname {
+      margin-bottom: 0;
+    }
+
     .xFormPages {
       width: auto !important;
     }
@@ -188,8 +219,12 @@
     }
   }
 
-  #xSectionDetails .xMediaContainer img {
-    max-width: -webkit-fill-available;
+  #xSectionDetails .xMediaContainer {
+    padding: 15% 15% 0 20%;
+    
+    img {
+      max-width: -webkit-fill-available;
+    }
   }
 
   .ticketFormContainer {
@@ -198,5 +233,11 @@
     .xFormPages {
       margin: 0 20%;
     }
+  }
+}
+
+@media #{$grid-lg} {
+  #xSectionDetails .xMediaContainer {
+    padding: 8% 15% 0 30%;
   }
 }
