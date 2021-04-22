@@ -14,7 +14,7 @@
     }
 
     h2 {
-        background: -webkit-linear-gradient(-45deg, $c-amarillo, $c-dorado);
+        background: -webkit-linear-gradient(-45deg, $c-cafe, $c-dorado);
         -webkit-background-clip: text;
         -webkit-text-stroke: 5px $c-transparent;
         color: $c-blanco;
@@ -46,10 +46,9 @@
             -webkit-background-clip: text;
             content: "Big Prize";
             position: absolute;
-            right: 12%;
+            right: 11%;
             top: -6%;
             font-size: 15vw;
-            max-width: 80%;
             text-align: center;
         }
     }
@@ -251,8 +250,8 @@
 @media #{$grid-md} {
     .Content1, .xStateContent1 {
         h1 {
-            font-size: 7vw;
-            padding-left: 15%;
+            font-size: 3.8vw;
+            padding: 20px 0px 20px 35px;
         }
 
         h2 {
@@ -369,7 +368,8 @@
 @media #{$grid-xl} {
     .Content1, .xStateContent1 {
         h1 {
-            font-size: 75px;
+            font-size: 46px;
+            padding: 25px 0px 25px 85px;
         }
 
         #xSectionContent1R1 .xRowInner {
