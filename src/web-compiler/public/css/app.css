@@ -5323,7 +5323,7 @@ body {
 
 .Content1 h2,
 .xStateContent1 h2 {
-  background: -webkit-linear-gradient(-45deg, #642805, #AC8833);
+  background: -webkit-linear-gradient(-45deg, #712100, #AC8833);
   -webkit-background-clip: text;
   -webkit-text-stroke: 5px transparent;
   color: #fff;
@@ -5665,14 +5665,15 @@ body {
 
   .Content1 #xSectionContent1R1 .xRowInner::before,
   .xStateContent1 #xSectionContent1R1 .xRowInner::before {
-    left: 0;
+    width: 8vw;
+    height: 12vw;
   }
 
   .Content1 #xSectionContent1R1 .xRowInner::after,
   .xStateContent1 #xSectionContent1R1 .xRowInner::after {
     content: "";
-    width: 18vw;
-    height: 12vw;
+    width: 15vw;
+    height: 10vw;
     display: block;
     background-image: url(https://a.wayin.com/images/7405/f7cdaa0a-93b7-47f6-8f9f-8723b19b8822/splash_choco_2.png);
     background-repeat: no-repeat;
@@ -5830,6 +5831,12 @@ body {
 }
 
 @media screen and (min-width: 992px) {
+  .Content1 #xSectionContent1R1 .xRowInner::before,
+  .xStateContent1 #xSectionContent1R1 .xRowInner::before {
+    width: 7vw;
+    height: 10vw;
+  }
+
   .Content1 #xSectionContent1R4 .xRowInner #xSectionContent1R4C1 .xComponentInner::before,
   .xStateContent1 #xSectionContent1R4 .xRowInner #xSectionContent1R4C1 .xComponentInner::before {
     top: -6%;
@@ -5845,14 +5852,14 @@ body {
 
   .Content1 #xSectionContent1R1 .xRowInner::before,
   .xStateContent1 #xSectionContent1R1 .xRowInner::before {
-    width: 140px;
-    height: 210px;
+    width: 90px;
+    height: 130px;
   }
 
   .Content1 #xSectionContent1R1 .xRowInner::after,
   .xStateContent1 #xSectionContent1R1 .xRowInner::after {
-    width: 250px;
-    height: 165px;
+    width: 200px;
+    height: 130px;
   }
 
   .Content1 #xSectionContent1R4 .xRowInner h3,
@@ -6007,11 +6014,12 @@ body {
 }
 
 nav > ul {
-  background-color: #3c1b1a;
+  background-color: #712100;
   background-image: url(https://a.wayin.com/images/7405/f7cdaa0a-93b7-47f6-8f9f-8723b19b8822/background_header_mob.jpg);
+  background-blend-mode: darken;
   background-repeat: no-repeat;
-  background-size: cover;
   background-position: center;
+  background-size: cover;
   color: #fff;
   list-style: none;
   min-height: 80px;
@@ -6051,7 +6059,7 @@ nav > ul .menuIcono {
 }
 
 #xSectionHeader {
-  background-color: #3c1b1a;
+  background-color: #712100;
   position: fixed;
   height: 100%;
   width: 80%;
@@ -6215,6 +6223,16 @@ nav > ul .menuIcono {
 }
 
 @media screen and (min-width: 768px) {
+  nav ul {
+    background-size: contain;
+    background-position: left;
+    justify-content: flex-start;
+  }
+
+  nav ul::before {
+    margin: 10px 30px 0px 18%;
+  }
+
   nav ul > div {
     left: auto;
     right: 5%;
@@ -6228,6 +6246,12 @@ nav > ul .menuIcono {
 
   #xSectionDetails .xRowInner .xCell.mid {
     width: 50%;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  nav > ul::before {
+    margin: 10px 30px 0px 12%;
   }
 }
 

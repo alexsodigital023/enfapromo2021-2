@@ -1,9 +1,10 @@
 nav>ul {
-  background-color: $c-cafe-oscuro;
+  background-color: $c-cafe;
   background-image: $background-header-mobile;
+  background-blend-mode: darken;
   background-repeat: no-repeat;
-  background-size: cover;
   background-position: center;
+  background-size: cover;
   color: $c-blanco;
   list-style: none;
   min-height: 80px;
@@ -43,7 +44,7 @@ nav>ul {
 }
 
 #xSectionHeader {
-  background-color: $c-cafe-oscuro;
+  background-color: $c-cafe;
   position: fixed;
   height: 100%;
   width: 80%;
@@ -216,11 +217,20 @@ nav>ul {
   margin-bottom: 0;
 }
 
-
 @media #{$grid-md} {
-  nav ul>div {
-    left: auto;
-    right: 5%;
+  nav ul {
+    background-size: contain;
+    background-position: left;
+    justify-content: flex-start;
+
+    &::before {
+      margin: 10px 30px 0px 18%;
+    }
+
+    >div {
+      left: auto;
+      right: 5%;
+    }
   }
 
   #xSectionHeader {
@@ -233,5 +243,11 @@ nav>ul {
     .xRowInner .xCell.mid {
       width: 50%;
     }
+  }
+}
+
+@media #{$grid-xl} {
+  nav > ul::before {
+    margin: 10px 30px 0px 12%;
   }
 }

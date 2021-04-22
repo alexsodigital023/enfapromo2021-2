@@ -269,13 +269,14 @@
             border-bottom: 2px solid $c-blanco;
 
             &::before {
-                left: 0;
+                width: 8vw;
+                height: 12vw;
             }
 
             &::after {
                 content: '';
-                width: 18vw;
-                height: 12vw;
+                width: 15vw;
+                height: 10vw;
                 display: block;
                 background-image: $splash-choco_2;
                 background-repeat: no-repeat;
@@ -359,6 +360,12 @@
 
 @media #{$grid-lg} {
     .Content1, .xStateContent1 {
+
+        #xSectionContent1R1 .xRowInner::before {
+            width: 7vw;
+            height: 10vw;
+        }
+
         #xSectionContent1R4 .xRowInner #xSectionContent1R4C1 .xComponentInner::before {
             top: -6%;
         }
@@ -374,13 +381,13 @@
 
         #xSectionContent1R1 .xRowInner {
             &::before {
-                width: 140px;
-                height: 210px;
+                width: 90px;
+                height: 130px;
             }
 
             &::after {
-                width: 250px;
-                height: 165px;
+                width: 200px;
+                height: 130px;
             }
         }
 
