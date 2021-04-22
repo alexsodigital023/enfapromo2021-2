@@ -40,16 +40,17 @@
         }
 
         &::before {
-            background: -webkit-linear-gradient($c-blanco 40%, $c-negro 60%);
+            background: -webkit-linear-gradient($c-transparent 12%,$c-blanco 32%, $c-negro 60%);
             -webkit-text-stroke: 3px transparent;
             -webkit-text-fill-color: transparent;
             -webkit-background-clip: text;
             content: "Big Prize";
             position: absolute;
-            right: 11%;
-            top: -6%;
+            right: 0;
+            top: -7%;
             font-size: 15vw;
             text-align: center;
+            width: 100%;
         }
     }
 
@@ -226,23 +227,8 @@
             left: 0;
         }
         
-        #xSectionContent1R4C1 .xComponentInner {
-            h2 {
-                -webkit-text-stroke: 4px #000;
-            }
-
-            &::before {
-                right: 13%;
-                top: -5%;
-            }
-        }
-    }
-}
-
-@media #{$grid-sm} {
-    .Content1, .xStateContent1 {
-        #xSectionContent1R4C1 .xComponentInner::before {
-            right: 14%;
+        #xSectionContent1R4C1 .xComponentInner h2 {
+            -webkit-text-stroke: 4px #000;
         }
     }
 }
@@ -334,9 +320,8 @@
                 }
 
                 .xComponentInner::before {
+                    text-align: right;
                     font-size: 7vw;
-                    right: 0;
-                    min-width: fit-content;
                     top: -7%;
                 }
             }
@@ -373,10 +358,6 @@
         #xSectionContent1R1 .xRowInner::before {
             width: 7vw;
             height: 10vw;
-        }
-
-        #xSectionContent1R4 .xRowInner #xSectionContent1R4C1 .xComponentInner::before {
-            top: -6%;
         }
     }
 }
