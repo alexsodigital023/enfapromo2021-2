@@ -249,6 +249,15 @@
 
 @media #{$grid-md} {
     .Content1, .xStateContent1 {
+        nav ul {
+            background-position: center;
+            justify-content: center;
+
+            &::before {
+                margin: 10px 30px 0px 25px;
+            }
+        }
+
         h1 {
             font-size: 3.8vw;
             padding: 20px 0px 20px 35px;

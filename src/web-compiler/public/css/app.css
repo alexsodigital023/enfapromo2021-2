@@ -5635,6 +5635,17 @@ body {
 }
 
 @media screen and (min-width: 768px) {
+  .Content1 nav ul,
+  .xStateContent1 nav ul {
+    background-position: center;
+    justify-content: center;
+  }
+
+  .Content1 nav ul::before,
+  .xStateContent1 nav ul::before {
+    margin: 10px 30px 0px 25px;
+  }
+
   .Content1 h1,
   .xStateContent1 h1 {
     font-size: 3.8vw;
@@ -6065,6 +6076,16 @@ nav > ul .menuIcono {
   display: none;
 }
 
+#xSectionHeader::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: -25%;
+  bottom: 0;
+  background: linear-gradient(90deg, transparent 80%, #0000006b 80%);
+}
+
 #xSectionHeader #HeaderR1 .xCampaignHeader {
   background-color: transparent;
 }
@@ -6254,6 +6275,16 @@ nav > ul .menuIcono {
     width: 50%;
     left: auto;
     right: 0;
+  }
+
+  #xSectionHeader::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(90deg, #0000006b 50%, transparent 50%);
   }
 
   #xSectionDetails .xRowInner .xCell.mid {

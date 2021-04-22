@@ -53,6 +53,16 @@ nav>ul {
   top: 0;
   display: none;
 
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: -25%;
+    bottom: 0;
+    background: linear-gradient(90deg, $c-transparent 80%, $c-sombra-negra 80%);
+  }
+
   #HeaderR1 .xCampaignHeader {
     background-color: $c-transparent;
 
@@ -259,6 +269,17 @@ nav>ul {
     width: 50%;
     left: auto;
     right: 0;
+
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(90deg, $c-sombra-negra 50%, $c-transparent 50%);
+    }
   }
 
   #xSectionDetails {
