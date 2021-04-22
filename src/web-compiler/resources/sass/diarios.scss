@@ -1,4 +1,8 @@
 .Content1, .xStateContent1 {
+    .menuIcono {
+        display: none;
+    }
+
     h1 {
         background: -webkit-linear-gradient($c-dorado, $c-amarillo);
         -webkit-text-fill-color: $c-transparent;

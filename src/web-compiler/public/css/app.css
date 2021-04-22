@@ -5112,6 +5112,7 @@ body {
   color: #F4A91D;
   font-size: 30px;
   line-height: 1.8;
+  text-shadow: 0px 6px 6px #94949469;
 }
 
 .xSectionPrizes #xSectionPrizesR1C1::after {
@@ -5300,6 +5301,11 @@ body {
   .xSectionPrizes #xSectionPrizesR2C1 .xFullColModule.xImage img {
     width: 250px;
   }
+}
+
+.Content1 .menuIcono,
+.xStateContent1 .menuIcono {
+  display: none;
 }
 
 .Content1 h1,
