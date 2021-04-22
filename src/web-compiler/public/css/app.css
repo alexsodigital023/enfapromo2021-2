@@ -4949,7 +4949,7 @@ body {
 }
 
 .xSectionPrizes .xCopyContainer::before {
-  background: -webkit-linear-gradient(#ffffffb5 40%, #000 60%);
+  background: #000;
   -webkit-text-stroke: 3px transparent;
   -webkit-text-fill-color: transparent;
   -webkit-background-clip: text;
@@ -4957,7 +4957,7 @@ body {
   position: absolute;
   font-size: 10vw;
   left: 0%;
-  top: -14%;
+  top: -5%;
   text-align: center;
   letter-spacing: 1px;
   width: 100%;
@@ -4969,7 +4969,7 @@ body {
 }
 
 .xSectionPrizes #xSectionPrizesR1C2 .xComponentInner::before {
-  background: #ffffffb5;
+  background: #000;
   -webkit-text-stroke: 3px transparent;
   -webkit-text-fill-color: transparent;
   -webkit-background-clip: text;
@@ -4977,7 +4977,7 @@ body {
   position: absolute;
   font-size: 10vw;
   left: 0;
-  top: -0.6%;
+  top: 0.3%;
   text-align: center;
   line-height: 1.01;
   width: 100%;
@@ -4989,7 +4989,7 @@ body {
 }
 
 .xSectionPrizes #xSectionPrizesR2C1 .n1 .xComponentInner::before {
-  background: #ffffffb5;
+  background: #000;
   -webkit-text-stroke: 3px transparent;
   -webkit-text-fill-color: transparent;
   -webkit-background-clip: text;
@@ -4997,7 +4997,7 @@ body {
   position: absolute;
   font-size: 10vw;
   left: 0;
-  top: -0.45%;
+  top: 0.3%;
   text-align: center;
   line-height: 1.01;
   width: 100%;
@@ -5036,11 +5036,12 @@ body {
 .xSectionPrizes ul li {
   display: grid;
   margin: 15px 0;
-  grid-gap: 0 2%;
+  grid-gap: 0 4%;
   flex-basis: 100%;
-  grid-template-columns: 39% 59%;
+  grid-template-columns: 40% 56%;
   grid-template-rows: repeat(2, 1fr);
   grid-template-areas: "img title" "img desc";
+  position: relative;
 }
 
 .xSectionPrizes ul li img {
@@ -5052,15 +5053,18 @@ body {
   grid-area: title;
   justify-self: start;
   align-self: end;
-  background: -webkit-linear-gradient(#EAD23D, #AC8833);
+  background: -webkit-linear-gradient(#EAD23D, #F4A91D);
   -webkit-text-fill-color: transparent;
   -webkit-background-clip: text;
   -webkit-text-stroke: 0;
-  color: #AC8833;
+  color: #F4A91D;
   font-size: 15px;
   text-align: left;
   line-height: 1;
   font-weight: bold;
+  position: relative;
+  text-transform: uppercase;
+  text-shadow: 0px 4px 5px #94949469;
 }
 
 .xSectionPrizes ul li sub {
@@ -5101,11 +5105,11 @@ body {
 }
 
 .xSectionPrizes #xSectionPrizesR1C1 h2 {
-  background: -webkit-linear-gradient(#AC8833, #EAD23D);
+  background: -webkit-linear-gradient(#EAD23D 40%, #F4A91D 60%);
   -webkit-text-fill-color: transparent;
   -webkit-background-clip: text;
   -webkit-text-stroke: 0;
-  color: #AC8833;
+  color: #F4A91D;
   font-size: 30px;
   line-height: 1.8;
 }
@@ -5158,15 +5162,15 @@ body {
   }
 
   .xSectionPrizes .xCopyContainer::before {
-    top: -15%;
+    top: -4%;
   }
 
   .xSectionPrizes #xSectionPrizesR1C2 .xComponentInner::before {
-    top: -1.3%;
+    top: 1%;
   }
 
   .xSectionPrizes #xSectionPrizesR2C1 .n1 .xComponentInner::before {
-    top: -1.3%;
+    top: 1%;
   }
 
   .xSectionPrizes ul li {
@@ -5191,10 +5195,6 @@ body {
     padding: 0;
   }
 
-  .xSectionPrizes #xSectionPrizesR2C1 .n1 .xComponentInner::before {
-    top: -2%;
-  }
-
   .xSectionPrizes #xSectionPrizesR2C1 h2 {
     max-width: 500px;
   }
@@ -5217,18 +5217,15 @@ body {
   }
 
   .xSectionPrizes .xCopyContainer::before {
-    top: -14%;
     font-size: 5.5vw;
   }
 
   .xSectionPrizes #xSectionPrizesR1C2 .xComponentInner::before {
     font-size: 5.5vw;
-    top: -1.3%;
   }
 
   .xSectionPrizes #xSectionPrizesR2C1 .n1 .xComponentInner::before {
     font-size: 5.5vw;
-    top: -1.7%;
     padding: 0 30%;
   }
 
@@ -5290,7 +5287,6 @@ body {
 
   .xSectionPrizes .xCopyContainer::before {
     font-size: 90px;
-    top: -16%;
   }
 
   .xSectionPrizes #xSectionPrizesR1C2 .xComponentInner::before {
@@ -6119,9 +6115,17 @@ nav > ul .menuIcono {
   margin-right: 10px;
 }
 
+#xSectionHeader #HeaderR1 .xCampaignHeader li.contentTab {
+  order: 2;
+}
+
 #xSectionHeader #HeaderR1 .xCampaignHeader li.contentTab .xTabLink::before {
   background-image: url(https://a.wayin.com/images/7405/f7cdaa0a-93b7-47f6-8f9f-8723b19b8822/icon_tel.png);
   border: 2px solid #fff;
+}
+
+#xSectionHeader #HeaderR1 .xCampaignHeader li.content2Tab {
+  order: 1;
 }
 
 #xSectionHeader #HeaderR1 .xCampaignHeader li.content2Tab .xTabLink::before {
@@ -6129,9 +6133,17 @@ nav > ul .menuIcono {
   border: 2px solid #fff;
 }
 
+#xSectionHeader #HeaderR1 .xCampaignHeader li.content3Tab {
+  order: 3;
+}
+
 #xSectionHeader #HeaderR1 .xCampaignHeader li.content3Tab .xTabLink::before {
   background-image: url(https://a.wayin.com/images/7405/f7cdaa0a-93b7-47f6-8f9f-8723b19b8822/icon_privacy.png);
   border: 2px solid #fff;
+}
+
+#xSectionHeader #HeaderR1 .xCampaignHeader li.content4Tab {
+  order: 4;
 }
 
 #xSectionHeader #HeaderR1 .xCampaignHeader li.content4Tab .xTabLink::before {

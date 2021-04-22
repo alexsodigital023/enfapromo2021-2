@@ -29,7 +29,7 @@
         font-family: $font-gothamItalic;
 
         &::before {
-            background: -webkit-linear-gradient($c-sombra-blanca 40%, $c-negro 60%);
+            background: $c-negro;
             -webkit-text-stroke: 3px transparent;
             -webkit-text-fill-color: transparent;
             -webkit-background-clip: text;
@@ -37,7 +37,7 @@
             position: absolute;
             font-size: 10vw;
             left: 0%;
-            top: -14%;
+            top: -5%;
             text-align: center;
             letter-spacing: 1px;
             width: 100%;
@@ -49,7 +49,7 @@
         font-family: $font-gothamItalic;
 
         &::before {
-            background: $c-sombra-blanca;
+            background: $c-negro;
             -webkit-text-stroke: 3px transparent;
             -webkit-text-fill-color: transparent;
             -webkit-background-clip: text;
@@ -57,7 +57,7 @@
             position: absolute;
             font-size: 10vw;
             left: 0;
-            top: -0.6%;
+            top: 0.3%;
             text-align: center;
             line-height: 1.01;
             width: 100%;
@@ -69,7 +69,7 @@
         font-family: $font-gothamItalic;
 
         &::before {
-            background: $c-sombra-blanca;
+            background: $c-negro;
             -webkit-text-stroke: 3px transparent;
             -webkit-text-fill-color: transparent;
             -webkit-background-clip: text;
@@ -77,7 +77,7 @@
             position: absolute;
             font-size: 10vw;
             left: 0;
-            top: -0.45%;
+            top: 0.3%;
             text-align: center;
             line-height: 1.01;
             width: 100%;
@@ -117,14 +117,15 @@
         li {
             display: grid;
             margin: 15px 0;
-            grid-gap: 0 2%;
+            grid-gap: 0 4%;
             flex-basis: 100%;
-            grid-template-columns: 39% 59%;
+            grid-template-columns: 40% 56%;
             grid-template-rows: repeat(2, 1fr);
             grid-template-areas:
                 'img title'
                 'img desc';
-            
+            position: relative;
+
             img {
                 grid-area: img;
                 margin: auto;
@@ -134,15 +135,18 @@
                 grid-area: title;
                 justify-self: start;
                 align-self: end;
-                background: -webkit-linear-gradient($c-amarillo, $c-dorado);
+                background: -webkit-linear-gradient($c-amarillo, $c-naranja);
                 -webkit-text-fill-color: $c-transparent;
                 -webkit-background-clip: text;
                 -webkit-text-stroke: 0;
-                color: $c-dorado;
+                color: $c-naranja;
                 font-size: 15px;
                 text-align: left;
                 line-height: 1;
                 font-weight: bold;
+                position: relative;
+                text-transform: uppercase;
+                text-shadow: 0px 4px 5px $c-sombra;
             }
             
             sub {
@@ -184,11 +188,11 @@
         }
         
         h2 {
-            background: -webkit-linear-gradient($c-dorado, $c-amarillo);
+            background: -webkit-linear-gradient($c-amarillo 40%, $c-naranja 60%);
             -webkit-text-fill-color: $c-transparent;
             -webkit-background-clip: text;
             -webkit-text-stroke: 0;
-            color: $c-dorado;
+            color: $c-naranja;
             font-size: 30px;
             line-height: 1.8;
         }
@@ -249,15 +253,15 @@
         }
 
         .xCopyContainer::before {
-            top: -15%;
+            top: -4%;
         }
 
         #xSectionPrizesR1C2 .xComponentInner::before {
-            top: -1.3%;
+            top: 1%;
         }
         
         #xSectionPrizesR2C1 .n1 .xComponentInner::before {
-            top: -1.3%;
+            top: 1%;
         }
 
         ul li {
@@ -285,10 +289,6 @@
             padding: 0;
         }
 
-        #xSectionPrizesR2C1 .n1 .xComponentInner::before {
-            top: -2%;
-        }
-
         #xSectionPrizesR2C1 {
             h2 {
                 max-width: 500px;
@@ -314,18 +314,15 @@
         }
 
         .xCopyContainer::before {
-            top: -14%;
             font-size: 5.5vw;
         }
 
         #xSectionPrizesR1C2 .xComponentInner::before {
             font-size: 5.5vw;
-            top: -1.3%;
         }
 
         #xSectionPrizesR2C1 .n1 .xComponentInner::before {
             font-size: 5.5vw;
-            top: -1.7%;
             padding: 0 30%;
         }
 
@@ -392,7 +389,6 @@
 
         .xCopyContainer::before {
             font-size: 90px;
-            top: -16%;
         }
 
         #xSectionPrizesR1C2 .xComponentInner::before {
