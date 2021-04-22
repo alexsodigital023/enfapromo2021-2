@@ -2,6 +2,19 @@
     <div v-click-outside ="clickExterno" :class="cssClass">
         <nav>
             <ul>
+                <li class="outer-menu">
+                    <a href="#">
+                        <i class="icon icon-pancho"></i>
+                        <p>Juega</p>
+                    </a><a href="#">
+                        <i class="icon icon-control"></i>
+                        <p>Juega</p>
+                    </a>
+                    <a href="#">
+                        <i class="icon icon-regalo"></i>
+                        <p>Premios</p>
+                    </a>
+                </li>
                 <div v-if="visible" @click="myMethod">
                     <div class="menuIcono"></div>
                 </div>
