@@ -4623,16 +4623,19 @@ body {
   width: 100%;
 }
 
-.details nav > ul {
+.details nav > ul,
+.xStateDetails nav > ul {
   background-image: none;
   background-color: transparent;
 }
 
-.details nav > ul::before {
+.details nav > ul::before,
+.xStateDetails nav > ul::before {
   display: none;
 }
 
-.details .xPage {
+.details .xPage,
+.xStateDetails .xPage {
   background-image: url(https://a.wayin.com/images/7405/f7cdaa0a-93b7-47f6-8f9f-8723b19b8822/background_blue_mob_2.jpg);
   background-repeat: no-repeat;
   background-size: cover;
@@ -4719,13 +4722,6 @@ body {
   font-weight: bold;
 }
 
-.ticketFormContainer #nameWrapper,
-.ticketFormContainer #PhoneWrapper,
-.ticketFormContainer #emailWrapper,
-.ticketFormContainer .xControlCheckbox {
-  padding: 0 10%;
-}
-
 .ticketFormContainer #name_Firstname {
   margin-bottom: 5px;
 }
@@ -4798,8 +4794,7 @@ body {
 }
 
 .ticketFormContainer .xControlCheckbox .xLabelContainer {
-  min-width: 0;
-  padding: 0;
+  display: none;
 }
 
 .ticketFormContainer .xFieldContainer {
@@ -4817,7 +4812,7 @@ body {
 }
 
 .ticketFormContainer .xActionsForm {
-  margin-top: 10px;
+  margin-top: 30px;
   margin-left: 0;
 }
 
@@ -4826,12 +4821,19 @@ body {
   font-size: 1.6em;
   font-weight: bold;
   text-transform: uppercase;
-  background-color: #26234f;
+  background-color: #0F1E55;
   border-top: 3px solid #fff;
   border-bottom: 3px solid #fff;
 }
 
 @media screen and (min-width: 576px) {
+  .ticketFormContainer #nameWrapper,
+  .ticketFormContainer #PhoneWrapper,
+  .ticketFormContainer #emailWrapper,
+  .ticketFormContainer .xControlCheckbox {
+    padding: 0 10%;
+  }
+
   .ticketFormContainer #name_Firstname {
     margin-bottom: 0;
   }
@@ -4852,12 +4854,13 @@ body {
 }
 
 @media screen and (min-width: 768px) {
-  .details .xPage {
+  .details .xPage,
+  .xStateDetails .xPage {
     background-image: url(https://a.wayin.com/images/7405/f7cdaa0a-93b7-47f6-8f9f-8723b19b8822/fondo-desktop.jpg);
   }
 
   #xSectionDetails .xMediaContainer {
-    padding: 15% 15% 0 20%;
+    padding: 45px 0 0 0;
   }
 
   #xSectionDetails .xMediaContainer img {
@@ -4875,7 +4878,14 @@ body {
 
 @media screen and (min-width: 992px) {
   #xSectionDetails .xMediaContainer {
-    padding: 8% 15% 0 30%;
+    padding: 8% 0 0 0;
+  }
+
+  .ticketFormContainer #nameWrapper,
+  .ticketFormContainer #PhoneWrapper,
+  .ticketFormContainer #emailWrapper,
+  .ticketFormContainer .xControlCheckbox {
+    padding: 0 10%;
   }
 }
 
@@ -5182,9 +5192,15 @@ body {
   padding: 0 10%;
 }
 
-.Content1 #xSectionContent1R4C1 h2,
-.xStateContent1 #xSectionContent1R4C1 h2 {
-  background: -webkit-linear-gradient(#AC8833, #EAD23D);
+.Content1 #xSectionContent1R4C1 .xComponentInner,
+.xStateContent1 #xSectionContent1R4C1 .xComponentInner {
+  position: relative;
+  font-family: "Gotham Italic";
+}
+
+.Content1 #xSectionContent1R4C1 .xComponentInner h2,
+.xStateContent1 #xSectionContent1R4C1 .xComponentInner h2 {
+  background: -webkit-linear-gradient(#EAD23D 40%, #c28717 60%);
   -webkit-text-fill-color: transparent;
   -webkit-text-stroke: 3px #000;
   -webkit-background-clip: text;
@@ -5192,13 +5208,28 @@ body {
   color: #EAD23D;
   font-weight: bold;
   font-size: 15vw;
+  position: relative;
+}
+
+.Content1 #xSectionContent1R4C1 .xComponentInner::before,
+.xStateContent1 #xSectionContent1R4C1 .xComponentInner::before {
+  background: -webkit-linear-gradient(#fff 40%, #000 60%);
+  -webkit-text-stroke: 3px transparent;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  content: "Big Prize";
+  position: absolute;
+  right: 12%;
+  top: -6%;
+  font-size: 15vw;
+  max-width: 80%;
+  text-align: center;
 }
 
 .Content1 h3,
 .xStateContent1 h3 {
   background: -webkit-linear-gradient(#AC8833, #EAD23D);
   -webkit-text-fill-color: transparent;
-  text-shadow: 0px 0px 20px #7c7c7c91;
   -webkit-background-clip: text;
   -webkit-text-stroke: 0;
   color: #AC8833;
@@ -5240,7 +5271,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #26234f;
+  background-color: #0F1E55;
 }
 
 .Content1 #xSectionContent1R1 .xRowInner #xSectionContent1R1C1 .xBodyContainer,
@@ -5405,19 +5436,19 @@ body {
 .xStateContent1 #xSectionContent1R2 .xRowInner {
   background-image: linear-gradient(45deg, #2AA1D2 35%, #00AAD9 34%);
   padding: 20px 10px;
-  margin: 10px 0;
+  margin: 10px auto;
 }
 
 .Content1 #xSectionContent1R3 .xRowInner,
 .xStateContent1 #xSectionContent1R3 .xRowInner {
   background-image: linear-gradient(45deg, #2AA1D2 50%, #00AAD9 49%);
   padding: 20px 10px;
-  margin: 10px 0;
+  margin: 10px auto;
 }
 
 .Content1 #xSectionContent1R4 .xRowInner,
 .xStateContent1 #xSectionContent1R4 .xRowInner {
-  background-color: #26234f;
+  background-color: #0F1E55;
   background-image: url(https://a.wayin.com/images/7405/f7cdaa0a-93b7-47f6-8f9f-8723b19b8822/background-big-price.jpg);
   background-repeat: no-repeat;
   background-position: top;
@@ -5447,6 +5478,24 @@ body {
     width: 11vw;
     height: 16vw;
     left: 0;
+  }
+
+  .Content1 #xSectionContent1R4C1 .xComponentInner h2,
+  .xStateContent1 #xSectionContent1R4C1 .xComponentInner h2 {
+    -webkit-text-stroke: 4px #000;
+  }
+
+  .Content1 #xSectionContent1R4C1 .xComponentInner::before,
+  .xStateContent1 #xSectionContent1R4C1 .xComponentInner::before {
+    right: 13%;
+    top: -5%;
+  }
+}
+
+@media screen and (min-width: 576px) {
+  .Content1 #xSectionContent1R4C1 .xComponentInner::before,
+  .xStateContent1 #xSectionContent1R4C1 .xComponentInner::before {
+    right: 14%;
   }
 }
 
@@ -5516,44 +5565,26 @@ body {
   .Content1 #xSectionContent1R2 .xRowInner #xSectionContent1R2C2,
   .Content1 #xSectionContent1R2 .xRowInner #xSectionContent1R3C1,
   .Content1 #xSectionContent1R2 .xRowInner #xSectionContent1R3C2,
-  .Content1 #xSectionContent1R2 .xRowInner #xSectionContent1R4C1,
-  .Content1 #xSectionContent1R2 .xRowInner #xSectionContent1R4C2,
-  .Content1 #xSectionContent1R2 .xRowInner #xSectionContent1R4C3,
   .Content1 #xSectionContent1R3 .xRowInner #xSectionContent1R2C1,
   .Content1 #xSectionContent1R3 .xRowInner #xSectionContent1R2C2,
   .Content1 #xSectionContent1R3 .xRowInner #xSectionContent1R3C1,
   .Content1 #xSectionContent1R3 .xRowInner #xSectionContent1R3C2,
-  .Content1 #xSectionContent1R3 .xRowInner #xSectionContent1R4C1,
-  .Content1 #xSectionContent1R3 .xRowInner #xSectionContent1R4C2,
-  .Content1 #xSectionContent1R3 .xRowInner #xSectionContent1R4C3,
   .Content1 #xSectionContent1R4 .xRowInner #xSectionContent1R2C1,
   .Content1 #xSectionContent1R4 .xRowInner #xSectionContent1R2C2,
   .Content1 #xSectionContent1R4 .xRowInner #xSectionContent1R3C1,
   .Content1 #xSectionContent1R4 .xRowInner #xSectionContent1R3C2,
-  .Content1 #xSectionContent1R4 .xRowInner #xSectionContent1R4C1,
-  .Content1 #xSectionContent1R4 .xRowInner #xSectionContent1R4C2,
-  .Content1 #xSectionContent1R4 .xRowInner #xSectionContent1R4C3,
   .xStateContent1 #xSectionContent1R2 .xRowInner #xSectionContent1R2C1,
   .xStateContent1 #xSectionContent1R2 .xRowInner #xSectionContent1R2C2,
   .xStateContent1 #xSectionContent1R2 .xRowInner #xSectionContent1R3C1,
   .xStateContent1 #xSectionContent1R2 .xRowInner #xSectionContent1R3C2,
-  .xStateContent1 #xSectionContent1R2 .xRowInner #xSectionContent1R4C1,
-  .xStateContent1 #xSectionContent1R2 .xRowInner #xSectionContent1R4C2,
-  .xStateContent1 #xSectionContent1R2 .xRowInner #xSectionContent1R4C3,
   .xStateContent1 #xSectionContent1R3 .xRowInner #xSectionContent1R2C1,
   .xStateContent1 #xSectionContent1R3 .xRowInner #xSectionContent1R2C2,
   .xStateContent1 #xSectionContent1R3 .xRowInner #xSectionContent1R3C1,
   .xStateContent1 #xSectionContent1R3 .xRowInner #xSectionContent1R3C2,
-  .xStateContent1 #xSectionContent1R3 .xRowInner #xSectionContent1R4C1,
-  .xStateContent1 #xSectionContent1R3 .xRowInner #xSectionContent1R4C2,
-  .xStateContent1 #xSectionContent1R3 .xRowInner #xSectionContent1R4C3,
   .xStateContent1 #xSectionContent1R4 .xRowInner #xSectionContent1R2C1,
   .xStateContent1 #xSectionContent1R4 .xRowInner #xSectionContent1R2C2,
   .xStateContent1 #xSectionContent1R4 .xRowInner #xSectionContent1R3C1,
-  .xStateContent1 #xSectionContent1R4 .xRowInner #xSectionContent1R3C2,
-  .xStateContent1 #xSectionContent1R4 .xRowInner #xSectionContent1R4C1,
-  .xStateContent1 #xSectionContent1R4 .xRowInner #xSectionContent1R4C2,
-  .xStateContent1 #xSectionContent1R4 .xRowInner #xSectionContent1R4C3 {
+  .xStateContent1 #xSectionContent1R4 .xRowInner #xSectionContent1R3C2 {
     width: 50%;
   }
 
@@ -5564,6 +5595,58 @@ body {
   .xStateContent1 #xSectionContent1R3 .xRowInner #xSectionContent1R2C1 .xComponentInner,
   .xStateContent1 #xSectionContent1R4 .xRowInner #xSectionContent1R2C1 .xComponentInner {
     display: flex;
+  }
+
+  .Content1 #xSectionContent1R2 .xRowInner #xSectionContent1R2C2 .xCellInner .xImage,
+  .Content1 #xSectionContent1R3 .xRowInner #xSectionContent1R2C2 .xCellInner .xImage,
+  .Content1 #xSectionContent1R4 .xRowInner #xSectionContent1R2C2 .xCellInner .xImage,
+  .xStateContent1 #xSectionContent1R2 .xRowInner #xSectionContent1R2C2 .xCellInner .xImage,
+  .xStateContent1 #xSectionContent1R3 .xRowInner #xSectionContent1R2C2 .xCellInner .xImage,
+  .xStateContent1 #xSectionContent1R4 .xRowInner #xSectionContent1R2C2 .xCellInner .xImage {
+    flex-basis: 21%;
+  }
+
+  .Content1 #xSectionContent1R2 .xRowInner #xSectionContent1R4C1,
+  .Content1 #xSectionContent1R3 .xRowInner #xSectionContent1R4C1,
+  .Content1 #xSectionContent1R4 .xRowInner #xSectionContent1R4C1,
+  .xStateContent1 #xSectionContent1R2 .xRowInner #xSectionContent1R4C1,
+  .xStateContent1 #xSectionContent1R3 .xRowInner #xSectionContent1R4C1,
+  .xStateContent1 #xSectionContent1R4 .xRowInner #xSectionContent1R4C1 {
+    width: 40%;
+  }
+
+  .Content1 #xSectionContent1R2 .xRowInner #xSectionContent1R4C1 h2,
+  .Content1 #xSectionContent1R3 .xRowInner #xSectionContent1R4C1 h2,
+  .Content1 #xSectionContent1R4 .xRowInner #xSectionContent1R4C1 h2,
+  .xStateContent1 #xSectionContent1R2 .xRowInner #xSectionContent1R4C1 h2,
+  .xStateContent1 #xSectionContent1R3 .xRowInner #xSectionContent1R4C1 h2,
+  .xStateContent1 #xSectionContent1R4 .xRowInner #xSectionContent1R4C1 h2 {
+    font-size: 7vw;
+    padding: 0;
+    text-align: right;
+  }
+
+  .Content1 #xSectionContent1R2 .xRowInner #xSectionContent1R4C1 .xComponentInner::before,
+  .Content1 #xSectionContent1R3 .xRowInner #xSectionContent1R4C1 .xComponentInner::before,
+  .Content1 #xSectionContent1R4 .xRowInner #xSectionContent1R4C1 .xComponentInner::before,
+  .xStateContent1 #xSectionContent1R2 .xRowInner #xSectionContent1R4C1 .xComponentInner::before,
+  .xStateContent1 #xSectionContent1R3 .xRowInner #xSectionContent1R4C1 .xComponentInner::before,
+  .xStateContent1 #xSectionContent1R4 .xRowInner #xSectionContent1R4C1 .xComponentInner::before {
+    font-size: 7vw;
+    right: 0;
+    min-width: -webkit-fit-content;
+    min-width: -moz-fit-content;
+    min-width: fit-content;
+    top: -7%;
+  }
+
+  .Content1 #xSectionContent1R2 .xRowInner #xSectionContent1R4C2,
+  .Content1 #xSectionContent1R3 .xRowInner #xSectionContent1R4C2,
+  .Content1 #xSectionContent1R4 .xRowInner #xSectionContent1R4C2,
+  .xStateContent1 #xSectionContent1R2 .xRowInner #xSectionContent1R4C2,
+  .xStateContent1 #xSectionContent1R3 .xRowInner #xSectionContent1R4C2,
+  .xStateContent1 #xSectionContent1R4 .xRowInner #xSectionContent1R4C2 {
+    width: 30%;
   }
 
   .Content1 #xSectionContent1R2 .xRowInner #xSectionContent1R4C2 .xCellInner .xImage .xMediaImage::before,
@@ -5578,22 +5661,38 @@ body {
     left: 12vw;
   }
 
-  .Content1 #xSectionContent1R2 .xRowInner #xSectionContent1R4C1 h2,
-  .Content1 #xSectionContent1R3 .xRowInner #xSectionContent1R4C1 h2,
-  .Content1 #xSectionContent1R4 .xRowInner #xSectionContent1R4C1 h2,
-  .xStateContent1 #xSectionContent1R2 .xRowInner #xSectionContent1R4C1 h2,
-  .xStateContent1 #xSectionContent1R3 .xRowInner #xSectionContent1R4C1 h2,
-  .xStateContent1 #xSectionContent1R4 .xRowInner #xSectionContent1R4C1 h2 {
-    font-size: 5vw;
+  .Content1 #xSectionContent1R2 .xRowInner #xSectionContent1R4C3,
+  .Content1 #xSectionContent1R3 .xRowInner #xSectionContent1R4C3,
+  .Content1 #xSectionContent1R4 .xRowInner #xSectionContent1R4C3,
+  .xStateContent1 #xSectionContent1R2 .xRowInner #xSectionContent1R4C3,
+  .xStateContent1 #xSectionContent1R3 .xRowInner #xSectionContent1R4C3,
+  .xStateContent1 #xSectionContent1R4 .xRowInner #xSectionContent1R4C3 {
+    width: 30%;
   }
 
-  .Content1 #xSectionContent1R2 .xRowInner #xSectionContent1R2C2 .xCellInner .xImage,
-  .Content1 #xSectionContent1R3 .xRowInner #xSectionContent1R2C2 .xCellInner .xImage,
-  .Content1 #xSectionContent1R4 .xRowInner #xSectionContent1R2C2 .xCellInner .xImage,
-  .xStateContent1 #xSectionContent1R2 .xRowInner #xSectionContent1R2C2 .xCellInner .xImage,
-  .xStateContent1 #xSectionContent1R3 .xRowInner #xSectionContent1R2C2 .xCellInner .xImage,
-  .xStateContent1 #xSectionContent1R4 .xRowInner #xSectionContent1R2C2 .xCellInner .xImage {
-    flex-basis: 21%;
+  .Content1 #xSectionContent1R2 .xRowInner #xSectionContent1R4C3 .xHtml,
+  .Content1 #xSectionContent1R3 .xRowInner #xSectionContent1R4C3 .xHtml,
+  .Content1 #xSectionContent1R4 .xRowInner #xSectionContent1R4C3 .xHtml,
+  .xStateContent1 #xSectionContent1R2 .xRowInner #xSectionContent1R4C3 .xHtml,
+  .xStateContent1 #xSectionContent1R3 .xRowInner #xSectionContent1R4C3 .xHtml,
+  .xStateContent1 #xSectionContent1R4 .xRowInner #xSectionContent1R4C3 .xHtml {
+    padding: 0;
+  }
+
+  .Content1 #xSectionContent1R2 .xRowInner #xSectionContent1R4C3 h3,
+  .Content1 #xSectionContent1R3 .xRowInner #xSectionContent1R4C3 h3,
+  .Content1 #xSectionContent1R4 .xRowInner #xSectionContent1R4C3 h3,
+  .xStateContent1 #xSectionContent1R2 .xRowInner #xSectionContent1R4C3 h3,
+  .xStateContent1 #xSectionContent1R3 .xRowInner #xSectionContent1R4C3 h3,
+  .xStateContent1 #xSectionContent1R4 .xRowInner #xSectionContent1R4C3 h3 {
+    text-align: left;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .Content1 #xSectionContent1R4 .xRowInner #xSectionContent1R4C1 .xComponentInner::before,
+  .xStateContent1 #xSectionContent1R4 .xRowInner #xSectionContent1R4C1 .xComponentInner::before {
+    top: -6%;
   }
 }
 
@@ -5622,7 +5721,12 @@ body {
 
   .Content1 #xSectionContent1R4 .xRowInner #xSectionContent1R4C1 h2,
   .xStateContent1 #xSectionContent1R4 .xRowInner #xSectionContent1R4C1 h2 {
-    font-size: 60px;
+    font-size: 80px;
+  }
+
+  .Content1 #xSectionContent1R4 .xRowInner #xSectionContent1R4C1 .xComponentInner::before,
+  .xStateContent1 #xSectionContent1R4 .xRowInner #xSectionContent1R4C1 .xComponentInner::before {
+    font-size: 80px;
   }
 
   .Content1 #xSectionContent1R4 .xRowInner #xSectionContent1R4C2 .xCellInner .xImage .xItemInner .xMediaImage::before,
@@ -5640,6 +5744,11 @@ body {
     font-size: 55px;
     -webkit-text-stroke: 10px transparent;
   }
+}
+
+.Content,
+.xStateContent {
+  color: #fff;
 }
 
 .Content #xSectionContent,
@@ -6031,6 +6140,11 @@ nav > ul .menuIcono {
   background-image: url(https://a.wayin.com/images/7405/f7cdaa0a-93b7-47f6-8f9f-8723b19b8822/icon_camera.png);
   background-position: center;
   background-size: cover;
+}
+
+.Confirmation .menuIcono,
+.xStateConfirmation .menuIcono {
+  display: none;
 }
 
 .xSectionConfirmation {

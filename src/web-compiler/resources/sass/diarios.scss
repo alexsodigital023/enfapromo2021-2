@@ -24,21 +24,40 @@
         padding: 0 10%;
     }
 
-    #xSectionContent1R4C1 h2 {
-        background: -webkit-linear-gradient($c-dorado, $c-amarillo);
-        -webkit-text-fill-color: $c-transparent;
-        -webkit-text-stroke: 3px $c-negro;
-        -webkit-background-clip: text;
-        text-align: center;
-        color: $c-amarillo;
-        font-weight: bold;
-        font-size: 15vw;
+    #xSectionContent1R4C1 .xComponentInner {
+        position: relative;
+        font-family: $font-gothamItalic;
+
+        h2 {
+            background: -webkit-linear-gradient($c-amarillo 40%, $c-naranja-oscuro 60%);
+            -webkit-text-fill-color: $c-transparent;
+            -webkit-text-stroke: 3px $c-negro;
+            -webkit-background-clip: text;
+            text-align: center;
+            color: $c-amarillo;
+            font-weight: bold;
+            font-size: 15vw;
+            position: relative;
+        }
+
+        &::before {
+            background: -webkit-linear-gradient($c-blanco 40%, $c-negro 60%);
+            -webkit-text-stroke: 3px transparent;
+            -webkit-text-fill-color: transparent;
+            -webkit-background-clip: text;
+            content: "Big Prize";
+            position: absolute;
+            right: 12%;
+            top: -6%;
+            font-size: 15vw;
+            max-width: 80%;
+            text-align: center;
+        }
     }
 
     h3 {
         background: -webkit-linear-gradient($c-dorado, $c-amarillo);
         -webkit-text-fill-color: $c-transparent;
-        text-shadow: 0px 0px 20px $c-shadow;
         -webkit-background-clip: text;
         -webkit-text-stroke: 0;
         color: $c-dorado;
@@ -170,13 +189,13 @@
     #xSectionContent1R2 .xRowInner {
         background-image: linear-gradient(45deg, #2AA1D2 35%, #00AAD9 34%);
         padding: 20px 10px;
-        margin: 10px 0;
+        margin: 10px auto;
     }
 
     #xSectionContent1R3 .xRowInner {
         background-image: linear-gradient(45deg, #2AA1D2 50%, #00AAD9 49%);
         padding: 20px 10px;
-        margin: 10px 0;
+        margin: 10px auto;
     }
 
     #xSectionContent1R4 .xRowInner {
@@ -207,6 +226,25 @@
             width: 11vw;
             height: 16vw;
             left: 0;
+        }
+        
+        #xSectionContent1R4C1 .xComponentInner {
+            h2 {
+                -webkit-text-stroke: 4px #000;
+            }
+
+            &::before {
+                right: 13%;
+                top: -5%;
+            }
+        }
+    }
+}
+
+@media #{$grid-sm} {
+    .Content1, .xStateContent1 {
+        #xSectionContent1R4C1 .xComponentInner::before {
+            right: 14%;
         }
     }
 }
@@ -265,10 +303,7 @@
             #xSectionContent1R2C1,
             #xSectionContent1R2C2,
             #xSectionContent1R3C1,
-            #xSectionContent1R3C2,
-            #xSectionContent1R4C1,
-            #xSectionContent1R4C2,
-            #xSectionContent1R4C3 {
+            #xSectionContent1R3C2 {
                 width: 50%;
             }
 
@@ -276,20 +311,57 @@
                 display: flex;
             }
 
-            #xSectionContent1R4C2 .xCellInner .xImage .xMediaImage::before {
-                width: 10vw;
-                height: 10vw;
-                top: 1vw;
-                left: 12vw;
-            }
-
-            #xSectionContent1R4C1 h2 {
-                font-size: 5vw;
-            }
-            
             #xSectionContent1R2C2 .xCellInner .xImage {
                 flex-basis: 21%;
             }
+
+            #xSectionContent1R4C1 {
+                width: 40%;
+                
+                h2 {
+                    font-size: 7vw;
+                    padding: 0;
+                    text-align: right;
+                }
+
+                .xComponentInner::before {
+                    font-size: 7vw;
+                    right: 0;
+                    min-width: fit-content;
+                    top: -7%;
+                }
+            }
+
+            #xSectionContent1R4C2 {
+                width: 30%;
+                
+                .xCellInner .xImage .xMediaImage::before {
+                    width: 10vw;
+                    height: 10vw;
+                    top: 1vw;
+                    left: 12vw;
+                }
+            }
+
+            #xSectionContent1R4C3 {
+                width: 30%;
+                
+                .xHtml {
+                    padding: 0;
+                }
+
+                h3 {
+                    text-align: left;
+                }
+            }
+        }
+    }
+}
+
+@media #{$grid-lg} {
+    .Content1, .xStateContent1 {
+        #xSectionContent1R4 .xRowInner #xSectionContent1R4C1 .xComponentInner::before {
+            top: -6%;
         }
     }
 }
@@ -317,8 +389,14 @@
                 font-size: 35px;
             }
 
-            #xSectionContent1R4C1 h2 {
-                font-size: 60px;
+            #xSectionContent1R4C1 {
+                h2 {
+                    font-size: 80px;
+                }
+                
+                .xComponentInner::before {
+                    font-size: 80px;
+                }
             }
             
             #xSectionContent1R4C2 .xCellInner .xImage .xItemInner .xMediaImage::before {

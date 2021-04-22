@@ -1,4 +1,4 @@
-.details {
+.details, .xStateDetails {
   nav>ul {
     background-image: none;
     background-color: transparent;
@@ -75,13 +75,6 @@
     font-weight: bold;
   }
 
-  #nameWrapper,
-  #PhoneWrapper,
-  #emailWrapper,
-  .xControlCheckbox {
-    padding: 0 10%;
-  }
-
   #name_Firstname {
     margin-bottom: 5px;
   }
@@ -154,8 +147,7 @@
   }
 
   .xControlCheckbox .xLabelContainer {
-    min-width: 0;
-    padding: 0;
+    display: none;
   }
 
   .xFieldContainer {
@@ -175,7 +167,7 @@
   }
 
   .xActionsForm {
-    margin-top: 10px;
+    margin-top: 30px;
     margin-left: 0;
 
     .xPagingButton {
@@ -192,6 +184,13 @@
 
 @media #{$grid-sm} {
   .ticketFormContainer {
+    #nameWrapper,
+    #PhoneWrapper,
+    #emailWrapper,
+    .xControlCheckbox {
+      padding: 0 10%;
+    }
+
     #name_Firstname {
       margin-bottom: 0;
     }
@@ -213,14 +212,14 @@
 }
 
 @media #{$grid-md} {
-  .details {
+  .details, .xStateDetails {
     .xPage {
       background-image: $background-home;
     }
   }
 
   #xSectionDetails .xMediaContainer {
-    padding: 15% 15% 0 20%;
+    padding: 45px 0 0 0;
     
     img {
       max-width: -webkit-fill-available;
@@ -238,6 +237,15 @@
 
 @media #{$grid-lg} {
   #xSectionDetails .xMediaContainer {
-    padding: 8% 15% 0 30%;
+    padding: 8% 0 0 0;
+  }
+
+  .ticketFormContainer {
+    #nameWrapper,
+    #PhoneWrapper,
+    #emailWrapper,
+    .xControlCheckbox {
+      padding: 0 10%;
+    }
   }
 }
