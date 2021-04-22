@@ -4613,6 +4613,33 @@ readers do not read off random characters that represent icons */
   src: url("https://chocomilk.nyc3.digitaloceanspaces.com/fonts/velocista-demo-ffp-webfont.woff2") format("woff2"), url("https://chocomilk.nyc3.digitaloceanspaces.com/fonts/velocista-demo-ffp-webfont.woff") format("woff");
 }
 
+@font-face {
+  font-family: "Font Awesome 5 Brands";
+  font-style: normal;
+  font-weight: 400;
+  font-display: block;
+  src: url("https://chocomilk.nyc3.digitaloceanspaces.com/webfonts/fa-brands-400.eot");
+  src: url("https://chocomilk.nyc3.digitaloceanspaces.com/webfonts/fa-brands-400.eot?#iefix") format("embedded-opentype"), url("https://chocomilk.nyc3.digitaloceanspaces.com/webfonts/fa-brands-400.woff2") format("woff2"), url("https://chocomilk.nyc3.digitaloceanspaces.com/webfonts/fa-brands-400.woff") format("woff"), url("https://chocomilk.nyc3.digitaloceanspaces.com/webfonts/fa-brands-400.ttf") format("truetype"), url("https://chocomilk.nyc3.digitaloceanspaces.com/webfonts/fa-brands-400.svg#fontawesome") format("svg");
+}
+
+@font-face {
+  font-family: "Font Awesome 5 Free";
+  font-style: normal;
+  font-weight: 400;
+  font-display: block;
+  src: url("https://chocomilk.nyc3.digitaloceanspaces.com/webfonts/fa-regular-400.eot");
+  src: url("https://chocomilk.nyc3.digitaloceanspaces.com/webfonts/fa-regular-400.eot?#iefix") format("embedded-opentype"), url("https://chocomilk.nyc3.digitaloceanspaces.com/webfonts/fa-regular-400.woff2") format("woff2"), url("https://chocomilk.nyc3.digitaloceanspaces.com/webfonts/fa-regular-400.woff") format("woff"), url("https://chocomilk.nyc3.digitaloceanspaces.com/webfonts/fa-regular-400.ttf") format("truetype"), url("https://chocomilk.nyc3.digitaloceanspaces.com/webfonts/fa-regular-400.svg#fontawesome") format("svg");
+}
+
+@font-face {
+  font-family: "Font Awesome 5 Free";
+  font-style: normal;
+  font-weight: 900;
+  font-display: block;
+  src: url("https://chocomilk.nyc3.digitaloceanspaces.com/webfonts/fa-solid-900.eot");
+  src: url("https://chocomilk.nyc3.digitaloceanspaces.com/webfonts/fa-solid-900.eot?#iefix") format("embedded-opentype"), url("https://chocomilk.nyc3.digitaloceanspaces.com/webfonts/fa-solid-900.woff2") format("woff2"), url("https://chocomilk.nyc3.digitaloceanspaces.com/webfonts/fa-solid-900.woff") format("woff"), url("https://chocomilk.nyc3.digitaloceanspaces.com/webfonts/fa-solid-900.ttf") format("truetype"), url("https://chocomilk.nyc3.digitaloceanspaces.com/webfonts/fa-solid-900.svg#fontawesome") format("svg");
+}
+
 body {
   background: #0A59A2;
   color: #fff;
@@ -5189,7 +5216,6 @@ body {
   font-size: 5vw;
   text-align: center;
   font-family: "Gotham Italic";
-  padding: 0 10%;
 }
 
 .Content1 #xSectionContent1R4C1 .xComponentInner,
@@ -5508,6 +5534,7 @@ body {
 
   .Content1 h2,
   .xStateContent1 h2 {
+    padding: 0 25%;
     font-size: 4vw;
     text-align: left;
     -webkit-text-stroke: 7px transparent;
