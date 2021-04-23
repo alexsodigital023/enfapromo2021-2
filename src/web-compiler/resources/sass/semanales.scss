@@ -193,7 +193,7 @@
             -webkit-background-clip: text;
             -webkit-text-stroke: 0;
             color: $c-naranja;
-            font-size: 30px;
+            font-size: 20px;
             line-height: 1.8;
             text-shadow: 0px 6px 6px $c-sombra;
         }
@@ -243,6 +243,10 @@
     .xSectionPrizes {
         .xTitle, h2 {
             -webkit-text-stroke: 3px $c-negro;
+        }
+        
+        #xSectionPrizesR1C1 h2 {
+            font-size: 30px;
         }
     }
 }

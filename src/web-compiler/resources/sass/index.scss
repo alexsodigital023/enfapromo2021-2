@@ -7,13 +7,11 @@ nav>ul {
   background-size: cover;
   color: $c-blanco;
   list-style: none;
-  min-height: 80px;
   padding: 0 10px;
-  display: flex;
-  align-items: center;
-  flex-direction: row;
   position: relative;
+  display: grid;
   justify-content: center;
+  align-items: center;
 
   &::before {
     content: '';
@@ -23,7 +21,6 @@ nav>ul {
     background-image: $modo-pantera;
     background-repeat: no-repeat;
     background-size: contain;
-    margin: 10px 30px 0px 30px;
   }
 
   >div {
@@ -31,6 +28,49 @@ nav>ul {
     cursor: pointer;
     position: absolute;
     left: 5%;
+  }
+
+  .outer-menu {
+    display: none;
+    
+    a {
+      margin: 0 15px;
+      padding: 30px;
+      background-color: $c-cafe-oscuro;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      &:hover {
+        background-color: $c-cafe-claro;
+        text-decoration: none;
+      }
+    }
+
+    .icon {
+      display: block;
+      width: 50px;
+      height: 50px;
+
+      &-pancho {
+        background-image: $menu-pancho;
+        background-repeat: no-repeat;
+        background-size: contain;
+      }
+
+      &-control {
+        background-image: $menu-control;
+        background-repeat: no-repeat;
+        background-size: contain;
+      }
+      
+      &-regalo {
+        background-image: $menu-regalo;
+        background-repeat: no-repeat;
+        background-size: contain;
+      }
+    }
   }
   
   .menuIcono{
@@ -251,17 +291,22 @@ nav>ul {
 
 @media #{$grid-md} {
   nav ul {
-    background-size: contain;
-    background-position: left;
-    justify-content: flex-start;
+    background-size: 600px;
+    background-position: -115px;
+    grid-template-columns: 3fr 4fr 1fr;
 
     &::before {
-      margin: 10px 30px 0px 18%;
+      justify-self: center;
     }
 
     >div {
       left: auto;
       right: 5%;
+    }
+
+    .outer-menu {
+      display: flex;
+      justify-self: flex-end;
     }
   }
 
@@ -270,15 +315,14 @@ nav>ul {
     left: auto;
     right: 0;
 
-
     &::before {
       content: '';
       position: absolute;
-      top: 0;
-      left: -100%;
       right: 0;
       bottom: 0;
-      background: linear-gradient(90deg, $c-sombra-negra 50%, $c-transparent 50%);
+      top: -5%;
+      left: -115%;
+      background: linear-gradient(90deg, $c-sombra-negra 51%, $c-transparent 61%);
     }
   }
 
@@ -290,7 +334,12 @@ nav>ul {
 }
 
 @media #{$grid-xl} {
-  nav > ul::before {
-    margin: 10px 30px 0px 12%;
+  nav > ul {
+    background-size: contain;
+    background-position: left;
+
+    ::before {
+      margin: 10px 30px 0px 12%;
+    }
   }
 }
