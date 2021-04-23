@@ -6049,7 +6049,7 @@ nav > ul .outer-menu {
 
 nav > ul .outer-menu a {
   margin: 0 15px;
-  padding: 30px;
+  padding: 30px 30px 20px 30px;
   background-color: #3c1b1a;
   display: flex;
   flex-direction: column;
@@ -6057,9 +6057,18 @@ nav > ul .outer-menu a {
   align-items: center;
 }
 
+nav > ul .outer-menu a p {
+  color: transparent;
+  margin-top: 10px;
+}
+
 nav > ul .outer-menu a:hover {
   background-color: #8A4814;
   text-decoration: none;
+}
+
+nav > ul .outer-menu a:hover p {
+  color: #fff;
 }
 
 nav > ul .outer-menu .icon {
@@ -6395,6 +6404,11 @@ nav > ul .menuIcono {
   display: none;
 }
 
+.Confirmation nav ul .outer-menu,
+.xStateConfirmation nav ul .outer-menu {
+  display: none;
+}
+
 .xSectionConfirmation {
   padding: 45px;
   background: url(https://a.wayin.com/images/7405/f7cdaa0a-93b7-47f6-8f9f-8723b19b8822/background_blue_mob_2.jpg);
@@ -6405,6 +6419,16 @@ nav > ul .menuIcono {
 }
 
 @media screen and (min-width: 768px) {
+  .Confirmation .menuIcono,
+  .xStateConfirmation .menuIcono {
+    display: none;
+  }
+
+  .Confirmation nav ul .outer-menu,
+  .xStateConfirmation nav ul .outer-menu {
+    display: none;
+  }
+
   .xSectionConfirmation {
     background: url(https://a.wayin.com/images/7405/f7cdaa0a-93b7-47f6-8f9f-8723b19b8822/background_blue.jpg);
     background-position-x: center;

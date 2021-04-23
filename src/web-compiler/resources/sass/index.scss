@@ -35,16 +35,25 @@ nav>ul {
     
     a {
       margin: 0 15px;
-      padding: 30px;
+      padding: 30px 30px 20px 30px;
       background-color: $c-cafe-oscuro;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
 
+      p {
+        color: $c-transparent;
+        margin-top: 10px;
+      }
+      
       &:hover {
         background-color: $c-cafe-claro;
         text-decoration: none;
+        
+        p {
+          color: $c-blanco;
+        }
       }
     }
 

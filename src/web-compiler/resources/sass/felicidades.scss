@@ -2,6 +2,10 @@
     .menuIcono {
         display: none;
     }
+
+    nav ul .outer-menu {
+      display: none;
+    }
 }
 
 .xSectionConfirmation{
@@ -14,6 +18,16 @@
 }
 
 @media #{$grid-md} {
+    .Confirmation, .xStateConfirmation {
+        .menuIcono {
+            display: none;
+        }
+    
+        nav ul .outer-menu {
+          display: none;
+        }
+    }
+    
     .xSectionConfirmation{
         background: $background-section;
         background-position-x: center;
