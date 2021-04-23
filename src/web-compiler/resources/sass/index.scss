@@ -47,6 +47,11 @@ nav>ul {
         margin-top: 10px;
       }
       
+      &:focus,
+      &:active {
+        text-decoration: none;
+      }
+
       &:hover {
         background-color: $c-cafe-claro;
         text-decoration: none;
@@ -155,51 +160,60 @@ nav>ul {
             background-position: center;
             background-size: 50%;
             border-radius: 100%;
-            margin-right: 10px;
+            margin: 0;
           }
         }
       }
-    }
     
-    li.detailsTab,
-    li.prizesTab,
-    li.content1Tab {
-      // display: none;
-    }
-
-    li.contentTab {
-      order: 2;
-
-      .xTabLink::before {
-        background-image: $icon-tel;
-        border: 2px solid #fff;
+      li.detailsTab .xTabLink::before {
+        background-image: $menu-control;
+        background-size: 100%;
       }
-    }
-
-    li.content2Tab {
-      order: 1;
+  
+      li.prizesTab .xTabLink::before {
+        background-image: $menu-regalo;
+        background-size: 100%;
+      }
+  
+      li.content1Tab .xTabLink::before {
+        background-image: $menu-regalo;
+        background-size: 100%;
+      }
+  
+      li.contentTab {
+        order: 2;
+  
+        .xTabLink::before {
+          background-image: $icon-tel;
+          border: 2px solid #fff;
+        }
+      }
+  
+      li.content2Tab {
+        order: 1;
+        
+        .xTabLink::before {
+          background-image: $icon-question;
+          border: 2px solid #fff;
+        }
+      }
       
-      .xTabLink::before {
-        background-image: $icon-question;
-        border: 2px solid #fff;
+      li.content3Tab {
+        order: 3;
+        
+        .xTabLink::before {
+          background-image: $icon-privacy;
+          border: 2px solid #fff;
+        }
       }
-    }
-    
-    li.content3Tab {
-      order: 3;
       
-      .xTabLink::before {
-        background-image: $icon-privacy;
-        border: 2px solid #fff;
-      }
-    }
-    
-    li.content4Tab {
-      order: 4;
-
-      .xTabLink::before {
-        background-image: $icon-terms;
-        border: 2px solid #fff;
+      li.content4Tab {
+        order: 4;
+  
+        .xTabLink::before {
+          background-image: $icon-terms;
+          border: 2px solid #fff;
+        }
       }
     }
   }
@@ -331,7 +345,7 @@ nav>ul {
       bottom: 0;
       top: -5%;
       left: -115%;
-      background: linear-gradient(90deg, $c-sombra-negra 51%, $c-transparent 61%);
+      background: linear-gradient(90deg, $c-sombra-negra 52%, $c-transparent 54%);
     }
   }
 

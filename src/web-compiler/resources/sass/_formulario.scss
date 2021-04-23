@@ -1,5 +1,6 @@
 .details, .xStateDetails {
   nav>ul {
+    min-height: 80px;
     background-image: none;
     background-color: transparent;
 
@@ -215,6 +216,10 @@
   .details, .xStateDetails {
     .xPage {
       background-image: $background-home;
+    }
+
+    .outer-menu {
+      display: none;
     }
   }
 
