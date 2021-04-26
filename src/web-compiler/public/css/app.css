@@ -4858,7 +4858,8 @@ body {
   .ticketFormContainer #nameWrapper,
   .ticketFormContainer #PhoneWrapper,
   .ticketFormContainer #emailWrapper,
-  .ticketFormContainer .xControlCheckbox {
+  .ticketFormContainer .xControlCheckbox,
+  .ticketFormContainer .xControlHtml {
     padding: 0 10%;
   }
 
@@ -4917,8 +4918,9 @@ body {
   .ticketFormContainer #nameWrapper,
   .ticketFormContainer #PhoneWrapper,
   .ticketFormContainer #emailWrapper,
-  .ticketFormContainer .xControlCheckbox {
-    padding: 0 10%;
+  .ticketFormContainer .xControlCheckbox,
+  .ticketFormContainer .xControlHtml {
+    padding: 0 16%;
   }
 }
 

@@ -188,7 +188,8 @@
     #nameWrapper,
     #PhoneWrapper,
     #emailWrapper,
-    .xControlCheckbox {
+    .xControlCheckbox,
+    .xControlHtml {
       padding: 0 10%;
     }
 
@@ -249,8 +250,9 @@
     #nameWrapper,
     #PhoneWrapper,
     #emailWrapper,
-    .xControlCheckbox {
-      padding: 0 10%;
+    .xControlCheckbox,
+    .xControlHtml {
+      padding: 0 16%;
     }
   }
 }
