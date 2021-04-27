@@ -4984,7 +4984,7 @@ body {
   left: 10%;
   width: 80%;
   height: 120%;
-  font-size: 30px;
+  font-size: 20px;
   font-weight: bold;
   color: transparent;
   letter-spacing: 1px;
@@ -5255,6 +5255,7 @@ body {
     margin: 15px 10px;
   }
 
+  .xSectionPrizes #xSectionPrizesR1C1 .n3 .xComponentInner::after,
   .xSectionPrizes #xSectionPrizesR1C1 h2 {
     font-size: 30px;
   }
