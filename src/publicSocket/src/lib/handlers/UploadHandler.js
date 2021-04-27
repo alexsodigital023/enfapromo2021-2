@@ -44,7 +44,7 @@ module.exports={
                                             conn.end();
                                             const id=r.insertId;
                                             const params = {
-                                                Bucket: 'enfa-goldenticket',
+                                                Bucket: 'chocomilk',
                                                 Key: path,
                                                 Body: data
                                             };

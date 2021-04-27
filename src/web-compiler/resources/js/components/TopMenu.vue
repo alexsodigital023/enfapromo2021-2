@@ -1,8 +1,24 @@
 <template>
-    <div :class="cssClass">
+    <div v-click-outside ="clickExterno" :class="cssClass">
         <nav>
             <ul>
-                <li>
+                <li class="outer-menu">
+                    <a href="#">
+                        <i class="icon icon-pancho"></i>
+                        <p>Juega</p>
+                    </a><a href="#">
+                        <i class="icon icon-control"></i>
+                        <p>Juega</p>
+                    </a>
+                    <a href="#">
+                        <i class="icon icon-regalo"></i>
+                        <p>Premios</p>
+                    </a>
+                </li>
+                <div v-if="visible" @click="myMethod">
+                    <div class="menuIcono"></div>
+                </div>
+                <li @click="clickExterno">
                     <slot></slot>
                 </li>
             </ul>
@@ -11,26 +27,44 @@
 </template>
 
 <script>
+import vClickOutside from 'v-click-outside'
     export default {
+        directives: {
+            clickOutside: vClickOutside.directive
+        },
         props:{
             cssClass:null,
             current:null
         },
         data(){
             return {
-                tamano:null
+                tamano:null,
+                visible:true
             }
+            
         },
         methods:{
+            clickExterno (event) {
+                if(this.visible==false){
+                    document.getElementById('xSectionHeader').style.display = "none";
+                    this.visible=true;
+                }
+            },
+            myMethod () {	
+    	        document.getElementById('xSectionHeader').style.display = "block";
+                this.visible=false
+            },
+            menuVisible(){
+                if(document.getElementById('xSectionHeader').style.display = "none"){
+                    return false;
+                }
+            },
             resize(){
-                console.log('wiiii');
             },
             makeBig(){
-                console.log("grande");
 
             },
             makeSmall(){
-                console.log("pequeño");
             }
         },
         created() {
@@ -39,7 +73,8 @@
             })
         },
         mounted() {
-                this.resize();
+               this.resize();
+               
         },
     }
 </script>
