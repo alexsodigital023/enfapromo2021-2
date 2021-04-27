@@ -1,8 +1,56 @@
-.ticketFormContainer{
+.details, .xStateDetails {
+  nav>ul {
+    min-height: 80px;
+    background-image: none;
+    background-color: transparent;
+
+
+    &::before {
+      display: none;
+    }
+  }
+  
+  .xPage {
+    background-image: $background-home-mobile;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+}
+
+#xSectionDetails {
+  .xForm {
+    padding: 0;
+  }
+
+  .xMediaContainer img {
+    max-width: 200px;
+  }
+
+  .xHelpContainer {
+    color: #fff;
+    margin: 5px 0 15px 0;
+  }
+}
+
+.ticketFormContainer {
   ::placeholder,
-  .item, {
+  .item {
     color: $c-gris;
     opacity: 1;
+  }
+
+  .xField {
+    margin: 0;
+  }
+
+  .xFormPages {
+    margin: 10%;
+    height: auto !important;
+    
+    .xFormPage {
+      position: initial !important;
+    }
   }
 
   label {
@@ -12,6 +60,15 @@
   input,
   select {
     color: $c-negro;
+    border-radius: 5px;
+    text-align: center;
+
+    &::placeholder {
+      font-weight: bold;
+      text-align: center;
+      color: $c-azul;
+      opacity: .4;
+    }
   }
 
   button[type="submit"] {
@@ -19,70 +76,183 @@
     font-weight: bold;
   }
 
+  #name_Firstname {
+    margin-bottom: 5px;
+  }
+
+  #emailWrapper {
+    margin-bottom: 10px;
+  }
+
   .xComboInput::after {
     color: $c-azul;
   }
 
+  .xFieldCheckboxChoice {
+    display: flex;
+    margin: 5px 0;
+    align-items: center;
+
+    .xCheckbox {
+      span::before {
+        content: "";
+        display: none;
+      }
+    }
+    
+    .checkField {
+      opacity: 1;
+      width: 10px;
+      height: 15px;
+      position: relative;
+
+      &::before {
+        content: "";
+        display: block;
+        width: 25px;
+        height: 25px;
+        border-radius: 100%;
+        background: $c-blanco;
+        border: 5px solid $c-blanco;
+        box-shadow: 0 0 0px 3px $c-azul;
+      }
+
+      &:checked::before {
+        background: $c-azul;
+      }
+    }
+  }
+
+  .xFieldLabel {
+    font-weight: normal;
+    margin: 0 0 0 30px;
+  }
 
   .xControlName,
   .xControlEmail,
   .xControlDate,
+  .xControlPhone,
   .xControlNumber {
     .xLabelContainer{
       display: block;
       width: 100%;
       max-width: 100%;
+      text-align: center;
+      padding: 0;
+      
       label {
         width: 100%;
-        text-align-last: left;
+        text-align: center;
       }
     }
   }
 
-  .xFieldContainer:first-child {
-    padding-left: 15px;
+  .xControlCheckbox .xLabelContainer {
+    display: none;
   }
 
-  .xFieldItem.xControlCheckbox.xRequired {
-    .xLabelContainer {
-      width: 10px;
-      min-width: 10px;
-      padding-right: 8px;
+  .xFieldContainer {
+    padding: 0;
+  }
+
+  .xFieldItem {
+    margin: 0;
+
+    &.xControlCheckbox.xRequired {
+      .xLabelContainer {
+        width: 10px;
+        min-width: 10px;
+        padding: 0;
+      }
     }
   }
 
   .xActionsForm {
+    margin-top: 30px;
     margin-left: 0;
-    margin-top: 10%;
-    padding-top: 35px;
-  }
-}
 
-
-@media only screen and (max-width: 1600px) {
-  .ticketFormContainer {}
-}
-
-@media only screen and (max-width: 1100px) {
-  .ticketFormContainer{
-    .xActionsForm {
-      margin-top: 30%;
-      padding-top: 20px;
+    .xPagingButton {
+      width: 100%;
+      font-size: 1.6em;
+      font-weight: bold;
+      text-transform: uppercase;
+      background-color: $c-azul-oscuro;
+      border-top: 3px solid $c-blanco;
+      border-bottom: 3px solid $c-blanco;
     }
   }
 }
 
-@media only screen and (max-width: 600px) {
-  .ticketFormContainer{
-    .xFieldItem.xControlCheckbox.xRequired {
-      .xFieldContainer.xFieldWidthMedium {
-        margin-left: 15px;
+@media #{$grid-sm} {
+  .ticketFormContainer {
+    #nameWrapper,
+    #PhoneWrapper,
+    #emailWrapper,
+    .xControlCheckbox,
+    .xControlHtml {
+      padding: 0 10%;
+    }
+
+    #name_Firstname {
+      margin-bottom: 0;
+    }
+
+    .xFormPages {
+      width: auto !important;
+    }
+
+    .xActionsForm {
+      text-align: center;
+
+      .xPagingButton {
+        border: 2px solid #fff;
+        border-radius: 10px;
+        width: auto;
       }
     }
+  }
+}
 
-  .xActionsForm {
-      margin-top: 100%;
-      padding-top: 15px;
+@media #{$grid-md} {
+  .details, .xStateDetails {
+    .xPage {
+      background-image: $background-home;
+    }
+
+    .outer-menu {
+      display: none;
+    }
+  }
+
+  #xSectionDetails .xMediaContainer {
+    padding: 45px 0 0 0;
+    
+    img {
+      max-width: -webkit-fill-available;
+    }
+  }
+
+  .ticketFormContainer {
+    transform: translateY(15%);
+
+    .xFormPages {
+      margin: 0 20%;
+    }
+  }
+}
+
+@media #{$grid-lg} {
+  #xSectionDetails .xMediaContainer {
+    padding: 8% 0 0 0;
+  }
+
+  .ticketFormContainer {
+    #nameWrapper,
+    #PhoneWrapper,
+    #emailWrapper,
+    .xControlCheckbox,
+    .xControlHtml {
+      padding: 0 16%;
     }
   }
 }
