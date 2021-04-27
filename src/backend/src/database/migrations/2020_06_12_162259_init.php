@@ -192,6 +192,7 @@ class Init extends Migration
     protected function createPhoto(){
 
         Schema::create('photo', function (Blueprint $table) {
+            $table->id();
             $table->char('uuid',36);
             $table->bigInteger('user_id',false,true);
             $table->tinyInteger('status_id',false,true);
