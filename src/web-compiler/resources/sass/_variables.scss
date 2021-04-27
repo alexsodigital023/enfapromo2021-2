@@ -1,7 +1,46 @@
+$breakpoints: (
+  xs: 480px,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1600px,
+);
+
+@function create-breakpoint($grid-name) {
+  @return ('screen and (min-width: #{map-get($breakpoints, $grid-name)})');
+}
+
+$grid-xs: create-breakpoint('xs');
+$grid-sm: create-breakpoint('sm');
+$grid-md: create-breakpoint('md');
+$grid-lg: create-breakpoint('lg');
+$grid-xl: create-breakpoint('xl');
+$grid-xxl: create-breakpoint('xxl');
+
 // Colores
 $c-negro: #000;
 $c-blanco: #fff;
-$c-naranja: #F99C1B;
+$c-cafe-oscuro: #3c1b1a;
+$c-cafe: #712100;
+$c-cafe-claro: #8A4814;
 $c-crema: #F6E8CD;
-$c-azul: #00217B; 
+$c-azul-oscuro: #0F1E55;
+$c-azul: #0A59A2;
+$c-azul-claro: #2AA1D2; 
 $c-gris: #b8b8b8;
+$c-dorado: #AC8833;
+$c-amarillo: #EAD23D;
+$c-naranja-oscuro: #c28717;
+$c-naranja: #F4A91D;
+$c-sombra-blanca: #ffffffb5;
+$c-sombra: #94949469;
+$c-sombra-negra: #00000073;
+$c-transparent: transparent;
+
+
+$font-avenir: 'Avenir Oblique';
+$font-gothamBook: 'Gotham Book';
+$font-gothamBold: 'Gotham Bold';
+$font-gothamItalic: 'Gotham Italic';
+$font-velocista: 'Velocista Demo';

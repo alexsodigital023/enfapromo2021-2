@@ -1,0 +1,420 @@
+.Content1, .xStateContent1 {
+    .menuIcono {
+        display: none;
+    }
+
+    h1 {
+        background: -webkit-linear-gradient($c-dorado, $c-amarillo);
+        -webkit-text-fill-color: $c-transparent;
+        -webkit-background-clip: text;
+        -webkit-text-stroke: 0;
+        color: $c-dorado;
+        text-align: center;
+        font-weight: bold;
+        font-size: 8vw;
+        font-family: $font-gothamItalic;
+        line-height: 1.16;
+        letter-spacing: 1px;
+    }
+
+    h2 {
+        background: -webkit-linear-gradient(-45deg, $c-cafe, $c-dorado);
+        -webkit-background-clip: text;
+        -webkit-text-stroke: 5px $c-transparent;
+        color: $c-blanco;
+        font-size: 5vw;
+        text-align: center;
+        font-family: $font-gothamItalic;
+    }
+
+    #xSectionContent1R4C1 .xComponentInner {
+        position: relative;
+        font-family: $font-gothamItalic;
+
+        h2 {
+            background: -webkit-linear-gradient($c-amarillo 40%, $c-naranja-oscuro 60%);
+            -webkit-text-fill-color: $c-transparent;
+            -webkit-text-stroke: 3px $c-negro;
+            -webkit-background-clip: text;
+            text-align: center;
+            color: $c-amarillo;
+            font-weight: bold;
+            font-size: 15vw;
+            position: relative;
+        }
+
+        &::before {
+            background: -webkit-linear-gradient($c-transparent 12%,$c-blanco 32%, $c-negro 60%);
+            -webkit-text-stroke: 3px transparent;
+            -webkit-text-fill-color: transparent;
+            -webkit-background-clip: text;
+            content: "Big Prize";
+            position: absolute;
+            right: 0;
+            top: -7%;
+            font-size: 15vw;
+            text-align: center;
+            width: 100%;
+        }
+    }
+
+    h3 {
+        background: -webkit-linear-gradient($c-dorado, $c-amarillo);
+        -webkit-text-fill-color: $c-transparent;
+        -webkit-background-clip: text;
+        -webkit-text-stroke: 0;
+        color: $c-dorado;
+        text-align: center;
+        font-size: 8vw;
+        font-family: $font-gothamItalic;
+    }
+
+    #xSectionContent1R1 .xRowInner {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        border-top: 2px solid $c-blanco;
+        background: $background-premios;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position-y: top;
+        background-position-x: 56%;
+        position: relative;
+
+        &::before {
+            content: '';
+            width: 14vw;
+            height: 20vw;
+            display: block;
+            background-image: $splash-choco_1;
+            background-repeat: no-repeat;
+            background-size: cover;
+            position: absolute;
+            left: -2vw;
+            bottom: 0;
+        }
+
+        #xSectionContent1R1C1 {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: $c-azul-oscuro;
+
+            .xBodyContainer {
+                padding: 15px 0 15px 30px;
+            }
+        }
+        
+        #xSectionContent1R1C2 {
+            width: 100%;
+            margin-left: -1px;
+            position: relative;
+
+            .xMediaImage img {
+                width: 100%;
+                display: none;
+            }
+        }
+    }
+
+    #xSectionContent1R2 .xRowInner,
+    #xSectionContent1R3 .xRowInner,
+    #xSectionContent1R4 .xRowInner {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-content: center;
+        
+        #xSectionContent1R2C1,
+        #xSectionContent1R3C1,
+        #xSectionContent1R3C2 {
+            width: 100%;
+        }
+
+        #xSectionContent1R2C2 {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            .xCellInner {
+                display: flex;
+                flex-wrap: wrap;
+                
+                .xImage {
+                    flex-basis: 45%;
+                    margin: 2%;
+
+                    .xItemInner {
+                        overflow: unset;
+
+                        .xMediaImage {
+                            position: relative;
+                        
+                            img {
+                                transform: rotate(345deg);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        
+        #xSectionContent1R3C2 .xCellInner .xImage .xMediaImage img {
+            width: 50%;
+        }
+
+        #xSectionContent1R4C2 .xCellInner .xImage .xMediaImage {
+            position: relative;
+            padding: 25px;
+
+            &::before {
+                content: "";
+                width: 32vw;
+                height: 32vw;
+                margin: auto;
+                display: block;
+                border-radius: 100%;
+                border: 6px solid $c-dorado;
+                background-color: $c-blanco;
+                position: absolute;
+                top: 9%;
+                left: 34vw;
+            }
+
+            img {
+                position: relative;
+                width: 50%;
+            }
+        }
+    }
+
+    #xSectionContent1R2 .xRowInner {
+        background-image: linear-gradient(45deg, #2AA1D2 35%, #00AAD9 34%);
+        padding: 20px 10px;
+        margin: 10px auto;
+    }
+
+    #xSectionContent1R3 .xRowInner {
+        background-image: linear-gradient(45deg, #2AA1D2 50%, #00AAD9 49%);
+        padding: 20px 10px;
+        margin: 10px auto;
+    }
+
+    #xSectionContent1R4 .xRowInner {
+        background-color: $c-azul-oscuro;
+        background-image: $background-big-price;
+        background-repeat: no-repeat;
+        background-position: top;
+        background-size: cover;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #xSectionContent1R3C1 {
+        justify-self: center;
+        align-self: center;
+    }
+
+    #xSectionContent1R4C1,
+    #xSectionContent1R4C2,
+    #xSectionContent1R4C3 {
+        width: 100%;
+    }
+}
+
+@media #{$grid-xs} {
+    .Content1, .xStateContent1 {
+        #xSectionContent1R1 .xRowInner::before {
+            width: 11vw;
+            height: 16vw;
+            left: 0;
+        }
+        
+        #xSectionContent1R4C1 .xComponentInner h2 {
+            -webkit-text-stroke: 4px #000;
+        }
+    }
+}
+
+@media #{$grid-md} {
+    .Content1, .xStateContent1 {
+        nav ul {
+            background-position: center;
+            justify-content: center;
+
+            &::before {
+                margin: 10px 30px 0px 25px;
+            }
+        }
+
+        h1 {
+            font-size: 3.8vw;
+            padding: 20px 0px 20px 35px;
+        }
+
+        h2 {
+            padding: 0 25%;
+            font-size: 4vw;
+            text-align: left;
+            -webkit-text-stroke: 7px $c-transparent;
+        }
+
+        h3 {
+            font-size: 3vw;
+        }
+
+        #xSectionContent1R1 .xRowInner {
+            border-bottom: 2px solid $c-blanco;
+
+            &::before {
+                width: 8vw;
+                height: 12vw;
+            }
+
+            &::after {
+                content: '';
+                width: 15vw;
+                height: 10vw;
+                display: block;
+                background-image: $splash-choco_2;
+                background-repeat: no-repeat;
+                background-size: cover;
+                position: absolute;
+                right: 0;
+                bottom: 0;
+            }
+            
+            #xSectionContent1R1C2 .xMediaImage {
+                padding: 4% 6% 4% 26%;
+
+                img {
+                    width: 50%;
+                }
+            }
+        }
+        
+        #xSectionContent1R2 .xRowInner,
+        #xSectionContent1R3 .xRowInner,
+        #xSectionContent1R4 .xRowInner {
+            flex-direction: row;
+
+            #xSectionContent1R2C1,
+            #xSectionContent1R2C2,
+            #xSectionContent1R3C1,
+            #xSectionContent1R3C2 {
+                width: 50%;
+            }
+
+            #xSectionContent1R2C1 .xComponentInner {
+                display: flex;
+            }
+
+            #xSectionContent1R2C2 .xCellInner .xImage {
+                flex-basis: 21%;
+            }
+
+            #xSectionContent1R4C1 {
+                width: 40%;
+                
+                h2 {
+                    font-size: 7vw;
+                    padding: 0;
+                    text-align: right;
+                }
+
+                .xComponentInner::before {
+                    text-align: right;
+                    font-size: 7vw;
+                    top: -7%;
+                }
+            }
+
+            #xSectionContent1R4C2 {
+                width: 30%;
+                
+                .xCellInner .xImage .xMediaImage::before {
+                    width: 10vw;
+                    height: 10vw;
+                    top: 1vw;
+                    left: 12vw;
+                }
+            }
+
+            #xSectionContent1R4C3 {
+                width: 30%;
+                
+                .xHtml {
+                    padding: 0;
+                }
+
+                h3 {
+                    text-align: left;
+                }
+            }
+        }
+    }
+}
+
+@media #{$grid-lg} {
+    .Content1, .xStateContent1 {
+
+        #xSectionContent1R1 .xRowInner::before {
+            width: 7vw;
+            height: 10vw;
+        }
+    }
+}
+
+@media #{$grid-xl} {
+    .Content1, .xStateContent1 {
+        h1 {
+            font-size: 46px;
+            padding: 25px 0px 25px 85px;
+        }
+
+        #xSectionContent1R1 .xRowInner {
+            &::before {
+                width: 90px;
+                height: 130px;
+            }
+
+            &::after {
+                width: 200px;
+                height: 130px;
+            }
+        }
+
+        #xSectionContent1R4 .xRowInner {
+            h3 {
+                font-size: 35px;
+            }
+
+            #xSectionContent1R4C1 {
+                h2 {
+                    font-size: 80px;
+                }
+                
+                .xComponentInner::before {
+                    font-size: 80px;
+                }
+            }
+            
+            #xSectionContent1R4C2 .xCellInner .xImage .xItemInner .xMediaImage::before {
+                width: 130px;
+                height: 130px;
+                top: 7%;
+                left: 35%;
+            }
+        }
+    }
+}
+
+@media #{$grid-xxl} {
+    .Content1, .xStateContent1 {
+        h2 {
+            font-size: 55px;
+            -webkit-text-stroke: 10px $c-transparent;
+        }
+    }
+}

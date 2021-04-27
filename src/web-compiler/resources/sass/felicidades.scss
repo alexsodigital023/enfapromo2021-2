@@ -1,16 +1,38 @@
-.xSectionConfirmation{
-    
-}
+.Confirmation, .xStateConfirmation {
+    .menuIcono {
+        display: none;
+    }
 
-
-
-@media only screen and (max-width: 1440px){
-    .xSectionConfirmation{
-        
+    nav ul .outer-menu {
+      display: none;
     }
 }
 
-@media only screen and (max-width: 600px) {
+.xSectionConfirmation{
+    padding: 45px;
+    background: $background-home-mobile;
+    background-position-x: center;
+    background-position-y: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+@media #{$grid-md} {
+    .Confirmation, .xStateConfirmation {
+        .menuIcono {
+            display: none;
+        }
+    
+        nav ul .outer-menu {
+          display: none;
+        }
+    }
+    
     .xSectionConfirmation{
+        background: $background-section;
+        background-position-x: center;
+        background-position-y: top;
+        background-repeat: no-repeat;
+        background-size: cover;
     }
 }

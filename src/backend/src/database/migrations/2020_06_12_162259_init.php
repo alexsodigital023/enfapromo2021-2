@@ -138,7 +138,7 @@ class Init extends Migration
     protected function createStatus(){
 
         Schema::create('cat_status', function (Blueprint $table) {
-            $table->tinyInteger('id',true,true)->nullable();
+            $table->tinyInteger('id',true,true);
             $table->string('name',200);
         });
         return $this;

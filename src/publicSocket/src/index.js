@@ -22,10 +22,13 @@ const options = {
 };
 
 const server = https.createServer(options,app);
+
+//const server = https.createServer(app);
 const wss = new websocket.Server({ server });
 
 app.on('upgrade', wss.handleUpgrade);
 wss.on('connection', ws => {
+  console.log("conectado");
   var user;
   var tw;
   ws.on('message', function incoming(data) {
@@ -153,7 +156,7 @@ wss.on('connection', ws => {
         break;
     }
   });
-});
+},error=>console.error("Error al conectar",error));
 
 server.listen(3000, () => {
     console.log('server started on PORT 3000');

@@ -1,16 +1,26 @@
 // Fonts
+@import 'fonts';
 //@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+//images
+@import 'images';
 
 // Variables
 @import 'variables';
 @import '~@fortawesome/fontawesome-free/css/all.css';
+// @import 'fontAwesome/fontawesome.scss';
+
 // Bootstrap
 //@import '~bootstrap/scss/bootstrap';
-
 
 @import '_general';
 @import '_botones';
 @import '_icons';
 @import '_formulario';
+@import 'semanales';
+@import 'diarios';
+@import 'contacto';
+@import 'legales';
 @import 'index';
+@import 'ticket';
 @import 'felicidades';

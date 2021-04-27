@@ -1,5 +1,5 @@
-const mariadb = require('mariadb');
-const pool = mariadb.createPool(require('../../config/database.json'));
+const mysql = require('mysql');
+const pool = mysql.createPool(require('../../config/database.json'));
 
 module.exports = class {
     constructor(){
