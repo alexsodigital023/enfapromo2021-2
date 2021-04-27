@@ -60,14 +60,11 @@ import vClickOutside from 'v-click-outside'
                 }
             },
             resize(){
-                console.log('wiiii');
             },
             makeBig(){
-                console.log("grande");
 
             },
             makeSmall(){
-                console.log("pequeño");
             }
         },
         created() {

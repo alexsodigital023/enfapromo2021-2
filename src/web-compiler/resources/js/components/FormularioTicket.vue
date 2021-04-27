@@ -11,40 +11,32 @@ import Cookies from 'js-cookie';
     export default {
         data(){
             return {
-                fields:[],
-                submitButton:null,
-                fileInput:null,
-                conexion:null,
-                emailInput:null,
-                nombreInput:null,
-                apellidoInput:null,
-                diaInput:null,
-                mesInput:null,
-                anyoInput:null,
-                ticketValue:null,
-                celularInput:null,
-                file:null,
-                email:null,
-                nombre:null,
-                apellido:null,
-                dia:null,
-                mes:null,
-                anyo:null,
-                stage:0,
-                fileSended:false,
-                enviando:false,
-                submit:null,
+                fields:{},
+                buttons:{},
+                values:{},
                 aclCampos:{
                     'emailInput':true,
                     'nombreInput':true,
                     'apellidoInput':true,
-                }
+                },
+                stage:0,
+                buttonsBinded:false,
+                fileFieldBinded:false
             };
         },
         watch:{
 	        stage(){
+                this.bindFields();
                 this.mapInputs();
-                console.log("cambio de stage",this.stage);
+                this.bindButtons();
+                switch(this.stage){
+                    case 1:
+                        $(this.buttons.next).show();
+                    break;
+                    case 2:
+                        $(this.buttons.next).hide();
+                        break;
+                }
             }
         },
         methods:{
@@ -107,10 +99,6 @@ import Cookies from 'js-cookie';
                     )
                 }
             },
-            fileChanged(){
-                this.file=$(this.fileInput).find("input[type='file']").val().length>0;
-                this.endStage();
-            },
             dataChanged(){
                 this.email=$(this.emailInput).val().length>0?$(this.emailInput).val():null;
                 this.nombre=$(this.emailInput).val().length>0?$(this.nombreInput).val():null;
@@ -141,7 +129,7 @@ import Cookies from 'js-cookie';
                                 status:50,
                                 message:'Espere...'
                             });
-                            let fileField = $(this.fileInput).find("input[type='file']").get(0);
+                            let fileField = this.fields.file;
                             for(let i in fileField.files){
                                 if(fileField.files[i]&&fileField.files[i].size){
                                     const reader = new FileReader();
@@ -188,14 +176,13 @@ import Cookies from 'js-cookie';
             },
             
             getConexionObject(){
-                console.log('!!');
                 if(!this.conexion){
                     this.conexion=new Conexion({
                         auth:{
                             host : {
                                 host: 'localhost',
                                 port: '8085',
-                                path:'/',
+                                path:'/user',
                             }
                         },
                         socket:{
@@ -223,8 +210,9 @@ import Cookies from 'js-cookie';
                             }
                             reject('timeout');
                         });
-                        this.openSocket(con,this.email).then(
+                        this.openSocket(con,$(this.fields.email).val()).then(
                             s=>{
+                                console.log("======conexión abierta");
                                 this.conexion=con;
                                 resolve(this.conexion);
                             },error=>reject(error)
@@ -244,26 +232,131 @@ import Cookies from 'js-cookie';
                 switch(this.stage){
                     case 1:
                         this.fields["nombre"]=$(this.$el).find("#name_Firstname").get(0);
+                        this.fields["apellido"]=$(this.$el).find("#name_Lastname").get(0);
+                        this.fields["telefono"]=$(this.$el).find("#Phone").get(0);
+                        this.fields["email"]=$(this.$el).find("#email").get(0);
+                        this.fields["toc"]=$(this.$el).find("#lds_url_01_ConsentAccepted_0").get(0);
+                        this.fields["pp"]=$(this.$el).find("#lds_url_02_ConsentAccepted_0").get(0);
+                        this.fields["age"]=$(this.$el).find("#age_verification_0").get(0);
+                        this.buttons["next"]=$(this.$el).find("a.xActionNext").get(0);
+                        this.buttons["prev"]=$(this.$el).find("a.xActionPrevious").get(0);
+                        break;
+                    case 2:
+                        this.fields["file"]=$(this.$el).find("#ngxUserUpload").get(0);
                         break;
                 }
-                console.log("Campos iniciados", this.fields);
+            },
+            bindFields(){
+                if(!this.fileFieldBinded && this.fields["file"]){
+                    $(this.fields["file"]).change(()=>{
+                        this.validate().then(
+                            ok=>{
+                                this.send().then(ok=>{
+                                    console.log("archivo enviado!!!");
+                                },error=>console.log(error));
+                            },error=>{
+                                console.error(error);
+                            }
+                        );
+                    });
+                    this.fileFieldBinded=true;
+                }
+            },
+            bindButtons(){
+                if(!this.buttonsBinded){
+                    $(this.buttons["next"]).click((ev)=>{
+                        this.nextStage(ev);
+                    });
+                    $(this.buttons["prev"]).click((ev)=>{
+                        this.prevStage(ev);
+                    });
+                    this.buttonsBinded=true;
+                }
+            },
+            nextStage(ev){
+                this.validate().then(
+                    ok=>{
+                        this.stage++;
+
+                        this.getConexion().then(
+                            ok=>console.log("conexion establecida"),
+                            error=>console.error("conexion fallida",error)
+                        );
+                    },error=>{
+                        ev.preventDefault();
+                        ev.stopPropagation();
+                        $(this.fields[error.campo]).parents(".xFieldItem").addClass("xFieldError");
+                        console.error("Error de validación",error);
+                    }
+                );
+            },
+            prevStage(ev){
+                this.stage--;
+            },
+            validate(){
+                return new Promise((resolve,reject)=>{
+                    let values=this.getValues();
+                    switch(this.stage){
+                        case 1:
+                            for(let i in values){
+                                switch(i){
+                                    case "nombre":
+                                    case "apellido":
+                                    case "telefono":
+                                    case "email":
+                                        if(!values[i]||values[i].legth < 1){
+                                           return  reject({
+                                                campo:i,
+                                                value:values[i]
+                                            });
+                                        }
+                                        break;
+                                    case "toc":
+                                    case "pp":
+                                    case "age":
+                                        if(!values[i]){
+                                            return reject({
+                                                campo:i,
+                                                value:values[i]
+                                            });
+                                        }
+                                        break;
+                                }
+                            }
+                            return resolve();
+                            break;
+                        case 2:
+                            if(!values.file||values.file.legth < 1){
+                                return  reject({
+                                    campo:'file',
+                                    value:values.file
+                                });
+                            }
+                            return resolve();
+                            break;
+                        default:
+                            return resolve();
+                    }
+                });
+            },
+            getValues(){
+                for(let i in this.fields){
+                    switch(i){
+                        case "toc":
+                        case "pp":
+                        case "age":
+                            this.values[i]=$(this.fields[i]).prop("checked");
+                            break;
+                        default:
+                            this.values[i]=$(this.fields[i]).val();
+                            break;
+                    }
+                }
+                return this.values;
             }
         },
         mounted() {
             this.stage=1;
-            console.log("Iniciando");
-            return;
-            this.submitButton=$(this.$el).find("#xSubmitContainer").get(0);
-            this.fileInput=$(this.$el).find("#ngxUserUploadWrapper").get(0);
-            this.celularInput=$(this.$el).find("#Phone").get(0);
-            this.fileInput=$(this.$el).find("#ngxUserUpload").get(0);
-            this.emailInput=$(this.$el).find("#email").get(0);
-            this.nombreInput=$(this.$el).find("#name_Firstname").get(0);
-            this.apellidoInput=$(this.$el).find("#name_Lastname").get(0);
-            this.diaInput=$(this.$el).find("#date_of_birth_day").get(0);
-            this.mesInput=$(this.$el).find("#date_of_birth_month").get(0);
-            this.anyoInput=$(this.$el).find("#date_of_birth_year").get(0);
-            this.ticketValue=$(this.$el).find("#ticketValue").get(0);
         }
     }
 </script>
