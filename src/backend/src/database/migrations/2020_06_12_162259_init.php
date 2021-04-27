@@ -178,6 +178,7 @@ class Init extends Migration
     protected function createSyncin(){
 
         Schema::create('syncin_status', function (Blueprint $table) {
+            $table->id();
             $table->bigInteger('ticket_id',false,true);
             $table->tinyInteger('status_id',false,true);
             $table->text('data')->nullable();
