@@ -4949,6 +4949,7 @@ body {
   letter-spacing: 1px;
   position: relative;
   padding: 0 10%;
+  z-index: 1;
 }
 
 .xSectionPrizes .xCopyContainer {
@@ -4969,6 +4970,26 @@ body {
   text-align: center;
   letter-spacing: 1px;
   width: 100%;
+  text-shadow: 0 0 20px #000;
+}
+
+.xSectionPrizes #xSectionPrizesR1C1 .n3 .xComponentInner {
+  position: relative;
+}
+
+.xSectionPrizes #xSectionPrizesR1C1 .n3 .xComponentInner::after {
+  content: "$100,000.00 MXN.";
+  position: absolute;
+  top: 0;
+  left: 10%;
+  width: 80%;
+  height: 120%;
+  font-size: 30px;
+  font-weight: bold;
+  color: transparent;
+  letter-spacing: 1px;
+  font-family: "Gotham Italic";
+  text-shadow: 0px 5px 20px #000;
 }
 
 .xSectionPrizes #xSectionPrizesR1C2 .xComponentInner {
@@ -4980,36 +5001,51 @@ body {
   background: #000;
   -webkit-text-stroke: 3px transparent;
   -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 20px #000;
   -webkit-background-clip: text;
   content: "Premios Semanales:";
   position: absolute;
-  font-size: 10vw;
-  left: 0;
-  top: 0.3%;
   text-align: center;
   line-height: 1.01;
+  font-size: 10vw;
   width: 100%;
+  top: 0.3%;
+  left: 0;
 }
 
-.xSectionPrizes #xSectionPrizesR2C1 .n1 .xComponentInner {
-  position: relative;
-  font-family: "Gotham Italic";
-}
-
-.xSectionPrizes #xSectionPrizesR2C1 .n1 .xComponentInner::before {
-  background: #000;
-  -webkit-text-stroke: 3px transparent;
-  -webkit-text-fill-color: transparent;
-  -webkit-background-clip: text;
-  content: "Premios Digitales:";
+.xSectionPrizes #xSectionPrizesR1C2 .xComponentInner ul li::before {
+  content: "";
   position: absolute;
-  font-size: 10vw;
-  left: 0;
-  top: 0.3%;
-  text-align: center;
-  line-height: 1.01;
-  width: 100%;
-  padding: 0 10%;
+  top: 8%;
+  right: 10%;
+  width: 60%;
+  height: 75%;
+  display: block;
+  background: radial-gradient(#00000073 -100%, transparent 60%);
+}
+
+.xSectionPrizes #xSectionPrizesR1C2 .xComponentInner ul li:first-child {
+  order: 1;
+}
+
+.xSectionPrizes #xSectionPrizesR1C2 .xComponentInner ul li:nth-child(2) {
+  order: 3;
+}
+
+.xSectionPrizes #xSectionPrizesR1C2 .xComponentInner ul li:nth-child(3) {
+  order: 5;
+}
+
+.xSectionPrizes #xSectionPrizesR1C2 .xComponentInner ul li:nth-child(4) {
+  order: 2;
+}
+
+.xSectionPrizes #xSectionPrizesR1C2 .xComponentInner ul li:nth-child(5) {
+  order: 4;
+}
+
+.xSectionPrizes #xSectionPrizesR1C2 .xComponentInner ul li:last-child {
+  order: 6;
 }
 
 .xSectionPrizes h2 {
@@ -5043,7 +5079,7 @@ body {
 
 .xSectionPrizes ul li {
   display: grid;
-  margin: 15px 0;
+  margin: 0 10px;
   grid-gap: 0 4%;
   flex-basis: 100%;
   grid-template-columns: 40% 56%;
@@ -5053,11 +5089,13 @@ body {
 }
 
 .xSectionPrizes ul li img {
+  position: relative;
   grid-area: img;
   margin: auto;
 }
 
 .xSectionPrizes ul li b {
+  position: relative;
   grid-area: title;
   justify-self: start;
   align-self: end;
@@ -5066,9 +5104,9 @@ body {
   -webkit-background-clip: text;
   -webkit-text-stroke: 0;
   color: #F4A91D;
-  font-size: 15px;
+  font-size: 18px;
   text-align: left;
-  line-height: 1;
+  line-height: 1.1;
   font-weight: bold;
   position: relative;
   text-transform: uppercase;
@@ -5076,6 +5114,7 @@ body {
 }
 
 .xSectionPrizes ul li sub {
+  position: relative;
   grid-area: desc;
   line-height: 1.5;
   align-self: start;
@@ -5135,21 +5174,55 @@ body {
   width: 100%;
 }
 
+.xSectionPrizes #xSectionPrizesR2C1 .n1 .xComponentInner {
+  position: relative;
+  font-family: "Gotham Italic";
+}
+
+.xSectionPrizes #xSectionPrizesR2C1 .n1 .xComponentInner::before {
+  background: #000;
+  -webkit-text-stroke: 3px transparent;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 20px #000;
+  -webkit-background-clip: text;
+  content: "Premios Digitales:";
+  position: absolute;
+  text-align: center;
+  line-height: 1.01;
+  font-size: 10vw;
+  padding: 0 10%;
+  width: 100%;
+  top: 0.3%;
+  left: 0;
+}
+
 .xSectionPrizes #xSectionPrizesR2C1 .xFullColModule.xImage img {
   width: 50%;
 }
 
-.xSectionPrizes #xSectionPrizesR2C1 ul li img {
-  grid-area: img;
+.xSectionPrizes #xSectionPrizesR2C1 ul {
+  width: 85%;
   margin: auto;
+}
+
+.xSectionPrizes #xSectionPrizesR2C1 ul li img {
+  width: 85%;
+  margin: auto;
+  grid-area: img;
   transform: rotate(-11deg);
+  z-index: 1;
+}
+
+.xSectionPrizes #xSectionPrizesR2C1 ul li b,
+.xSectionPrizes #xSectionPrizesR2C1 ul li sub {
+  z-index: 1;
 }
 
 .xSectionPrizes #xSectionPrizesR2C1 ul li::before {
   grid-area: img;
   content: "";
-  width: 30vw;
-  height: 30vw;
+  width: 22vw;
+  height: 22vw;
   margin: auto;
   display: block;
   border-radius: 100%;
@@ -5157,10 +5230,29 @@ body {
   background-color: #fff;
 }
 
+.xSectionPrizes #xSectionPrizesR2C1 ul li::after {
+  content: "";
+  position: absolute;
+  top: 10%;
+  right: 0;
+  width: 75%;
+  height: 65%;
+  display: block;
+  background: radial-gradient(#00000073 -100%, transparent 50%);
+}
+
+.xSectionPrizes #xSectionPrizesR2C1 ul li:nth-child(3)::after {
+  top: 0;
+}
+
 @media screen and (min-width: 480px) {
   .xSectionPrizes .xTitle,
   .xSectionPrizes h2 {
     -webkit-text-stroke: 3px #000;
+  }
+
+  .xSectionPrizes ul li {
+    margin: 15px 10px;
   }
 
   .xSectionPrizes #xSectionPrizesR1C1 h2 {
@@ -5188,7 +5280,6 @@ body {
 
   .xSectionPrizes ul li {
     flex-basis: 45%;
-    margin: 15px auto;
   }
 
   .xSectionPrizes #xSectionPrizesR2C1 .xFullColModule.xImage img {
@@ -5196,8 +5287,8 @@ body {
   }
 
   .xSectionPrizes #xSectionPrizesR2C1 ul li::before {
-    width: 16vw;
-    height: 16vw;
+    width: 11vw;
+    height: 11vw;
   }
 }
 
@@ -5206,6 +5297,10 @@ body {
   .xSectionPrizes h2 {
     -webkit-text-stroke: 5px #000;
     padding: 0;
+  }
+
+  .xSectionPrizes #xSectionPrizesR1C2 .xComponentInner ul li::before {
+    background: radial-gradient(#000 -100%, transparent 60%);
   }
 
   .xSectionPrizes #xSectionPrizesR2C1 h2 {
@@ -5217,8 +5312,8 @@ body {
   }
 
   .xSectionPrizes #xSectionPrizesR2C1 ul li::before {
-    width: 12vw;
-    height: 12vw;
+    width: 8vw;
+    height: 8vw;
   }
 }
 
@@ -5281,8 +5376,8 @@ body {
   }
 
   .xSectionPrizes #xSectionPrizesR2C1 ul li::before {
-    width: 140px;
-    height: 140px;
+    width: 100px;
+    height: 100px;
   }
 
   .xSectionPrizes #xSectionPrizesR1 .xRowInner #xSectionPrizesR1C1 .xMediaContainer::before {
@@ -6032,16 +6127,33 @@ nav > ul {
   display: grid;
   justify-content: center;
   align-items: center;
+  grid-template-columns: 90px 2fr 3fr;
 }
 
 nav > ul::before {
   content: "";
-  width: 150px;
-  height: 120px;
+  width: 100px;
+  height: 79px;
   display: block;
   background-image: url(https://a.wayin.com/images/7405/f7cdaa0a-93b7-47f6-8f9f-8723b19b8822/modo_pantera_only.png);
   background-repeat: no-repeat;
   background-size: contain;
+  grid-row: 1;
+  grid-column: 3;
+}
+
+nav > ul::after {
+  content: "";
+  width: 100px;
+  height: 68px;
+  display: block;
+  background-image: url(https://a.wayin.com/images/7405/f7cdaa0a-93b7-47f6-8f9f-8723b19b8822/chocomilk_logo.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  grid-row: 1;
+  grid-column: 2;
+  justify-self: flex-end;
+  transform: rotate(-10deg);
 }
 
 nav > ul > div {
@@ -6049,6 +6161,8 @@ nav > ul > div {
   cursor: pointer;
   position: absolute;
   left: 5%;
+  grid-row: 1;
+  grid-column: 1;
 }
 
 nav > ul .outer-menu {
@@ -6135,7 +6249,7 @@ nav > ul .menuIcono {
   left: 0;
   right: -25%;
   bottom: 0;
-  background: linear-gradient(90deg, transparent 80%, #0000006b 80%);
+  background: linear-gradient(90deg, transparent 80%, #00000073 80%);
 }
 
 #xSectionHeader #HeaderR1 .xCampaignHeader {
@@ -6330,7 +6444,19 @@ nav > ul .menuIcono {
   }
 
   nav ul::before {
-    justify-self: center;
+    justify-self: flex-end;
+    margin-right: 3vw;
+    grid-column: 1;
+    height: 11vw;
+    width: 14vw;
+  }
+
+  nav ul::after {
+    justify-self: flex-start;
+    margin-left: 3vw;
+    grid-column: 1;
+    height: 10vw;
+    width: 14vw;
   }
 
   nav ul > div {
@@ -6356,11 +6482,26 @@ nav > ul .menuIcono {
     bottom: 0;
     top: -5%;
     left: -115%;
-    background: linear-gradient(90deg, #0000006b 52%, transparent 54%);
+    background: linear-gradient(90deg, #00000073 52%, transparent 54%);
   }
 
   #xSectionDetails .xRowInner .xCell.mid {
     width: 50%;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  nav ul::before {
+    margin: 0;
+    width: 130px;
+    height: 100px;
+    justify-self: center;
+  }
+
+  nav ul::after {
+    width: 130px;
+    height: 100px;
+    margin-left: 0px;
   }
 }
 
@@ -6370,8 +6511,8 @@ nav > ul .menuIcono {
     background-position: left;
   }
 
-  nav > ul ::before {
-    margin: 10px 30px 0px 12%;
+  nav > ul::after {
+    margin-left: 25px;
   }
 }
 

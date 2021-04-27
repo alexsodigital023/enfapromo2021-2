@@ -22,6 +22,7 @@
         letter-spacing: 1px;
         position: relative;
         padding: 0 10%;
+        z-index: 1;
     }
 
     .xCopyContainer {
@@ -41,6 +42,26 @@
             text-align: center;
             letter-spacing: 1px;
             width: 100%;
+            text-shadow: 0 0 20px $c-negro;
+        }
+    }
+
+    #xSectionPrizesR1C1 .n3 .xComponentInner {
+        position: relative;
+        
+        &::after {
+            content: "$100,000.00 MXN.";
+            position: absolute;
+            top: 0;
+            left: 10%;
+            width: 80%;
+            height: 120%;
+            font-size: 30px;
+            font-weight: bold;
+            color: transparent;
+            letter-spacing: 1px;
+            font-family: $font-gothamItalic;
+            text-shadow: 0px 5px 20px $c-negro;
         }
     }
 
@@ -52,36 +73,48 @@
             background: $c-negro;
             -webkit-text-stroke: 3px transparent;
             -webkit-text-fill-color: transparent;
+            text-shadow: 0 0 20px $c-negro;
             -webkit-background-clip: text;
             content: "Premios Semanales:";
             position: absolute;
-            font-size: 10vw;
-            left: 0;
-            top: 0.3%;
             text-align: center;
             line-height: 1.01;
+            font-size: 10vw;
             width: 100%;
+            top: 0.3%;
+            left: 0;
         }
-    }
 
-    #xSectionPrizesR2C1 .n1 .xComponentInner {
-        position: relative;
-        font-family: $font-gothamItalic;
+        ul li {
+            &::before {
+                content: "";
+                position: absolute;
+                top: 8%;
+                right: 10%;
+                width: 60%;
+                height: 75%;
+                display: block;
+                background: radial-gradient($c-sombra-negra -100%, $c-transparent 60%);
+            }
 
-        &::before {
-            background: $c-negro;
-            -webkit-text-stroke: 3px transparent;
-            -webkit-text-fill-color: transparent;
-            -webkit-background-clip: text;
-            content: "Premios Digitales:";
-            position: absolute;
-            font-size: 10vw;
-            left: 0;
-            top: 0.3%;
-            text-align: center;
-            line-height: 1.01;
-            width: 100%;
-            padding: 0 10%;
+            &:first-child {
+                order: 1;
+            }
+            &:nth-child(2) {
+                order: 3;
+            }
+            &:nth-child(3) {
+                order: 5;
+            }
+            &:nth-child(4) {
+                order: 2;
+            }
+            &:nth-child(5) {
+                order: 4;
+            }
+            &:last-child {
+                order: 6;
+            }
         }
     }
 
@@ -116,7 +149,7 @@
 
         li {
             display: grid;
-            margin: 15px 0;
+            margin: 0 10px;
             grid-gap: 0 4%;
             flex-basis: 100%;
             grid-template-columns: 40% 56%;
@@ -127,11 +160,13 @@
             position: relative;
 
             img {
+                position: relative;
                 grid-area: img;
                 margin: auto;
             }
             
             b {
+                position: relative;
                 grid-area: title;
                 justify-self: start;
                 align-self: end;
@@ -140,9 +175,9 @@
                 -webkit-background-clip: text;
                 -webkit-text-stroke: 0;
                 color: $c-naranja;
-                font-size: 15px;
+                font-size: 18px;
                 text-align: left;
-                line-height: 1;
+                line-height: 1.1;
                 font-weight: bold;
                 position: relative;
                 text-transform: uppercase;
@@ -150,6 +185,7 @@
             }
             
             sub {
+                position: relative;
                 grid-area: desc;
                 line-height: 1.5;
                 align-self: start;
@@ -212,28 +248,75 @@
     }
 
     #xSectionPrizesR2C1 {
+        .n1 .xComponentInner {
+            position: relative;
+            font-family: $font-gothamItalic;
+    
+            &::before {
+                background: $c-negro;
+                -webkit-text-stroke: 3px transparent;
+                -webkit-text-fill-color: transparent;
+                text-shadow: 0 0 20px $c-negro;
+                -webkit-background-clip: text;
+                content: "Premios Digitales:";
+                position: absolute;
+                text-align: center;
+                line-height: 1.01;
+                font-size: 10vw;
+                padding: 0 10%;
+                width: 100%;
+                top: 0.3%;
+                left: 0;
+            }
+        }
+
         .xFullColModule.xImage img {
             width: 50%;
         }
 
-        ul li {
-            img {
-                grid-area: img;
-                margin: auto;
-                transform: rotate(-11deg);
-            
-            }
+        ul {
+            width: 85%;
+            margin: auto;
 
-            &::before {
-                grid-area: img;
-                content: '';
-                width: 30vw;
-                height: 30vw;
-                margin: auto;
-                display: block;
-                border-radius: 100%;
-                border: 6px solid $c-dorado;
-                background-color: $c-blanco;
+            li {
+                img {
+                    width: 85%;
+                    margin: auto;
+                    grid-area: img;
+                    transform: rotate(-11deg);
+                    z-index: 1;
+                }
+
+                b,sub {
+                    z-index: 1;
+                }
+
+                &::before {
+                    grid-area: img;
+                    content: '';
+                    width: 22vw;
+                    height: 22vw;
+                    margin: auto;
+                    display: block;
+                    border-radius: 100%;
+                    border: 6px solid $c-dorado;
+                    background-color: $c-blanco;
+                }
+
+                &::after {
+                    content: "";
+                    position: absolute;
+                    top: 10%;
+                    right: 0;
+                    width: 75%;
+                    height: 65%;
+                    display: block;
+                    background: radial-gradient($c-sombra-negra -100%, $c-transparent 50%);
+                }
+
+                &:nth-child(3)::after {
+                    top: 0;
+                }
             }
         }
     }
@@ -245,6 +328,10 @@
             -webkit-text-stroke: 3px $c-negro;
         }
         
+        ul li {
+            margin: 15px 10px;
+        }
+
         #xSectionPrizesR1C1 h2 {
             font-size: 30px;
         }
@@ -271,7 +358,6 @@
 
         ul li {
             flex-basis: 45%;
-            margin: 15px auto;
         }
 
         #xSectionPrizesR2C1 {
@@ -280,8 +366,8 @@
             }
 
             ul li::before {
-                width: 16vw;
-                height: 16vw;
+                width: 11vw;
+                height: 11vw;
             }
         }
     }
@@ -294,6 +380,11 @@
             padding: 0;
         }
 
+
+        #xSectionPrizesR1C2 .xComponentInner ul li::before {
+            background: radial-gradient($c-negro -100%, $c-transparent 60%);
+        }
+
         #xSectionPrizesR2C1 {
             h2 {
                 max-width: 500px;
@@ -303,8 +394,8 @@
                 flex-basis: 30%;
                 
                 &::before {
-                    width: 12vw;
-                    height: 12vw;
+                    width: 8vw;
+                    height: 8vw;
                 }
             }
         }
@@ -373,8 +464,8 @@
             }
 
             ul li::before {
-                width: 140px;
-                height: 140px;
+                width: 100px;
+                height: 100px;
             }
         }
 
