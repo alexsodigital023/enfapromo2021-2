@@ -164,6 +164,7 @@ class Init extends Migration
     protected function createSyncout(){
 
         Schema::create('syncout_status', function (Blueprint $table) {
+            $table->id();
             $table->bigInteger('ticket_id',false,true);
             $table->tinyInteger('status_id',false,true);
             $table->text('data')->nullable();
