@@ -125,16 +125,7 @@ nav>ul {
   left: 0;
   top: 0;
   display: none;
-
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: -25%;
-    bottom: 0;
-    background: linear-gradient(90deg, $c-transparent 80%, $c-sombra-negra 80%);
-  }
+  overflow: auto;
 
   #HeaderR1 .xCampaignHeader {
     background-color: $c-transparent;
@@ -146,9 +137,18 @@ nav>ul {
       background: $c-transparent;
 
       &::before {
+        content: '';
         width: 190px;
         height: 150px;
+        display: block;
         margin: 10px 4%;
+        background-image: $modo-pantera;
+        background-repeat: no-repeat;
+        background-size: contain;
+      }
+
+      &::after {
+        display: none;
       }
       
       li.xTab {
@@ -210,6 +210,7 @@ nav>ul {
   
       li.content2Tab {
         order: 1;
+        margin-top: 25px;
         
         .xTabLink::before {
           background-image: $icon-question;
@@ -368,16 +369,6 @@ nav>ul {
     width: 50%;
     left: auto;
     right: 0;
-
-    &::before {
-      content: '';
-      position: absolute;
-      right: 0;
-      bottom: 0;
-      top: -5%;
-      left: -115%;
-      background: linear-gradient(90deg, $c-sombra-negra 52%, $c-transparent 54%);
-    }
   }
 
   #xSectionDetails {

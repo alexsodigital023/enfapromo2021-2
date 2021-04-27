@@ -6241,16 +6241,7 @@ nav > ul .menuIcono {
   left: 0;
   top: 0;
   display: none;
-}
-
-#xSectionHeader::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: -25%;
-  bottom: 0;
-  background: linear-gradient(90deg, transparent 80%, #00000073 80%);
+  overflow: auto;
 }
 
 #xSectionHeader #HeaderR1 .xCampaignHeader {
@@ -6265,9 +6256,18 @@ nav > ul .menuIcono {
 }
 
 #xSectionHeader #HeaderR1 .xCampaignHeader ul.xNavMain::before {
+  content: "";
   width: 190px;
   height: 150px;
+  display: block;
   margin: 10px 4%;
+  background-image: url(https://a.wayin.com/images/7405/f7cdaa0a-93b7-47f6-8f9f-8723b19b8822/modo_pantera_only.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+#xSectionHeader #HeaderR1 .xCampaignHeader ul.xNavMain::after {
+  display: none;
 }
 
 #xSectionHeader #HeaderR1 .xCampaignHeader ul.xNavMain li.xTab {
@@ -6329,6 +6329,7 @@ nav > ul .menuIcono {
 
 #xSectionHeader #HeaderR1 .xCampaignHeader ul.xNavMain li.content2Tab {
   order: 1;
+  margin-top: 25px;
 }
 
 #xSectionHeader #HeaderR1 .xCampaignHeader ul.xNavMain li.content2Tab .xTabLink::before {
@@ -6474,16 +6475,6 @@ nav > ul .menuIcono {
     width: 50%;
     left: auto;
     right: 0;
-  }
-
-  #xSectionHeader::before {
-    content: "";
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    top: -5%;
-    left: -115%;
-    background: linear-gradient(90deg, #00000073 52%, transparent 54%);
   }
 
   #xSectionDetails .xRowInner .xCell.mid {
