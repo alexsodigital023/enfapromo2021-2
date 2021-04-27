@@ -48,6 +48,7 @@ class Init extends Migration
 
     protected function createAsignaciones(){
         Schema::create('asignacion',function(Blueprint $table){
+            \Illuminate\Support\Facades\DB::statement('SET SESSION sql_require_primary_key=0');
             $table->bigInteger('user_id',false,true);
             $table->bigInteger('ticket_id',false,true)->unique();
             $table->timestamp('fecha');
@@ -138,6 +139,7 @@ class Init extends Migration
     protected function createStatus(){
 
         Schema::create('cat_status', function (Blueprint $table) {
+            \Illuminate\Support\Facades\DB::statement('SET SESSION sql_require_primary_key=0');
             $table->tinyInteger('id',true,true);
             $table->string('name',200);
         });
@@ -164,7 +166,7 @@ class Init extends Migration
     protected function createSyncout(){
 
         Schema::create('syncout_status', function (Blueprint $table) {
-            $table->id();
+            \Illuminate\Support\Facades\DB::statement('SET SESSION sql_require_primary_key=0');
             $table->bigInteger('ticket_id',false,true);
             $table->tinyInteger('status_id',false,true);
             $table->text('data')->nullable();
@@ -178,7 +180,7 @@ class Init extends Migration
     protected function createSyncin(){
 
         Schema::create('syncin_status', function (Blueprint $table) {
-            $table->id();
+            \Illuminate\Support\Facades\DB::statement('SET SESSION sql_require_primary_key=0');
             $table->bigInteger('ticket_id',false,true);
             $table->tinyInteger('status_id',false,true);
             $table->text('data')->nullable();
@@ -192,7 +194,7 @@ class Init extends Migration
     protected function createPhoto(){
 
         Schema::create('photo', function (Blueprint $table) {
-            $table->id();
+            \Illuminate\Support\Facades\DB::statement('SET SESSION sql_require_primary_key=0');
             $table->char('uuid',36);
             $table->bigInteger('user_id',false,true);
             $table->tinyInteger('status_id',false,true);
@@ -221,6 +223,7 @@ class Init extends Migration
         });
 
         Schema::create('oauth_access_tokens', function (Blueprint $table) {
+            \Illuminate\Support\Facades\DB::statement('SET SESSION sql_require_primary_key=0');
             $table->string('access_token',40);
             $table->bigInteger('client_id',false,true);
             $table->string('user_id')->nullable();
@@ -245,6 +248,7 @@ class Init extends Migration
         });
 
         Schema::create('oauth_refresh_tokens', function (Blueprint $table) {
+            \Illuminate\Support\Facades\DB::statement('SET SESSION sql_require_primary_key=0');
             $table->string('refresh_token',40);
             $table->bigInteger('client_id',false,true);
             $table->string('user_id')->nullable();
@@ -256,6 +260,7 @@ class Init extends Migration
         });
 
         Schema::create('oauth_scopes', function (Blueprint $table) {
+            \Illuminate\Support\Facades\DB::statement('SET SESSION sql_require_primary_key=0');
             $table->string('type',255)->default("supported");
             $table->string('scope',200)->nullable();
             $table->bigInteger('client_id',false,true)->nullable();
@@ -265,6 +270,7 @@ class Init extends Migration
         });
 
         Schema::create('oauth_jwt', function (Blueprint $table) {
+            \Illuminate\Support\Facades\DB::statement('SET SESSION sql_require_primary_key=0');
             $table->bigInteger('client_id',false,true)->nullable();
             $table->string('subject',255)->nullable();
             $table->string('public_key',2000)->nullable();
