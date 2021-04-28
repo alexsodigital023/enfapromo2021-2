@@ -29,6 +29,7 @@ module.exports={
                     },
                     error=>{
                         conn.end();
+                        console.log("error",error);
                         reject({
                             code:400,
                             message:'Error de autenticación'
