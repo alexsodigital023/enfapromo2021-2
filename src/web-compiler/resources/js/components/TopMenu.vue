@@ -3,14 +3,11 @@
         <nav>
             <ul>
                 <li class="outer-menu">
-                    <a href="#">
-                        <i class="icon icon-pancho"></i>
-                        <p>Juega</p>
-                    </a><a href="#">
+                    <a href="https://app.wayin.com/preview/experience/7c606ec2-435f-4eb4-a0fa-c852c5e0006c/236633/details">
                         <i class="icon icon-control"></i>
                         <p>Juega</p>
                     </a>
-                    <a href="#">
+                    <a href="https://app.wayin.com/preview/experience/7c606ec2-435f-4eb4-a0fa-c852c5e0006c/236633/prizes">
                         <i class="icon icon-regalo"></i>
                         <p>Premios</p>
                     </a>
