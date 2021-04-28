@@ -5,6 +5,7 @@ const acl={
     'numero':true,
     'email':true,
     'nombre':true,
+    'telefono':true,
     'apellido':true,
     'foto':true,
     'estado_id':true,
