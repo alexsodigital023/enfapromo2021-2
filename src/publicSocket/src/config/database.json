@@ -1,8 +1,8 @@
 {
-    "host": "db",
-    "port":3306,
-    "user":"prueba",
-    "password": "prueba",
-    "database":"prueba",
+    "host": "db-mysql-nyc1-42577-do-user-1684304-0.b.db.ondigitalocean.com",
+    "port":25060,
+    "user":"doadmin",
+    "password": "cperj0r7ng3hl9ld",
+    "database":"chocomilk",
     "connectionLimit": 10
 }
