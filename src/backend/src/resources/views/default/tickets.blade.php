@@ -55,6 +55,9 @@
                                 <data
                                     id="{{$t->id}}"
                                     email="{{$t->user->email}}"
+                                    telefono="{{$t->user->telefono}}"
+                                    tiempo="{{$t->user->game_t}}"
+                                    movimientos="{{$t->user->game_m}}"
                                     estado="{{$t->estado->name}}"
                                     tienda="{{$t->tienda->name}}"
                                     status_id="{{$t->status_id}}"
