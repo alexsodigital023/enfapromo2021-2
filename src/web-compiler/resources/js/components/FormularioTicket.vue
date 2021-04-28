@@ -172,7 +172,7 @@ import Cookies from 'js-cookie';
                     this.conexion=new Conexion({
                         auth:{
                             host : {
-                                host: 'chocomilk.free.beeceptor.com',
+                                host: 'chocomilk.proxy.beeceptor.com',
                                 port: '443',
                                 path:'/appv1/user',
                             }
