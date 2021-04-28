@@ -4916,7 +4916,7 @@ body input {
 
   .ticketFormContainer .xActionsForm .xPagingButton {
     border: 2px solid #fff;
-    display: inline-block !important;
+    display: inline-block;
     width: auto;
   }
 }
