@@ -50,35 +50,6 @@ import Cookies from 'js-cookie';
             }
         },
         methods:{
-            endStage(){
-                console.log("stage :",this.stage);
-                switch(this.stage){
-                    case 0:
-                        $(this.emailInput).change(()=>this.dataChanged());
-                        $(this.nombreInput).change(()=>this.dataChanged());
-                        $(this.apellidoInput).change(()=>this.dataChanged());
-                        $(this.celularInput).change(()=>this.dataChanged());
-                        this.stage++;
-                        break;
-                    case 1:
-                        if(this.file&&this.email){
-                            this.send().then(ok=>{
-                                console.log(ok);
-                                this.stage++;
-                                this.dataChanged();
-                            },error=>console.log(error));
-                        }
-                        break;
-                    case 2:
-                        this.email?this.updateTicket('email',this.email):null;
-                        this.nombre?this.updateTicket('nombre',this.nombre):null;
-                        this.apellido?this.updateTicket('apellido',this.apellido):null;
-                        !isNaN(parseInt(this.dia))?this.updateTicket('dia',this.dia):0;
-                        this.mes?this.updateTicket('mes',this.mes):null;
-                        !isNaN(parseInt(this.anyo))?this.updateTicket('anyo',this.anyo):null;
-                        break;
-                }
-            },
             showError(type,title,message){
                 this.$emit('error',{
                     type:type,
@@ -108,15 +79,6 @@ import Cookies from 'js-cookie';
                         }
                     )
                 }
-            },
-            dataChanged(){
-                this.email=$(this.emailInput).val().length>0?$(this.emailInput).val():null;
-                this.nombre=$(this.emailInput).val().length>0?$(this.nombreInput).val():null;
-                this.apellido=$(this.emailInput).val().length>0?$(this.apellidoInput).val():null;
-                this.dia=$(this.emailInput).val().length>0?$(this.diaInput).val():null;
-                this.mes=$(this.emailInput).val().length>0?$(this.mesInput).val():null;
-                this.anyo=$(this.emailInput).val().length>0?$(this.anyoInput).val():null;
-                this.endStage();
             },
             updateStatus(status){
                 $(this.ticketValue).val(status.import)
@@ -267,6 +229,10 @@ import Cookies from 'js-cookie';
                         this.validate().then(
                             ok=>{
                                 this.send().then(ok=>{
+                                    this.updateTicket("nombre",$(this.fields["nombre"]).val()).then(ok=>{},error=>{});
+                                    this.updateTicket("apellido",$(this.fields["apellido"]).val()).then(ok=>{},error=>{});
+                                    this.updateTicket("telefono",$(this.fields["telefono"]).val()).then(ok=>{},error=>{});
+                                    this.updateTicket("email",$(this.fields["email"]).val()).then(ok=>{},error=>{});
                                     $(this.buttons["next"]).show();
                                 },error=>console.log(error));
                             },error=>{

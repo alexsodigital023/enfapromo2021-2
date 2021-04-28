@@ -67,6 +67,7 @@ class Init extends Migration
             $table->string('numero',20)->nullable();
             $table->string('nombre',50)->nullable();
             $table->string('apellido',50)->nullable();
+            $table->string('telefono',50)->nullable();
             $table->string('foto',200)->nullable();
             $table->bigInteger('estado_id',false,true);
             $table->bigInteger('tienda_id',false,true);
