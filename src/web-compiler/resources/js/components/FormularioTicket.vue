@@ -152,9 +152,9 @@ import Cookies from 'js-cookie';
                     this.conexion=new Conexion({
                         auth:{
                             host : {
-                                host: 'chocomilkpromo-54hks.ondigitalocean.app',
+                                host: 'chocomilk.free.beeceptor.com',
                                 port: '443',
-                                path:'/api/user',
+                                path:'/appv1/user',
                             }
                         },
                         socket:{
