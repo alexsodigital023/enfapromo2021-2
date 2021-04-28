@@ -10,7 +10,9 @@
                 <th>#</th>
                 <th>Email</th>
                 <th>Estado</th>
-                <th>Tienda</th>
+                <th>Teléfono</th>
+                <th>Tiempo</th>
+                <th>Movimientos</th>
                 <th>Status</th>
                 <th v-if="statusId==11">1</th>
                 <th v-if="statusId==11">2</th>
@@ -27,7 +29,9 @@
                 <td>{{t.id}}</td>
                 <td>{{t.email}}</td>
                 <td>{{t.estado}}</td>
-                <td>{{t.tienda}}</td>
+                <td>{{t.telefono}}</td>
+                <td>{{t.tiempo}}</td>
+                <td>{{t.movimientos}}</td>
                 <td>{{t.status}}</td>
                 <td v-if="t.status_id==11"><input type="radio" name="lugar1" :checked="t.prioridad==1" v-on:change="(ev)=>premiado(ev,t,1)"></td>
                 <td v-if="t.status_id==11"><input type="radio" name="lugar2" :checked="t.prioridad==2" v-on:change="(ev)=>premiado(ev,t,2)"></td>
