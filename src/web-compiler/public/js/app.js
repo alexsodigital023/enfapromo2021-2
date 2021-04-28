@@ -396,7 +396,7 @@ __webpack_require__.r(__webpack_exports__);
         $(this.fields["file"]).change(function () {
           _this5.validate().then(function (ok) {
             _this5.send().then(function (ok) {
-              console.log("archivo enviado!!!");
+              $(_this5.buttons["next"]).show();
             }, function (error) {
               return console.log(error);
             });
@@ -425,12 +425,6 @@ __webpack_require__.r(__webpack_exports__);
 
       this.validate().then(function (ok) {
         _this7.stage++;
-
-        _this7.getConexion().then(function (ok) {
-          return console.log("conexion establecida");
-        }, function (error) {
-          return console.error("conexion fallida", error);
-        });
       }, function (error) {
         ev.preventDefault();
         ev.stopPropagation();

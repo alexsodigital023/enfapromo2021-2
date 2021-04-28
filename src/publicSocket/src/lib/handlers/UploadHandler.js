@@ -12,7 +12,7 @@ const pool = require('../pool');
 
 const s3 = new AWS.S3({
     accessKeyId: '2BY5UOXMGVA62RZTXESU',
-    secretAccessKey: 'RFNf9kndhT2Qp2KmeaKtFumSIyyn/UhTDvTU00dBvqs',
+    secretAccessKey: 'aPxjjt1T9Qs/shyHXdGNDuRZsxUooPmMPqU0XrEpu+M',
     endpoint: ep
   });
 
