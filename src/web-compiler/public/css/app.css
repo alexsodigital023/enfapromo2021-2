@@ -4646,6 +4646,12 @@ body {
   padding: 0 !important;
 }
 
+body form,
+body button,
+body input {
+  font-family: "Gotham Book";
+}
+
 .xPage {
   width: 100%;
 }
@@ -4910,7 +4916,7 @@ body {
 
   .ticketFormContainer .xActionsForm .xPagingButton {
     border: 2px solid #fff;
-    display: inline-block;
+    display: inline-block !important;
     width: auto;
   }
 }
@@ -6056,6 +6062,7 @@ body {
 .Content #xSectionContent h3,
 .xStateContent #xSectionContent h3 {
   font-size: 20px;
+  font-family: "Gotham Book";
 }
 
 .Content #xSectionContent img,
@@ -6110,6 +6117,7 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   color: #fff;
+  font-family: "Gotham Book";
 }
 
 .xSectionContent2 h1,
@@ -6159,6 +6167,10 @@ nav > ul {
   grid-template-columns: 90px 2fr 3fr;
 }
 
+nav > ul li a {
+  font-family: "Gotham Book";
+}
+
 nav > ul::before {
   content: "";
   width: 100px;
@@ -6206,6 +6218,7 @@ nav > ul .outer-menu a {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  font-family: "Gotham Book";
 }
 
 nav > ul .outer-menu a p {
