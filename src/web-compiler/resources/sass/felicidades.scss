@@ -8,13 +8,17 @@
     }
 }
 
-.xSectionConfirmation{
+.xSectionConfirmation {
     padding: 45px;
     background: $background-home-mobile;
     background-position-x: center;
     background-position-y: top;
     background-repeat: no-repeat;
     background-size: cover;
+
+    .xMediaContainer img {
+        max-width: 80%;
+    }
 }
 
 @media #{$grid-md} {
