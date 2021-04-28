@@ -55,6 +55,7 @@ import Cookies from 'js-cookie';
                         $(this.buttons.prev).show().removeClass("xHidden");
                         $(this.buttons.next).hide().addClass("xHidden");
                         $(this.buttons["submit"]).removeClass("xHidden");
+                        //$(this.buttons["submit"]).find(".xSubmit").prop("disabled",true);
                         $(this.pages[1]).hide();
                         $(this.pages[2]).hide();
                         $(this.pages[3]).show();
@@ -71,7 +72,7 @@ import Cookies from 'js-cookie';
                 });
             },
 
-            updateTicket(nombre,valor){
+            updateTicket(nombre,valor,callback){
                 if(this.aclCampos[nombre]){
                     this.enviando=true;
                     this.getConexion().then(
@@ -80,7 +81,12 @@ import Cookies from 'js-cookie';
                                 name:nombre,
                                 value:valor
                             }).then(
-                                ok=>this.enviando=false,
+                                ok=>{
+                                    this.enviando=false
+                                    if(callback){
+                                        callback(ok);
+                                    }
+                                },
                                 error=>{
                                     console.error(error);
                                     this.enviando=false;
@@ -229,14 +235,17 @@ import Cookies from 'js-cookie';
                         this.fields["toc"]=$(this.$el).find("#lds_url_01_ConsentAccepted_0").get(0);
                         this.fields["pp"]=$(this.$el).find("#lds_url_02_ConsentAccepted_0").get(0);
                         this.fields["age"]=$(this.$el).find("#age_verification_0").get(0);
-                        this.fields["game_t"]=$(this.$el).find("#game_t").get(0);
-                        this.fields["game_m"]=$(this.$el).find("#game_m").get(0);
                         this.buttons["next"]=$(this.$el).find("a.xActionNext").get(0);
                         this.buttons["prev"]=$(this.$el).find("a.xActionPrevious").get(0);
                         this.buttons["submit"]=$(this.$el).find(".xActivateContainer").get(0);
                         break;
                     case 2:
                         this.fields["file"]=$(this.$el).find("#ngxUserUpload").get(0);
+                        break;
+                    case 3:
+                        this.fields["game_t"]=$(this.$el).find("#game_t").get(0);
+                        this.fields["game_m"]=$(this.$el).find("#game_m").get(0);
+                        console.log(this.fields);
                         break;
                 }
             },
@@ -258,6 +267,14 @@ import Cookies from 'js-cookie';
                             }
                         );
                     });
+                     $(this.fields["game_t"]).change(()=>{
+                         console.log("game_t");
+                         this.updateTicket("game_t",$(this.fields["game_t"]).val());
+                     });
+                     $(this.fields["game_m"]).change(()=>{
+                         console.log("game_m");
+                         this.updateTicket("game_m",$(this.fields["game_m"]).val());
+                     });
                     this.fileFieldBinded=true;
                 }
             },
@@ -269,7 +286,18 @@ import Cookies from 'js-cookie';
                     $(this.buttons["prev"]).click((ev)=>{
                         this.prevStage(ev);
                     });
+                    $(this.buttons["submit"]).click((ev)=>{
+                        let submit=false;
+                        if($(this.fields["game_t"]).val()&&$(this.fields["game_m"]).val()){
+                            $(this.fields["game_t"]).change();
+                            $(this.fields["game_m"]).change();
+                        }else{
+                            ev.preventDefault();
+                            ev.stopPropagation();
+                        }
+                    });
                     this.buttonsBinded=true;
+                    
                 }
             },
             nextStage(ev){
