@@ -51,7 +51,7 @@ class Init extends Migration
             \Illuminate\Support\Facades\DB::statement('SET SESSION sql_require_primary_key=0');
             $table->bigInteger('user_id',false,true);
             $table->bigInteger('ticket_id',false,true)->unique();
-            $table->timestamp('fecha');
+            $table->timestamp('fecha')->nullable();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
             $table->foreign('ticket_id')->references('id')->on('ticket')->onDelete('cascade')->onUpdate('cascade');
 
