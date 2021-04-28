@@ -12,6 +12,7 @@ import Cookies from 'js-cookie';
         data(){
             return {
                 fields:{},
+                pages:{},
                 buttons:{},
                 values:{},
                 aclCampos:{
@@ -26,49 +27,29 @@ import Cookies from 'js-cookie';
         },
         watch:{
 	        stage(){
-                this.bindFields();
+                this.mapPages();
                 this.mapInputs();
+                this.bindFields();
                 this.bindButtons();
                 switch(this.stage){
                     case 1:
-                        $(this.buttons.next).show();
+                        $(this.buttons.prev).hide().addClass("xHidden");
+                        $(this.buttons.next).show().removeClass("xHidden");
+                        $(this.pages[1]).show();
+                        $(this.pages[2]).hide();
+                        $(this.pages[3]).hide();
                     break;
                     case 2:
-                        $(this.buttons.next).hide();
+                        $(this.buttons.prev).show().removeClass("xHidden");
+                        $(this.buttons.next).hide().addClass("xHidden");
+                        $(this.pages[1]).hide();
+                        $(this.pages[2]).show();
+                        $(this.pages[3]).hide();
                         break;
                 }
             }
         },
         methods:{
-            endStage(){
-                console.log("stage :",this.stage);
-                switch(this.stage){
-                    case 0:
-                        $(this.emailInput).change(()=>this.dataChanged());
-                        $(this.nombreInput).change(()=>this.dataChanged());
-                        $(this.apellidoInput).change(()=>this.dataChanged());
-                        $(this.celularInput).change(()=>this.dataChanged());
-                        this.stage++;
-                        break;
-                    case 1:
-                        if(this.file&&this.email){
-                            this.send().then(ok=>{
-                                console.log(ok);
-                                this.stage++;
-                                this.dataChanged();
-                            },error=>console.log(error));
-                        }
-                        break;
-                    case 2:
-                        this.email?this.updateTicket('email',this.email):null;
-                        this.nombre?this.updateTicket('nombre',this.nombre):null;
-                        this.apellido?this.updateTicket('apellido',this.apellido):null;
-                        !isNaN(parseInt(this.dia))?this.updateTicket('dia',this.dia):0;
-                        this.mes?this.updateTicket('mes',this.mes):null;
-                        !isNaN(parseInt(this.anyo))?this.updateTicket('anyo',this.anyo):null;
-                        break;
-                }
-            },
             showError(type,title,message){
                 this.$emit('error',{
                     type:type,
@@ -98,15 +79,6 @@ import Cookies from 'js-cookie';
                         }
                     )
                 }
-            },
-            dataChanged(){
-                this.email=$(this.emailInput).val().length>0?$(this.emailInput).val():null;
-                this.nombre=$(this.emailInput).val().length>0?$(this.nombreInput).val():null;
-                this.apellido=$(this.emailInput).val().length>0?$(this.apellidoInput).val():null;
-                this.dia=$(this.emailInput).val().length>0?$(this.diaInput).val():null;
-                this.mes=$(this.emailInput).val().length>0?$(this.mesInput).val():null;
-                this.anyo=$(this.emailInput).val().length>0?$(this.anyoInput).val():null;
-                this.endStage();
             },
             updateStatus(status){
                 $(this.ticketValue).val(status.import)
@@ -228,6 +200,11 @@ import Cookies from 'js-cookie';
                     );
                 });
             },
+            mapPages(){
+                this.pages[1]=$(this.$el).find(".xFormPage.n1").get(0);
+                this.pages[2]=$(this.$el).find(".xFormPage.n2").get(0);
+                this.pages[3]=$(this.$el).find(".xFormPage.n3").get(0);
+            },
             mapInputs(){
                 switch(this.stage){
                     case 1:
@@ -252,6 +229,10 @@ import Cookies from 'js-cookie';
                         this.validate().then(
                             ok=>{
                                 this.send().then(ok=>{
+                                    this.updateTicket("nombre",$(this.fields["nombre"]).val()).then(ok=>{},error=>{});
+                                    this.updateTicket("apellido",$(this.fields["apellido"]).val()).then(ok=>{},error=>{});
+                                    this.updateTicket("telefono",$(this.fields["telefono"]).val()).then(ok=>{},error=>{});
+                                    this.updateTicket("email",$(this.fields["email"]).val()).then(ok=>{},error=>{});
                                     $(this.buttons["next"]).show();
                                 },error=>console.log(error));
                             },error=>{
@@ -277,7 +258,6 @@ import Cookies from 'js-cookie';
                 this.validate().then(
                     ok=>{
                         this.stage++;
-                        this.getConexion().then(ok=>console.log(ok),error=>console.error(error));
                     },error=>{
                         ev.preventDefault();
                         ev.stopPropagation();
@@ -352,6 +332,7 @@ import Cookies from 'js-cookie';
             }
         },
         mounted() {
+            console.log("formulario iniciado");
             this.stage=1;
         }
     }
