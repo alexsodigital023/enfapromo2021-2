@@ -16,9 +16,12 @@ import Cookies from 'js-cookie';
                 buttons:{},
                 values:{},
                 aclCampos:{
-                    'emailInput':true,
-                    'nombreInput':true,
-                    'apellidoInput':true,
+                    'nombre':true,
+                    'apellido':true,
+                    'telefono':true,
+                    'email':true,
+                    'game_t':true,
+                    'game_m':true,
                 },
                 stage:0,
                 buttonsBinded:false,
@@ -35,6 +38,7 @@ import Cookies from 'js-cookie';
                     case 1:
                         $(this.buttons.prev).hide().addClass("xHidden");
                         $(this.buttons.next).show().removeClass("xHidden");
+                        $(this.buttons["submit"]).addClass("xHidden");
                         $(this.pages[1]).show();
                         $(this.pages[2]).hide();
                         $(this.pages[3]).hide();
@@ -42,9 +46,18 @@ import Cookies from 'js-cookie';
                     case 2:
                         $(this.buttons.prev).show().removeClass("xHidden");
                         $(this.buttons.next).hide().addClass("xHidden");
+                        $(this.buttons["submit"]).addClass("xHidden");
                         $(this.pages[1]).hide();
                         $(this.pages[2]).show();
                         $(this.pages[3]).hide();
+                        break;
+                    case 3:
+                        $(this.buttons.prev).show().removeClass("xHidden");
+                        $(this.buttons.next).hide().addClass("xHidden");
+                        $(this.buttons["submit"]).removeClass("xHidden");
+                        $(this.pages[1]).hide();
+                        $(this.pages[2]).hide();
+                        $(this.pages[3]).show();
                         break;
                 }
             }
@@ -111,6 +124,7 @@ import Cookies from 'js-cookie';
                                         message:'Espere...'
                                     });
                                     reader.onload = (e)=>{
+                                        console.log("enviando archivo");
                                         con.sendFile(e.target.result,(update)=>{
                                                 this.fileSended=true;
                                                 this.$emit("stop");
@@ -215,8 +229,11 @@ import Cookies from 'js-cookie';
                         this.fields["toc"]=$(this.$el).find("#lds_url_01_ConsentAccepted_0").get(0);
                         this.fields["pp"]=$(this.$el).find("#lds_url_02_ConsentAccepted_0").get(0);
                         this.fields["age"]=$(this.$el).find("#age_verification_0").get(0);
+                        this.fields["game_t"]=$(this.$el).find("#game_t").get(0);
+                        this.fields["game_m"]=$(this.$el).find("#game_m").get(0);
                         this.buttons["next"]=$(this.$el).find("a.xActionNext").get(0);
                         this.buttons["prev"]=$(this.$el).find("a.xActionPrevious").get(0);
+                        this.buttons["submit"]=$(this.$el).find(".xActivateContainer").get(0);
                         break;
                     case 2:
                         this.fields["file"]=$(this.$el).find("#ngxUserUpload").get(0);
@@ -229,11 +246,12 @@ import Cookies from 'js-cookie';
                         this.validate().then(
                             ok=>{
                                 this.send().then(ok=>{
-                                    this.updateTicket("nombre",$(this.fields["nombre"]).val()).then(ok=>{},error=>{});
-                                    this.updateTicket("apellido",$(this.fields["apellido"]).val()).then(ok=>{},error=>{});
-                                    this.updateTicket("telefono",$(this.fields["telefono"]).val()).then(ok=>{},error=>{});
-                                    this.updateTicket("email",$(this.fields["email"]).val()).then(ok=>{},error=>{});
-                                    $(this.buttons["next"]).show();
+                                    this.updateTicket("nombre",$(this.fields["nombre"]).val());
+                                    this.updateTicket("apellido",$(this.fields["apellido"]).val());
+                                    this.updateTicket("telefono",$(this.fields["telefono"]).val());
+                                    this.updateTicket("email",$(this.fields["email"]).val());
+                                    console.log("archivo enviado");
+                                    $(this.buttons["next"]).show().removeClass("xHidden");
                                 },error=>console.log(error));
                             },error=>{
                                 console.error(error);
@@ -332,7 +350,6 @@ import Cookies from 'js-cookie';
             }
         },
         mounted() {
-            console.log("formulario iniciado");
             this.stage=1;
         }
     }

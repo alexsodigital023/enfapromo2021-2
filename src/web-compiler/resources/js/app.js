@@ -25,7 +25,6 @@ $(document).ready(()=>{
     const xF1 = $.parseHTML('<top-menu ></top-menu>');
     $(xF1).insertBefore(f1);
     $(xF1).append(f1);
-    console.log(f);
   })($);
   
   const app = new Vue({
@@ -38,7 +37,6 @@ $(document).ready(()=>{
   
     },
     mounted() {
-      console.log("app iniciada");
     }
   });
 });

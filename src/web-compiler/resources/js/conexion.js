@@ -38,7 +38,7 @@ export default class {
         console.error('Conexión cerrada');
     }
     messageHandler(m){
-        //console.log("recibido",m);
+        console.log("recibido",m);
         this.stopTimeout();
         if(m && m.data){
             const d = JSON.parse(m.data);
@@ -153,7 +153,7 @@ export default class {
         return new Promise((resolve,reject)=>{
             this.getClient().then(
                 client=>{
-                    //console.log("enviando",file,client);
+                    console.log("enviando",file,client);
                     const tx=uuidv4();
                     const tx2=uuidv4();
                     const message={
