@@ -72,6 +72,7 @@ module.exports={
 
                                                         let response = null;
                                                         res.on('data', (d) => {
+                                                            console.log("recibido",d);
                                                             response = JSON.parse(d);
                                                             resolve({
                                                                 code:200,
