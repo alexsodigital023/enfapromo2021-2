@@ -12,6 +12,7 @@ import Cookies from 'js-cookie';
         data(){
             return {
                 fields:{},
+                pages:{},
                 buttons:{},
                 values:{},
                 aclCampos:{
@@ -26,15 +27,24 @@ import Cookies from 'js-cookie';
         },
         watch:{
 	        stage(){
-                this.bindFields();
+                this.mapPages();
                 this.mapInputs();
+                this.bindFields();
                 this.bindButtons();
                 switch(this.stage){
                     case 1:
-                        $(this.buttons.next).show();
+                        $(this.buttons.prev).hide().addClass("xHidden");
+                        $(this.buttons.next).show().removeClass("xHidden");
+                        $(this.pages[1]).show();
+                        $(this.pages[2]).hide();
+                        $(this.pages[3]).hide();
                     break;
                     case 2:
-                        $(this.buttons.next).hide();
+                        $(this.buttons.prev).show().removeClass("xHidden");
+                        $(this.buttons.next).hide().addClass("xHidden");
+                        $(this.pages[1]).hide();
+                        $(this.pages[2]).show();
+                        $(this.pages[3]).hide();
                         break;
                 }
             }
@@ -228,6 +238,11 @@ import Cookies from 'js-cookie';
                     );
                 });
             },
+            mapPages(){
+                this.pages[1]=$(this.$el).find(".xFormPage.n1").get(0);
+                this.pages[2]=$(this.$el).find(".xFormPage.n2").get(0);
+                this.pages[3]=$(this.$el).find(".xFormPage.n3").get(0);
+            },
             mapInputs(){
                 switch(this.stage){
                     case 1:
@@ -277,7 +292,6 @@ import Cookies from 'js-cookie';
                 this.validate().then(
                     ok=>{
                         this.stage++;
-                        this.getConexion().then(ok=>console.log(ok),error=>console.error(error));
                     },error=>{
                         ev.preventDefault();
                         ev.stopPropagation();
@@ -352,6 +366,7 @@ import Cookies from 'js-cookie';
             }
         },
         mounted() {
+            console.log("formulario iniciado");
             this.stage=1;
         }
     }

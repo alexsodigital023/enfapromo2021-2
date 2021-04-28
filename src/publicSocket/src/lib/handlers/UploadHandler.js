@@ -67,6 +67,7 @@ module.exports={
                                                         Accept: '*/*',
                                                         },
                                                     };
+                                                    console.log("ejecutando servicio",id);
                                                     https.get(`https://chocomilkpromo-54hks.ondigitalocean.app/api/runservice?id=${id}`, (res) => {
 
                                                         let response = null;

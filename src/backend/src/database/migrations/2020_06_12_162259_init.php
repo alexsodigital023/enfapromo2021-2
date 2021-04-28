@@ -50,7 +50,7 @@ class Init extends Migration
         Schema::create('asignacion',function(Blueprint $table){
             $table->bigInteger('user_id',false,true);
             $table->bigInteger('ticket_id',false,true)->unique();
-            $table->timestamp('fecha');
+            $table->timestamp('fecha')->nullable();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
             $table->foreign('ticket_id')->references('id')->on('ticket')->onDelete('cascade')->onUpdate('cascade');
 
