@@ -12,7 +12,9 @@ const acl={
     'tienda_id':true,
     'mes':true,
     'dia':true,
-    'anyo':true
+    'anyo':true,
+    'game_t':true,
+    'game_m':true
 }
 
 module.exports={
