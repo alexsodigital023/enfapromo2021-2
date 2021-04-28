@@ -26,8 +26,8 @@ class UserSeeder extends Seeder
                 "profile_id"=>2
             ],
             [
-                "name"=>"Joaquin Leon",
-                "email"=>"premios@playergroup.com.mx",
+                "name"=>"Rachel Mendoza",
+                "email"=>"rachel.m@playergroup.com.mx",
                 "email_verified_at"=>"2011-10-08",
                 "created_at"=>"2020-07-08",
                 "password"=>Hash::make("ghRWRJ4HJfpVNNRjvhqzcHq3M"),
@@ -36,8 +36,8 @@ class UserSeeder extends Seeder
                 "profile_id"=>2
             ],
             [
-                "name"=>"Sammir Madrid",
-                "email"=>"promocion@playergroup.com.mx",
+                "name"=>"J Reyes",
+                "email"=>"Jreyes@advantagemarketing.mx",
                 "email_verified_at"=>"2011-10-08",
                 "created_at"=>"2020-07-08",
                 "password"=>Hash::make("ghRWRJ4HJfpVNNRjvhqzcHq3M"),
@@ -47,7 +47,17 @@ class UserSeeder extends Seeder
             ],
             [
                 "name"=>"Rachel Mendoza",
-                "email"=>"Rachel.m@playergroup.com.mx",
+                "email"=>"rrodriguez@advantagemarketing.mx",
+                "email_verified_at"=>"2011-10-08",
+                "created_at"=>"2020-07-08",
+                "password"=>Hash::make("ghRWRJ4HJfpVNNRjvhqzcHq3M"),
+                "oauth"=>1,
+                "backend"=>1,
+                "profile_id"=>2
+            ],
+            [
+                "name"=>"M rivera",
+                "email"=>"Mrivera@advantageoperaciones.mx",
                 "email_verified_at"=>"2011-10-08",
                 "created_at"=>"2020-07-08",
                 "password"=>Hash::make("ghRWRJ4HJfpVNNRjvhqzcHq3M"),
