@@ -1,8 +1,8 @@
 {
-    "host": "ec2-18-222-32-38.us-east-2.compute.amazonaws.com",
-    "port":3307,
-    "user":"golden",
-    "password": "3XRMws3hKmbvPCsTf4jT9nPnd",
-    "database":"golden",
+    "host": "db-mysql-nyc1-42577-do-user-1684304-0.b.db.ondigitalocean.com",
+    "port":25060,
+    "user":"doadmin",
+    "password": "cperj0r7ng3hl9ld",
+    "database":"chocomilk",
     "connectionLimit": 10
 }
