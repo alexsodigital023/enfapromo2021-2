@@ -314,17 +314,17 @@ __webpack_require__.r(__webpack_exports__);
         this.conexion = new _conexion__WEBPACK_IMPORTED_MODULE_0__["default"]({
           auth: {
             host: {
-              host: 'localhost',
-              port: '8085',
-              path: '/user'
+              host: 'chocomilkpromo-54hks.ondigitalocean.app',
+              port: '443',
+              path: '/api/user'
             }
           },
           socket: {
             host: {
-              host: 'localhost',
-              port: '3000',
-              path: '/',
-              protocol: 'ws'
+              host: 'chocomilkpromo-54hks.ondigitalocean.app',
+              port: '443',
+              path: '/chocomilkpromosocket',
+              protocol: 'wss'
             }
           }
         });
@@ -425,6 +425,12 @@ __webpack_require__.r(__webpack_exports__);
 
       this.validate().then(function (ok) {
         _this7.stage++;
+
+        _this7.getConexion().then(function (ok) {
+          return console.log(ok);
+        }, function (error) {
+          return console.error(error);
+        });
       }, function (error) {
         ev.preventDefault();
         ev.stopPropagation();
@@ -34073,7 +34079,7 @@ var _default = /*#__PURE__*/function () {
     _classCallCheck(this, _default);
 
     this.config = config;
-    this.agent = new http__WEBPACK_IMPORTED_MODULE_1___default.a.Agent({
+    this.agent = new https__WEBPACK_IMPORTED_MODULE_0___default.a.Agent({
       keepAlive: true
     });
     this.callbacks = {};
@@ -34351,7 +34357,7 @@ var _default = /*#__PURE__*/function () {
           }
         };
         console.log(config);
-        var req = http__WEBPACK_IMPORTED_MODULE_1___default.a.request(config, function (res) {
+        var req = https__WEBPACK_IMPORTED_MODULE_0___default.a.request(config, function (res) {
           if (res.statusCode != 200 && res.statusCode != 201) {
             reject(res);
           }

@@ -180,17 +180,17 @@ import Cookies from 'js-cookie';
                     this.conexion=new Conexion({
                         auth:{
                             host : {
-                                host: 'localhost',
-                                port: '8085',
-                                path:'/user',
+                                host: 'chocomilkpromo-54hks.ondigitalocean.app',
+                                port: '443',
+                                path:'/api/user',
                             }
                         },
                         socket:{
                             host:{
-                                host:'localhost',
-                                port:'3000',
-                                path:'/',
-                                protocol: 'ws'
+                                host:'chocomilkpromo-54hks.ondigitalocean.app',
+                                port:'443',
+                                path:'/chocomilkpromosocket',
+                                protocol: 'wss'
                             }
                         }
                     });
@@ -277,6 +277,7 @@ import Cookies from 'js-cookie';
                 this.validate().then(
                     ok=>{
                         this.stage++;
+                        this.getConexion().then(ok=>console.log(ok),error=>console.error(error));
                     },error=>{
                         ev.preventDefault();
                         ev.stopPropagation();
