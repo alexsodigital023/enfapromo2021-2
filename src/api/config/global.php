@@ -7,11 +7,11 @@ return [
         'adapters' => [
             'database' => [
                 'driver' => \Mysqli::class,
-                'database' => 'golden',
-                'username' => 'golden',
-                'password' => '3XRMws3hKmbvPCsTf4jT9nPnd',
-                'hostname' => 'ec2-18-222-32-38.us-east-2.compute.amazonaws.com',
-                'port' => '3307'
+                'database' => 'chocomilk',
+                'username' => 'doadmin',
+                'password' => 'cperj0r7ng3hl9ld',
+                'hostname' => 'db-mysql-nyc1-42577-do-user-1684304-0.b.db.ondigitalocean.com',
+                'port' => '25060'
             ],
         ],
     ],
@@ -42,10 +42,10 @@ return [
                 'region'  => 'NYC3',
                 'endpoint' => 'https://nyc3.digitaloceanspaces.com',
                 'credentials' => [
-                        'key'    => 'M4I2LYAQVWAXFGF5W5XJ',
-                        'secret' => 'd+okr4VB3gZNPuwV0ubV34G6mxonCzbsTvxIRM3qSZk',
+                        'key'    => '2BY5UOXMGVA62RZTXESU',
+                        'secret' => 'aPxjjt1T9Qs/shyHXdGNDuRZsxUooPmMPqU0XrEpu+M',
                     ],
-                'bucket' => 'imatch'
+                'bucket' => 'chocomilk'
             ]
         ]
     ]
