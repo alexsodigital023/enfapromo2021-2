@@ -12,6 +12,7 @@ module.exports={
                   ]).then(
                     r=>{
                         if(!r[0]){
+                            console.error("resultado",r[0]);
                             reject({
                                 code:404,
                                 message:'Error de autenticación'

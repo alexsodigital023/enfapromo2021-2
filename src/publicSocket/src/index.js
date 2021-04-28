@@ -11,19 +11,9 @@ const magic = new mmm.Magic(mmm.MAGIC_MIME_TYPE);
 
 const app = express();
 
-const options = {
- /* cert: fs.readFileSync(`${__dirname}/ssl/certificate.pem`,'utf8'),
-  key: fs.readFileSync(`${__dirname}/ssl/private.key`,'utf8'),
-  ca: [
-    fs.readFileSync(`${__dirname}/ssl/ca1.crt`,'utf8'),
-    fs.readFileSync(`${__dirname}/ssl/ca2.crt`,'utf8'),
-    fs.readFileSync(`${__dirname}/ssl/ca3.crt`,'utf8'),
-  ]*/
-};
 
 const server = http.createServer(app);
 
-//const server = https.createServer(app);
 const wss = new websocket.Server({ server });
 
 app.on('upgrade', wss.handleUpgrade);
@@ -34,6 +24,7 @@ wss.on('connection', ws => {
   ws.on('message', function incoming(data) {
     switch(typeof(data)){
       case 'string':
+        console.log("mensaje recibido",data);
         try{
           const d=JSON.parse(data);
           let action=d.action;
