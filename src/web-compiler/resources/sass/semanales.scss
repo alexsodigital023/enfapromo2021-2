@@ -10,7 +10,7 @@
     .xTitle, h2 {
         background: -webkit-linear-gradient($c-amarillo 40%, $c-naranja 60%);
         -webkit-text-fill-color: $c-transparent;
-        -webkit-text-stroke: 2px $c-negro;
+        -webkit-text-stroke: 2px $c-azul-oscuro;
         -webkit-background-clip: text;
         text-align: center;
         color: $c-amarillo;
@@ -30,7 +30,7 @@
         font-family: $font-gothamItalic;
 
         &::before {
-            background: $c-negro;
+            background: $c-azul-claro;
             -webkit-text-stroke: 3px transparent;
             -webkit-text-fill-color: transparent;
             -webkit-background-clip: text;
@@ -70,7 +70,7 @@
         font-family: $font-gothamItalic;
 
         &::before {
-            background: $c-negro;
+            background: $c-azul-claro;
             -webkit-text-stroke: 3px transparent;
             -webkit-text-fill-color: transparent;
             text-shadow: 0 0 20px $c-negro;
@@ -253,7 +253,7 @@
             font-family: $font-gothamItalic;
     
             &::before {
-                background: $c-negro;
+                background: $c-azul-claro;
                 -webkit-text-stroke: 3px transparent;
                 -webkit-text-fill-color: transparent;
                 text-shadow: 0 0 20px $c-negro;
@@ -325,7 +325,7 @@
 @media #{$grid-xs} {
     .xSectionPrizes {
         .xTitle, h2 {
-            -webkit-text-stroke: 3px $c-negro;
+            -webkit-text-stroke: 3px $c-azul-oscuro;
         }
         
         ul li {
@@ -345,7 +345,7 @@
 @media #{$grid-sm} {
     .xSectionPrizes {
         .xTitle, h2 {
-            -webkit-text-stroke: 4px $c-negro;
+            -webkit-text-stroke: 4px $c-azul-oscuro;
         }
 
         .xCopyContainer::before {
@@ -353,7 +353,7 @@
         }
 
         #xSectionPrizesR1C2 .xComponentInner::before {
-            top: 1%;
+            top: 0.5%;
         }
         
         #xSectionPrizesR2C1 .n1 .xComponentInner::before {
@@ -380,7 +380,7 @@
 @media #{$grid-md} {
     .xSectionPrizes {
         .xTitle, h2 {
-            -webkit-text-stroke: 5px $c-negro;
+            -webkit-text-stroke: 5px $c-azul-oscuro;
             padding: 0;
         }
 
@@ -408,7 +408,7 @@
 @media #{$grid-lg} {
     .xSectionPrizes {
         .xTitle, h2 {
-            -webkit-text-stroke: 3.5px $c-negro;
+            -webkit-text-stroke: 3.5px $c-azul-oscuro;
             font-size: 5.5vw;
         }
 
