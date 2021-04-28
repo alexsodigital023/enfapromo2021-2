@@ -255,13 +255,15 @@ import Cookies from 'js-cookie';
                         this.validate().then(
                             ok=>{
                                 this.send().then(ok=>{
+                                    console.log("ticket enviado:",ok);
                                     this.updateTicket("nombre",$(this.fields["nombre"]).val());
                                     this.updateTicket("apellido",$(this.fields["apellido"]).val());
                                     this.updateTicket("telefono",$(this.fields["telefono"]).val());
                                     this.updateTicket("email",$(this.fields["email"]).val());
                                     console.log("archivo enviado");
-                                    $(this.buttons["next"]).show().removeClass("xHidden");
                                 },error=>console.log(error));
+
+                                $(this.buttons["next"]).show().removeClass("xHidden");
                             },error=>{
                                 console.error(error);
                             }
