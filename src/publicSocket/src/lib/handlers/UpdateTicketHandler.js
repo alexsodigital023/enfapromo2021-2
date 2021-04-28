@@ -1,6 +1,5 @@
-const mariadb = require('mariadb');
 
-const pool = mariadb.createPool(require('../../config/database.json'));
+const pool = require('../pool');
 
 const acl={
     'numero':true,
