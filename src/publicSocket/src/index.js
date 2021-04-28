@@ -1,5 +1,5 @@
 const websocket = require('ws');
-const https = require('https');
+const http = require('http');
 const fs = require('fs');
 const express = require('express');
 const handleLoader = require('./lib/LoadHandler');
@@ -21,7 +21,7 @@ const options = {
   ]*/
 };
 
-const server = https.createServer(options,app);
+const server = http.createServer(app);
 
 //const server = https.createServer(app);
 const wss = new websocket.Server({ server });

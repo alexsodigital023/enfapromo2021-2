@@ -252,7 +252,7 @@ import Cookies from 'js-cookie';
                         this.validate().then(
                             ok=>{
                                 this.send().then(ok=>{
-                                    console.log("archivo enviado!!!");
+                                    $(this.buttons["next"]).show();
                                 },error=>console.log(error));
                             },error=>{
                                 console.error(error);
@@ -277,11 +277,6 @@ import Cookies from 'js-cookie';
                 this.validate().then(
                     ok=>{
                         this.stage++;
-
-                        this.getConexion().then(
-                            ok=>console.log("conexion establecida"),
-                            error=>console.error("conexion fallida",error)
-                        );
                     },error=>{
                         ev.preventDefault();
                         ev.stopPropagation();
