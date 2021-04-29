@@ -23,11 +23,13 @@ class ServiceController extends Controller
         }
         if($ticket->status_id==1
             ||$ticket->status_id==7
+            ||$ticket->status_id==8
             ){
             $ticket->status_id=8;
             $ticket->save();
             $tmpFile=tempnam(sys_get_temp_dir(),'ticket_');
             file_put_contents($tmpFile,$this->getFile($ticket->path));
+            echo $tmpFile;exit;
             $ocr=new Ocr();
             $time=time();
             $text=$ocr->processTicket($tmpFile);
