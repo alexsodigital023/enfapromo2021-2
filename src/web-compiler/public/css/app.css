@@ -4871,6 +4871,11 @@ body input {
   padding: 0;
 }
 
+.ticketFormContainer .xFieldItem.xControlCheckbox .xFormLabel {
+  font-family: "Gotham Bold";
+  font-size: 1.6rem;
+}
+
 .ticketFormContainer .xActionsForm {
   margin-top: 30px;
   margin-left: 0;

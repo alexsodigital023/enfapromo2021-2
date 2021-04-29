@@ -183,11 +183,16 @@
   .xFieldItem {
     margin: 0;
 
-    &.xControlCheckbox.xRequired {
-      .xLabelContainer {
+    &.xControlCheckbox {
+      &.xRequired .xLabelContainer {
         width: 10px;
         min-width: 10px;
         padding: 0;
+      }
+
+      .xFormLabel {
+        font-family: $font-gothamBold;
+        font-size: 1.6rem;
       }
     }
   }
