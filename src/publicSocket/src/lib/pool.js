@@ -17,7 +17,9 @@ module.exports = {
                     });
                 },
                 end:()=>{
-                    
+                    pool.end(()=>{
+                        console.log("conexion cerrada");
+                    });
                 }
             });
         });
