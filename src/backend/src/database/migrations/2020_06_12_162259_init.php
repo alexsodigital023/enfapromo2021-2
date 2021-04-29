@@ -98,31 +98,6 @@ class Init extends Migration
             $table->foreign('tienda_id')->references('id')->on('cat_tienda');
             $table->foreign('rule_id')->references('id')->on('regex_rule');
         });
-        DB::unprepared('
-        CREATE TRIGGER asignacion
-            BEFORE UPDATE 
-            ON ticket FOR EACH ROW
-            begin
-                if (new.status_id in (2,5,6,7,10)) THEN 
-                    set @asignado=0;
-                    select count(*) into @asignado from asignacion a where ticket_id = new.id;
-                    if (@asignado < 1) THEN
-                        set @usuario = 0;
-                        set @total = 0;
-                        select u.id, count(a.user_id)  as total   into @usuario, @total
-                            from users u
-                                left join asignacion a on a.user_id=u.id 
-                                    and year(fecha)=year(now())
-                                    and month(fecha)=month(now())
-                                    and DAYOFMONTH(fecha)=DAYOFMONTH(now()) 
-                            where u.profile_id = 3 and u.activo=1
-                            group by u.id
-                            order by total limit 1;
-                        insert into asignacion (user_id,ticket_id) values (@usuario,new.id);
-                    end if; 
-                end if ;
-            end
-        ');
 
         DB::statement("create or replace view ganadores as
         select 
