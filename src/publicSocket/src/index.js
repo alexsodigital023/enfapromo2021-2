@@ -1,5 +1,5 @@
 const websocket = require('ws');
-const https = require('https');
+const http = require('http');
 const fs = require('fs');
 const express = require('express');
 const handleLoader = require('./lib/LoadHandler');
@@ -12,16 +12,16 @@ const magic = new mmm.Magic(mmm.MAGIC_MIME_TYPE);
 const app = express();
 
 const options = {
-  cert: fs.readFileSync(`${__dirname}/ssl/certificate.pem`,'utf8'),
+  /*cert: fs.readFileSync(`${__dirname}/ssl/certificate.pem`,'utf8'),
   key: fs.readFileSync(`${__dirname}/ssl/private.key`,'utf8'),
   ca: [
     fs.readFileSync(`${__dirname}/ssl/ca1.crt`,'utf8'),
     fs.readFileSync(`${__dirname}/ssl/ca2.crt`,'utf8'),
     fs.readFileSync(`${__dirname}/ssl/ca3.crt`,'utf8'),
-  ]
+  ]*/
 };
 
-const server = https.createServer(options,app);
+const server = http.createServer(app);
 
 //const server = https.createServer(app);
 const wss = new websocket.Server({ server });
@@ -36,6 +36,7 @@ wss.on('connection', ws => {
       case 'string':
         try{
           const d=JSON.parse(data);
+          console.log("mensaje recibido",d);
           let action=d.action;
           if(!action){
             throw 'Se requiere un action';

@@ -5,7 +5,7 @@ import { v4 as uuidv4 } from 'uuid';
 export default class {
     constructor(config){
         this.config=config;
-        this.agent = new http.Agent({ keepAlive: true });
+        this.agent = new https.Agent({ keepAlive: true });
         this.callbacks={};
         this.connected=false;
         this.timeout=5000;
@@ -38,7 +38,7 @@ export default class {
         console.error('Conexión cerrada');
     }
     messageHandler(m){
-        //console.log("recibido",m);
+        console.log("recibido",m);
         this.stopTimeout();
         if(m && m.data){
             const d = JSON.parse(m.data);
@@ -153,7 +153,7 @@ export default class {
         return new Promise((resolve,reject)=>{
             this.getClient().then(
                 client=>{
-                    //console.log("enviando",file,client);
+                    console.log("enviando",file,client);
                     const tx=uuidv4();
                     const tx2=uuidv4();
                     const message={
@@ -202,7 +202,7 @@ export default class {
               },
             };
             console.log(config);
-            const req = http.request(config, (res) => {
+            const req = https.request(config, (res) => {
                 if (res.statusCode != 200 && res.statusCode != 201) {
                   reject(res);
                 }

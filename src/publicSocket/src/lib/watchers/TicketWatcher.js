@@ -1,5 +1,4 @@
-const mysql = require('mysql');
-const pool = mysql.createPool(require('../../config/database.json'));
+const pool = require('../pool');
 
 module.exports = class {
     constructor(){

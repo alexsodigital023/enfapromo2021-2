@@ -50,7 +50,7 @@ class Init extends Migration
         Schema::create('asignacion',function(Blueprint $table){
             $table->bigInteger('user_id',false,true);
             $table->bigInteger('ticket_id',false,true)->unique();
-            $table->timestamp('fecha');
+            $table->timestamp('fecha')->nullable();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
             $table->foreign('ticket_id')->references('id')->on('ticket')->onDelete('cascade')->onUpdate('cascade');
 
@@ -66,6 +66,9 @@ class Init extends Migration
             $table->string('numero',20)->nullable();
             $table->string('nombre',50)->nullable();
             $table->string('apellido',50)->nullable();
+            $table->string('telefono',50)->nullable();
+            $table->string('game_t',50)->nullable();
+            $table->string('game_m',50)->nullable();
             $table->string('foto',200)->nullable();
             $table->bigInteger('estado_id',false,true);
             $table->bigInteger('tienda_id',false,true);

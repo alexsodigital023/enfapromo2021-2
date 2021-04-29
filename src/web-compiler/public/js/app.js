@@ -110,12 +110,16 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       fields: {},
+      pages: {},
       buttons: {},
       values: {},
       aclCampos: {
-        'emailInput': true,
-        'nombreInput': true,
-        'apellidoInput': true
+        'nombre': true,
+        'apellido': true,
+        'telefono': true,
+        'email': true,
+        'game_t': true,
+        'game_m': true
       },
       stage: 0,
       buttonsBinded: false,
@@ -124,68 +128,43 @@ __webpack_require__.r(__webpack_exports__);
   },
   watch: {
     stage: function stage() {
-      this.bindFields();
+      this.mapPages();
       this.mapInputs();
+      this.bindFields();
       this.bindButtons();
 
       switch (this.stage) {
         case 1:
-          $(this.buttons.next).show();
+          $(this.buttons.prev).hide().addClass("xHidden");
+          $(this.buttons.next).show().removeClass("xHidden");
+          $(this.buttons["submit"]).addClass("xHidden");
+          $(this.pages[1]).show();
+          $(this.pages[2]).hide();
+          $(this.pages[3]).hide();
           break;
 
         case 2:
-          $(this.buttons.next).hide();
+          $(this.buttons.prev).show().removeClass("xHidden");
+          $(this.buttons.next).hide().addClass("xHidden");
+          $(this.buttons["submit"]).addClass("xHidden");
+          $(this.pages[1]).hide();
+          $(this.pages[2]).show();
+          $(this.pages[3]).hide();
+          break;
+
+        case 3:
+          $(this.buttons.prev).show().removeClass("xHidden");
+          $(this.buttons.next).hide().addClass("xHidden");
+          $(this.buttons["submit"]).removeClass("xHidden"); //$(this.buttons["submit"]).find(".xSubmit").prop("disabled",true);
+
+          $(this.pages[1]).hide();
+          $(this.pages[2]).hide();
+          $(this.pages[3]).show();
           break;
       }
     }
   },
   methods: {
-    endStage: function endStage() {
-      var _this = this;
-
-      console.log("stage :", this.stage);
-
-      switch (this.stage) {
-        case 0:
-          $(this.emailInput).change(function () {
-            return _this.dataChanged();
-          });
-          $(this.nombreInput).change(function () {
-            return _this.dataChanged();
-          });
-          $(this.apellidoInput).change(function () {
-            return _this.dataChanged();
-          });
-          $(this.celularInput).change(function () {
-            return _this.dataChanged();
-          });
-          this.stage++;
-          break;
-
-        case 1:
-          if (this.file && this.email) {
-            this.send().then(function (ok) {
-              console.log(ok);
-              _this.stage++;
-
-              _this.dataChanged();
-            }, function (error) {
-              return console.log(error);
-            });
-          }
-
-          break;
-
-        case 2:
-          this.email ? this.updateTicket('email', this.email) : null;
-          this.nombre ? this.updateTicket('nombre', this.nombre) : null;
-          this.apellido ? this.updateTicket('apellido', this.apellido) : null;
-          !isNaN(parseInt(this.dia)) ? this.updateTicket('dia', this.dia) : 0;
-          this.mes ? this.updateTicket('mes', this.mes) : null;
-          !isNaN(parseInt(this.anyo)) ? this.updateTicket('anyo', this.anyo) : null;
-          break;
-      }
-    },
     showError: function showError(type, title, message) {
       this.$emit('error', {
         type: type,
@@ -193,8 +172,8 @@ __webpack_require__.r(__webpack_exports__);
         message: message
       });
     },
-    updateTicket: function updateTicket(nombre, valor) {
-      var _this2 = this;
+    updateTicket: function updateTicket(nombre, valor, callback) {
+      var _this = this;
 
       if (this.aclCampos[nombre]) {
         this.enviando = true;
@@ -203,94 +182,90 @@ __webpack_require__.r(__webpack_exports__);
             name: nombre,
             value: valor
           }).then(function (ok) {
-            return _this2.enviando = false;
+            _this.enviando = false;
+
+            if (callback) {
+              callback(ok);
+            }
           }, function (error) {
             console.error(error);
-            _this2.enviando = false;
+            _this.enviando = false;
           });
         }, function (error) {
-          _this2.enviando = false;
+          _this.enviando = false;
 
-          _this2.showError('error', 'Error de Conexión', 'Por favor intenta más tarde');
+          _this.showError('error', 'Error de Conexión', 'Por favor intenta más tarde');
         });
       }
-    },
-    dataChanged: function dataChanged() {
-      this.email = $(this.emailInput).val().length > 0 ? $(this.emailInput).val() : null;
-      this.nombre = $(this.emailInput).val().length > 0 ? $(this.nombreInput).val() : null;
-      this.apellido = $(this.emailInput).val().length > 0 ? $(this.apellidoInput).val() : null;
-      this.dia = $(this.emailInput).val().length > 0 ? $(this.diaInput).val() : null;
-      this.mes = $(this.emailInput).val().length > 0 ? $(this.mesInput).val() : null;
-      this.anyo = $(this.emailInput).val().length > 0 ? $(this.anyoInput).val() : null;
-      this.endStage();
     },
     updateStatus: function updateStatus(status) {
       $(this.ticketValue).val(status["import"]);
     },
     send: function send() {
-      var _this3 = this;
+      var _this2 = this;
 
       return new Promise(function (resolve, reject) {
-        if (_this3.enviando) {
+        if (_this2.enviando) {
           return reject("ya se esta enviando");
         }
 
-        _this3.$emit("working", {
+        _this2.$emit("working", {
           percent: 'Subiendo Ticker',
           status: 0,
           message: 'Espere...'
         });
 
-        _this3.enviando = true;
+        _this2.enviando = true;
 
-        _this3.getConexion().then(function (con) {
-          _this3.$emit("working", {
+        _this2.getConexion().then(function (con) {
+          _this2.$emit("working", {
             percent: '50%',
             status: 50,
             message: 'Espere...'
           });
 
-          var fileField = _this3.fields.file;
+          var fileField = _this2.fields.file;
 
           for (var i in fileField.files) {
             if (fileField.files[i] && fileField.files[i].size) {
               var reader = new FileReader();
 
-              _this3.$emit("working", {
+              _this2.$emit("working", {
                 percent: '75%',
                 status: 50,
                 message: 'Espere...'
               });
 
               reader.onload = function (e) {
+                console.log("enviando archivo");
                 con.sendFile(e.target.result, function (update) {
-                  _this3.fileSended = true;
+                  _this2.fileSended = true;
 
-                  _this3.$emit("stop");
+                  _this2.$emit("stop");
 
-                  _this3.enviando = false;
+                  _this2.enviando = false;
 
-                  _this3.updateStatus(update);
+                  _this2.updateStatus(update);
 
                   resolve(update);
                 }).then(function (resp) {
-                  _this3.$emit("stop");
+                  _this2.$emit("stop");
 
-                  _this3.enviando = false;
+                  _this2.enviando = false;
 
-                  _this3.updateStatus(resp);
+                  _this2.updateStatus(resp);
 
-                  _this3.fileSended = true;
+                  _this2.fileSended = true;
                   resolve(update);
                 }, function (error) {
-                  _this3.ticketStatus = 2;
-                  _this3.enviando = false;
+                  _this2.ticketStatus = 2;
+                  _this2.enviando = false;
 
-                  _this3.showError('error', 'Archivo incorrecto', 'Este ticket está duplicado o es de un formato que no podemos aceptar');
+                  _this2.showError('error', 'Archivo incorrecto', 'Este ticket está duplicado o es de un formato que no podemos aceptar');
 
-                  _this3.$emit("stop");
+                  _this2.$emit("stop");
 
-                  _this3.fileSended = false;
+                  _this2.fileSended = false;
                   resolve(update);
                 });
               };
@@ -299,13 +274,13 @@ __webpack_require__.r(__webpack_exports__);
             }
           }
         }, function (error) {
-          _this3.showError('error', 'Error de Conexión', 'Por favor intenta más tarde');
+          _this2.showError('error', 'Error de Conexión', 'Por favor intenta más tarde');
 
-          _this3.enviando = false;
+          _this2.enviando = false;
 
-          _this3.$emit("stop");
+          _this2.$emit("stop");
 
-          _this3.ticketStatus = 2;
+          _this2.ticketStatus = 2;
         });
       });
     },
@@ -314,17 +289,17 @@ __webpack_require__.r(__webpack_exports__);
         this.conexion = new _conexion__WEBPACK_IMPORTED_MODULE_0__["default"]({
           auth: {
             host: {
-              host: 'localhost',
-              port: '8085',
-              path: '/user'
+              host: 'chocomilk.proxy.beeceptor.com',
+              port: '443',
+              path: '/appv1/user'
             }
           },
           socket: {
             host: {
-              host: 'localhost',
-              port: '3000',
-              path: '/',
-              protocol: 'ws'
+              host: 'chocomilkpromo-54hks.ondigitalocean.app',
+              port: '443',
+              path: '/chocomilkpromosocket',
+              protocol: 'wss'
             }
           }
         });
@@ -333,28 +308,28 @@ __webpack_require__.r(__webpack_exports__);
       return this.conexion;
     },
     getConexion: function getConexion() {
-      var _this4 = this;
+      var _this3 = this;
 
       return new Promise(function (resolve, reject) {
-        if (_this4.conexion && _this4.conexion.conectado) {
-          resolve(_this4.conexion);
+        if (_this3.conexion && _this3.conexion.conectado) {
+          resolve(_this3.conexion);
         } else {
-          var con = _this4.getConexionObject();
+          var con = _this3.getConexionObject();
 
           con.registerTimeoutHandler(function () {
-            if (_this4.enviando) {
-              _this4.$emit('stop');
+            if (_this3.enviando) {
+              _this3.$emit('stop');
 
-              _this4.showError('error', 'Error de Conexión', 'Por favor intenta más tarde');
+              _this3.showError('error', 'Error de Conexión', 'Por favor intenta más tarde');
             }
 
             reject('timeout');
           });
 
-          _this4.openSocket(con, $(_this4.fields.email).val()).then(function (s) {
+          _this3.openSocket(con, $(_this3.fields.email).val()).then(function (s) {
             console.log("======conexión abierta");
-            _this4.conexion = con;
-            resolve(_this4.conexion);
+            _this3.conexion = con;
+            resolve(_this3.conexion);
           }, function (error) {
             return reject(error);
           });
@@ -370,6 +345,11 @@ __webpack_require__.r(__webpack_exports__);
         });
       });
     },
+    mapPages: function mapPages() {
+      this.pages[1] = $(this.$el).find(".xFormPage.n1").get(0);
+      this.pages[2] = $(this.$el).find(".xFormPage.n2").get(0);
+      this.pages[3] = $(this.$el).find(".xFormPage.n3").get(0);
+    },
     mapInputs: function mapInputs() {
       switch (this.stage) {
         case 1:
@@ -382,59 +362,93 @@ __webpack_require__.r(__webpack_exports__);
           this.fields["age"] = $(this.$el).find("#age_verification_0").get(0);
           this.buttons["next"] = $(this.$el).find("a.xActionNext").get(0);
           this.buttons["prev"] = $(this.$el).find("a.xActionPrevious").get(0);
+          this.buttons["submit"] = $(this.$el).find(".xActivateContainer").get(0);
           break;
 
         case 2:
           this.fields["file"] = $(this.$el).find("#ngxUserUpload").get(0);
           break;
+
+        case 3:
+          this.fields["game_t"] = $(this.$el).find("#game_t").get(0);
+          this.fields["game_m"] = $(this.$el).find("#game_m").get(0);
+          console.log(this.fields);
+          break;
       }
     },
     bindFields: function bindFields() {
-      var _this5 = this;
+      var _this4 = this;
 
       if (!this.fileFieldBinded && this.fields["file"]) {
         $(this.fields["file"]).change(function () {
-          _this5.validate().then(function (ok) {
-            _this5.send().then(function (ok) {
-              console.log("archivo enviado!!!");
+          _this4.validate().then(function (ok) {
+            _this4.send().then(function (ok) {
+              console.log("ticket enviado:", ok);
+
+              _this4.updateTicket("nombre", $(_this4.fields["nombre"]).val());
+
+              _this4.updateTicket("apellido", $(_this4.fields["apellido"]).val());
+
+              _this4.updateTicket("telefono", $(_this4.fields["telefono"]).val());
+
+              _this4.updateTicket("email", $(_this4.fields["email"]).val());
+
+              console.log("archivo enviado");
             }, function (error) {
               return console.log(error);
             });
+
+            $(_this4.buttons["next"]).show().removeClass("xHidden");
           }, function (error) {
             console.error(error);
           });
+        });
+        $(this.fields["game_t"]).change(function () {
+          console.log("game_t");
+
+          _this4.updateTicket("game_t", $(_this4.fields["game_t"]).val());
+        });
+        $(this.fields["game_m"]).change(function () {
+          console.log("game_m");
+
+          _this4.updateTicket("game_m", $(_this4.fields["game_m"]).val());
         });
         this.fileFieldBinded = true;
       }
     },
     bindButtons: function bindButtons() {
-      var _this6 = this;
+      var _this5 = this;
 
       if (!this.buttonsBinded) {
         $(this.buttons["next"]).click(function (ev) {
-          _this6.nextStage(ev);
+          _this5.nextStage(ev);
         });
         $(this.buttons["prev"]).click(function (ev) {
-          _this6.prevStage(ev);
+          _this5.prevStage(ev);
+        });
+        $(this.buttons["submit"]).click(function (ev) {
+          var submit = false;
+
+          if ($(_this5.fields["game_t"]).val() && $(_this5.fields["game_m"]).val()) {
+            $(_this5.fields["game_t"]).change();
+            $(_this5.fields["game_m"]).change();
+          } else {
+            ev.preventDefault();
+            ev.stopPropagation();
+          }
         });
         this.buttonsBinded = true;
       }
     },
     nextStage: function nextStage(ev) {
-      var _this7 = this;
+      var _this6 = this;
 
       this.validate().then(function (ok) {
-        _this7.stage++;
-
-        _this7.getConexion().then(function (ok) {
-          return console.log("conexion establecida");
-        }, function (error) {
-          return console.error("conexion fallida", error);
-        });
+        _this6.stage++;
       }, function (error) {
         ev.preventDefault();
         ev.stopPropagation();
-        $(_this7.fields[error.campo]).parents(".xFieldItem").addClass("xFieldError");
+        $(_this6.fields[error.campo]).parents(".xFieldItem").addClass("xFieldError");
         console.error("Error de validación", error);
       });
     },
@@ -442,12 +456,12 @@ __webpack_require__.r(__webpack_exports__);
       this.stage--;
     },
     validate: function validate() {
-      var _this8 = this;
+      var _this7 = this;
 
       return new Promise(function (resolve, reject) {
-        var values = _this8.getValues();
+        var values = _this7.getValues();
 
-        switch (_this8.stage) {
+        switch (_this7.stage) {
           case 1:
             for (var i in values) {
               switch (i) {
@@ -782,9 +796,6 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var v_click_outside__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! v-click-outside */ "./node_modules/v-click-outside/dist/v-click-outside.umd.js");
 /* harmony import */ var v_click_outside__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(v_click_outside__WEBPACK_IMPORTED_MODULE_0__);
-//
-//
-//
 //
 //
 //
@@ -21039,22 +21050,35 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("li", { staticClass: "outer-menu" }, [
-      _c("a", { attrs: { href: "#" } }, [
-        _c("i", { staticClass: "icon icon-pancho" }),
-        _vm._v(" "),
-        _c("p", [_vm._v("Juega")])
-      ]),
-      _c("a", { attrs: { href: "#" } }, [
-        _c("i", { staticClass: "icon icon-control" }),
-        _vm._v(" "),
-        _c("p", [_vm._v("Juega")])
-      ]),
+      _c(
+        "a",
+        {
+          attrs: {
+            href:
+              "https://app.wayin.com/preview/experience/7c606ec2-435f-4eb4-a0fa-c852c5e0006c/236633/details"
+          }
+        },
+        [
+          _c("i", { staticClass: "icon icon-control" }),
+          _vm._v(" "),
+          _c("p", [_vm._v("Juega")])
+        ]
+      ),
       _vm._v(" "),
-      _c("a", { attrs: { href: "#" } }, [
-        _c("i", { staticClass: "icon icon-regalo" }),
-        _vm._v(" "),
-        _c("p", [_vm._v("Premios")])
-      ])
+      _c(
+        "a",
+        {
+          attrs: {
+            href:
+              "https://app.wayin.com/preview/experience/7c606ec2-435f-4eb4-a0fa-c852c5e0006c/236633/prizes"
+          }
+        },
+        [
+          _c("i", { staticClass: "icon icon-regalo" }),
+          _vm._v(" "),
+          _c("p", [_vm._v("Premios")])
+        ]
+      )
     ])
   }
 ]
@@ -33728,29 +33752,30 @@ if (true) {
 
 vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(v_click_outside__WEBPACK_IMPORTED_MODULE_2___default.a);
 vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue2_touch_events__WEBPACK_IMPORTED_MODULE_1___default.a);
-vue__WEBPACK_IMPORTED_MODULE_0___default.a.component('formulario-ticket', __webpack_require__(/*! ./components/FormularioTicket.vue */ "./resources/js/components/FormularioTicket.vue")["default"]);
+vue__WEBPACK_IMPORTED_MODULE_0___default.a.component('formulario', __webpack_require__(/*! ./components/FormularioTicket.vue */ "./resources/js/components/FormularioTicket.vue")["default"]);
 vue__WEBPACK_IMPORTED_MODULE_0___default.a.component('registros', __webpack_require__(/*! ./components/RegisterCounter.vue */ "./resources/js/components/RegisterCounter.vue")["default"]);
 vue__WEBPACK_IMPORTED_MODULE_0___default.a.component('rasca', __webpack_require__(/*! ./components/Rasca.vue */ "./resources/js/components/Rasca.vue")["default"]);
 vue__WEBPACK_IMPORTED_MODULE_0___default.a.component('top-menu', __webpack_require__(/*! ./components/TopMenu */ "./resources/js/components/TopMenu.vue")["default"]);
+$(document).ready(function () {
+  (function ($) {
+    var f = $("#xCampaignForm").get(0);
+    var xF = $.parseHTML('<formulario ></formulario>');
+    $(xF).insertBefore(f);
+    $(xF).append(f);
+    var f1 = $("#xSectionHeader").get(0);
+    var xF1 = $.parseHTML('<top-menu ></top-menu>');
+    $(xF1).insertBefore(f1);
+    $(xF1).append(f1);
+  })($);
 
-(function ($) {
-  var f = $("#xCampaignForm").get(0);
-  var xF = $.parseHTML('<formulario-ticket ></formulario-ticket>');
-  $(xF).insertBefore(f);
-  $(xF).append(f);
-  var f1 = $("#xSectionHeader").get(0);
-  var xF1 = $.parseHTML('<top-menu ></top-menu>');
-  $(xF1).insertBefore(f1);
-  $(xF1).append(f1);
-})($);
-
-var app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
-  el: '.xPageInner',
-  data: function data() {
-    return {};
-  },
-  methods: {},
-  mounted: function mounted() {}
+  var app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
+    el: '.xPageInner',
+    data: function data() {
+      return {};
+    },
+    methods: {},
+    mounted: function mounted() {}
+  });
 });
 
 /***/ }),
@@ -34079,7 +34104,7 @@ var _default = /*#__PURE__*/function () {
     _classCallCheck(this, _default);
 
     this.config = config;
-    this.agent = new http__WEBPACK_IMPORTED_MODULE_1___default.a.Agent({
+    this.agent = new https__WEBPACK_IMPORTED_MODULE_0___default.a.Agent({
       keepAlive: true
     });
     this.callbacks = {};
@@ -34124,7 +34149,7 @@ var _default = /*#__PURE__*/function () {
   }, {
     key: "messageHandler",
     value: function messageHandler(m) {
-      //console.log("recibido",m);
+      console.log("recibido", m);
       this.stopTimeout();
 
       if (m && m.data) {
@@ -34295,7 +34320,7 @@ var _default = /*#__PURE__*/function () {
 
       return new Promise(function (resolve, reject) {
         _this6.getClient().then(function (client) {
-          //console.log("enviando",file,client);
+          console.log("enviando", file, client);
           var tx = Object(uuid__WEBPACK_IMPORTED_MODULE_2__["v4"])();
           var tx2 = Object(uuid__WEBPACK_IMPORTED_MODULE_2__["v4"])();
           var message = {
@@ -34357,7 +34382,7 @@ var _default = /*#__PURE__*/function () {
           }
         };
         console.log(config);
-        var req = http__WEBPACK_IMPORTED_MODULE_1___default.a.request(config, function (res) {
+        var req = https__WEBPACK_IMPORTED_MODULE_0___default.a.request(config, function (res) {
           if (res.statusCode != 200 && res.statusCode != 201) {
             reject(res);
           }
