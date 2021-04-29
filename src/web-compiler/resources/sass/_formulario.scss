@@ -239,13 +239,14 @@
       width: auto !important;
     }
 
-    .xActionsForm {
+    .xActionsForm .xPaginationContainer {
+      display: flex;
       text-align: center;
 
       .xPagingButton {
         border: 2px solid $c-blanco;
         display: inline-block;
-        width: auto;
+        width: 40%;
       }
     }
   }

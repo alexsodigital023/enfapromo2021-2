@@ -4916,14 +4916,15 @@ body input {
     width: auto !important;
   }
 
-  .ticketFormContainer .xActionsForm {
+  .ticketFormContainer .xActionsForm .xPaginationContainer {
+    display: flex;
     text-align: center;
   }
 
-  .ticketFormContainer .xActionsForm .xPagingButton {
+  .ticketFormContainer .xActionsForm .xPaginationContainer .xPagingButton {
     border: 2px solid #fff;
     display: inline-block;
-    width: auto;
+    width: 40%;
   }
 }
 
