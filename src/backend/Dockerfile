@@ -3,6 +3,12 @@ FROM php:7.3-apache
 RUN apt-get update
 RUN apt-get install -y git unzip libpng-dev
 
+
+RUN apt-get update && apt-get install -y git zip zlib1g zlib1g-dev libzip-dev libpng-dev\
+     tesseract-ocr tesseract-ocr-all libmagickwand-dev  unzip
+
+RUN pecl install imagick
+
 COPY ./config/vhost.conf /etc/apache2/sites-enabled/000-default.conf
 COPY ./src /var/www
 
