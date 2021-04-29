@@ -4851,6 +4851,7 @@ body input {
 .ticketFormContainer .xControlNumber .xLabelContainer label {
   width: 100%;
   text-align: center;
+  font-family: "Gotham Bold";
 }
 
 .ticketFormContainer .xControlCheckbox .xLabelContainer {
