@@ -168,6 +168,7 @@
       label {
         width: 100%;
         text-align: center;
+        font-family: $font-gothamBold;
       }
     }
   }
@@ -183,11 +184,16 @@
   .xFieldItem {
     margin: 0;
 
-    &.xControlCheckbox.xRequired {
-      .xLabelContainer {
+    &.xControlCheckbox {
+      &.xRequired .xLabelContainer {
         width: 10px;
         min-width: 10px;
         padding: 0;
+      }
+
+      .xFormLabel {
+        font-family: $font-gothamBold;
+        font-size: 1.6rem;
       }
     }
   }
@@ -233,13 +239,14 @@
       width: auto !important;
     }
 
-    .xActionsForm {
+    .xActionsForm .xPaginationContainer {
+      display: flex;
       text-align: center;
 
       .xPagingButton {
         border: 2px solid $c-blanco;
         display: inline-block;
-        width: auto;
+        width: 40%;
       }
     }
   }
