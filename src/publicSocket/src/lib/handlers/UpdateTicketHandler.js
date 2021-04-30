@@ -1,18 +1,20 @@
-const mariadb = require('mariadb');
 
-const pool = mariadb.createPool(require('../../config/database.json'));
+const pool = require('../pool');
 
 const acl={
     'numero':true,
     'email':true,
     'nombre':true,
+    'telefono':true,
     'apellido':true,
     'foto':true,
     'estado_id':true,
     'tienda_id':true,
     'mes':true,
     'dia':true,
-    'anyo':true
+    'anyo':true,
+    'game_t':true,
+    'game_m':true
 }
 
 module.exports={

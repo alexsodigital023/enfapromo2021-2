@@ -2,6 +2,10 @@ body {
   background: $c-azul;
   color: $c-blanco;
   padding: 0 !important;
+
+  form, button, input {
+    font-family: $font-gothamBook;
+  }
 }
 
 .xPage {

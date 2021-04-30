@@ -2,18 +2,17 @@ const paths = require('../../config/paths.json');
 const { v4: uuidv4 } = require('uuid');
 const https = require('https');
 const md5 = require('md5');
-const mariadb = require('mariadb');
 const mmm = require('mmmagic');
 const AWS = require('aws-sdk');
 
 
 const magic = new mmm.Magic(mmm.MAGIC_MIME_TYPE);
-const pool = mariadb.createPool(require('../../config/database.json'));
 const ep = new AWS.Endpoint('nyc3.digitaloceanspaces.com');
+const pool = require('../pool');
 
 const s3 = new AWS.S3({
-    accessKeyId: 'QETEHBUFSJ7F2Y5WJF6W',
-    secretAccessKey: 'RFNf9kndhT2Qp2KmeaKtFumSIyyn/UhTDvTU00dBvqs',
+    accessKeyId: '2BY5UOXMGVA62RZTXESU',
+    secretAccessKey: 'aPxjjt1T9Qs/shyHXdGNDuRZsxUooPmMPqU0XrEpu+M',
     endpoint: ep
   });
 
@@ -60,7 +59,7 @@ module.exports={
                                                     const config = {
                                                         agent: agent,
                                                         method: 'GET',
-                                                        host: 'enfa-goldenticket-backend-ypabl.ondigitalocean.app',
+                                                        host: 'chocomilkpromo-54hks.ondigitalocean.app',
                                                         port: 443,
                                                         path: 'api/runservice',
                                                         headers: {
@@ -68,10 +67,12 @@ module.exports={
                                                         Accept: '*/*',
                                                         },
                                                     };
-                                                    https.get(`https://enfa-goldenticket-backend-ypabl.ondigitalocean.app/api/runservice?id=${id}`, (res) => {
+                                                    console.log("ejecutando servicio",`https://chocomilkpromo-54hks.ondigitalocean.app/api/runservice?id=${id}`);
+                                                    https.get(`https://chocomilkpromo-54hks.ondigitalocean.app/chocomilkpromo2/api/runservice?id=${id}`, (res) => {
 
                                                         let response = null;
                                                         res.on('data', (d) => {
+                                                            console.log("recibido",d);
                                                             response = JSON.parse(d);
                                                             resolve({
                                                                 code:200,

@@ -12,12 +12,16 @@ import Cookies from 'js-cookie';
         data(){
             return {
                 fields:{},
+                pages:{},
                 buttons:{},
                 values:{},
                 aclCampos:{
-                    'emailInput':true,
-                    'nombreInput':true,
-                    'apellidoInput':true,
+                    'nombre':true,
+                    'apellido':true,
+                    'telefono':true,
+                    'email':true,
+                    'game_t':true,
+                    'game_m':true,
                 },
                 stage:0,
                 buttonsBinded:false,
@@ -26,49 +30,40 @@ import Cookies from 'js-cookie';
         },
         watch:{
 	        stage(){
-                this.bindFields();
+                this.mapPages();
                 this.mapInputs();
+                this.bindFields();
                 this.bindButtons();
                 switch(this.stage){
                     case 1:
-                        $(this.buttons.next).show();
+                        $(this.buttons.prev).hide().addClass("xHidden");
+                        $(this.buttons.next).show().removeClass("xHidden");
+                        $(this.buttons["submit"]).addClass("xHidden");
+                        $(this.pages[1]).show();
+                        $(this.pages[2]).hide();
+                        $(this.pages[3]).hide();
                     break;
                     case 2:
-                        $(this.buttons.next).hide();
+                        $(this.buttons.prev).show().removeClass("xHidden");
+                        $(this.buttons.next).hide().addClass("xHidden");
+                        $(this.buttons["submit"]).addClass("xHidden");
+                        $(this.pages[1]).hide();
+                        $(this.pages[2]).show();
+                        $(this.pages[3]).hide();
+                        break;
+                    case 3:
+                        $(this.buttons.prev).show().removeClass("xHidden");
+                        $(this.buttons.next).hide().addClass("xHidden");
+                        $(this.buttons["submit"]).removeClass("xHidden");
+                        $(this.pages[1]).hide();
+                        $(this.pages[2]).hide();
+                        $(this.pages[3]).show();
+                        window.gameBus.$emit('startGame');
                         break;
                 }
             }
         },
         methods:{
-            endStage(){
-                console.log("stage :",this.stage);
-                switch(this.stage){
-                    case 0:
-                        $(this.emailInput).change(()=>this.dataChanged());
-                        $(this.nombreInput).change(()=>this.dataChanged());
-                        $(this.apellidoInput).change(()=>this.dataChanged());
-                        $(this.celularInput).change(()=>this.dataChanged());
-                        this.stage++;
-                        break;
-                    case 1:
-                        if(this.file&&this.email){
-                            this.send().then(ok=>{
-                                console.log(ok);
-                                this.stage++;
-                                this.dataChanged();
-                            },error=>console.log(error));
-                        }
-                        break;
-                    case 2:
-                        this.email?this.updateTicket('email',this.email):null;
-                        this.nombre?this.updateTicket('nombre',this.nombre):null;
-                        this.apellido?this.updateTicket('apellido',this.apellido):null;
-                        !isNaN(parseInt(this.dia))?this.updateTicket('dia',this.dia):0;
-                        this.mes?this.updateTicket('mes',this.mes):null;
-                        !isNaN(parseInt(this.anyo))?this.updateTicket('anyo',this.anyo):null;
-                        break;
-                }
-            },
             showError(type,title,message){
                 this.$emit('error',{
                     type:type,
@@ -77,7 +72,7 @@ import Cookies from 'js-cookie';
                 });
             },
 
-            updateTicket(nombre,valor){
+            updateTicket(nombre,valor,callback){
                 if(this.aclCampos[nombre]){
                     this.enviando=true;
                     this.getConexion().then(
@@ -86,9 +81,13 @@ import Cookies from 'js-cookie';
                                 name:nombre,
                                 value:valor
                             }).then(
-                                ok=>this.enviando=false,
+                                ok=>{
+                                    this.enviando=false
+                                    if(callback){
+                                        callback(ok);
+                                    }
+                                },
                                 error=>{
-                                    console.error(error);
                                     this.enviando=false;
                                 }
                             )
@@ -98,15 +97,6 @@ import Cookies from 'js-cookie';
                         }
                     )
                 }
-            },
-            dataChanged(){
-                this.email=$(this.emailInput).val().length>0?$(this.emailInput).val():null;
-                this.nombre=$(this.emailInput).val().length>0?$(this.nombreInput).val():null;
-                this.apellido=$(this.emailInput).val().length>0?$(this.apellidoInput).val():null;
-                this.dia=$(this.emailInput).val().length>0?$(this.diaInput).val():null;
-                this.mes=$(this.emailInput).val().length>0?$(this.mesInput).val():null;
-                this.anyo=$(this.emailInput).val().length>0?$(this.anyoInput).val():null;
-                this.endStage();
             },
             updateStatus(status){
                 $(this.ticketValue).val(status.import)
@@ -180,17 +170,17 @@ import Cookies from 'js-cookie';
                     this.conexion=new Conexion({
                         auth:{
                             host : {
-                                host: 'localhost',
-                                port: '8085',
-                                path:'/user',
+                                host: 'chocomilk.proxy.beeceptor.com',
+                                port: '443',
+                                path:'/appv1/user',
                             }
                         },
                         socket:{
                             host:{
-                                host:'localhost',
-                                port:'3000',
-                                path:'/',
-                                protocol: 'ws'
+                                host:'chocomilkpromo-54hks.ondigitalocean.app',
+                                port:'443',
+                                path:'/chocomilkpromosocket',
+                                protocol: 'wss'
                             }
                         }
                     });
@@ -212,7 +202,6 @@ import Cookies from 'js-cookie';
                         });
                         this.openSocket(con,$(this.fields.email).val()).then(
                             s=>{
-                                console.log("======conexión abierta");
                                 this.conexion=con;
                                 resolve(this.conexion);
                             },error=>reject(error)
@@ -228,6 +217,11 @@ import Cookies from 'js-cookie';
                     );
                 });
             },
+            mapPages(){
+                this.pages[1]=$(this.$el).find(".xFormPage.n1").get(0);
+                this.pages[2]=$(this.$el).find(".xFormPage.n2").get(0);
+                this.pages[3]=$(this.$el).find(".xFormPage.n3").get(0);
+            },
             mapInputs(){
                 switch(this.stage){
                     case 1:
@@ -240,9 +234,14 @@ import Cookies from 'js-cookie';
                         this.fields["age"]=$(this.$el).find("#age_verification_0").get(0);
                         this.buttons["next"]=$(this.$el).find("a.xActionNext").get(0);
                         this.buttons["prev"]=$(this.$el).find("a.xActionPrevious").get(0);
+                        this.buttons["submit"]=$(this.$el).find(".xActivateContainer").get(0);
                         break;
                     case 2:
                         this.fields["file"]=$(this.$el).find("#ngxUserUpload").get(0);
+                        break;
+                    case 3:
+                        this.fields["game_t"]=$(this.$el).find("#game_t").get(0);
+                        this.fields["game_m"]=$(this.$el).find("#game_m").get(0);
                         break;
                 }
             },
@@ -251,14 +250,26 @@ import Cookies from 'js-cookie';
                     $(this.fields["file"]).change(()=>{
                         this.validate().then(
                             ok=>{
-                                this.send().then(ok=>{
-                                    console.log("archivo enviado!!!");
+                                this.send().then(resp=>{
+                                    localStorage.setItem('ticket_id', resp.tid);
+                                    this.updateTicket("nombre",$(this.fields["nombre"]).val());
+                                    this.updateTicket("apellido",$(this.fields["apellido"]).val());
+                                    this.updateTicket("telefono",$(this.fields["telefono"]).val());
+                                    this.updateTicket("email",$(this.fields["email"]).val());
                                 },error=>console.log(error));
+
+                                $(this.buttons["next"]).show().removeClass("xHidden");
                             },error=>{
                                 console.error(error);
                             }
                         );
                     });
+                     $(this.fields["game_t"]).change(()=>{
+                         this.updateTicket("game_t",$(this.fields["game_t"]).val());
+                     });
+                     $(this.fields["game_m"]).change(()=>{
+                         this.updateTicket("game_m",$(this.fields["game_m"]).val());
+                     });
                     this.fileFieldBinded=true;
                 }
             },
@@ -270,23 +281,24 @@ import Cookies from 'js-cookie';
                     $(this.buttons["prev"]).click((ev)=>{
                         this.prevStage(ev);
                     });
+                     window.addEventListener("gameFinished", (e)=>{
+                        localStorage.setItem('game_t', e.detail.time);
+                        localStorage.setItem('game_m', e.detail.moves);
+                        this.updateTicket("game_t", e.detail.time);
+                        this.updateTicket("game_m", e.detail.moves);
+                        })
                     this.buttonsBinded=true;
+                    
                 }
             },
             nextStage(ev){
                 this.validate().then(
                     ok=>{
                         this.stage++;
-
-                        this.getConexion().then(
-                            ok=>console.log("conexion establecida"),
-                            error=>console.error("conexion fallida",error)
-                        );
                     },error=>{
                         ev.preventDefault();
                         ev.stopPropagation();
                         $(this.fields[error.campo]).parents(".xFieldItem").addClass("xFieldError");
-                        console.error("Error de validación",error);
                     }
                 );
             },

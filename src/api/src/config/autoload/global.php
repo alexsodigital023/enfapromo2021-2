@@ -6,11 +6,12 @@ return [
     'db' => [
         'adapters' => [
             'database' => [
-                'driver' => \Mysqli::class,
-                'database' => 'prueba',
-                'username' => 'prueba',
-                'password' => 'prueba',
-                'hostname' => 'db',
+                'driver' => 'Pdo_Mysql',
+                'database' => 'chocomilk',
+                'username' => 'doadmin',
+                'password' => 'cperj0r7ng3hl9ld',
+                'hostname' => 'db-mysql-nyc1-42577-do-user-1684304-0.b.db.ondigitalocean.com',
+                'port' => '25060'
             ],
         ],
     ],

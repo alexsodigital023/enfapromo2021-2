@@ -14,6 +14,10 @@ nav>ul {
   align-items: center;
   grid-template-columns: 90px 2fr 3fr;
 
+  li a {
+    font-family: $font-gothamBook;
+  }
+
   &::before {
     content: '';
     width: 100px;
@@ -60,6 +64,7 @@ nav>ul {
       flex-direction: column;
       justify-content: center;
       align-items: center;
+      font-family: $font-gothamBook;
 
       p {
         color: $c-transparent;
@@ -194,8 +199,8 @@ nav>ul {
         background-size: 100%;
       }
   
-      li.content1Tab .xTabLink::before {
-        background-image: $menu-regalo;
+      li.instructionsTab .xTabLink::before {
+        background-image: $menu-pancho;
         background-size: 100%;
       }
   
