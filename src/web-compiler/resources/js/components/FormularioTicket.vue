@@ -88,7 +88,6 @@ import Cookies from 'js-cookie';
                                     }
                                 },
                                 error=>{
-                                    console.error(error);
                                     this.enviando=false;
                                 }
                             )
@@ -130,7 +129,6 @@ import Cookies from 'js-cookie';
                                         message:'Espere...'
                                     });
                                     reader.onload = (e)=>{
-                                        console.log("enviando archivo");
                                         con.sendFile(e.target.result,(update)=>{
                                                 this.fileSended=true;
                                                 this.$emit("stop");
@@ -204,7 +202,6 @@ import Cookies from 'js-cookie';
                         });
                         this.openSocket(con,$(this.fields.email).val()).then(
                             s=>{
-                                console.log("======conexión abierta");
                                 this.conexion=con;
                                 resolve(this.conexion);
                             },error=>reject(error)
@@ -245,7 +242,6 @@ import Cookies from 'js-cookie';
                     case 3:
                         this.fields["game_t"]=$(this.$el).find("#game_t").get(0);
                         this.fields["game_m"]=$(this.$el).find("#game_m").get(0);
-                        console.log(this.fields);
                         break;
                 }
             },
@@ -254,13 +250,12 @@ import Cookies from 'js-cookie';
                     $(this.fields["file"]).change(()=>{
                         this.validate().then(
                             ok=>{
-                                this.send().then(ok=>{
-                                    console.log("ticket enviado:",ok);
+                                this.send().then(resp=>{
+                                    localStorage.setItem('ticket_id', resp.tid);
                                     this.updateTicket("nombre",$(this.fields["nombre"]).val());
                                     this.updateTicket("apellido",$(this.fields["apellido"]).val());
                                     this.updateTicket("telefono",$(this.fields["telefono"]).val());
                                     this.updateTicket("email",$(this.fields["email"]).val());
-                                    console.log("archivo enviado");
                                 },error=>console.log(error));
 
                                 $(this.buttons["next"]).show().removeClass("xHidden");
@@ -270,11 +265,9 @@ import Cookies from 'js-cookie';
                         );
                     });
                      $(this.fields["game_t"]).change(()=>{
-                         console.log("game_t");
                          this.updateTicket("game_t",$(this.fields["game_t"]).val());
                      });
                      $(this.fields["game_m"]).change(()=>{
-                         console.log("game_m");
                          this.updateTicket("game_m",$(this.fields["game_m"]).val());
                      });
                     this.fileFieldBinded=true;
@@ -289,10 +282,10 @@ import Cookies from 'js-cookie';
                         this.prevStage(ev);
                     });
                      window.addEventListener("gameFinished", (e)=>{
-                        // send data to websocket
-                        this.updateTicket("game_t",);
-                        this.updateTicket("game_m",);
-                        console.log("juego terminado",e.detail)
+                        localStorage.setItem('game_t', e.detail.time);
+                        localStorage.setItem('game_m', e.detail.moves);
+                        this.updateTicket("game_t", e.detail.time);
+                        this.updateTicket("game_m", e.detail.moves);
                         })
                     this.buttonsBinded=true;
                     
@@ -306,7 +299,6 @@ import Cookies from 'js-cookie';
                         ev.preventDefault();
                         ev.stopPropagation();
                         $(this.fields[error.campo]).parents(".xFieldItem").addClass("xFieldError");
-                        console.error("Error de validación",error);
                     }
                 );
             },

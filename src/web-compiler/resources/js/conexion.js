@@ -35,10 +35,8 @@ export default class {
         if(this.client){
             this.client=null;
         }
-        console.error('Conexión cerrada');
     }
     messageHandler(m){
-        console.log("recibido",m);
         this.stopTimeout();
         if(m && m.data){
             const d = JSON.parse(m.data);
@@ -153,7 +151,6 @@ export default class {
         return new Promise((resolve,reject)=>{
             this.getClient().then(
                 client=>{
-                    console.log("enviando",file,client);
                     const tx=uuidv4();
                     const tx2=uuidv4();
                     const message={
@@ -201,7 +198,6 @@ export default class {
                 'Content-Length': Buffer.byteLength(data),
               },
             };
-            console.log(config);
             const req = https.request(config, (res) => {
                 if (res.statusCode != 200 && res.statusCode != 201) {
                   reject(res);

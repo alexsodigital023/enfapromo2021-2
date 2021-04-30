@@ -21,14 +21,13 @@ class TicketResource extends ResourceBase
         $sql=new Sql($this->_db);
         $u=$sql->update('ticket')
             ->set([
-                'foto'=>$data->foto,
+                'game_t'=>$data->game_t,
+                'game_m'=>$data->game_m,
                 'submited'=>1
                 ])
             ->where([
-                "id"=>$data->tid,
-                "submited"=>0
+                "id"=>$data->tid
                 ]);
-        
         $st=$sql->prepareStatementForSqlObject($u);
         $r=($st->execute());
         $r->buffer();
