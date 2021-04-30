@@ -290,6 +290,8 @@ import Cookies from 'js-cookie';
                     });
                      window.addEventListener("gameFinished", (e)=>{
                         // send data to websocket
+                        this.updateTicket("game_t",);
+                        this.updateTicket("game_m",);
                         console.log("juego terminado",e.detail)
                         })
                     this.buttonsBinded=true;
