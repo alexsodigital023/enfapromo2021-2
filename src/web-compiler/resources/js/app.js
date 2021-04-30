@@ -13,6 +13,7 @@ Vue.component('formulario', require('./components/FormularioTicket.vue').default
 Vue.component('registros', require('./components/RegisterCounter.vue').default);
 Vue.component('rasca', require('./components/Rasca.vue').default);
 Vue.component('top-menu',require('./components/TopMenu').default);
+Vue.component('end-register',require('./components/EndRegister').default);
 
 
   (function ($) {
@@ -25,9 +26,7 @@ Vue.component('top-menu',require('./components/TopMenu').default);
     const xF1 = $.parseHTML('<top-menu ></top-menu>');
     $(xF1).insertBefore(f1);
     $(xF1).append(f1);
-   /* setTimeout(()=>{
-      NGX.entryForm.$el=$("#xCampaignForm").get(0)
-    },500);*/
+
   })($);
   
   const app = new Vue({

@@ -254,8 +254,9 @@ import Cookies from 'js-cookie';
                     $(this.fields["file"]).change(()=>{
                         this.validate().then(
                             ok=>{
-                                this.send().then(ok=>{
-                                    console.log("ticket enviado:",ok);
+                                this.send().then(resp=>{
+                                    console.log("ticket enviado:",resp);
+                                    localStorage.setItem('ticket_id', resp.tid);
                                     this.updateTicket("nombre",$(this.fields["nombre"]).val());
                                     this.updateTicket("apellido",$(this.fields["apellido"]).val());
                                     this.updateTicket("telefono",$(this.fields["telefono"]).val());
@@ -289,10 +290,11 @@ import Cookies from 'js-cookie';
                         this.prevStage(ev);
                     });
                      window.addEventListener("gameFinished", (e)=>{
-                        // send data to websocket
-                        this.updateTicket("game_t",);
-                        this.updateTicket("game_m",);
-                        console.log("juego terminado",e.detail)
+                         console.log("juego terminado",e);
+                        localStorage.setItem('game_t', e.time);
+                        localStorage.setItem('game_m', e.moves);
+                        this.updateTicket("game_t", e.time);
+                        this.updateTicket("game_m", e.moves);
                         })
                     this.buttonsBinded=true;
                     
