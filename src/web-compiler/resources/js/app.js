@@ -11,7 +11,6 @@ Vue.use(Vue2TouchEvents);
 
 Vue.component('formulario', require('./components/FormularioTicket.vue').default);
 Vue.component('registros', require('./components/RegisterCounter.vue').default);
-Vue.component('rasca', require('./components/Rasca.vue').default);
 Vue.component('top-menu',require('./components/TopMenu').default);
 Vue.component('end-register',require('./components/EndRegister').default);
 
