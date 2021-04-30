@@ -14,7 +14,7 @@ Vue.component('registros', require('./components/RegisterCounter.vue').default);
 Vue.component('rasca', require('./components/Rasca.vue').default);
 Vue.component('top-menu',require('./components/TopMenu').default);
 
-$(document).ready(()=>{
+
   (function ($) {
     const f = $("#xCampaignForm").get(0);
     const xF = $.parseHTML('<formulario ></formulario>');
@@ -25,6 +25,9 @@ $(document).ready(()=>{
     const xF1 = $.parseHTML('<top-menu ></top-menu>');
     $(xF1).insertBefore(f1);
     $(xF1).append(f1);
+   /* setTimeout(()=>{
+      NGX.entryForm.$el=$("#xCampaignForm").get(0)
+    },500);*/
   })($);
   
   const app = new Vue({
@@ -39,6 +42,8 @@ $(document).ready(()=>{
     mounted() {
     }
   });
-});
+
+
+
 
 

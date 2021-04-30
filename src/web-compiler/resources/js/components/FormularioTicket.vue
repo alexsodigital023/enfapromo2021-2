@@ -55,10 +55,10 @@ import Cookies from 'js-cookie';
                         $(this.buttons.prev).show().removeClass("xHidden");
                         $(this.buttons.next).hide().addClass("xHidden");
                         $(this.buttons["submit"]).removeClass("xHidden");
-                        //$(this.buttons["submit"]).find(".xSubmit").prop("disabled",true);
                         $(this.pages[1]).hide();
                         $(this.pages[2]).hide();
                         $(this.pages[3]).show();
+                        window.gameBus.$emit('startGame');
                         break;
                 }
             }
@@ -288,16 +288,12 @@ import Cookies from 'js-cookie';
                     $(this.buttons["prev"]).click((ev)=>{
                         this.prevStage(ev);
                     });
-                    $(this.buttons["submit"]).click((ev)=>{
-                        let submit=false;
-                        if($(this.fields["game_t"]).val()&&$(this.fields["game_m"]).val()){
-                            $(this.fields["game_t"]).change();
-                            $(this.fields["game_m"]).change();
-                        }else{
-                            ev.preventDefault();
-                            ev.stopPropagation();
-                        }
-                    });
+                     window.addEventListener("gameFinished", (e)=>{
+                        // send data to websocket
+                        this.updateTicket("game_t",);
+                        this.updateTicket("game_m",);
+                        console.log("juego terminado",e.detail)
+                        })
                     this.buttonsBinded=true;
                     
                 }

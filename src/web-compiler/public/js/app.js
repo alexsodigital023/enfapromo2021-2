@@ -155,11 +155,11 @@ __webpack_require__.r(__webpack_exports__);
         case 3:
           $(this.buttons.prev).show().removeClass("xHidden");
           $(this.buttons.next).hide().addClass("xHidden");
-          $(this.buttons["submit"]).removeClass("xHidden"); //$(this.buttons["submit"]).find(".xSubmit").prop("disabled",true);
-
+          $(this.buttons["submit"]).removeClass("xHidden");
           $(this.pages[1]).hide();
           $(this.pages[2]).hide();
           $(this.pages[3]).show();
+          window.gameBus.$emit('startGame');
           break;
       }
     }
@@ -426,16 +426,13 @@ __webpack_require__.r(__webpack_exports__);
         $(this.buttons["prev"]).click(function (ev) {
           _this5.prevStage(ev);
         });
-        $(this.buttons["submit"]).click(function (ev) {
-          var submit = false;
+        window.addEventListener("gameFinished", function (e) {
+          // send data to websocket
+          _this5.updateTicket("game_t");
 
-          if ($(_this5.fields["game_t"]).val() && $(_this5.fields["game_m"]).val()) {
-            $(_this5.fields["game_t"]).change();
-            $(_this5.fields["game_m"]).change();
-          } else {
-            ev.preventDefault();
-            ev.stopPropagation();
-          }
+          _this5.updateTicket("game_m");
+
+          console.log("juego terminado", e.detail);
         });
         this.buttonsBinded = true;
       }
@@ -33756,26 +33753,28 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.component('formulario', __webpack_req
 vue__WEBPACK_IMPORTED_MODULE_0___default.a.component('registros', __webpack_require__(/*! ./components/RegisterCounter.vue */ "./resources/js/components/RegisterCounter.vue")["default"]);
 vue__WEBPACK_IMPORTED_MODULE_0___default.a.component('rasca', __webpack_require__(/*! ./components/Rasca.vue */ "./resources/js/components/Rasca.vue")["default"]);
 vue__WEBPACK_IMPORTED_MODULE_0___default.a.component('top-menu', __webpack_require__(/*! ./components/TopMenu */ "./resources/js/components/TopMenu.vue")["default"]);
-$(document).ready(function () {
-  (function ($) {
-    var f = $("#xCampaignForm").get(0);
-    var xF = $.parseHTML('<formulario ></formulario>');
-    $(xF).insertBefore(f);
-    $(xF).append(f);
-    var f1 = $("#xSectionHeader").get(0);
-    var xF1 = $.parseHTML('<top-menu ></top-menu>');
-    $(xF1).insertBefore(f1);
-    $(xF1).append(f1);
-  })($);
 
-  var app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
-    el: '.xPageInner',
-    data: function data() {
-      return {};
-    },
-    methods: {},
-    mounted: function mounted() {}
-  });
+(function ($) {
+  var f = $("#xCampaignForm").get(0);
+  var xF = $.parseHTML('<formulario ></formulario>');
+  $(xF).insertBefore(f);
+  $(xF).append(f);
+  var f1 = $("#xSectionHeader").get(0);
+  var xF1 = $.parseHTML('<top-menu ></top-menu>');
+  $(xF1).insertBefore(f1);
+  $(xF1).append(f1);
+  /* setTimeout(()=>{
+     NGX.entryForm.$el=$("#xCampaignForm").get(0)
+   },500);*/
+})($);
+
+var app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
+  el: '.xPageInner',
+  data: function data() {
+    return {};
+  },
+  methods: {},
+  mounted: function mounted() {}
 });
 
 /***/ }),
