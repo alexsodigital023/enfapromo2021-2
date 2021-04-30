@@ -46,7 +46,7 @@ class UserSeeder extends Seeder
                 "profile_id"=>2
             ],
             [
-                "name"=>"Rachel Mendoza",
+                "name"=>"R Rodriguez",
                 "email"=>"rrodriguez@advantagemarketing.mx",
                 "email_verified_at"=>"2011-10-08",
                 "created_at"=>"2020-07-08",
@@ -58,6 +58,36 @@ class UserSeeder extends Seeder
             [
                 "name"=>"M rivera",
                 "email"=>"Mrivera@advantageoperaciones.mx",
+                "email_verified_at"=>"2011-10-08",
+                "created_at"=>"2020-07-08",
+                "password"=>Hash::make("ghRWRJ4HJfpVNNRjvhqzcHq3M"),
+                "oauth"=>1,
+                "backend"=>1,
+                "profile_id"=>2
+            ],
+            [
+                "name"=>"D carrera",
+                "email"=>"dcarrera@advantagemarketing.mx",
+                "email_verified_at"=>"2011-10-08",
+                "created_at"=>"2020-07-08",
+                "password"=>Hash::make("ghRWRJ4HJfpVNNRjvhqzcHq3M"),
+                "oauth"=>1,
+                "backend"=>1,
+                "profile_id"=>2
+            ],
+            [
+                "name"=>"M quintero",
+                "email"=>"mquintero@advantagemarketing.mx",
+                "email_verified_at"=>"2011-10-08",
+                "created_at"=>"2020-07-08",
+                "password"=>Hash::make("ghRWRJ4HJfpVNNRjvhqzcHq3M"),
+                "oauth"=>1,
+                "backend"=>1,
+                "profile_id"=>2
+            ],
+            [
+                "name"=>"K Aguirre",
+                "email"=>"kaguirre@advantagemarketing.mx",
                 "email_verified_at"=>"2011-10-08",
                 "created_at"=>"2020-07-08",
                 "password"=>Hash::make("ghRWRJ4HJfpVNNRjvhqzcHq3M"),
