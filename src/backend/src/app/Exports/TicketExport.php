@@ -63,7 +63,7 @@ class TicketExport implements FromQuery, WithHeadings
                 'ticket.foto',
                 'ticket.estado_id',
                 'cat_estado.name as estado',
-                'telefono',
+                'ticket.telefono',
                 'game_m',
                 'game_t',
                 'fingerprint',
