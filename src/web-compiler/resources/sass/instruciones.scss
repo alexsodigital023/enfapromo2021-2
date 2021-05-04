@@ -1,0 +1,15 @@
+.here {
+  font-family: $font-gothamBold;
+  color: $c-amarillo;
+
+  ol {
+    li {
+      text-align: left;
+      span {
+        color: $c-blanco;
+        font-family: $font-gothamBook;
+        font-weight: 600;
+      }
+    }
+  }
+}
