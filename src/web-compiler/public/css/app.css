@@ -6478,6 +6478,21 @@ nav > ul .menuIcono {
   left: 35%;
 }
 
+#xSectionDetails .xComponentInner .here {
+  font-family: "Gotham Bold";
+  color: #EAD23D;
+}
+
+#xSectionDetails .xComponentInner .here ol li {
+  text-align: left;
+}
+
+#xSectionDetails .xComponentInner .here ol li span {
+  color: #fff;
+  font-family: "Gotham Book";
+  font-weight: 600;
+}
+
 #xSectionDetails .xRowInner .xCell.n2 .xComponentInner .xMediaContainer.xRenderEmbed.xMediaImage img {
   display: block;
 }
