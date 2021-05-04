@@ -347,6 +347,12 @@ nav>ul {
       }
     }
   }
+  
+  .xMediaContainer {
+    img {
+      max-width: 350px !important;
+    }
+  }
 }
 
 .xMediacard .xMediaContainer:last-child {

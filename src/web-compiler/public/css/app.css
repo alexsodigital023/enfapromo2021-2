@@ -6501,6 +6501,10 @@ nav > ul .menuIcono {
   width: 100%;
 }
 
+#xSectionDetails .xMediaContainer img {
+  max-width: 350px !important;
+}
+
 .xMediacard .xMediaContainer:last-child {
   margin-bottom: 0;
 }
