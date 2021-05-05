@@ -17,6 +17,12 @@ class RegexSeeder extends Seeder
                 "product"=>"/.*CHOCO.MILK.*\n[> 0-9a-zA-Z.]*/",
                 "import"=>"/(\d{1,9})+[.].{0,1}(\d{0,2})/",
                 "active"=>1
+            ],
+            [    
+                "id"=>3,
+                "product"=>"/.*CHOCO..ILK.*/",
+                "import"=>"/(\d{1,9})+[.].{0,1}(\d{0,2})$/",
+                "active"=>1
             ]
         ];
     /**
