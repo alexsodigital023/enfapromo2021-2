@@ -9,7 +9,7 @@ class RegexSeeder extends Seeder
             [    
                 "id"=>1,
                 "product"=>"/.*CHOCO.ILK.*/",
-                "import"=>"(\d{1,9})+[.].{0,1}(\d{0,2})",
+                "import"=>"/(\d{1,9})+[.].{0,1}(\d{0,2})/",
                 "active"=>1
             ]
         ];
