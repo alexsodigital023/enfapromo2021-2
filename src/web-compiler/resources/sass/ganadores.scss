@@ -1,4 +1,25 @@
 .Prizes, .xSectionInstructions {
+    .tabla {
+        position: relative;
+
+        &::before {
+            background: #2AA1D2;
+            -webkit-text-stroke: 3px transparent;
+            -webkit-text-fill-color: transparent;
+            -webkit-background-clip: text;
+            font-family: $font-gothamItalic;
+            content: "Felicidades";
+            position: absolute;
+            font-size: 10vw;
+            top: -5px;
+            left: 0;
+            text-align: center;
+            letter-spacing: 1px;
+            width: 100%;
+            text-shadow: 0 0 20px #000;
+        }
+    }
+
     table {
         width: 100%;
 
@@ -30,27 +51,51 @@
 }
 
 @media #{$grid-xs} {
-    .Prizes table td {
-        width: 48%;
-        margin: 15px auto;
-        display: inline-flex;
+    .Prizes, .xSectionPrizes {
+        table td {
+            width: 48%;
+            margin: 15px auto;
+            display: inline-flex;
+        }
     }
 }
 
 @media #{$grid-sm} {
-    .Prizes table td {
-        width: 32%;
+    .Prizes, .xSectionPrizes {
+        table td {
+            width: 32%;
+        }
     }
 }
 
 @media #{$grid-md} {
-    .Prizes table td {
-        width: 24%;
+    .Prizes, .xSectionPrizes {
+        table td {
+            width: 24%;
+        }
+    }
+}
+
+@media #{$grid-lg} {
+    .Prizes, .xSectionPrizes {
+        .tabla::before {
+            font-size: 5.5vw;
+        }
     }
 }
 
 @media #{$grid-xl} {
-    .Prizes table td {
-        width: 20%;
+    .Prizes, .xSectionPrizes {
+        table td {
+            width: 20%;
+        }
+    }
+}
+
+@media #{$grid-xxl} {
+    .Prizes, .xSectionPrizes {
+        .tabla::before {
+            font-size: 90px;
+        }
     }
 }
