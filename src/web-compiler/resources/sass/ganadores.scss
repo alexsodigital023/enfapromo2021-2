@@ -1,0 +1,56 @@
+.Prizes {
+    table {
+        width: 100%;
+
+        tr {
+            display: inline-flex;
+            flex-wrap: wrap;
+            align-items: flex-start;
+        }
+
+        td {
+            display: flex;
+            flex-direction: column;
+
+            img {
+                margin: auto;
+            }
+        }
+    }
+    
+    .xSectionPrizes .xCopyContainer::before {
+        content: "Ganadores";
+    }
+
+    p {
+        font-size: 1.2em;
+        font-weight: bold;
+        font-family: $font-gothamBook;
+    }
+}
+
+@media #{$grid-xs} {
+    .Prizes table td {
+        width: 48%;
+        margin: 15px auto;
+        display: inline-flex;
+    }
+}
+
+@media #{$grid-sm} {
+    .Prizes table td {
+        width: 32%;
+    }
+}
+
+@media #{$grid-md} {
+    .Prizes table td {
+        width: 24%;
+    }
+}
+
+@media #{$grid-xl} {
+    .Prizes table td {
+        width: 20%;
+    }
+}
