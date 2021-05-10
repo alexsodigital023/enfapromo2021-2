@@ -6709,6 +6709,38 @@ nav > ul .menuIcono {
   }
 }
 
+.Prizes .xTitle,
+.Prizes h2,
+#xSectionInstructions .xTitle,
+#xSectionInstructions h2 {
+  background: -webkit-linear-gradient(#EAD23D 40%, #F4A91D 60%);
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 2px #0F1E55;
+  -webkit-background-clip: text;
+  text-align: center;
+  color: #EAD23D;
+  font-weight: bold;
+  font-size: 10vw;
+  margin: 0 auto 25px auto;
+  font-family: "Gotham Italic";
+  line-height: 1.16;
+  letter-spacing: 1px;
+  position: relative;
+  padding: 0 10%;
+  z-index: 1;
+}
+
+.Prizes h3,
+#xSectionInstructions h3 {
+  margin: 0;
+  font-size: 1em;
+  color: #fff;
+  font-weight: bold;
+  text-align: center;
+  font-family: "Gotham Bold";
+  text-shadow: 0 3px 7px #000;
+}
+
 .Prizes .tabla,
 #xSectionInstructions .tabla {
   position: relative;
@@ -6775,12 +6807,26 @@ nav > ul .menuIcono {
     margin: 15px auto;
     display: inline-flex;
   }
+
+  .Prizes .xTitle,
+  .Prizes h2,
+  #xSectionInstructions .xTitle,
+  #xSectionInstructions h2 {
+    -webkit-text-stroke: 3px #0F1E55;
+  }
 }
 
 @media screen and (min-width: 576px) {
   .Prizes table td,
   #xSectionInstructions table td {
     width: 32%;
+  }
+
+  .Prizes .xTitle,
+  .Prizes h2,
+  #xSectionInstructions .xTitle,
+  #xSectionInstructions h2 {
+    -webkit-text-stroke: 4px #0F1E55;
   }
 }
 
@@ -6789,11 +6835,27 @@ nav > ul .menuIcono {
   #xSectionInstructions table td {
     width: 24%;
   }
+
+  .Prizes .xTitle,
+  .Prizes h2,
+  #xSectionInstructions .xTitle,
+  #xSectionInstructions h2 {
+    -webkit-text-stroke: 5px #0F1E55;
+    padding: 0;
+  }
 }
 
 @media screen and (min-width: 992px) {
   .Prizes .tabla::before,
   #xSectionInstructions .tabla::before {
+    font-size: 5.5vw;
+  }
+
+  .Prizes .xTitle,
+  .Prizes h2,
+  #xSectionInstructions .xTitle,
+  #xSectionInstructions h2 {
+    -webkit-text-stroke: 3.5px #0F1E55;
     font-size: 5.5vw;
   }
 }
@@ -6808,6 +6870,13 @@ nav > ul .menuIcono {
 @media screen and (min-width: 1600px) {
   .Prizes .tabla::before,
   #xSectionInstructions .tabla::before {
+    font-size: 90px;
+  }
+
+  .Prizes .xTitle,
+  .Prizes h2,
+  #xSectionInstructions .xTitle,
+  #xSectionInstructions h2 {
     font-size: 90px;
   }
 }
