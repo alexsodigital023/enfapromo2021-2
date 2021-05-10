@@ -1,4 +1,4 @@
-.Prizes, .xSectionInstructions {
+.Prizes, #xSectionInstructions {
     .tabla {
         position: relative;
 
@@ -52,7 +52,7 @@
 }
 
 @media #{$grid-xs} {
-    .Prizes, .xSectionPrizes {
+    .Prizes, #xSectionInstructions {
         table td {
             width: 48%;
             margin: 15px auto;
@@ -62,7 +62,7 @@
 }
 
 @media #{$grid-sm} {
-    .Prizes, .xSectionPrizes {
+    .Prizes, #xSectionInstructions {
         table td {
             width: 32%;
         }
@@ -70,7 +70,7 @@
 }
 
 @media #{$grid-md} {
-    .Prizes, .xSectionPrizes {
+    .Prizes, #xSectionInstructions {
         table td {
             width: 24%;
         }
@@ -78,7 +78,7 @@
 }
 
 @media #{$grid-lg} {
-    .Prizes, .xSectionPrizes {
+    .Prizes, #xSectionInstructions {
         .tabla::before {
             font-size: 5.5vw;
         }
@@ -86,7 +86,7 @@
 }
 
 @media #{$grid-xl} {
-    .Prizes, .xSectionPrizes {
+    .Prizes, #xSectionInstructions {
         table td {
             width: 20%;
         }
@@ -94,7 +94,7 @@
 }
 
 @media #{$grid-xxl} {
-    .Prizes, .xSectionPrizes {
+    .Prizes, #xSectionInstructions {
         .tabla::before {
             font-size: 90px;
         }
