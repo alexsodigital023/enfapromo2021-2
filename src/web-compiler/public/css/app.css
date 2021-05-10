@@ -6709,6 +6709,108 @@ nav > ul .menuIcono {
   }
 }
 
+.Prizes .tabla,
+.xSectionInstructions .tabla {
+  position: relative;
+}
+
+.Prizes .tabla::before,
+.xSectionInstructions .tabla::before {
+  background: #2AA1D2;
+  -webkit-text-stroke: 3px transparent;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  font-family: "Gotham Italic";
+  content: "Felicidades";
+  position: absolute;
+  font-size: 10vw;
+  top: -5px;
+  left: 0;
+  text-align: center;
+  letter-spacing: 1px;
+  width: 100%;
+  text-shadow: 0 0 20px #000;
+}
+
+.Prizes table,
+.xSectionInstructions table {
+  width: 100%;
+}
+
+.Prizes table tr,
+.xSectionInstructions table tr {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+
+.Prizes table td,
+.xSectionInstructions table td {
+  display: flex;
+  flex-direction: column;
+}
+
+.Prizes table td img,
+.xSectionInstructions table td img {
+  margin: auto;
+}
+
+.Prizes .xSectionPrizes .xCopyContainer::before,
+.xSectionInstructions .xSectionPrizes .xCopyContainer::before {
+  content: "Ganadores";
+}
+
+.Prizes p,
+.xSectionInstructions p {
+  font-size: 1.2em;
+  font-weight: bold;
+  font-family: "Gotham Book";
+}
+
+@media screen and (min-width: 480px) {
+  .Prizes table td,
+  .xSectionPrizes table td {
+    width: 48%;
+    margin: 15px auto;
+    display: inline-flex;
+  }
+}
+
+@media screen and (min-width: 576px) {
+  .Prizes table td,
+  .xSectionPrizes table td {
+    width: 32%;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .Prizes table td,
+  .xSectionPrizes table td {
+    width: 24%;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .Prizes .tabla::before,
+  .xSectionPrizes .tabla::before {
+    font-size: 5.5vw;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .Prizes table td,
+  .xSectionPrizes table td {
+    width: 20%;
+  }
+}
+
+@media screen and (min-width: 1600px) {
+  .Prizes .tabla::before,
+  .xSectionPrizes .tabla::before {
+    font-size: 90px;
+  }
+}
+
 .here {
   font-family: "Gotham Bold";
   color: #EAD23D;
