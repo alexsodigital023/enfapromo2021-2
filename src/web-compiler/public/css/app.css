@@ -6709,30 +6709,36 @@ nav > ul .menuIcono {
   }
 }
 
-.Prizes table {
+.Prizes table,
+.xSectionInstructions table {
   width: 100%;
 }
 
-.Prizes table tr {
+.Prizes table tr,
+.xSectionInstructions table tr {
   display: inline-flex;
   flex-wrap: wrap;
   align-items: flex-start;
 }
 
-.Prizes table td {
+.Prizes table td,
+.xSectionInstructions table td {
   display: flex;
   flex-direction: column;
 }
 
-.Prizes table td img {
+.Prizes table td img,
+.xSectionInstructions table td img {
   margin: auto;
 }
 
-.Prizes .xSectionPrizes .xCopyContainer::before {
+.Prizes .xSectionPrizes .xCopyContainer::before,
+.xSectionInstructions .xSectionPrizes .xCopyContainer::before {
   content: "Ganadores";
 }
 
-.Prizes p {
+.Prizes p,
+.xSectionInstructions p {
   font-size: 1.2em;
   font-weight: bold;
   font-family: "Gotham Book";
