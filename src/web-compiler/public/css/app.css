@@ -6742,6 +6742,7 @@ nav > ul .menuIcono {
   display: inline-flex;
   flex-wrap: wrap;
   align-items: flex-start;
+  width: 100%;
 }
 
 .Prizes table td,
