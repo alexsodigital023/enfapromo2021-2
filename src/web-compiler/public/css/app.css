@@ -6709,45 +6709,11 @@ nav > ul .menuIcono {
   }
 }
 
-.Prizes .xTitle,
-.Prizes h2,
-#xSectionInstructions .xTitle,
-#xSectionInstructions h2 {
-  background: -webkit-linear-gradient(#EAD23D 40%, #F4A91D 60%);
-  -webkit-text-fill-color: transparent;
-  -webkit-text-stroke: 2px #0F1E55;
-  -webkit-background-clip: text;
-  text-align: center;
-  color: #EAD23D;
-  font-weight: bold;
-  font-size: 10vw;
-  margin: 0 auto 25px auto;
-  font-family: "Gotham Italic";
-  line-height: 1.16;
-  letter-spacing: 1px;
-  position: relative;
-  padding: 0 10%;
-  z-index: 1;
-}
-
-.Prizes h3,
-#xSectionInstructions h3 {
-  margin: 0;
-  font-size: 1em;
-  color: #fff;
-  font-weight: bold;
-  text-align: center;
-  font-family: "Gotham Bold";
-  text-shadow: 0 3px 7px #000;
-}
-
-.Prizes .tabla,
-#xSectionInstructions .tabla {
+.tabla {
   position: relative;
 }
 
-.Prizes .tabla::before,
-#xSectionInstructions .tabla::before {
+.tabla::before {
   background: #2AA1D2;
   -webkit-text-stroke: 3px transparent;
   -webkit-text-fill-color: transparent;
@@ -6764,119 +6730,132 @@ nav > ul .menuIcono {
   text-shadow: 0 0 20px #000;
 }
 
-.Prizes table,
-#xSectionInstructions table {
+.tabla h1,
+.tabla h2 {
+  background: -webkit-linear-gradient(#EAD23D 40%, #EAD23D 60%);
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 2px #0F1E55;
+  -webkit-background-clip: text;
+  text-align: center;
+  color: #EAD23D;
+  font-weight: bold;
+  font-size: 10vw;
+  margin: 0 auto 25px auto;
+  font-family: "Gotham Italic";
+  line-height: 1.16;
+  letter-spacing: 1px;
+  position: relative;
+  padding: 0 10%;
+  z-index: 1;
+}
+
+.tabla h3 {
+  margin: 0;
+  font-size: 1em;
+  color: #fff;
+  font-weight: bold;
+  text-align: center;
+  font-family: "Gotham Bold";
+  text-shadow: 0 3px 7px #000;
+}
+
+.tabla h4 {
+  color: #EAD23D;
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+.tabla table {
   width: 100%;
 }
 
-.Prizes table tr,
-#xSectionInstructions table tr {
+.tabla table tr {
   display: inline-flex;
   flex-wrap: wrap;
   align-items: flex-start;
   width: 100%;
 }
 
-.Prizes table td,
-#xSectionInstructions table td {
+.tabla table td {
   display: flex;
   flex-direction: column;
 }
 
-.Prizes table td img,
-#xSectionInstructions table td img {
+.tabla table td img {
   margin: auto;
 }
 
-.Prizes .xSectionPrizes .xCopyContainer::before,
-#xSectionInstructions .xSectionPrizes .xCopyContainer::before {
+.tabla .xSectionPrizes .xCopyContainer::before {
   content: "Ganadores";
 }
 
-.Prizes p,
-#xSectionInstructions p {
+.tabla p {
   font-size: 1.2em;
   font-weight: bold;
   font-family: "Gotham Book";
 }
 
 @media screen and (min-width: 480px) {
-  .Prizes table td,
-  #xSectionInstructions table td {
+  .tabla table td {
     width: 48%;
     margin: 15px auto;
     display: inline-flex;
   }
 
-  .Prizes .xTitle,
-  .Prizes h2,
-  #xSectionInstructions .xTitle,
-  #xSectionInstructions h2 {
+  .tabla h1,
+  .tabla h2 {
     -webkit-text-stroke: 3px #0F1E55;
   }
 }
 
 @media screen and (min-width: 576px) {
-  .Prizes table td,
-  #xSectionInstructions table td {
+  .tabla table td {
     width: 32%;
   }
 
-  .Prizes .xTitle,
-  .Prizes h2,
-  #xSectionInstructions .xTitle,
-  #xSectionInstructions h2 {
+  .tabla h1,
+  .tabla h2 {
     -webkit-text-stroke: 4px #0F1E55;
   }
 }
 
 @media screen and (min-width: 768px) {
-  .Prizes table td,
-  #xSectionInstructions table td {
+  .tabla table td {
     width: 24%;
   }
 
-  .Prizes .xTitle,
-  .Prizes h2,
-  #xSectionInstructions .xTitle,
-  #xSectionInstructions h2 {
+  .tabla h1,
+  .tabla h2 {
     -webkit-text-stroke: 5px #0F1E55;
     padding: 0;
   }
 }
 
 @media screen and (min-width: 992px) {
-  .Prizes .tabla::before,
-  #xSectionInstructions .tabla::before {
+  .tabla::before {
     font-size: 5.5vw;
   }
 
-  .Prizes .xTitle,
-  .Prizes h2,
-  #xSectionInstructions .xTitle,
-  #xSectionInstructions h2 {
+  .tabla h1,
+  .tabla h2 {
     -webkit-text-stroke: 3.5px #0F1E55;
     font-size: 5.5vw;
   }
 }
 
 @media screen and (min-width: 1200px) {
-  .Prizes table td,
-  #xSectionInstructions table td {
+  .tabla table td {
     width: 20%;
   }
 }
 
 @media screen and (min-width: 1600px) {
-  .Prizes .tabla::before,
-  #xSectionInstructions .tabla::before {
+  .tabla::before {
     font-size: 90px;
   }
 
-  .Prizes .xTitle,
-  .Prizes h2,
-  #xSectionInstructions .xTitle,
-  #xSectionInstructions h2 {
+  .tabla h1,
+  .tabla h2 {
     font-size: 90px;
   }
 }
