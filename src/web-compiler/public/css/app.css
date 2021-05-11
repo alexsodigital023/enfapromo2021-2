@@ -6719,7 +6719,7 @@ nav > ul .menuIcono {
   -webkit-text-fill-color: transparent;
   -webkit-background-clip: text;
   font-family: "Gotham Italic";
-  content: "Felicidades";
+  content: "Ganadores";
   position: absolute;
   font-size: 10vw;
   top: -5px;
@@ -6732,7 +6732,7 @@ nav > ul .menuIcono {
 
 .tabla h1,
 .tabla h2 {
-  background: -webkit-linear-gradient(#EAD23D 40%, #EAD23D 60%);
+  background: -webkit-linear-gradient(#EAD23D 40%, #F4A91D 60%);
   -webkit-text-fill-color: transparent;
   -webkit-text-stroke: 2px #0F1E55;
   -webkit-background-clip: text;
@@ -6763,6 +6763,7 @@ nav > ul .menuIcono {
   color: #EAD23D;
   font-size: 3rem;
   font-weight: bold;
+  text-align: center;
 }
 
 .tabla table {
@@ -6773,6 +6774,7 @@ nav > ul .menuIcono {
   display: inline-flex;
   flex-wrap: wrap;
   align-items: flex-start;
+  justify-content: center;
   width: 100%;
 }
 
@@ -6792,6 +6794,7 @@ nav > ul .menuIcono {
 .tabla p {
   font-size: 1.2em;
   font-weight: bold;
+  text-align: center;
   font-family: "Gotham Book";
 }
 
