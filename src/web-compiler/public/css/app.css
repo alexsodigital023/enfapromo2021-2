@@ -6711,7 +6711,7 @@ nav > ul .menuIcono {
 
 .tabla {
   position: relative;
-  background: url(https://a.wayin.com/images/7405/f7cdaa0a-93b7-47f6-8f9f-8723b19b8822/background_controller.jpg);
+  background: url(https://a.wayin.com/images/7405/f7cdaa0a-93b7-47f6-8f9f-8723b19b8822/background_blue_mob_confett.jpg);
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -6827,6 +6827,10 @@ nav > ul .menuIcono {
 }
 
 @media screen and (min-width: 768px) {
+  .tabla {
+    background: url(https://a.wayin.com/images/7405/f7cdaa0a-93b7-47f6-8f9f-8723b19b8822/background_blue_desktop_confett.jpg);
+  }
+
   .tabla table td {
     width: 24%;
   }

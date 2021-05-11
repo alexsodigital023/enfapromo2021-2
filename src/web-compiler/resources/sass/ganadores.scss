@@ -1,6 +1,6 @@
 .tabla {
     position: relative;
-    background: $background-game;
+    background: $background-ganadores-mobile;
     background-repeat: no-repeat;
     background-size: cover;
 
@@ -118,6 +118,8 @@
 
 @media #{$grid-md} {
     .tabla {
+        background: $background-ganadores;
+        
         table td {
             width: 24%;
         }
