@@ -133,6 +133,8 @@
                         email:this.$slots.default[i].data.attrs.email,
                         estado:this.$slots.default[i].data.attrs.estado,
                         tienda:this.$slots.default[i].data.attrs.tienda,
+                        tiempo:this.$slots.default[i].data.attrs.tiempo,
+                        movimientos:this.$slots.default[i].data.attrs.movimientos,
                         status_id:this.$slots.default[i].data.attrs.status_id,
                         status:this.$slots.default[i].data.attrs.status,
                         product:this.$slots.default[i].data.attrs.product,
