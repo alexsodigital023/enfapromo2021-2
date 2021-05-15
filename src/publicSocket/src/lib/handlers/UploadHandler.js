@@ -91,6 +91,16 @@ module.exports={
                                                                 code:500,
                                                                 message:'No se pudo analizar.'
                                                             });
+                                                    
+                                                        resolve({
+                                                            code:200,
+                                                            data:{
+                                                                type:'statusChange',
+                                                                status:8,
+                                                                tid:id
+                                                            },
+                                                            ticket_id:id
+                                                        });
                                                     });
                                                 }
                                             });
