@@ -62,7 +62,7 @@ class Regex{
         $ticket->rule_id=$ruleid;
         $ticket->product=count($productos);
         $ticket->products_find=json_encode($productos);
-        $ticket->import=$importe;
+        $ticket->import=floatval($importe);
         $ticket->save();
     }
 
