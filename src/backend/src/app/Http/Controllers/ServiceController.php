@@ -50,8 +50,7 @@ class ServiceController extends Controller
         }
         return json_encode([
             "id"=>$ticket->id,
-            "status_id"=>$ticket->status_id,
-            "importe"=>$ticket->import
+            "status_id"=>$ticket->status_id
         ]);
     }
 }
