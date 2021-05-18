@@ -6,6 +6,7 @@ use App\Ticket;
 use Maatwebsite\Excel\Concerns\FromCollection;
 use Maatwebsite\Excel\Concerns\FromQuery;
 use Maatwebsite\Excel\Concerns\WithHeadings;
+use Illuminate\Database\Query\Expression;
 
 class TicketExport implements FromQuery, WithHeadings
 {
@@ -40,6 +41,7 @@ class TicketExport implements FromQuery, WithHeadings
         'updateDate',
         'semana',
         'valido',
+        'submitDate_MexicoCity'
     ];
 
     function __construct($week,$invalidos=0)
@@ -82,6 +84,7 @@ class TicketExport implements FromQuery, WithHeadings
                 'ticket.updated_at',
                 'week',
                 'submited',
+                new Expression("CONVERT_TZ(ticket.created_at, 'UTC', 'America/Mexico_City')")
                 ])
             ->leftJoin("users","users.id","=","ticket.user_id")
             ->leftJoin("cat_estado","cat_estado.id","=","ticket.estado_id")
