@@ -19,6 +19,41 @@
     .xMediaContainer img {
         max-width: 80%;
     }
+
+    #xSectionConfirmation_html_1619814434914 .xComponentInner {
+        position: relative;
+        text-align: center;
+
+        &::before {
+            content: '¡GRACIAS POR PARTICIPAR!';
+            text-shadow: 0 0 12px black;
+            position: absolute;
+            width: 100%;
+            left: 0;
+            top: 0;
+            font-size: 50px;
+            font-weight: 700;
+            line-height: 1.16;
+            letter-spacing: 1px;
+            font-family: $font-gothamItalic;
+        }
+            
+        h2 {
+            background: -webkit-linear-gradient(#ead23d 40%,#f4a91d 60%);
+            -webkit-text-fill-color: transparent;
+            -webkit-text-stroke: 2px #0f1e55;
+            -webkit-background-clip: text;
+            padding: 0;
+            color: #ead23d;
+            margin: 0 auto 25px;
+            font-size: 50px;
+            font-weight: 700;
+            line-height: 1.16;
+            letter-spacing: 1px;
+            font-family: $font-gothamItalic;
+            position: relative;
+        }
+    }
 }
 
 @media #{$grid-md} {
