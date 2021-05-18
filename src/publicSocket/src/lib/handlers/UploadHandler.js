@@ -73,17 +73,24 @@ module.exports={
                                                         let response = null;
                                                         res.on('data', (d) => {
                                                             console.log("recibido",d);
-                                                            response = JSON.parse(d);
-                                                            resolve({
-                                                                code:200,
-                                                                data:{
-                                                                    type:'statusChange',
-                                                                    status:response.status_id,
-                                                                    import:response.import,
-                                                                    tid:id
-                                                                },
-                                                                ticket_id:id
-                                                            });
+                                                            try{
+                                                                response = JSON.parse(d);
+                                                                resolve({
+                                                                    code:200,
+                                                                    data:{
+                                                                        type:'statusChange',
+                                                                        status:response.status_id,
+                                                                        import:response.import,
+                                                                        tid:id
+                                                                    },
+                                                                    ticket_id:id
+                                                                });
+                                                            }catch(e){
+                                                                reject({
+                                                                    code:500,
+                                                                    message:'No se pudo analizar.'
+                                                                });
+                                                            }
                                                         });
 
                                                         }).on('error', (e) => {
