@@ -106,16 +106,16 @@ wss.on('connection', ws => {
                 }
                 handler.run(data,user).then(
                   (res)=>{
-                    if(!tw){
+                    /*if(!tw){
                       tw=new TicketWatcher();
-                    }
-                    tw.watchTicket(res.ticket_id,user.file_tx,(r)=>{
+                    }*/
+                    /*tw.watchTicket(res.ticket_id,user.file_tx,(r)=>{
                       ws.send(JSON.stringify({
                         code:r.code,
                         data: r.data,
                         tx:r.file_tx
                       }));
-                    });
+                    });*/
                     user.ticket_id=res.ticket_id;
                     ws.send(JSON.stringify({
                       code:res.code,
