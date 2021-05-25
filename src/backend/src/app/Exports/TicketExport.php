@@ -88,7 +88,8 @@ class TicketExport implements FromQuery, WithHeadings
                 ])
             ->leftJoin("users","users.id","=","ticket.user_id")
             ->leftJoin("cat_estado","cat_estado.id","=","ticket.estado_id")
-            ->leftJoin("cat_tienda","cat_tienda.id","=","ticket.tienda_id");
+            ->leftJoin("cat_tienda","cat_tienda.id","=","ticket.tienda_id")
+            ->where("users.activo=1");
         if(!$this->invalidos){
             $select->where([
                 //'week'=>$this->week,
