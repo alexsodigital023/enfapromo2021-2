@@ -14,13 +14,16 @@ class UserCollection extends Paginator
     static function findByeEmail(Adapter &$db,$email){
         $sql=new Sql($db);
         $q=$sql->select('users')
-            ->columns(['id'])
+            ->columns(['id','activo'])
             ->where(['email'=>$email])
             ->limit(1);
         $st=$sql->prepareStatementForSqlObject($q);
         $r=($st->execute());
         $r->buffer();
         $d=$r->current();
+        if($d&&$d["activo"]=="0"){
+            throw new \Exception("Usuario bloqueado");
+        }
         if($d&&$d["id"]){
             return new UserEntity($d["id"],$db);
         }
