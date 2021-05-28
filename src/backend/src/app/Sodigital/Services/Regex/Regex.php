@@ -49,7 +49,7 @@ class Regex{
                             }
                         }
                     }
-                    if($importe >= 350){
+                    if($importe >= 39.9){
                         $status = 3;
                         $desc="Ok";
                         break;

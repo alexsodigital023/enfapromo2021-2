@@ -312,6 +312,19 @@ nav>ul {
         }
       }
     }
+
+    ol {
+      font-family: $font-gothamBold;
+      color: $c-amarillo;
+      li {
+        text-align: left;
+        span {
+          color: $c-blanco;
+          font-family: $font-gothamBook;
+          font-weight: 600;
+        }
+      }
+    }
   }
 
   .xRowInner {
@@ -329,6 +342,12 @@ nav>ul {
       &.mid {
         width: 100%;
       }
+    }
+  }
+  
+  .xMediaContainer {
+    img {
+      max-width: 350px !important;
     }
   }
 }

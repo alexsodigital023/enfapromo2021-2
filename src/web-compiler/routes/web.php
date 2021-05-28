@@ -48,3 +48,7 @@ Route::get('/tyc.html', function () {
 Route::get('/thankyou.html', function () {
     return view('thankyou');
 })->name("thankyou");
+
+Route::get('/ganadores.html', function () {
+    return view('ganadores');
+})->name("ganadores");
