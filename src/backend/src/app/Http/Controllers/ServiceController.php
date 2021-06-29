@@ -9,10 +9,11 @@ use App\Ticket;
 use App\User;
 use Illuminate\Http\Request;
 use App\Mutators\Storage\Spaces;
+use App\Sodigital\Interfaces\Controllers\ServiceControllerInterface;
 use App\Sodigital\Services\Ocr\Ocr;
 use App\Sodigital\Services\Regex\Regex;
 
-class ServiceController extends Controller
+class ServiceController extends Controller implements ServiceControllerInterface
 {
     use Spaces;
     public function run(Request $request){
