@@ -15,8 +15,8 @@ interface ServiceControllerInterface{
 
     /**
      * Devuelve una instancia del manejador de google para OCR
-     * 
+     *
      * @return App\Sodigital\Interfaces\Provider\GoogleOcsProviderInterface
      */
-    public function getGoogleOcrProvider();
+    public function getGoogleOcrProvider($request,$credenciales);
 }

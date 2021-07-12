@@ -81,7 +81,8 @@ class Init extends Migration
             $table->tinyInteger('status_id',false,true);
             $table->text('status_desc')->nullable();
             $table->bigInteger('rule_id',false,true)->nullable();
-            $table->text('data')->nullable();
+            //$table->text('data')->nullable();
+            $table->longText('data')->nullable();
             $table->text('products_find')->nullable();
             $table->tinyInteger('product',false,true)->nullable();
             $table->decimal('import',8,2)->nullable();
@@ -99,7 +100,7 @@ class Init extends Migration
         });
 
         DB::statement("create or replace view ganadores as
-        select 
+        select
         concat(SUBSTRING(`u`.`email`, 1,3),'***@***',SUBSTRING(`u`.`email`, -6)) as 'email',
         `e`.`name` as 'estado',
         `s`.`name` as 'tienda',

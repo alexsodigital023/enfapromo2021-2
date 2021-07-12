@@ -4,13 +4,14 @@
 namespace App\Sodigital\Services\Ocr;
 
 use App\Sodigital\Interfaces\Services\OcrInterface;
-use finfo;
 use thiagoalessio\TesseractOCR\TesseractOCR;
 use App\Sodigital\Services\Error\FileNotFound;
 
+
 class Ocr implements OcrInterface{
+
     protected $_db;
-    
+
     public function run(){
         $tickets=$this->_db->getTickets(1);
         foreach($tickets as $t){

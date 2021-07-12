@@ -2,7 +2,7 @@
 
 namespace App\Sodigital\Interfaces\Providers;
 
-interface GoogleOcsProviderInterface{
+interface GoogleOcrProviderInterface{
 
     /**
     * Envía una petición a google para reconocimiento de texto
@@ -10,7 +10,7 @@ interface GoogleOcsProviderInterface{
      * @param [type] $url
      * @return void
      */
-    public function checkInGoogle($url);
+    public function checkInGoogle($jsonDataEncoded,$headers);
 
     /**
      * Devuelve las credenciales de google
@@ -24,5 +24,5 @@ interface GoogleOcsProviderInterface{
      *
      * @return void
      */
-    public function setCredentials();
+    public function setCredentials($credencial);
 }
