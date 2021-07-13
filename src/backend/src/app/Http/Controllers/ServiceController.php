@@ -28,7 +28,6 @@ class ServiceController extends Controller implements ServiceControllerInterface
             $ticket->save();
             $tmpFile=tempnam(sys_get_temp_dir(),'ticket_');
             file_put_contents($tmpFile,$this->getFile($ticket->path));
-            //Implementar GoogleOcr
             $url=$this->temporaryUrl($ticket->path,10);
             $time=time();
             $txt = $this->checkInGoogle($url);
@@ -38,14 +37,6 @@ class ServiceController extends Controller implements ServiceControllerInterface
             $ticket->data=base64_encode(json_encode($txt));
             $ticket->process_time=$time2-$time;
             $ticket->save();
-            /*$time=time();
-            $text=$ocr->processTicket($tmpFile);
-            $time2=time();
-            $ticket->status_id=strlen($ticket->data)>5?4:7;
-            $ticket->submited=1;
-            $ticket->data=$text;
-            unlink($tmpFile);
-            //}*/
             }
         if(strlen($ticket->data)>5){
             $regex=new Regex();
