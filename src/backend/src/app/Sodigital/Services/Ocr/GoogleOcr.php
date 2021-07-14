@@ -11,10 +11,13 @@ trait GoogleOcr
 {
     use Spaces;
 
-    //Envía una petición a google para reconocimiento de texto
+    /**
+     * Envía una petición a google para reconocimiento de texto
+     * @param String $url
+     * @return Object
+     */
     public function checkInGoogle($url)
     {
-        $api = env('GOOGLE_OCR_API', '');
         $features = "TEXT_DETECTION";
         $request = new AnnotateImageRequest();
         $request->setImageUri($url);
@@ -26,26 +29,17 @@ trait GoogleOcr
             'accept: application/json',
             'content-type: application/json',
         ];
-        $jsonDataEncoded = json_encode($rq);
-        $ch = curl_init();
-        curl_setopt($ch, CURLOPT_URL, $api);
-        curl_setopt( $ch, CURLOPT_POSTFIELDS, $jsonDataEncoded );
-        curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
-        curl_setopt( $ch, CURLOPT_RETURNTRANSFER, true );
-        curl_setopt( $ch, CURLOPT_HTTPHEADER, $headers);
-        curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
-        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
-        curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
-        curl_setopt($ch, CURLOPT_VERBOSE, true);
-        $result = curl_exec($ch);
-        curl_close($ch);
-        return json_decode($result);
+        $provider = $this->getGoogleOcrProvider();
+        return $provider->checkInGoogle($rq,$headers);
     }
-    //Devuelve una instancia del manejador de google para OCR
-    public function getGoogleOcrProvider($rq,$headers)
+    /**
+     * Devuelve una instancia del manejador de google para OCR
+     * @param String $rq,$headers
+     */
+    public function getGoogleOcrProvider()
     {
         //devolver una instancia del provider para google
-        return new GoogleOcrProvider($rq,$headers);
+        return new GoogleOcrProvider();
 
     }
 }
