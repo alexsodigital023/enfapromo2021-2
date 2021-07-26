@@ -60,7 +60,24 @@ class Init extends Migration
 
     protected function createTicket(){
 
+        Schema::create('tickets', function (Blueprint $table) {
+            $table->id();
+            $table->string('email',false);
+            $table->string('firstname');
+            $table->string('lastname');
+            $table->integer('source');
+            $table->integer('status');
+            $table->integer('points');
+            $table->string('image');
+            $table->datetime('submitDate');
+            $table->string('timeZone')->nullable();
+            $table->string('phonenumber');
+            $table->string('shop');
+            $table->string('TX')->nullable();
+        });
+        
         Schema::create('ticket', function (Blueprint $table) {
+           
             $table->id();
             $table->bigInteger('user_id',false,true);
             $table->string('numero',20)->nullable();
