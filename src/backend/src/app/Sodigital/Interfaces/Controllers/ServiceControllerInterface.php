@@ -18,5 +18,5 @@ interface ServiceControllerInterface{
      *
      * @return App\Sodigital\Interfaces\Provider\GoogleOcsProviderInterface
      */
-    public function getGoogleOcrProvider($request,$credenciales);
+    public function getGoogleOcrProvider();
 }

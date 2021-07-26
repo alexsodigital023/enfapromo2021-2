@@ -5,7 +5,8 @@ namespace App\Sodigital\Services\Ocr;
 use App\Mutators\Storage\Spaces;
 use App\Sodigital\Interfaces\Providers\GoogleOcrProvider;
 use GoogleCloudVision\Request\AnnotateImageRequest;
-$api = env('GOOGLE_OCR_API', 'xxxxx');
+use Storage;
+
 
 trait GoogleOcr
 {
@@ -22,6 +23,7 @@ trait GoogleOcr
         $request = new AnnotateImageRequest();
         $request->setImageUri($url);
         $request->setFeature($features);
+        $api = config('services.google.api');
         $rq = array(
             "requests" => $request
         );
@@ -30,7 +32,7 @@ trait GoogleOcr
             'content-type: application/json',
         ];
         $provider = $this->getGoogleOcrProvider();
-        return $provider->checkInGoogle($rq,$headers);
+        return $provider->checkInGoogle($rq,$headers,$api);
     }
     /**
      * Devuelve una instancia del manejador de google para OCR
