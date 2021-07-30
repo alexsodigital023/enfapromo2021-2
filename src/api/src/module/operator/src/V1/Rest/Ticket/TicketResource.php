@@ -7,6 +7,8 @@ use Laminas\Db\Sql\Sql;
 use Application\Base\ResourceBase;
 use Laminas\Db\Sql\Select;
 use Laminas\Paginator\Adapter\DbSelect;
+use Ramsey\Uuid\Uuid;
+
 
 class TicketResource extends ResourceBase
 {
@@ -17,21 +19,155 @@ class TicketResource extends ResourceBase
      * @return ApiProblem|mixed
      */
     public function create($data)
-    {
+    {   
+         /**
+         * id con TX ->busca tx -> si -> actualiza -> no insertar
+         * id sin TX ->busca id -> si -> actualiza -> no insertar
+         */
+       
+        $r_id;
+        $r_TX;
+        $uuid;
+        if(isset($data->submitDate)){
+            if(preg_match('/([zZ]-[0-9]*)|([zZ]\+[0-9]*)/',$data->submitDate, $matches)){
+                $data->timeZone = $matches[0];
+                // $data->submitDate = preg_replace('/([zZ]-[0-9]*)|([zZ]\+[0-9]*)/',"",$data->submitDate);
+                $data->submitDate = str_replace($matches[0],"",$data->submitDate);
+            }
+        }
+       
         $sql=new Sql($this->_db);
-        $u=$sql->update('ticket')
-            ->set([
-                'game_t'=>$data->game_t,
-                'game_m'=>$data->game_m,
-                'submited'=>1
-                ])
-            ->where([
-                "id"=>$data->tid
-                ]);
-        $st=$sql->prepareStatementForSqlObject($u);
-        $r=($st->execute());
-        $r->buffer();
-        return true;
+        if( isset($data->TX) ){
+            
+            $select = $sql->select('tickets')
+                ->where(['TX'=> $data->TX])
+                ->limit(1);
+            $statement = $sql->prepareStatementForSqlObject($select);
+            $results = $statement->execute();
+            $results->buffer();
+            if ($results->getAffectedRows()) {
+                foreach ($results as $r) {
+                    $r_TX = ($r["TX"]);
+                    if ($r_TX == $data->TX) {
+                        try {
+                            $update = $sql->update("tickets");
+                            $update->set([
+                                'id' => $data->id,
+                                'email' => $data->email,
+                                'firstname' => $data->firstname,
+                                'lastname' => $data->lastname,
+                                'source' => $data->source,
+                                'status' => $data->status,
+                                'points' => $data->points,
+                                'image' => $data->image,
+                                'submitDate' => $data->submitDate,
+                                'timeZone' => $data->timeZone,
+                                'phonenumber' => $data->phonenumber,
+                                'shop' => $data->shop,
+                                'TX' => $data->TX,
+                            ])->where(["TX" => $r["TX"]]);
+                            $s = $sql->prepareStatementForSqlObject($update);
+                            $r = $s->execute();
+                            $r->buffer();
+                            return $data;
+                        }catch (\Exception $e) {
+                            return new ApiProblem(500, $e->getMessage());
+                        }
+                    }
+                }
+            }else{
+                try {
+                    $insert = $sql->insert("tickets")->values([
+                        'id' => $data->id,
+                        'email' => $data->email,
+                        'firstname' => $data->firstname,
+                        'lastname' => $data->lastname,
+                        'source' => $data->source,
+                        'status' => $data->status,
+                        'points' => $data->points,
+                        'image' => $data->image,
+                        'submitDate' => $data->submitDate,
+                        'timeZone' => $data->timeZone,
+                        'phonenumber' => $data->phonenumber,
+                        'shop' => $data->shop,
+                        'TX' => $data->TX,
+                    ]);
+                    $statement = $sql->prepareStatementForSqlObject($insert);
+                    $results = $statement->execute();
+                    $results->buffer();
+                    return $data;
+                }catch (Exception $e) {
+                        return new ApiProblem(500, $e->getMessage());
+                }
+            }
+        }else{
+            $uuid = Uuid::uuid4();
+            $data->TX = $uuid->toString();
+            $select = $sql->select('tickets')
+                ->where(['id'=> $data->id])
+                ->limit(1);
+            $statement = $sql->prepareStatementForSqlObject($select);
+            $results = $statement->execute();
+            $results->buffer();
+            if ($results->getAffectedRows()) {
+                foreach ($results as $r) {
+                    $r_id = ($r["id"]);
+                    if ($r_id == $data->id) {
+                        try {
+                            $update = $sql->update("tickets");
+                            $update->set([
+                                'id' => $data->id,
+                                'email' => $data->email,
+                                'firstname' => $data->firstname,
+                                'lastname' => $data->lastname,
+                                'source' => $data->source,
+                                'status' => $data->status,
+                                'points' => $data->points,
+                                'image' => $data->image,
+                                'submitDate' => $data->submitDate,
+                                'timeZone' => $data->timeZone,
+                                'phonenumber' => $data->phonenumber,
+                                'shop' => $data->shop,
+                                'TX' => $data->TX,  
+                            ])->where(["id" => $r["id"]]);
+                            $s = $sql->prepareStatementForSqlObject($update);
+                            $r = $s->execute();
+                            $r->buffer();
+                            return $data;
+                        }catch (\Exception $e) {
+                            return new ApiProblem(500, $e->getMessage());
+                        }
+                    }
+                }
+            }else{
+                $uuid = Uuid::uuid4();
+                $data->TX = $uuid->toString();
+
+                try {
+                    $insert = $sql->insert("tickets")->values([
+                        'id' => $data->id,
+                        'email' => $data->email,
+                        'firstname' => $data->firstname,
+                        'lastname' => $data->lastname,
+                        'source' => $data->source,
+                        'status' => $data->status,
+                        'points' => $data->points,
+                        'image' => $data->image,
+                        'submitDate' => $data->submitDate,
+                        'timeZone' => $data->timeZone,
+                        'phonenumber' => $data->phonenumber,
+                        'shop' => $data->shop,
+                        'TX' => $data->TX,
+                    ]);
+                    $statement = $sql->prepareStatementForSqlObject($insert);
+                    $results = $statement->execute();
+                    $results->buffer();
+                    return $data;
+                }catch (Exception $e) {
+                        return new ApiProblem(500, $e->getMessage());
+                }
+            }
+        }
     }
 
     /**
