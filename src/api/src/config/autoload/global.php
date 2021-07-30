@@ -29,7 +29,7 @@ return [
     'api-tools-mvc-auth' => [
         'authentication' => [
             'map' => [
-                'operator\\V1' => 'oauth',
+                'operator\\V1' => 'basic',
                 'ping\\V1' => 'oauth',
             ],
         ],
