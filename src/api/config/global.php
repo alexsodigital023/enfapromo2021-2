@@ -7,10 +7,10 @@ return [
         'adapters' => [
             'database' => [
                 'driver' => \Mysqli::class,
-                'database' => 'chocomilk',
+                'database' => 'defaultdb',
                 'username' => 'doadmin',
-                'password' => 'cperj0r7ng3hl9ld',
-                'hostname' => 'db-mysql-nyc1-42577-do-user-1684304-0.b.db.ondigitalocean.com',
+                'password' => 'tm0m4rm7oukqeuqz',
+                'hostname' => 'db-mysql-nyc3-83436-enfapromo2021-2-do-user-1684304-0.b.db.ondigitalocean.com',
                 'port' => '25060'
             ],
         ],
