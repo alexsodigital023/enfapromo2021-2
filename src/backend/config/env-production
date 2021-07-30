@@ -7,19 +7,19 @@ APP_URL=https://enfa-goldenticket-backend-ypabl.ondigitalocean.app
 LOG_CHANNEL=stack
 
 DB_CONNECTION=mysql
-DB_HOST=db-mysql-nyc1-42577-do-user-1684304-0.b.db.ondigitalocean.com
-DATABASE_URL=mysql://doadmin:cperj0r7ng3hl9ld@db-mysql-nyc1-42577-do-user-1684304-0.b.db.ondigitalocean.com:25060/chocomilk?ssl-mode=REQUIRED
+DB_HOST=db-mysql-nyc3-83436-enfapromo2021-2-do-user-1684304-0.b.db.ondigitalocean.com
+DATABASE_URL=mysql://doadmin:tm0m4rm7oukqeuqz@db-mysql-nyc3-83436-enfapromo2021-2-do-user-1684304-0.b.db.ondigitalocean.com:25060/defaultdb?ssl-mode=REQUIRED
 DB_PORT=25060
-DB_DATABASE=chocomilk
+DB_DATABASE=defaultdb
 DB_USERNAME=doadmin
-DB_PASSWORD=cperj0r7ng3hl9ld
+DB_PASSWORD=tm0m4rm7oukqeuqz
 
 DB2_CONNECTION=mysql
-DB2_HOST=db-mysql-nyc1-42577-do-user-1684304-0.b.db.ondigitalocean.com
+DB2_HOST=db-mysql-nyc3-83436-enfapromo2021-2-do-user-1684304-0.b.db.ondigitalocean.com
 DB2_PORT=25060
-DB2_DATABASE=chocomilk
+DB2_DATABASE=defaultdb
 DB2_USERNAME=doadmin
-DB2_PASSWORD=cperj0r7ng3hl9ld
+DB2_PASSWORD=tm0m4rm7oukqeuqz
 
 BROADCAST_DRIVER=log
 CACHE_DRIVER=file
