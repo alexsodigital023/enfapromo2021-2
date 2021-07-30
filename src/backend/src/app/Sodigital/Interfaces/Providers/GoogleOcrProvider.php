@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Sodigital\Interfaces\Providers;
+use Storage;
 use App\Sodigital\Interfaces\Providers\GoogleOcrProviderInterface;
 use GoogleCloudVision\GoogleCloudVision;
 
@@ -16,8 +17,7 @@ class GoogleOcrProvider extends GoogleCloudVision implements GoogleOcrProviderIn
      * @param String $rq $headers
      * @return Object
      */
-    public function checkInGoogle($rq,$headers){
-        $api = env('GOOGLE_OCR_API', '');
+    public function checkInGoogle($rq,$headers,$api){
         $jsonDataEncoded = json_encode($rq);
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, $api);
