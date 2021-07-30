@@ -1,13 +1,9 @@
 body {
-  background: $c-azul;
-  color: $c-blanco;
+  background: $c-white;
+  color: $c-black;
   padding: 0 !important;
 
   form, button, input {
-    font-family: $font-gothamBook;
+    font-family: $font-avenir;
   }
-}
-
-.xPage {
-  width: 100%;
 }

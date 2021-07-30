@@ -1,10 +1,8 @@
-if(process.env.NODE_ENV=='development'){
-  $ = require('jquery');
-}
-
-import Vue from 'vue'
-import Vue2TouchEvents from 'vue2-touch-events'
-import vClickOutside from 'v-click-outside';  
+import $ from "jquery";
+import Vue from 'vue';
+import Vue2TouchEvents from 'vue2-touch-events';
+import vClickOutside from 'v-click-outside';
+import 'bootstrap';
      
 Vue.use(vClickOutside);  
 Vue.use(Vue2TouchEvents);
