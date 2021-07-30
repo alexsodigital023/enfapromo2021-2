@@ -7,11 +7,11 @@ return [
         'adapters' => [
             'database' => [
                 'driver' => 'Pdo_Mysql',
-                'database' => 'chocomilk',
-                'username' => 'doadmin',
-                'password' => 'cperj0r7ng3hl9ld',
-                'hostname' => 'db-mysql-nyc1-42577-do-user-1684304-0.b.db.ondigitalocean.com',
-                'port' => '25060'
+                'database' => 'prueba',
+                'username' => 'prueba',
+                'password' => 'prueba',
+                'hostname' => 'db',
+                'port' => '3306'
             ],
         ],
     ],

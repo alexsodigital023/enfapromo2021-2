@@ -29,10 +29,12 @@ class Regex{
         $ruleid=null;
         $desc="Producto no encontrado";
         if(strlen($ticket->data)>10){
+            //decodificar
+            $regex = base64_decode($ticket->data);
+            //analizar regexx
             foreach($this->ruleList as $rule){
                 $m=[];
-                preg_match_all($rule->product,$ticket->data,$m);
-
+                preg_match_all($rule->product,$regex,$m);
                 if(count($m[0])){
                     $status = 6;
                     $ruleid = $rule->id;
@@ -45,7 +47,7 @@ class Regex{
                             try{
                             $importe+=floatval($p[1][$i])+(floatval($p[2][$i])?floatval($p[2][$i])/100:0);
                             }catch(\Exception $e){
-                                
+
                             }
                         }
                     }
