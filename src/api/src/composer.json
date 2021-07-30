@@ -36,6 +36,7 @@
         "laminas/laminas-component-installer": "^1.1.1 || ^2.1.1",
         "laminas/laminas-development-mode": "^3.2",
         "laminas/laminas-zendframework-bridge": "^1.0",
+        "ramsey/uuid": "^4.1",
         "zfr/zfr-cors": "^2.0"
     },
     "require-dev": {
