@@ -182,15 +182,15 @@ return [
         'authorization' => [
             'operator\\V1\\Rest\\Ticket\\Controller' => [
                 'collection' => [
-                    'GET' => false,
-                    'POST' => false,
+                    'GET' => true,
+                    'POST' => true,
                     'PUT' => false,
                     'PATCH' => false,
                     'DELETE' => false,
                 ],
                 'entity' => [
                     'GET' => true,
-                    'POST' => false,
+                    'POST' => true,
                     'PUT' => true,
                     'PATCH' => true,
                     'DELETE' => true,
@@ -199,13 +199,29 @@ return [
             'operator\\V1\\Rest\\User\\Controller' => [
                 'collection' => [
                     'GET' => false,
-                    'POST' => false,
+                    'POST' => true,
                     'PUT' => false,
                     'PATCH' => false,
                     'DELETE' => false,
                 ],
                 'entity' => [
                     'GET' => true,
+                    'POST' => false,
+                    'PUT' => false,
+                    'PATCH' => false,
+                    'DELETE' => false,
+                ],
+            ],
+            'operator\\V1\\Rest\\Ganadores\\Controller' => [
+                'collection' => [
+                    'GET' => true,
+                    'POST' => false,
+                    'PUT' => false,
+                    'PATCH' => false,
+                    'DELETE' => false,
+                ],
+                'entity' => [
+                    'GET' => false,
                     'POST' => false,
                     'PUT' => false,
                     'PATCH' => false,
