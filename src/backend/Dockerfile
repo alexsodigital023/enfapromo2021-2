@@ -28,4 +28,4 @@ RUN docker-php-ext-enable mysqli pdo pdo_mysql
 
 RUN a2enmod rewrite
 
-RUN cd /var/www && composer install --no-dev 
+RUN cd /var/www && composer install  
