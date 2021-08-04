@@ -21,7 +21,17 @@ $grid-xxl: create-breakpoint('xxl');
 // Colores
 $c-black: #000;
 $c-white: #fff;
+$c-red: #ed1c24;
 $c-transparent: transparent;
+$c-naranja: #f99c1c;
+$c-azul: #001b5d;
+$c-sams: #002F6E;
+$c-walmart: #2F6BA7;
+$c-chedraui: #F1892A;
+$c-enfashop: #0171a8;
 
+
+// Colorses alpha
+$c-5-black: rgba($c-black, 0.5);
 
 $font-avenir: 'Avenir Oblique';
