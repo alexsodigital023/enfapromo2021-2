@@ -6,6 +6,7 @@ use App\Exports\TicketExport;
 use App\Status;
 use App\Ticket;
 use App\Log;
+use App\Providers\CdpServiceProvider;
 use Illuminate\Http\Request;
 use Maatwebsite\Excel\Facades\Excel;
 use Illuminate\Support\Facades\Auth;
@@ -182,7 +183,7 @@ class TicketController extends Controller
                     "status_id"=>3,
                     "prioridad"=>99
                 ]);
-            
+
             $this->log([
                 "ticket_id"=>$id,
                 "status_id"=>3,
@@ -202,5 +203,74 @@ class TicketController extends Controller
     }
     public function download($week,Request $request){
         return Excel::download((new TicketExport($week,intval($request->invalidos))), 'tickets.xlsx');
+    }
+    public function test(){
+
+        $config = config('services.cdp');
+        $cdp = new CdpServiceProvider((object)$config);
+        $payload = [
+                "FirstName" => "Test",
+                "LastName" => "Test",
+                "LanguageCode"=>  "SPA",
+                "Emails"=>  [
+                  (object)[
+                    "EmailAddress" =>  "test.sodigital1234567@rb.com",
+                    "DeliveryStatus" =>  "G"
+                    ]
+                ],
+                "SourceCode"=>  "MJNMEXWEB",
+                "EnrollmentStatus"=>  "A",
+                "EnrollChannelCode"=>  "WEB",
+                "TierCode"=>  "MJNMEXTIER1",
+                "BirthDate"=>  "1955-06-05T00:00:00Z",
+                "JsonExternalData"=>  [
+                  "Agreements"=>  [
+                    (object)[
+                      "BusinessId"=>  "LT-CP-PL-pl-RB-Shareholders",
+                      "RevisionId"=>  "5e32e87e01dab10001c320f9",
+                      "ConsentAcceptedInd"=>  true,
+                      "ConsentDesc"=>  "Consent Description",
+                      "MandatoryInd"=>  false,
+                      "AgreementDate"=>  "2018-05-23 12:29:04",
+                      "ActivityDate"=>  "2017-07-02T12:37:11.3665418Z",
+                      "Status"=>  "A"
+                    ]
+                  ],
+                  "Children"=>  [
+                    (object)[
+                      "BirthDate"=>  "2019-03-02T00:00:00.000Z"
+                    ]
+                  ],
+                  "ProfileSubscriptions"=>  [
+                    (object)[
+                      "SubscriptionId" => "882ddb48-dc46-42f7-8a17-8c9a12247084",
+                      "OptSource"=>  "WEB",
+                      "ChannelCode"=>  "EM",
+                      "OptStatus"=>  true,
+                      "ActivityDate"=>  "2019-09-20T14:47:41.000000Z",
+                      "Status"=>  "A",
+                      "JsonExternalData"=>  (object)[
+                        "ContactPointValue"=>  "test.sodigital1234567@rb.com",
+                        "EmailOptFlag"=>  "Y"
+                      ]
+                    ]
+                  ],
+
+                  "ProfileActivity"=>  (object)[
+                    "ActivityInput"=>  (object)[],
+                    "ActivityType"=>  "REGISTRATION",
+                    "Status"=>  "A",
+                    "DataSourceCode"=>  "MJNMEXAPP2021",
+                    "JsonExternalData"=>  (object)[
+                      "ActivityDate"=>  "2019-09-20T14:47:41.000000Z",
+                      "CountryCode"=>  "SPA"
+                    ]
+                ],
+                  "UnmappedAttributes"=>  (object)[],
+                  "UtmAttributes"=>  []
+            ]
+        ];
+        $res = $cdp->process($payload);
+        return response()->json($res);
     }
 }
