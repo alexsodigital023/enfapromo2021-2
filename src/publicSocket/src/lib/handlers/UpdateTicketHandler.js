@@ -1,5 +1,6 @@
 
 const pool = require('../pool');
+const https = require('https');
 
 const acl={
     'numero':true,
@@ -7,6 +8,9 @@ const acl={
     'nombre':true,
     'telefono':true,
     'apellido':true,
+    'edad':true,
+    'ciudad':true,
+    'tienda':true,
     'foto':true,
     'estado_id':true,
     'tienda_id':true,
@@ -41,6 +45,9 @@ module.exports={
                             ]).then(
                                 r=>{
                                     conn.end();
+                                    if(data.name=='apellido'){
+                                        https.get(`${paths.report}?id=${user.ticket_id}`);
+                                    }
                                     resolve({
                                         code:200,
                                         data:'actualizado'
