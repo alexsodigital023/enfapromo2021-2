@@ -24,7 +24,8 @@ class Init extends Migration
             ->createSyncin()
             ->createPhoto()
             ->createOauth()
-            ->createAsignaciones();
+            ->createAsignaciones()
+            ->createCdp();
     }
 
     /**
@@ -268,5 +269,17 @@ class Init extends Migration
         DB::statement("create or REPLACE VIEW oauth_users as select email as username, password as password, name as first_name, null as last_name from users where oauth=1");
         return $this;
     }
+    protected function createCdp(){
+
+        Schema::create('cdp_token', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->string('access_token',200);
+            $table->string('token_type',20);
+            $table->string('refresh_token',200);
+            $table->dateTime('expires_date');
+        });
+        return $this;
+    }
+
 }
 

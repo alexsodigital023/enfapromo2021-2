@@ -1,9 +1,10 @@
 <?php
 
 namespace App\Sodigital\Interfaces\Providers;
-use Storage;
+
 use App\Sodigital\Interfaces\Providers\GoogleOcrProviderInterface;
 use GoogleCloudVision\GoogleCloudVision;
+use GoogleCloudVision\Request\AnnotateImageRequest;
 
 class GoogleOcrProvider extends GoogleCloudVision implements GoogleOcrProviderInterface{
     protected $credencial;
@@ -17,21 +18,23 @@ class GoogleOcrProvider extends GoogleCloudVision implements GoogleOcrProviderIn
      * @param String $rq $headers
      * @return Object
      */
-    public function checkInGoogle($rq,$headers,$api){
-        $jsonDataEncoded = json_encode($rq);
-        $ch = curl_init();
-        curl_setopt($ch, CURLOPT_URL, $api);
-        curl_setopt( $ch, CURLOPT_POSTFIELDS, $jsonDataEncoded );
-        curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
-        curl_setopt( $ch, CURLOPT_RETURNTRANSFER, true );
-        curl_setopt( $ch, CURLOPT_HTTPHEADER, $headers);
-        curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
-        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
-        curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
-        curl_setopt($ch, CURLOPT_VERBOSE, true);
-        $result = curl_exec($ch);
-        curl_close($ch);
-        return json_decode($result);
+    public function checkInGoogle($url,$api){
+
+        $features = "TEXT_DETECTION";
+        $request = new AnnotateImageRequest();
+        $request->setImageUri($url);
+        $request->setFeature($features);
+
+        $cv= new GoogleCloudVision([$request],$api);
+        $response = $cv->annotate();
+        if(is_array($response)&&$response["error"]){
+            throw new \Exception($response["error"]->message);
+        }
+        foreach($response->responses as $r){
+            if(!property_exists($r,"error")){
+                return ($r->textAnnotations);
+            }
+        }
     }
 
     /**

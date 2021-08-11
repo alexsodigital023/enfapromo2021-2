@@ -5,6 +5,7 @@ return [
             \operator\V1\Rest\Ticket\TicketResource::class => \operator\V1\Rest\Ticket\TicketResourceFactory::class,
             \operator\V1\Rest\User\UserResource::class => \operator\V1\Rest\User\UserResourceFactory::class,
             \operator\V1\Rest\Ganadores\GanadoresResource::class => \operator\V1\Rest\Ganadores\GanadoresResourceFactory::class,
+            \operator\V1\Rest\Test\TestResource::class => \operator\V1\Rest\Test\TestResourceFactory::class,
         ],
     ],
     'router' => [
@@ -36,6 +37,15 @@ return [
                     ],
                 ],
             ],
+            'operator.rest.test' => [
+                'type' => 'Segment',
+                'options' => [
+                    'route' => '/test[/:test_id]',
+                    'defaults' => [
+                        'controller' => 'operator\\V1\\Rest\\Test\\Controller',
+                    ],
+                ],
+            ],
         ],
     ],
     'api-tools-versioning' => [
@@ -43,6 +53,7 @@ return [
             0 => 'operator.rest.ticket',
             1 => 'operator.rest.user',
             2 => 'operator.rest.ganadores',
+            3 => 'operator.rest.test',
         ],
     ],
     'api-tools-rest' => [
@@ -99,12 +110,30 @@ return [
             'collection_class' => \operator\V1\Rest\Ganadores\GanadoresCollection::class,
             'service_name' => 'ganadores',
         ],
+        'operator\\V1\\Rest\\Test\\Controller' => [
+            'listener' => \operator\V1\Rest\Test\TestResource::class,
+            'route_name' => 'operator.rest.test',
+            'route_identifier_name' => 'test_id',
+            'collection_name' => 'test',
+            'entity_http_methods' => [],
+            'collection_http_methods' => [
+                0 => 'POST',
+                1 => 'GET',
+            ],
+            'collection_query_whitelist' => [],
+            'page_size' => 25,
+            'page_size_param' => null,
+            'entity_class' => \operator\V1\Rest\Test\TestEntity::class,
+            'collection_class' => \operator\V1\Rest\Test\TestCollection::class,
+            'service_name' => 'Test',
+        ],
     ],
     'api-tools-content-negotiation' => [
         'controllers' => [
             'operator\\V1\\Rest\\Ticket\\Controller' => 'HalJson',
             'operator\\V1\\Rest\\User\\Controller' => 'HalJson',
             'operator\\V1\\Rest\\Ganadores\\Controller' => 'HalJson',
+            'operator\\V1\\Rest\\Test\\Controller' => 'HalJson',
         ],
         'accept_whitelist' => [
             'operator\\V1\\Rest\\Ticket\\Controller' => [
@@ -122,6 +151,11 @@ return [
                 1 => 'application/hal+json',
                 2 => 'application/json',
             ],
+            'operator\\V1\\Rest\\Test\\Controller' => [
+                0 => 'application/vnd.operator.v1+json',
+                1 => 'application/hal+json',
+                2 => 'application/json',
+            ],
         ],
         'content_type_whitelist' => [
             'operator\\V1\\Rest\\Ticket\\Controller' => [
@@ -133,6 +167,10 @@ return [
                 1 => 'application/json',
             ],
             'operator\\V1\\Rest\\Ganadores\\Controller' => [
+                0 => 'application/vnd.operator.v1+json',
+                1 => 'application/json',
+            ],
+            'operator\\V1\\Rest\\Test\\Controller' => [
                 0 => 'application/vnd.operator.v1+json',
                 1 => 'application/json',
             ],
@@ -174,6 +212,18 @@ return [
                 'entity_identifier_name' => 'id',
                 'route_name' => 'operator.rest.ganadores',
                 'route_identifier_name' => 'ganadores_id',
+                'is_collection' => true,
+            ],
+            \operator\V1\Rest\Test\TestEntity::class => [
+                'entity_identifier_name' => 'id',
+                'route_name' => 'operator.rest.test',
+                'route_identifier_name' => 'test_id',
+                'hydrator' => \Laminas\Hydrator\ArraySerializableHydrator::class,
+            ],
+            \operator\V1\Rest\Test\TestCollection::class => [
+                'entity_identifier_name' => 'id',
+                'route_name' => 'operator.rest.test',
+                'route_identifier_name' => 'test_id',
                 'is_collection' => true,
             ],
         ],
