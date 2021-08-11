@@ -38,7 +38,13 @@ return [
         'client_secret'=>'R5k{8JX_$Zh',
         'basic_auth'=>'reckittbenckiser:t8uLkZMWNa87mxzKokKCXVQ9PEkwzXJv9YrHRD7r63WJwh5djf',
         'baseurl'=>'https://digital-security-authservice-regression.frankfurt.rbdigitalcloud.com',
-        'apiurl'=>'https://api.cdp-rb.com'
+        'apiurl'=>'https://api.cdp-rb.com',
+        'legal_version'=>'6107a6c74158bb0001de089a',
+        'legal_id'=>'LT-O-MX-es-SmartpromoCalCTose',
+        'legal_description'=>'',
+        'AccountSourceCode'=>'RBMEXCALWEB',
+        'TierCode'=>'RBMEXCALTIER1',
+        'legal_description'=>''
     ],
 
 
