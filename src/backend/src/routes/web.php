@@ -29,7 +29,6 @@ Route::post('/ticket/{id}/premiar', 'TicketController@premiar')->name('ticket/pr
 Route::post('/ticket/{id}/despremiar', 'TicketController@despremiar')->name('ticket/despremiar');
 Route::get('/ticket/download/{week}', 'TicketController@download')->name('ticket/download');
 
-Route::get('/ticket-test','TicketController@test');
 
 
 Route::get('/user', 'UserController@index')->name('users');
@@ -37,4 +36,5 @@ Route::post('/user/{id}', 'UserController@update')->name('user/update');
 
 Route::get('/participantes', 'ParticipantesController@index')->name('participantes');
 
-Route::get('/api/runservice', 'ServiceController@run')->name('services');
+Route::get('/runservice', 'ServiceController@run')->name('services');
+Route::get('/report','ServiceController@report');
