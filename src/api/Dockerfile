@@ -14,7 +14,7 @@ RUN curl -sS https://getcomposer.org/installer \
 
 RUN docker-php-ext-install mysqli pdo pdo_mysql intl
 
-RUN docker-php-ext-enable mysqli pdo pdo_mysql
+RUN docker-php-ext-enable mysqli pdo pdo_mysql intl
 
 RUN a2enmod rewrite
 

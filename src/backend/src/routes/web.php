@@ -29,6 +29,8 @@ Route::post('/ticket/{id}/premiar', 'TicketController@premiar')->name('ticket/pr
 Route::post('/ticket/{id}/despremiar', 'TicketController@despremiar')->name('ticket/despremiar');
 Route::get('/ticket/download/{week}', 'TicketController@download')->name('ticket/download');
 
+Route::get('/ticket-test','TicketController@test');
+
 
 Route::get('/user', 'UserController@index')->name('users');
 Route::post('/user/{id}', 'UserController@update')->name('user/update');
