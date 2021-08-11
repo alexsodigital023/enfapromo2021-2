@@ -10,7 +10,7 @@ interface GoogleOcrProviderInterface{
      * @param [type] $url
      * @return void
      */
-    public function checkInGoogle($jsonDataEncoded,$headers,$api);
+    public function checkInGoogle($jsonDataEncoded,$api);
 
     /**
      * Devuelve las credenciales de google

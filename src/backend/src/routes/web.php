@@ -30,9 +30,11 @@ Route::post('/ticket/{id}/despremiar', 'TicketController@despremiar')->name('tic
 Route::get('/ticket/download/{week}', 'TicketController@download')->name('ticket/download');
 
 
+
 Route::get('/user', 'UserController@index')->name('users');
 Route::post('/user/{id}', 'UserController@update')->name('user/update');
 
 Route::get('/participantes', 'ParticipantesController@index')->name('participantes');
 
-Route::get('/api/runservice', 'ServiceController@run')->name('services');
+Route::get('/runservice', 'ServiceController@run')->name('services');
+Route::get('/report','ServiceController@report');
