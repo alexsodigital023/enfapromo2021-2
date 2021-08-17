@@ -13,10 +13,8 @@
       <div class="shop">
         <p>Compra aquí</p>
       </div>
-      <div class="store chedraui"><a href=""><img src="images/chedraui.png" alt=""></a></div>
-      <div class="store enfashop"><a href=""><img src="images/enfashop.png" alt=""></a></div>
+      <div class="store amazon"><a href=""><img src="images/amazon.png" alt=""></a></div>
       <div class="store sams"><a href=""><img src="images/sams.png" alt=""></a></div>
-      <div class="store walmart"><a href=""><img src="images/walmart.png" alt=""></a></div>
     </div>
 
     <div class="col-12 text-center title">
@@ -32,7 +30,10 @@
           <p><img src="images/dos.jpeg" alt="" class="img-responsive img-fluid"><strong>Registra</strong></p>
         </div>
         <div class="col col-md-4">
-          <p><img src="images/tres.jpeg" alt="" class="img-responsive img-fluid"><strong>Comparte</strong></p>
+          <p><img src="images/tres.jpeg" alt="" class="img-responsive img-fluid"><strong>Gana un premio al instante</strong></p>
+        </div>
+        <div class="col">
+          <p><img src="images/tres.jpeg" alt="" class="img-responsive img-fluid"><strong>Comparte un video de 30 seg en tu Facebook®* personal con los logros de tu bebé usando #EnfaLogros. El que tenga más likes, gana.</strong></p>
         </div>
       </div>
 

@@ -109,8 +109,9 @@
           background: $c-chedraui;
         }
 
-        &.enfashop {
-          background: $c-enfashop;
+        &.amazon {
+          border: 2px solid $c-amazon;
+          background: $c-white;
         }
 
         &.sams {

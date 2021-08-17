@@ -15742,8 +15742,9 @@ body input {
   background: #F1892A;
 }
 
-.enfa-container .shopping-cart .store.enfashop {
-  background: #0171a8;
+.enfa-container .shopping-cart .store.amazon {
+  border: 2px solid #ff9b00;
+  background: #fff;
 }
 
 .enfa-container .shopping-cart .store.sams {

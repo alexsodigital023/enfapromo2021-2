@@ -17,6 +17,10 @@ Route::get('/', function () {
     return view('welcome');
 })->name("home");
 
+Route::get('/preguntas-frecuentes', function () {
+    return view('faq');
+})->name("faq");
+
 Route::get('/terminos-y-condiciones', function () {
     return view('legales');
 })->name("legales");
