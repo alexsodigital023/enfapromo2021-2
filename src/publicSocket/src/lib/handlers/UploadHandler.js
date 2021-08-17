@@ -1,4 +1,5 @@
 const paths = require('../../config/paths.json');
+const s3Credentials = require('../../config/s3.json');
 const { v4: uuidv4 } = require('uuid');
 const https = require('https');
 const md5 = require('md5');
@@ -7,12 +8,12 @@ const AWS = require('aws-sdk');
 
 
 const magic = new mmm.Magic(mmm.MAGIC_MIME_TYPE);
-const ep = new AWS.Endpoint('nyc3.digitaloceanspaces.com');
+const ep = new AWS.Endpoint(s3Credentials.endpoint);
 const pool = require('../pool');
 
 const s3 = new AWS.S3({
-    accessKeyId: '2BY5UOXMGVA62RZTXESU',
-    secretAccessKey: 'aPxjjt1T9Qs/shyHXdGNDuRZsxUooPmMPqU0XrEpu+M',
+    accessKeyId: s3Credentials.accessKeyId,
+    secretAccessKey: s3Credentials.secretAccessKey,
     endpoint: ep
   });
 
@@ -54,21 +55,8 @@ module.exports={
                                                         message:'No se pudo guardar'
                                                     });
                                                 }else{
-                                                    let agent=new https.Agent({ keepAlive: true });
-
-                                                    const config = {
-                                                        agent: agent,
-                                                        method: 'GET',
-                                                        host: 'chocomilkpromo-54hks.ondigitalocean.app',
-                                                        port: 443,
-                                                        path: 'api/runservice',
-                                                        headers: {
-                                                        'Content-Type': 'application/json',
-                                                        Accept: '*/*',
-                                                        },
-                                                    };
-                                                    console.log("ejecutando servicio",`https://chocomilkpromo-54hks.ondigitalocean.app/api/runservice?id=${id}`);
-                                                    https.get(`https://chocomilkpromo-54hks.ondigitalocean.app/chocomilkpromo2/api/runservice?id=${id}`, (res) => {
+                                                    console.log("ejecutando servicio",`${paths.ocr}?id=${id}`);
+                                                    https.get(`${paths.ocr}?id=${id}`, (res) => {
 
                                                         let response = null;
                                                         res.on('data', (d) => {

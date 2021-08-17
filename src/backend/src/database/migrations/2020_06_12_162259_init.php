@@ -24,7 +24,8 @@ class Init extends Migration
             ->createSyncin()
             ->createPhoto()
             ->createOauth()
-            ->createAsignaciones();
+            ->createAsignaciones()
+            ->createCdp();
     }
 
     /**
@@ -60,7 +61,24 @@ class Init extends Migration
 
     protected function createTicket(){
 
+        Schema::create('tickets', function (Blueprint $table) {
+            $table->id();
+            $table->string('email',false);
+            $table->string('firstname');
+            $table->string('lastname');
+            $table->integer('source');
+            $table->integer('status');
+            $table->integer('points');
+            $table->string('image');
+            $table->datetime('submitDate');
+            $table->string('timeZone')->nullable();
+            $table->string('phonenumber');
+            $table->string('shop');
+            $table->string('TX')->nullable();
+        });
+        
         Schema::create('ticket', function (Blueprint $table) {
+           
             $table->id();
             $table->bigInteger('user_id',false,true);
             $table->string('numero',20)->nullable();
@@ -81,7 +99,8 @@ class Init extends Migration
             $table->tinyInteger('status_id',false,true);
             $table->text('status_desc')->nullable();
             $table->bigInteger('rule_id',false,true)->nullable();
-            $table->text('data')->nullable();
+            //$table->text('data')->nullable();
+            $table->longText('data')->nullable();
             $table->text('products_find')->nullable();
             $table->tinyInteger('product',false,true)->nullable();
             $table->decimal('import',8,2)->nullable();
@@ -99,7 +118,7 @@ class Init extends Migration
         });
 
         DB::statement("create or replace view ganadores as
-        select 
+        select
         concat(SUBSTRING(`u`.`email`, 1,3),'***@***',SUBSTRING(`u`.`email`, -6)) as 'email',
         `e`.`name` as 'estado',
         `s`.`name` as 'tienda',
@@ -250,5 +269,17 @@ class Init extends Migration
         DB::statement("create or REPLACE VIEW oauth_users as select email as username, password as password, name as first_name, null as last_name from users where oauth=1");
         return $this;
     }
+    protected function createCdp(){
+
+        Schema::create('cdp_token', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->string('access_token',200);
+            $table->string('token_type',20);
+            $table->string('refresh_token',200);
+            $table->dateTime('expires_date');
+        });
+        return $this;
+    }
+
 }
 

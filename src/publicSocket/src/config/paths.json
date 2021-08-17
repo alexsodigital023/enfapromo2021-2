@@ -1,3 +1,5 @@
 {
-    "uploads":"chocomilk"
+    "uploads":"goldenpromo",
+    "ocr":"https://api-enfapromo-2021-2-35olt.ondigitalocean.app/runservice",
+    "report":"https://api-enfapromo-2021-2-35olt.ondigitalocean.app/report"
 }
