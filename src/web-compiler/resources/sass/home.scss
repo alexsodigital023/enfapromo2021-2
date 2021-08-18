@@ -1,0 +1,274 @@
+.enfa {
+  &-promo {
+    background: $c-naranja;
+    color: $c-azul;
+    padding: 2% 2% 0;
+
+    &.legales {
+      .logo {
+        margin: 0 auto;
+        display: block;
+      }
+
+      h1 {
+        margin-bottom: 50px;
+        font-weight: bold;
+      }
+    }
+  }
+
+  &-container {
+    max-width: 1300px;
+    margin: 0 auto;
+
+    .captcha-btn {
+      display: block;
+      background: $c-red;
+      color: $c-white;
+      width: 100%;
+      max-width: 300px;
+      margin: 20px auto;
+      padding: 15px 0;
+    }
+
+    .popEnfa {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      left: 0;
+      top: 0;
+      background: $c-5-black;
+      z-index: 30;
+
+      form {
+        width: 100%;
+        max-width: 350px;
+        position: absolute;
+        z-index: 80;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%,-50%);
+        background: $c-azul;
+        color: $c-white;
+        padding: 25px 30px;
+        border-radius: 0.5rem;
+
+        label {
+          display: block;
+          text-align: center;
+          margin-bottom: 10px;
+        }
+
+        .close {
+          cursor: pointer;
+          opacity: 1;
+          text-align: center;
+          position: absolute;
+          top: -40px;
+          right: -20px;
+          z-index: 100;
+
+          span {
+            height: 35px;
+            width: 35px;
+            display: block;
+            background: $c-naranja;
+            color: $c-white;
+            padding: 5px;
+            border-radius: 1rem;
+          }
+        }
+      }
+    }
+
+    .shopping-cart {
+      position: fixed;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+
+      .shop {
+        border-radius: 1rem 0 0 1rem;
+        text-align: center;
+        background: $c-red;
+        color: $c-white;
+        font-weight: bold;
+        margin: 0;
+        padding: 15px 0;
+
+        p {
+          margin: 0;
+        }
+      }
+
+      .store {
+        border-radius: 1rem 0 0 1rem;
+        margin: 1px 0;
+
+        &.chedraui {
+          background: $c-chedraui;
+        }
+
+        &.amazon {
+          border: 2px solid $c-amazon;
+          background: $c-white;
+        }
+
+        &.sams {
+          border: 2px solid $c-sams;
+          background: $c-white;
+        }
+
+        &.walmart {
+          border: 2px solid $c-walmart;
+          background: $c-white;
+        }
+
+        a {
+          display: block;
+          padding: 10px 15px;
+
+          img {
+            max-width: 80px;
+          }
+        }
+      }
+    }
+
+    a {
+      color: $c-azul;
+
+      &:active,
+      &:hover {
+        color: $c-white;
+        text-decoration: none;
+        font-weight: bold;
+      }
+    }
+
+    img {
+      &.bebe {
+        max-width: 500px;
+        display: block;
+        margin: 0 auto;
+      }
+    }
+
+    .title {
+      font-size: 3rem;
+    }
+    .subtitle {
+      font-size: 2.5rem;
+
+      &-h2 {
+        font-size: 4rem;
+        font-weight: bold;
+      }
+
+      &-h3 {
+        font-size: 2rem;
+        margin: -15px auto 30px;
+      }
+    }
+
+    .pasos {
+      font-size: 1.8rem;
+      margin: 30px auto;
+
+      img {
+        margin-right: 10px;
+      }
+    }
+
+    form {
+      small {
+        font-size: 0.8rem;
+        margin-bottom: 20px;
+        display: inline-block;
+      }
+
+      label {
+        font-weight: bold;
+        margin: 10px auto -10px;
+
+        &.file {
+          display: block;
+          background: $c-azul;
+          color: $c-white;
+          margin: 0 auto 15px;
+          max-width: 200px;
+
+          &:active,
+          &:hover {
+            color: $c-white;
+            opacity: .95;
+          }
+        }
+
+        &.checkbox {
+          display: block;
+          margin: 10px auto;
+          font-size: 0.9rem;
+        }
+      }
+
+      input {
+        box-shadow: inset 0px 0px 3px 1px rgba(71,71,71,1);
+        border: 1px solid $c-transparent;
+
+        &.file {
+          display: none;
+        }
+      }
+
+      .sube {
+        font-weight: bold;
+        font-size: 1.2rem;
+      }
+
+      button {
+        display: block;
+        background: $c-azul;
+        color: $c-white;
+        margin: 15px auto;
+        font-weight: bold;
+        font-size: 1.2rem;
+        border-radius: 0.5rem;
+        padding: 5px 30px;
+
+        &:active,
+        &:hover {
+          color: $c-white;
+          opacity: .95;
+        }
+      }
+    }
+
+    .footer {
+      margin-top: 50px;
+      color: $c-black;
+
+      small {
+        display: block;
+
+        &.video {
+          margin-bottom: 10px;
+          font-size: 0.75rem;
+        }
+      }
+
+      .legales {
+        margin-top: 5px;
+      }
+
+      a {
+        color: $c-black;
+
+        &:active,
+        &:hover {
+          color: $c-azul;
+        }
+      }
+    }
+  }
+}
