@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Cal-C-Tose Promo 2021 | @yield('title')</title>
+  <title>Enfabebe Promo 2021 | @yield('title')</title>
 
   <link rel="stylesheet" href="css/app.css">
 
