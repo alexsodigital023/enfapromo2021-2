@@ -110,12 +110,12 @@ class Init extends Migration
             $table->integer("week",false,true)->virtualAs("WEEKOFYEAR(created_at)")->nullable();
             $table->unique("fingerprint")->nullable();
             $table->index(["status_id","path","product","import"])->nullable();
-            $table->integer('source');
-            $table->integer('status');
-            $table->integer('points');
-            $table->datetime('submitDate');
+            $table->integer('source')->nullable();
+            $table->integer('status')->nullable();
+            $table->integer('points')->nullable();
+            $table->datetime('submitDate')->nullable();
             $table->string('timeZone')->nullable();
-            $table->string('shop');
+            $table->string('shop')->nullable();
             $table->string('TX')->nullable();
         });
 
