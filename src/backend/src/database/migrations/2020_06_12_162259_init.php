@@ -85,6 +85,7 @@ class Init extends Migration
             $table->string('nombre',50)->nullable();
             $table->string('apellido',50)->nullable();
             $table->string('telefono',50)->nullable();
+            $table->string('edad',50)->nullable();
             $table->string('game_t',50)->nullable();
             $table->string('game_m',50)->nullable();
             $table->string('foto',200)->nullable();
