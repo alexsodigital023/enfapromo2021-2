@@ -28,7 +28,7 @@ class GoogleOcrProvider extends GoogleCloudVision implements GoogleOcrProviderIn
         $cv= new GoogleCloudVision([$request],$api);
         $response = $cv->annotate();
         if(is_array($response)&&$response["error"]){
-            throw new \Exception($response["error"]->message);
+            throw new \Exception($response["error"]->error->message);
         }
         foreach($response->responses as $r){
             if(!property_exists($r,"error")){
