@@ -110,7 +110,6 @@ class TicketResource extends ResourceBase
                 if(preg_match('/([zZ]-[0-9]*)|([zZ]\+[0-9]*)/',$data->submitDate, $matches)){
                     $data->timeZone = $matches[0];
                     $validateData->timeZone = $matches[0];
-                    // $data->submitDate = preg_replace('/([zZ]-[0-9]*)|([zZ]\+[0-9]*)/',"",$data->submitDate);
                     $data->submitDate = str_replace($matches[0],"",$data->submitDate);
                     $validateData->submitDate = $data->submitDate;
                    

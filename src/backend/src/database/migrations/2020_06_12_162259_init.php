@@ -100,7 +100,6 @@ class Init extends Migration
             $table->tinyInteger('status_id',false,true)->nullable();
             $table->text('status_desc')->nullable();
             $table->bigInteger('rule_id',false,true)->nullable();
-            //$table->text('data')->nullable();
             $table->longText('data')->nullable();
             $table->text('products_find')->nullable();
             $table->tinyInteger('product',false,true)->nullable();
@@ -118,11 +117,6 @@ class Init extends Migration
             $table->string('timeZone')->nullable();
             $table->string('shop');
             $table->string('TX')->nullable();
-            // $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
-            // $table->foreign('status_id')->references('id')->on('cat_status');
-            // $table->foreign('estado_id')->references('id')->on('cat_estado');
-            // $table->foreign('tienda_id')->references('id')->on('cat_tienda');
-            // $table->foreign('rule_id')->references('id')->on('regex_rule');
         });
 
         DB::statement("create or replace view ganadores as
