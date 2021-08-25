@@ -9,6 +9,7 @@ use App\Sodigital\Services\Regex\Regex;
 use App\Sodigital\Interfaces\Controllers\ServiceControllerInterface;
 use App\Sodigital\Services\Ocr\GoogleOcr;
 use App\Providers\CdpServiceProvider;
+use App\Providers\AdvantageServiceProvider;
 
 class ServiceController extends Controller implements ServiceControllerInterface
 {
@@ -113,6 +114,18 @@ class ServiceController extends Controller implements ServiceControllerInterface
             ]
         ];
         $res = $cdp->process($payload);
-        return response()->json($res);
+        $config = (object)config('services.advantage');
+        $advantage=new AdvantageServiceProvider($config);
+        $payload=[
+          "source"=>0,
+          "TX"=>$ticket->TX
+        ];
+        $tmpFile=tempnam(sys_get_temp_dir(),'ticket_');
+        file_put_contents($tmpFile,$this->getFile($ticket->path));
+        $file=[
+          "tmp_name"=>$tmpFile
+        ];
+        $advantage->sendPhotoTicket($payload,$file);
+        return response()->json([$res]);
     }
 }

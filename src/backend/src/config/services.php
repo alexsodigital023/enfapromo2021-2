@@ -46,6 +46,13 @@ return [
         'TierCode'=>'RBMEXCALTIER1',
         'legal_description'=>''
     ],
+    'advantage' =>[
+        "client_id"=>"3",
+        "client_secret"=>"Vq5MxBqX9rRjCVFi06kuU3yLvfK5XdYPjCnS04ba",
+        "url_token"=>"https://srvenfarewards.qa-advantagemkt.mx/oauth/token",
+        "url_auth"=>"https://srvenfarewards.qa-advantagemkt.mx/authApi/authLogin",
+        "url_base"=>"https://srvenfarewards.qa-advantagemkt.mx/%s",
+    ]
 
 
 ];
