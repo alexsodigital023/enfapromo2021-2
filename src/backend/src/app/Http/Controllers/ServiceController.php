@@ -114,7 +114,14 @@ class ServiceController extends Controller implements ServiceControllerInterface
         ];
         $res = $cdp->process($payload);
         $config = (object)config('services.advantage');
-        $advantage=new AdvantageServiceProvider($config);
+        $owner=[
+          "usuario"=>$ticket->email,
+          "cliente"=>$ticket->user_id,
+          "firstname"=>$ticket->nombre,
+          "lastname"=>$ticket->apellido,
+          "phonenumber"=>0
+        ];
+        $advantage=new AdvantageServiceProvider($config,$owner);
         $payload=[
           "source"=>0,
           "TX"=>$ticket->TX
