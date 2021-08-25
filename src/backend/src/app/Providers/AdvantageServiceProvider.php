@@ -64,7 +64,7 @@ class AdvantageServiceProvider extends ServiceProvider {
         $this->_url_token=$config->url_token;
         $this->_url_auth=$config->url_auth;
         $this->_url_base=$config->url_base;
-        $this->_provider->setOwnerData($owner);
+        $this->setOwnerData($owner);
     }
 
     public function sendPhotoTicket($data,$file){
