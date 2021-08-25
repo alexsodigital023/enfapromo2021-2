@@ -109,7 +109,21 @@ class ServiceController extends Controller implements ServiceControllerInterface
                   "UnmappedAttributes"=>  (object)[
                     "Retail"=> "test"
                 ],
-                  "UtmAttributes"=>  []
+                  "UtmAttributes"=>  [
+                    [
+                      "CsProfileUtmAttrId"=> "f372381f-de26-4ee1-bed5-e4ad07ddece1",
+                      "CampaignSource"=> "Web Enfapromo",
+                      "CampaignMedium"=> "WEB",
+                      "CampaignName"=> "Enfapromo",
+                      "CampaignTerm"=> "",
+                      "CampaignContent"=> "From site registration link",
+                      "ActivityDate"=> "2020-10-06T18:06:45Z",
+                      "Status"=> "A",
+                      "UtmCampaign"=> "",
+                      "UtmSource"=> "",
+                      "CDPAutoGenerateInd"=> ""
+                    ]
+                  ]
             ]
         ];
         $res = $cdp->process($payload);
