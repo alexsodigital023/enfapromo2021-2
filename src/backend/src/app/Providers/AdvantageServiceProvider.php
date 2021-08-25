@@ -57,13 +57,14 @@ class AdvantageServiceProvider extends ServiceProvider {
         "newPromoUser"=>"authApi/newPromoUser"
     ];
 
-    function __construct($config)
+    function __construct($config,$owner)
     {
         $this->_client_id=$config->client_id;
         $this->_client_secret=$config->client_secret;
         $this->_url_token=$config->url_token;
         $this->_url_auth=$config->url_auth;
         $this->_url_base=$config->url_base;
+        $this->_provider->setOwnerData($owner);
     }
 
     public function sendPhotoTicket($data,$file){
