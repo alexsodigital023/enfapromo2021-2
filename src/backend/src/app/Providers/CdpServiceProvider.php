@@ -18,7 +18,7 @@ class CdpServiceProvider extends ServiceProvider {
     const URL_AUTHORIZE="%s/oauth/authorize?%s";
     const URL_TOKEN="%s/oauth/token?%s";
     const URL_RENEW_TOKEN="%s/oauth/token";
-    const URL_PROFILE="%s/stage/profile?access_token=%s";
+    const URL_PROFILE="%s/profile?access_token=%s";
     const URL_REDIRECT_URI="http://www.sodigital.mx";
     const AUTHORIZE_RESPONSE_TYPE="code";
     const AUTHORIZE_SCOPE="SAVE_DATA";
