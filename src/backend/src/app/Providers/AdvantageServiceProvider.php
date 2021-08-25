@@ -74,7 +74,7 @@ class AdvantageServiceProvider extends ServiceProvider {
             $filePath = '@' . realpath($file['tmp_name']);
         }
         $data['multimedia']=$filePath;
-        return $this->provider->runService($this->urls["sendPhotoTicket"],$data,"formMultipart");
+        return $this->runService($this->urls["sendPhotoTicket"],$data,"formMultipart");
     }
 
     public function runService($path,$data,$format="json"){
