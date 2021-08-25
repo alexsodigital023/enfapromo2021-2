@@ -46,6 +46,13 @@ return [
         'TierCode'=>'RBMEXCALTIER1',
         'legal_description'=>''
     ],
+    'advantage' =>[
+        "client_id"=>"3",
+        "client_secret"=>"MXkvNDPDGBxZLi600akeODADti91q5J7AdyEfEcO",
+        "url_token"=>"https://enfagrow.servicios-advantage.mx/oauth/token",
+        "url_auth"=>"https://enfagrow.servicios-advantage.mx/authApi/authLogin",
+        "url_base"=>"https://enfagrow.servicios-advantage.mx/%s",
+    ],
 
 
 ];
