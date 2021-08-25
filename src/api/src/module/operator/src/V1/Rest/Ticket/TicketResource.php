@@ -110,7 +110,6 @@ class TicketResource extends ResourceBase
                 if(preg_match('/([zZ]-[0-9]*)|([zZ]\+[0-9]*)/',$data->submitDate, $matches)){
                     $data->timeZone = $matches[0];
                     $validateData->timeZone = $matches[0];
-                    // $data->submitDate = preg_replace('/([zZ]-[0-9]*)|([zZ]\+[0-9]*)/',"",$data->submitDate);
                     $data->submitDate = str_replace($matches[0],"",$data->submitDate);
                     $validateData->submitDate = $data->submitDate;
                    
@@ -139,7 +138,7 @@ class TicketResource extends ResourceBase
         if( isset($data->TX) ){
             $validateData->TX = $data->TX;
 
-            $select = $sql->select('tickets')
+            $select = $sql->select('ticket')
                 ->where(['TX'=> $validateData->TX])
                 ->limit(1);
             $statement = $sql->prepareStatementForSqlObject($select);
@@ -152,24 +151,23 @@ class TicketResource extends ResourceBase
                     $r_TX = ($r["TX"]);
                     if ($r_TX == $validateData->TX) {
                         try {
-                            $update = $sql->update("tickets");
+                            $update = $sql->update("ticket");
                             $update->set(
                                 [
                                 'id' => $validateData->id,
                                 'email' => $validateData->email,
-                                'firstname' => $validateData->firstname,
-                                'lastname' => $validateData->lastname,
+                                'nombre' => $validateData->firstname,
+                                'apellido' => $validateData->lastname,
                                 'source' => $validateData->source,
                                 'status' => $validateData->status,
                                 'points' => $validateData->points,
-                                'image' => $validateData->image,
+                                'foto' => $validateData->image,
                                 'submitDate' => $validateData->submitDate,
                                 'timeZone' => $davalidateDatata->timeZone,
-                                'phonenumber' => $validateData->phonenumber,
+                                'telefono' => $validateData->phonenumber,
                                 'shop' => $validateData->shop,
                                 'TX' => $validateData->TX,
                                 ]
-                            
                             )->where(["TX" => $r["TX"]]);
                             $s = $sql->prepareStatementForSqlObject($update);
                             $r = $s->execute();
@@ -183,18 +181,18 @@ class TicketResource extends ResourceBase
                 }
             }else{
                 try {
-                    $insert = $sql->insert("tickets")->values([
+                    $insert = $sql->insert("ticket")->values([
                         'id' => $validateData->id,
                         'email' => $validateData->email,
-                        'firstname' => $validateData->firstname,
-                        'lastname' => $validateData->lastname,
+                        'nombre' => $validateData->firstname,
+                        'apellido' => $validateData->lastname,
                         'source' => $validateData->source,
                         'status' => $validateData->status,
                         'points' => $validateData->points,
-                        'image' => $validateData->image,
+                        'foto' => $validateData->image,
                         'submitDate' => $validateData->submitDate,
                         'timeZone' => $validateData->timeZone,
-                        'phonenumber' => $validateData->phonenumber,
+                        'telefono' => $validateData->phonenumber,
                         'shop' => $validateData->shop,
                         'TX' => $validateData->TX,
                     ]);
@@ -209,7 +207,7 @@ class TicketResource extends ResourceBase
         }else{
             $uuid = Uuid::uuid4();
             $validateData->TX = $uuid->toString();
-            $select = $sql->select('tickets')
+            $select = $sql->select('ticket')
                 ->where(['id'=> $validateData->id])
                 ->limit(1);
             $statement = $sql->prepareStatementForSqlObject($select);
@@ -220,19 +218,19 @@ class TicketResource extends ResourceBase
                     $r_id = ($r["id"]);
                     if ($r_id == $validateData->id) {
                         try {
-                            $update = $sql->update("tickets");
+                            $update = $sql->update("ticket");
                             $update->set([
                                 'id' => $validateData->id,
                                 'email' => $validateData->email,
-                                'firstname' => $validateData->firstname,
-                                'lastname' => $validateData->lastname,
+                                'nombre' => $validateData->firstname,
+                                'apellido' => $validateData->lastname,
                                 'source' => $validateData->source,
                                 'status' => $validateData->status,
                                 'points' => $validateData->points,
-                                'image' => $validateData->image,
+                                'foto' => $validateData->image,
                                 'submitDate' => $validateData->submitDate,
                                 'timeZone' => $validateData->timeZone,
-                                'phonenumber' => $validateData->phonenumber,
+                                'telefono' => $validateData->phonenumber,
                                 'shop' => $validateData->shop,
                                 'TX' => $validateData->TX,  
                             ])->where(["id" => $r["id"]]);
@@ -248,20 +246,19 @@ class TicketResource extends ResourceBase
             }else{
                 $uuid = Uuid::uuid4();
                 $validateData->TX = $uuid->toString();
-
                 try {
-                    $insert = $sql->insert("tickets")->values([
+                    $insert = $sql->insert("ticket")->values([
                         'id' => $validateData->id,
                         'email' => $validateData->email,
-                        'firstname' => $validateData->firstname,
-                        'lastname' => $validateData->lastname,
+                        'nombre' => $validateData->firstname,
+                        'apellido' => $validateData->lastname,
                         'source' => $validateData->source,
                         'status' => $validateData->status,
                         'points' => $validateData->points,
-                        'image' => $validateData->image,
+                        'foto' => $validateData->image,
                         'submitDate' => $validateData->submitDate,
                         'timeZone' => $validateData->timeZone,
-                        'phonenumber' => $validateData->phonenumber,
+                        'telefono' => $validateData->phonenumber,
                         'shop' => $validateData->shop,
                         'TX' => $validateData->TX,
                     ]);
