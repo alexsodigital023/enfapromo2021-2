@@ -139,7 +139,14 @@ class CdpServiceProvider extends ServiceProvider {
      * @return Object
      */
     protected function getTokenFromEndpoint(){
-        return $this->_oldToken?$this->renewToken():$this->newToken();
+        $token=null;
+        if($this->_oldToken){
+            $token=$this->renewToken();
+        }
+        if(!$token){
+            $token=$this->newToken();
+        }
+        return $token;
     }
 
     /**

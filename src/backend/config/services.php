@@ -35,9 +35,9 @@ return [
     ],
     'cdp' =>[
         'client_id'=>'md-so-digital-prod',
-        'client_secret'=>'R5k{8JX_$Zh',
+        'client_secret'=>'mNZ@P4CeBa2u}v$m',
         'basic_auth'=>'reckittbenckiser:t8uLkZMWNa87mxzKokKCXVQ9PEkwzXJv9YrHRD7r63WJwh5djf',
-        'baseurl'=>'https://digital-security-authservice-production.frankfurt.rbdigitalcloud.com',
+        'baseurl'=>'http://digital-security-authservice-production.frankfurt.rbdigitalcloud.com',
         'apiurl'=>'https://api.cdp-rb.com',
         'legal_version'=>'6124ec06207a4c000194298c',
         'legal_id'=>'LT-PP-MX-es-enfagrow-lp',
