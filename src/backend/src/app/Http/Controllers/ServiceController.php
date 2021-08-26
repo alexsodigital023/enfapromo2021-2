@@ -80,6 +80,16 @@ class ServiceController extends Controller implements ServiceControllerInterface
                       "AgreementDate"=>   (new \DateTime($ticket->created_at))->format("Y-m-d H:i:s"),
                       "ActivityDate"=>  (new \DateTime($ticket->created_at))->format("Y-m-d\TH:i:s.u\Z"),
                       "Status"=>  "A"
+                    ],
+                    (object)[
+                      "BusinessId"=>  "LT-PP-MX-es-Enfagrow-PrivacyPolicyGoldenPromo",
+                      "RevisionId"=>  "60fffe67207a4c0001942941",
+                      "ConsentAcceptedInd"=>  true,
+                      "ConsentDesc"=>   "Privacy Policy for Enfagrow",
+                      "MandatoryInd"=>  false,
+                      "AgreementDate"=>   (new \DateTime($ticket->created_at))->format("Y-m-d H:i:s"),
+                      "ActivityDate"=>  (new \DateTime($ticket->created_at))->format("Y-m-d\TH:i:s.u\Z"),
+                      "Status"=>  "A"
                     ]
                   ],
                   "ProfileSubscriptions"=> [

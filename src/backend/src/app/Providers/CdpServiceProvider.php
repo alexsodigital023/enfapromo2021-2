@@ -52,9 +52,10 @@ class CdpServiceProvider extends ServiceProvider {
     protected function send($payload){
         $headers = [
             "Content-Type: application/json",
-            "Brand-Org-Code: MJNPOL",
-            "Program-Code: MJNPOL",
-            "Account-Source: POLGWTPL"
+            "Brand-Org-Code: MJNMEX",
+            "Program-Code: MJNMEX",
+            "Account-Source: MEXAPPSODIGITAL",
+            "Accept-Language: es-MX"
         ];
         $ch= curl_init(sprintf(self::URL_PROFILE,$this->config->apiurl,$this->token->access_token));
         curl_setopt($ch, CURLOPT_HEADER, false);

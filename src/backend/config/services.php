@@ -39,12 +39,11 @@ return [
         'basic_auth'=>'reckittbenckiser:t8uLkZMWNa87mxzKokKCXVQ9PEkwzXJv9YrHRD7r63WJwh5djf',
         'baseurl'=>'http://digital-security-authservice-production.frankfurt.rbdigitalcloud.com',
         'apiurl'=>'https://api.cdp-rb.com',
-        'legal_version'=>'6124ec06207a4c000194298c',
-        'legal_id'=>'LT-PP-MX-es-enfagrow-lp',
-        'legal_description'=>'',
-        'AccountSourceCode'=>'RBMEXCALWEB',
-        'TierCode'=>'RBMEXCALTIER1',
-        'legal_description'=>''
+        'legal_version'=>'60fffe67ecc88500017b5554',
+        'legal_id'=>'LT-TC-MX-es-Enfagrow-TermsOfUseGoldenPromo',
+        'legal_description'=>'Terms and Conditions for Enfagrow',
+        'AccountSourceCode'=>'MEXAPPSODIGITAL',
+        'TierCode'=>'RBMEXCALTIER1'
     ],
     'advantage' =>[
         "client_id"=>"3",
