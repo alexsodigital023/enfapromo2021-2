@@ -101,7 +101,7 @@ class ServiceController extends Controller implements ServiceControllerInterface
                           "ActivityDate"=> (new \DateTime($ticket->created_at))->format("Y-m-d\TH:i:s.u\Z"),
                           "Status"=> "A",
                           "JsonExternalData"=> [
-                              "ContactPointValue"=> "test.calctose@rb.com",
+                              "ContactPointValue"=> $ticket->email,
                               "EmailOptFlag"=> "Y"
                         ]
                       ]
@@ -110,7 +110,7 @@ class ServiceController extends Controller implements ServiceControllerInterface
                       "ActivityInput"=> (object)[],
                       "ActivityType"=> "REGISTRATION",
                       "Status"=> "A",
-                      "DataSourceCode"=> "RBMEXCALAPP2021",
+                      "DataSourceCode"=> "MJNMEXAPP2021",
                       "JsonExternalData"=> [
                           "ActivityDate"=> (new \DateTime($ticket->created_at))->format("Y-m-d\TH:i:s.u\Z"),
                           "CountryCode"=> "SPA"

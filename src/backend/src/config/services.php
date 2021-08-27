@@ -42,8 +42,8 @@ return [
         'legal_version'=>'60fffe67ecc88500017b5554',
         'legal_id'=>'LT-TC-MX-es-Enfagrow-TermsOfUseGoldenPromo',
         'legal_description'=>'Terms and Conditions for Enfagrow',
-        'AccountSourceCode'=>'MEXAPPSODIGITAL',
-        'TierCode'=>'RBMEXCALTIER1'
+        'AccountSourceCode'=>'MJNMEXWEB',
+        'TierCode'=>'MJNMEXTIER1'
     ],
     'advantage' =>[
         "client_id"=>"3",
