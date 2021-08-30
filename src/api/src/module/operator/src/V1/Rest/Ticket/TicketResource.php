@@ -163,7 +163,7 @@ class TicketResource extends ResourceBase
                                 'points' => $validateData->points,
                                 'foto' => $validateData->image,
                                 'submitDate' => $validateData->submitDate,
-                                'timeZone' => $davalidateDatata->timeZone,
+                                'timeZone' => $validateData->timeZone,
                                 'telefono' => $validateData->phonenumber,
                                 'shop' => $validateData->shop,
                                 'TX' => $validateData->TX,
