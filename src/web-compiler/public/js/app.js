@@ -39998,6 +39998,14 @@ vue__WEBPACK_IMPORTED_MODULE_1___default.a.component('formulario', __webpack_req
 vue__WEBPACK_IMPORTED_MODULE_1___default.a.component('registros', __webpack_require__(/*! ./components/RegisterCounter.vue */ "./resources/js/components/RegisterCounter.vue")["default"]);
 vue__WEBPACK_IMPORTED_MODULE_1___default.a.component('top-menu', __webpack_require__(/*! ./components/TopMenu */ "./resources/js/components/TopMenu.vue")["default"]);
 vue__WEBPACK_IMPORTED_MODULE_1___default.a.component('end-register', __webpack_require__(/*! ./components/EndRegister */ "./resources/js/components/EndRegister.vue")["default"]);
+jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(function () {
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()(".captcha-btn").on("click", function () {
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()(".enfa-container").append("<div class='popEnfa'><form><div class='close'><span>x</span></div><div class='form-group'><label for='inputLetras'>¿Cuántas letras tiene <strong>Enfagrow</strong>?</label><input type='number' class='form-control' id='inputLetras'></div><button class='btn btn-primary btn-popEnfa'>Enviar</button></form></div>");
+    jquery__WEBPACK_IMPORTED_MODULE_0___default()(".popEnfa").find(".close").click(function () {
+      jquery__WEBPACK_IMPORTED_MODULE_0___default()(".popEnfa").hide();
+    });
+  });
+});
 
 (function ($) {
   var f = $("#xCampaignForm").get(0);

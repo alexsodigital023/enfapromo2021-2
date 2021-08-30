@@ -80,26 +80,26 @@ class Init extends Migration
         Schema::create('ticket', function (Blueprint $table) {
            
             $table->id();
-            $table->bigInteger('user_id',false,true);
+            $table->bigInteger('user_id',false,true)->nullable();
             $table->string('numero',20)->nullable();
             $table->string('nombre',50)->nullable();
             $table->string('apellido',50)->nullable();
             $table->string('telefono',50)->nullable();
+            $table->string('edad',50)->nullable();
             $table->string('game_t',50)->nullable();
             $table->string('game_m',50)->nullable();
             $table->string('foto',200)->nullable();
-            $table->bigInteger('estado_id',false,true);
-            $table->bigInteger('tienda_id',false,true);
-            $table->char('fingerprint',32);
+            $table->bigInteger('estado_id',false,true)->nullable();
+            $table->bigInteger('tienda_id',false,true)->nullable();
+            $table->char('fingerprint',32)->nullable();
             $table->string('mes',20)->nullable();
             $table->integer('dia',false,true)->nullable();
             $table->integer('anyo',false,true)->nullable();
             $table->string('email',false,true)->nullable();
-            $table->string('path',200);
-            $table->tinyInteger('status_id',false,true);
+            $table->string('path',200)->nullable();
+            $table->tinyInteger('status_id',false,true)->nullable();
             $table->text('status_desc')->nullable();
             $table->bigInteger('rule_id',false,true)->nullable();
-            //$table->text('data')->nullable();
             $table->longText('data')->nullable();
             $table->text('products_find')->nullable();
             $table->tinyInteger('product',false,true)->nullable();
@@ -107,14 +107,16 @@ class Init extends Migration
             $table->double('process_time')->nullable();
             $table->integer('submited')->default(0);
             $table->timestamps();
-            $table->integer("week",false,true)->virtualAs("WEEKOFYEAR(created_at)");
-            $table->unique("fingerprint");
-            $table->index(["status_id","path","product","import"]);
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
-            $table->foreign('status_id')->references('id')->on('cat_status');
-            $table->foreign('estado_id')->references('id')->on('cat_estado');
-            $table->foreign('tienda_id')->references('id')->on('cat_tienda');
-            $table->foreign('rule_id')->references('id')->on('regex_rule');
+            $table->integer("week",false,true)->virtualAs("WEEKOFYEAR(created_at)")->nullable();
+            $table->unique("fingerprint")->nullable();
+            $table->index(["status_id","path","product","import"])->nullable();
+            $table->integer('source')->nullable();
+            $table->integer('status')->nullable();
+            $table->integer('points')->nullable();
+            $table->datetime('submitDate')->nullable();
+            $table->string('timeZone')->nullable();
+            $table->string('shop')->nullable();
+            $table->string('TX')->nullable();
         });
 
         DB::statement("create or replace view ganadores as

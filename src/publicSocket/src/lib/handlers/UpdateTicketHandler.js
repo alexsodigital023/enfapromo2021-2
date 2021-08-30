@@ -1,6 +1,7 @@
 
 const pool = require('../pool');
 const https = require('https');
+const paths = require('../../config/paths.json');
 
 const acl={
     'numero':true,
