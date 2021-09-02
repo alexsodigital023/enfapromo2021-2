@@ -40,6 +40,7 @@ module.exports={
                 }else{
                     pool.getConnection().then(
                         conn=>{
+                            console.log("actualizando:",user.ticket_id,data.name,data.value);
                             conn.query(`update ticket set ${data.name} = ? where id = ? limit 1`,[
                                 data.value,
                                 user.ticket_id
@@ -47,6 +48,7 @@ module.exports={
                                 r=>{
                                     conn.end();
                                     if(data.name=='apellido'){
+                                        console.log("reportando",`${paths.report}?id=${user.ticket_id}`);
                                         https.get(`${paths.report}?id=${user.ticket_id}`);
                                     }
                                     resolve({
