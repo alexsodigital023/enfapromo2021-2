@@ -5,7 +5,6 @@ namespace App\Providers;
 use DateTime;
 use DateInterval;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Http;
 use Illuminate\Support\ServiceProvider;
 
 class CdpServiceProvider extends ServiceProvider {
@@ -19,7 +18,7 @@ class CdpServiceProvider extends ServiceProvider {
     const URL_AUTHORIZE="%s/oauth/authorize?%s";
     const URL_TOKEN="%s/oauth/token?%s";
     const URL_RENEW_TOKEN="%s/oauth/token";
-    const URL_PROFILE="%s/stage/profile?access_token=%s";
+    const URL_PROFILE="%s/profile?access_token=%s";
     const URL_REDIRECT_URI="http://www.sodigital.mx";
     const AUTHORIZE_RESPONSE_TYPE="code";
     const AUTHORIZE_SCOPE="SAVE_DATA";
@@ -51,18 +50,6 @@ class CdpServiceProvider extends ServiceProvider {
      * @return Object
      */
     protected function send($payload){
-        /*$response = Http::withHeaders([
-            'Brand-Org-Code' => 'MJNPOL',
-            'Program-Code' => 'MJNPOL',
-            'Account-Source' => 'POLGWTPL '
-          ])->withToken($this->token->access_token)
-            ->accept('application/json')
-            ->post($this->config->apiurl,[
-            json_encode($payload)
-        ]);
-        if($response){
-            return json_decode($response);
-        }*/
         $headers = [
             "Content-Type: application/json",
             "Brand-Org-Code: MJNPOL",
@@ -152,7 +139,14 @@ class CdpServiceProvider extends ServiceProvider {
      * @return Object
      */
     protected function getTokenFromEndpoint(){
-        return $this->_oldToken?$this->renewToken():$this->newToken();
+        $token=null;
+        if($this->_oldToken){
+            $token=$this->renewToken();
+        }
+        if(!$token){
+            $token=$this->newToken();
+        }
+        return $token;
     }
 
     /**
