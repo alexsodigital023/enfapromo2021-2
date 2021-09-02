@@ -185,8 +185,6 @@ class AdvantageServiceProvider extends ServiceProvider {
                 $resultData=json_decode($result);
                 if(!$resultData){
                     $resultData=(object)["response"=>$result];
-                }elseif(property_exists($resultData,"result")&&$resultData->result->sesion_activa=="0"){
-                    $token->expire();
                 }
             break;
             default:
