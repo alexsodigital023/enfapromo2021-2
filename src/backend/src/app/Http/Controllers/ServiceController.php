@@ -155,7 +155,7 @@ class ServiceController extends Controller implements ServiceControllerInterface
         $file=[
           "tmp_name"=>$tmpFile
         ];
-        $advantage->sendPhotoTicket($payload,$file);
-        return response()->json([$res]);
+        $advg=$advantage->sendPhotoTicket($payload,$file);
+        return response()->json([$res,$advg]);
     }
 }
