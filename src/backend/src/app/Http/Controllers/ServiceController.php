@@ -125,7 +125,7 @@ class ServiceController extends Controller implements ServiceControllerInterface
         $advantage=new AdvantageServiceProvider($config,$owner);
         $payload=[
           "source"=>0,
-          "TX"=>$ticket->TX
+          "TX"=>$ticket->fingerprint
         ];
         $tmpFile=tempnam(sys_get_temp_dir(),'ticket_');
         file_put_contents($tmpFile,$this->getFile($ticket->path));
