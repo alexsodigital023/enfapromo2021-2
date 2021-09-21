@@ -121,13 +121,12 @@ class ServiceController extends Controller implements ServiceControllerInterface
                 ],
                   "UtmAttributes"=>  [
                     [
-                      "CsProfileUtmAttrId"=> "f372381f-de26-4ee1-bed5-e4ad07ddece1",
                       "CampaignSource"=> "Web Enfapromo",
                       "CampaignMedium"=> "WEB",
                       "CampaignName"=> "Enfapromo",
                       "CampaignTerm"=> "",
                       "CampaignContent"=> "From site registration link",
-                      "ActivityDate"=> "2020-10-06T18:06:45Z",
+                      "ActivityDate"=> (new \DateTime($ticket->created_at))->format("Y-m-d\TH:i:s.u\Z"),
                       "Status"=> "A",
                       "UtmCampaign"=> "",
                       "UtmSource"=> "",
